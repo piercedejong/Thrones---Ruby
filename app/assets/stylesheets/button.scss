@@ -1,0 +1,16 @@
+.btn{
+  font-size: 3rem;
+  color: #262626;
+  background-color: darkgrey;
+  padding:0.1rem;
+  margin:0.1rem;
+  white-space: pre-wrap;
+  border-width:0.15rem;
+  border-color: black;
+  border-radius: 4px;
+}
+
+.btn:hover{
+  background-color: rgba(255,255,255,0.3);
+  color:white;
+}
