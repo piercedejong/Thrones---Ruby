@@ -1,11 +1,9 @@
-<div id="title" class="text-center">Game of Thrones Season 8 U of C Pool</div>
+<div id="title" class="text-center ">Game of Thrones Death Pool</div>
 <% if current_user %>
   Logged in as <%= current_user.email %>.
   <%= link_to 'Log Out', logout_path %>
 <% else %>
-  <%= link_to 'Sign Up', signup_path %>
-  <%= link_to 'Log In', login_path %>
+  <%= link_to 'Sign Up', signup_path, :id=>"sign-up", :class=>"btn btn-log btn-sign-up", :role=>"button" %>
+  <%= link_to 'Log In', login_path, :id=>"log-in", :class=>"btn btn-log btn-log-in", :role=>"button"%>
 <% end %>
 <p id=”notice”><%= notice %></p>
-<h1>Example</h1>
-<p>Lorem ipsum …</p>
