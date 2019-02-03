@@ -10,23 +10,24 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+<div id="new-user--form"class="form">
+  <div class="form-group">
+    <%= form.label :email, "Your Email", class:'form-text' %>
+    <%= form.text_field :email, class:"form-input" %>
   </div>
 
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
+  <div class="form-group">
+    <%= form.label :password, "Your Password", class:'form-text' %>
+    <%= form.password_field :password, class:'form-input' %>
   </div>
 
-  <div class="field">
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation %>
+  <div class="form-group">
+    <%= form.label :password_confirmation, "Confirm Password", class:'form-text' %>
+    <%= form.password_field :password_confirmation, class:"form-input" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Create Player", :class=>"btn btn-outline-light" %>
   </div>
+</div>
 <% end %>
