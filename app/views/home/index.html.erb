@@ -3,7 +3,7 @@
 <% if current_user %>
   <div id="current-user" class=" bottomalignedright shadow-text">
     Logged in as <%= current_user.email %>
-    <%= link_to 'Log Out', logout_path, :class=>"btn btn-log-out" %>
+    <%= link_to 'Log Out', logout_path, :class=>"btn btn-log-out btn-main btn-outline-light" %>
   </div>
 <% else %>
 <div class="container-fluid" style="padding-top:2vw">
