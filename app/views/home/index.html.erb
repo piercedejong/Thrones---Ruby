@@ -1,5 +1,5 @@
 <% content_for :title, "Death Pool"%>
-<div id="title" class="text-center shadow-text">Game of Thrones Death Pool</div>
+<div id="title" class="title text-center shadow-text">Game of Thrones Death Pool</div>
 <% if current_user %>
   <div id="current-user" class=" bottomalignedright shadow-text">
     Logged in as <%= current_user.email %>
@@ -11,8 +11,8 @@
     <div class="col-sm-4">
     </div>
     <div id="" class="col-sm-4">
-      <%= link_to 'Log In', login_path, :id=>"log-in", :class=>"btn btn-main btn-outline-primary btn-log-in shadow-text", :role=>"button" %>
-      <%= link_to 'Sign Up', signup_path, :id=>"sign-up", :class=>"btn btn-main btn-outline-secondary btn-sign-up shadow-text", :role=>"button" %>
+      <%= link_to 'Log In', login_path, :id=>"log-in", :class=>"btn btn-main btn-outline-light btn-log-in", :role=>"button" %>
+      <%= link_to 'Sign Up', signup_path, :id=>"sign-up", :class=>"btn btn-main btn-outline-dark btn-sign-up ", :role=>"button" %>
     </div>
     <div class="col-sm-4">
     </div>
