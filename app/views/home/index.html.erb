@@ -5,9 +5,17 @@
     <%= link_to 'Log Out', logout_path, :class=>"btn btn-log-out" %>
   </div>
 <% else %>
-  <div id="userbuttons" class="swag topalignedright">
-    <%= link_to 'Sign Up', signup_path, :id=>"sign-up", :class=>"btn btn-outline-secondary btn-sign-up shadow-text", :role=>"button" %>
-    <%= link_to 'Log In', login_path, :id=>"log-in", :class=>"btn btn-outline-primary btn-log-in shadow-text", :role=>"button" %>
+<div class="container-fluid" style="padding-top:2vw">
+  <div class="row content">
+    <div class="col-sm-4">
+    </div>
+    <div id="" class="col-sm-4">
+      <%= link_to 'Log In', login_path, :id=>"log-in", :class=>"btn btn-main btn-outline-primary btn-log-in shadow-text", :role=>"button" %>
+      <%= link_to 'Sign Up', signup_path, :id=>"sign-up", :class=>"btn btn-main btn-outline-secondary btn-sign-up shadow-text", :role=>"button" %>
+    </div>
+    <div class="col-sm-4">
+    </div>
   </div>
+</div>
 <% end %>
 <p id=”notice”><%= notice %></p>
