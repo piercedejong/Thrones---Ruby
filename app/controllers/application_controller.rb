@@ -3,9 +3,9 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   def current_user
     if session[:user_id]
-      @curret_user ||= User.find(session[:user_id])
+      @current_user ||= User.find(cookies.signed[:permanent_user_id] || session[:user_id])
     else
-      @ucurrent_user = nil
+      @current_user = nil
     end
   end
 

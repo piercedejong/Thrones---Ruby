@@ -4,12 +4,17 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    if(current_user and current_user.role.eql? "admin")
+      @users = User.all
+    else
+      redirect_to root_path
+    end
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find_by(uuid: params[:id])
   end
 
   # GET /users/new
@@ -19,6 +24,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @user = User.find_by(uuid: params[:id])
   end
 
   # POST /users
@@ -56,6 +62,8 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
     @user.destroy
+    cookies.permanent.signed[:permanent_user_id] = nil
+    session[:user_id] = nil
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
@@ -65,7 +73,7 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(params[:id])
+      @user = User.find_by(uuid: params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
