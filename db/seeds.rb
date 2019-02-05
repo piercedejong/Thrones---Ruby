@@ -19,9 +19,8 @@ Gain one extra point if you correctly predict if they
 become a Wight. Lose a point if you predict
 Wight status incorrectly."},
       {rid: 3,rule: "Correctly answer Bonus Questions for more points"},
-      {rid: 4,rule: "Entry with the most points wins the entire pool.
-Submit up to 2 pool entries per person by April 13.
-Pool Entry Fee is $10.00."},
+      {rid: 4,rule: "The entry with the most points wins the entire pool. At 12:00am on April 14th the form will close and you will NOT be allowed to change your answers."},
+      {rid: 5,rule: "Pool Entry Fee is $10.00."},
     ]
 )
 
