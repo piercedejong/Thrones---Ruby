@@ -1,28 +1,32 @@
 <div id="title" class="title text-center shadow-text">Drinking Game</div>
-<table style="color:white;margin:0px; width:100%" class="table table-condensed ">
+<div class="table-responsive">
+<table style="color:white;margin:0px;" class="table table-condensed ">
   <thead>
     <tr class="shadow-text table-top">
-    <th class="text-center"></th>
-      <th class="text-center"></th>
-      <th class="text-center">Rule</th>
+      <th class="text-center drink">Rules</th>
     </tr>
   </thead>
   <tbody class="unit-table">
     <% Drink.all.each do |d| %>
-    <% if d.id%2 ==  0 %>
-      <tr class="tablerow1" style="background-color:(240,240,240,0.4)">
-    <% else %>
-      <tr class="tablerow2 shadow-text" style="background-color:rgba(0, 0, 0, 0.4)">
-    <% end %>
-      <% if d.hardcore %>
-        <td class="text-center hardcore character-name">Hardcore</td>
-      <%else%>
-        <td></td>
-      <%end%>
-        <td class="drink character-name"><%if d.finish %>Finish your drink<%else%>Take a drink<%end%></td>
-        <td class="drink-rule character-name"><%= d.rule %></td>
+      <% if d.id%2==0 %>
+        <% if d.hardcore %>
+          <tr class="tablerow1" style="background-color:rgba(240,0,0,0.3)">
+        <%else%>
+        <tr class="tablerow1" style="background-color:rgba(240,240,240,0.1)">
+        <%end%>
+        <td class="drink-rule drink-even shadow-text"><%if d.finish %>Finish your drink <%else%>Take a drink <%end%><%= d.rule %></td>
         </tr>
-    <% end %>
+      <% else %>
+        <% if d.hardcore %>
+          <tr class="tablerow2" style="background-color:rgba(240,0,0,0.3)">
+        <%else%>
+          <tr class="tablerow2" style="background-color:rgba(0,0,0,0.4)">
+        <%end%>
+        <td class="drink-rule drink-odd shadow-text"><%if d.finish %>Finish your drink <%else%>Take a drink <%end%><%= d.rule %></td>
+        </tr>
+      <% end %>
+    <%end%>
   </tbody>
 </table>
+</div>
 <%= link_to 'Back', root_url, :class=>"bottomaligned btn btn-outline-light" %>

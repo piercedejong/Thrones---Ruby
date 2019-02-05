@@ -49,19 +49,26 @@
   font-size: 1.5rem;
   color:white
 }
-
-.drink{
-  text-align: right;
+.drink-rule{
+  font-size: 1.5rem
+}
+.drink-odd{
+  color:rgb(200,200,200)
 }
 
 @media only screen and (max-width: 800px) {
- .drink, .drink-rule{
-   font-size: 4rem;
- }
-
- .character-name{
-   font-size: 5 rem;
- }
+  .character-name{
+    font-size: 2rem;
+  }
+  .drink {
+    font-size: 3rem
+  }
+  .drink-rule{
+   font-size: 2rem;
+  }
+  .title{
+    font-size: 4rem;
+  }
 }
 
 .hardcore{
