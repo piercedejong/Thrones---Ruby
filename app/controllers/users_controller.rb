@@ -57,7 +57,7 @@ class UsersController < ApplicationController
       if @character.walker
         @word = "Wight"
       else
-        @word = "  Just Dead  "
+        @word = "Just Dead"
       end
       if request.xhr?
         render :json => {
