@@ -67,6 +67,23 @@ class UsersController < ApplicationController
     end
   end
 
+  def paid
+    @word=""
+    @user = User.find_by(email: params[:email])
+    if @user.payed
+      @user.update(payed: false)
+      @word="false"
+    else
+      @user.update(payed: true)
+      @word = "true"
+    end
+    if request.xhr?
+      render :json => {
+        word: @word
+      }
+    end
+  end
+
   # POST /users
   # POST /users.json
   def create

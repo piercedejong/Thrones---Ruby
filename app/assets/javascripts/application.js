@@ -55,3 +55,21 @@ function change_walker(element){
     $("#"+element.getAttribute("id")).text(response["word"])
   })
 }
+
+function paid(element){
+  console.log(element.getAttribute("email"))
+  $.ajax({
+       method: "GET",
+       data:{
+       	email: element.getAttribute("email")
+       },
+       url: window.location.origin + '/user/paid'
+	})
+  .done(function(response) {
+    if(response["word"]=="true"){
+      $("#"+element.getAttribute("uid")).removeClass("glyphicon-remove").addClass("glyphicon-ok")
+    }else{
+      $("#"+element.getAttribute("uid")).removeClass("glyphicon-ok").addClass("glyphicon-remove")
+    }
+  })
+}
