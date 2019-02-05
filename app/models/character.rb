@@ -46,7 +46,6 @@ class Character < ApplicationRecord
     characters.each do |c|
       user.characters.create(c)
     end
-    binding.pry
   end
 
   def create_uuid
