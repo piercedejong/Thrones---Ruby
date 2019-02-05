@@ -5,5 +5,45 @@
   <%= @user.email %>
 </p>
 
+<table style="color:white;margin-left:1vw;margin-bottom: 0.1vw; width:auto" class="table table-condensed ">
+  <thead>
+    <tr class="shadow-text table-top">
+      <th class="text-center">Character</th>
+      <th class="text-center">Alive or Dead</th>
+      <th class="text-center">   Wight   </th>
+    </tr>
+  </thead>
+  <tbody class="unit-table">
+    <% current_user.characters.each do |c| %>
+      <% if c.id%2 ==  0 %>
+        <tr class="tablerow1" style="background-color:(240,240,240,0.4)">
+      <% else %>
+        <tr class="tablerow2 shadow-text" style="background-color:rgba(0, 0, 0, 0.4)">
+      <% end %>
+        <td id="<%c.name%>" class=" text-center character-name"><%= c.name %></td>
+        <td class="text-center">
+          <%if c.dead %>
+           <button class="btn btn-dead" id="dead-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_dead(this)">Dead</button>
+           <%else%>
+           <button class="btn btn-alive" id="dead-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_dead(this)">Alive</button>
+           <%end%>
+        </td>
+        <td class="text-center">
+          <%if c.walker %>
+           <button class="btn btn-walker" id="walker-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_walker(this)">Whitewalker</button>
+           <%else%>
+            <%if c.dead %>
+              <button class="btn btn-just-dead" id="walker-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_walker(this)">Just Dead</button>
+            <% else %>
+              <button class="btn btn-just-dead" id="walker-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_walker(this)">N/A</button>
+            <% end %>
+
+           <%end%>
+        </td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <%= link_to 'Edit', edit_user_path(@user.uuid) %> |
 <%= link_to 'Back', users_path %>
