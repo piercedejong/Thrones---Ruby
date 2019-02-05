@@ -47,7 +47,7 @@ function change_walker(element){
        url: window.location.origin + '/user/walker'
 	})
   .done(function(response) {
-    if (response["word"] == "Whight"){
+    if (response["word"] == "Wight"){
       $("#"+element.getAttribute("id")).removeClass("btn-just-dead").addClass("btn-walker")
     }else{
       $("#"+element.getAttribute("id")).removeClass("btn-walker").addClass("btn-just-dead")

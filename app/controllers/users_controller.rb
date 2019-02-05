@@ -55,9 +55,9 @@ class UsersController < ApplicationController
     if @character.dead
       @character.update(walker: !@character.walker)
       if @character.walker
-        @word = "Whight"
+        @word = "Wight"
       else
-        @word = "Just Dead"
+        @word = "  Just Dead  "
       end
       if request.xhr?
         render :json => {
