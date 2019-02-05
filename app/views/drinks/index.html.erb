@@ -1,11 +1,7 @@
 <div id="title" class="title text-center shadow-text">Drinking Game</div>
 <div id="drink-table">
-<table style="color:white;margin:0px;" class="table table-condensed ">
-  <thead>
-    <tr class="shadow-text table-top">
-      <th class="text-center drink">Rules</th>
-    </tr>
-  </thead>
+<table style="color:white;margin:0px;width:auto;margin-left:auto;margin-right:auto" class="table table-condensed ">
+
   <tbody class="unit-table">
     <% Drink.all.each do |d| %>
       <% if d.id%2==0 %>
