@@ -8,4 +8,6 @@ Rails.application.routes.draw do
 
   get '/user/dead', to: 'users#dead'
   get '/user/walker', to: 'users#walker'
+
+  get 'drink', to: 'drinks#index', as: 'drink'
 end

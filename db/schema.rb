@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_05_031149) do
+ActiveRecord::Schema.define(version: 2019_02_05_170822) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 2019_02_05_031149) do
     t.string "uuid"
     t.integer "user_id"
     t.integer "cid"
+  end
+
+  create_table "drinks", force: :cascade do |t|
+    t.string "rule"
+    t.boolean "finish", default: false
+    t.boolean "hardcore", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "rules", force: :cascade do |t|

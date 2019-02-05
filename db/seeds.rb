@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Rule.all.each do |r| r.destroy end
+Drink.all.each do |d| d.destroy end
 
 Rule.create(
     [
@@ -21,4 +23,22 @@ Wight status incorrectly."},
 Submit up to 2 pool entries per person by April 13.
 Pool Entry Fee is $10.00."},
     ]
+)
+
+Drink.create(
+  [
+    {rule:"whenever the Starks, Lannisters, Baratheons, or Targarens are mentioned"},
+    {rule:"when your religion is mentioned. Pick one: The Old Gods, The Faith of the Seven, The Drowned God,  The Lord of Light, The Many Faced God (Season 5)"},
+    {rule:"whenever someone dies"},
+    {rule:"whenever am major character dies", finish: true},
+    {rule:"whenever there is nudity on screen"},
+    {rule:"whenever someone on screen drinks"},
+    {rule:"whenever the White Walkers are mentioned"},
+    {rule:"whenever a White Walker or wight is on screen", finish: true},
+    {rule:"whenever Hodor says 'hodor'", hardcore:true},
+    {rule:"whenever someone is addressed as mlord or lady, take 2 for your grace", hardcore:true},
+    {rule:"whenever someone says 'Winter is coming'", hardcore:true},
+    {rule:"whenever Jorah says 'Khaleesi'", hardcore:true},
+    {rule:"whenever the word 'whore' is used", hardcore:true},
+  ]
 )
