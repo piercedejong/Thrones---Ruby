@@ -30,7 +30,7 @@ Drink.create(
     {rule:"whenever the Starks, Lannisters, Baratheons, or Targarens are mentioned"},
     {rule:"when your religion is mentioned. Pick one: The Old Gods, The Faith of the Seven, The Drowned God,  The Lord of Light, The Many Faced God (Season 5)"},
     {rule:"whenever someone dies"},
-    {rule:"whenever am major character dies", finish: true},
+    {rule:"whenever a major character dies", finish: true},
     {rule:"whenever there is nudity on screen"},
     {rule:"whenever someone on screen drinks"},
     {rule:"whenever the White Walkers are mentioned"},
