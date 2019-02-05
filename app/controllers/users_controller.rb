@@ -27,6 +27,22 @@ class UsersController < ApplicationController
     @user = User.find_by(uuid: params[:id])
   end
 
+  def dead
+    @word = ""
+    @character = current_user.characters.find_by(name: params[:character])
+    @character.update(dead: !@character.dead)
+    if @character.dead
+      @word = "Dead"
+    else
+      @word = "Alive"
+    end
+    if request.xhr?
+      render :json => {
+        word: @word
+      }
+    end
+  end
+
   # POST /users
   # POST /users.json
   def create

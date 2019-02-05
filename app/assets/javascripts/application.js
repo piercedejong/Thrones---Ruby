@@ -17,3 +17,16 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
+
+function change_dead(element){
+  $.ajax({
+       method: "GET",
+       data:{
+       	character: element.getAttribute("character")
+       },
+       url: window.location.origin + '/user/dead'
+	})
+  .done(function(response) {
+    $("#"+element.getAttribute("id")).text(response["word"])
+  })
+}

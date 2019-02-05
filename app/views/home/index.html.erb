@@ -23,7 +23,7 @@
             <tr class="tablerow2 shadow-text" style="background-color:rgba(0, 0, 0, 0.4)">
           <% end %>
             <td id="<%c.name%>" class=" text-center character-name"><%= c.name %></td>
-            <td id="dead-<%=c.name%>" class=" text-center character-dead"><button><%if c.dead %> Dead <%else%> Alive <%end%></button></td>
+            <td class=" text-center character-dead"><button id="dead-<%=c.cid%>" character="<%=c.name%>" onclick="change_dead(this)"><%if c.dead %> Dead <%else%> Alive <%end%></button></td>
             <td id="walker-<%=c.name%>" class=" text-center character-walker"><button><%if c.walker %> Yes <%else%> No <%end%></button></td>
           </tr>
         <% end %>
