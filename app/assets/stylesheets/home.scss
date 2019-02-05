@@ -12,8 +12,9 @@
 }
 
 #current-user{
-  font-size: 2.5rem;
+  font-size: 1.75rem;
   color:white;
+  background-color: rgba(40,40,40,0.5)
 }
 
 .table-top{
@@ -55,6 +56,11 @@
 .drink-odd{
   color:rgb(200,200,200)
 }
+ #user-logged-in{
+   padding-bottom:4rem
+}
+#drink-table{
+}
 
 @media only screen and (max-width: 800px) {
   .character-name{
@@ -68,6 +74,12 @@
   }
   .title{
     font-size: 4rem;
+  }
+  #current-user{
+    font-size: 1.25rem
+  }
+  .btn-log-out{
+    font-size: 1.5rem !important
   }
 }
 

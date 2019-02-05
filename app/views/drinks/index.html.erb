@@ -1,5 +1,5 @@
 <div id="title" class="title text-center shadow-text">Drinking Game</div>
-<div class="table-responsive">
+<div id="drink-table">
 <table style="color:white;margin:0px;" class="table table-condensed ">
   <thead>
     <tr class="shadow-text table-top">
@@ -12,9 +12,9 @@
         <% if d.hardcore %>
           <tr class="tablerow1" style="background-color:rgba(240,0,0,0.3)">
         <%else%>
-        <tr class="tablerow1" style="background-color:rgba(240,240,240,0.1)">
+          <tr class="tablerow1" style="background-color:rgba(240,240,240,0.1)">
         <%end%>
-        <td class="drink-rule drink-even shadow-text"><%if d.finish %>Finish your drink <%else%>Take a drink <%end%><%= d.rule %></td>
+          <td class="drink-rule drink-even shadow-text"><%if d.finish %>Finish your drink <%else%>Take a drink <%end%><%= d.rule %></td>
         </tr>
       <% else %>
         <% if d.hardcore %>
@@ -22,11 +22,11 @@
         <%else%>
           <tr class="tablerow2" style="background-color:rgba(0,0,0,0.4)">
         <%end%>
-        <td class="drink-rule drink-odd shadow-text"><%if d.finish %>Finish your drink <%else%>Take a drink <%end%><%= d.rule %></td>
-        </tr>
+          <td class="drink-rule drink-odd shadow-text"><%if d.finish %>Finish your drink <%else%>Take a drink <%end%><%= d.rule %></td>
+          </tr>
       <% end %>
     <%end%>
   </tbody>
 </table>
 </div>
-<%= link_to 'Back', root_url, :class=>"bottomaligned btn btn-outline-light" %>
+<%= link_to 'Back', root_url, :class=>"topalignedleft btn btn-outline-light btn-back" %>

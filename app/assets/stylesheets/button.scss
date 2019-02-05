@@ -25,7 +25,7 @@
 }
 
 .btn-log-out{
-  font-size: 2.5rem;
+  font-size: 2rem;
   //background-color: rgba(255,255,255,0.5);
   text-shadow: none;
   width:unset;
@@ -56,4 +56,11 @@
 
 .btn-walker {
   color:#0080ff
+}
+
+@media only screen and (max-width: 800px) {
+  .btn-back{
+    font-size: 2rem
+  }
+
 }
