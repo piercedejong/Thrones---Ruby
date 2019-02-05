@@ -51,10 +51,9 @@
     <div class="col-sm-4">
     <div id="rules" style="padding-left:15px">
       <div id="rules-title" class="shadow-text ">Rules</div>
-      <div id="rule1" class="shadow-text rule">1. <%=Rule.first.rule%></div>
-      <div id="rule2" class="shadow-text rule">2. <%=Rule.second.rule%></div>
-      <div id="rule3" class="shadow-text rule">3. <%=Rule.third.rule%></div>
-      <div id="rule4" class="shadow-text rule">4. <%=Rule.fourth.rule%></div>
+      <% Rule.all.each do |r| %>
+        <div id="rule<%=r.rid%>" style="padding-top:5px"class="shadow-text rule"><%=r.rid%>. <%=r.rule%></div>
+      <%end%>
     </div>
     <%= link_to 'Drinking Game', drink_path, :style=>"margin-top: 20px",:class=>"btn btn-outline-light btn-main btn-drink" %>
 
