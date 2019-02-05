@@ -1,28 +1,35 @@
 <% content_for :title, "Death Pool"%>
 <div id="title" class="title text-center shadow-text">Game of Thrones Death Pool</div>
 <% if current_user %>
-  <table style="color:white;margin-left:1vw;margin-bottom: 0.1vw; width:auto" class="table table-condensed ">
-    <thead>
-      <tr class="shadow-text table-top">
-        <th class="text-center">Charcter</th>
-        <th class="text-center">Alive or Dead</th>
-        <th class="text-center">Whitewalker</th>
-      </tr>
-    </thead>
-    <tbody class="unit-table">
-      <% current_user.characters.each do |c| %>
-        <% if c.id%2 ==  0 %>
-          <tr class="tablerow1" style="background-color:(240,240,240,0.4)">
-        <% else %>
-          <tr class="tablerow2 shadow-text" style="background-color:rgba(0, 0, 0, 0.4)">
-        <% end %>
-          <td id="" class=" text-center character-name"><%= c.name %></td>
-          <td id="" class=" text-center character-dead"><button><%if c.dead %>Dead<% else %>Alive<%end%></button></td>
-          <td id="" class=" text-center character-wlaker"><button><%if c.walker %>Yes<% else %>No<%end%></button></td>
-        </tr>
+  <div id="user-logged-in">
+    <% if current_user.payed %>
+      <div id="payed">You have payed</div>
+    <% else %>
+      <div id="scum">You have NOT payed yet. PAY ME NOW</div>
       <% end %>
-    </tbody>
-  </table>
+    <table style="color:white;margin-left:1vw;margin-bottom: 0.1vw; width:auto" class="table table-condensed ">
+      <thead>
+        <tr class="shadow-text table-top">
+          <th class="text-center">Charcter</th>
+          <th class="text-center">Alive or Dead</th>
+          <th class="text-center">Whitewalker</th>
+        </tr>
+      </thead>
+      <tbody class="unit-table">
+        <% current_user.characters.each do |c| %>
+          <% if c.id%2 ==  0 %>
+            <tr class="tablerow1" style="background-color:(240,240,240,0.4)">
+          <% else %>
+            <tr class="tablerow2 shadow-text" style="background-color:rgba(0, 0, 0, 0.4)">
+          <% end %>
+            <td id="<%c.name%>" class=" text-center character-name"><%= c.name %></td>
+            <td id="dead-<%=c.name%>" class=" text-center character-dead"><button><%if c.dead %> Dead <%else%> Alive <%end%></button></td>
+            <td id="walker-<%=c.name%>" class=" text-center character-walker"><button><%if c.walker %> Yes <%else%> No <%end%></button></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
   <div id="current-user" class=" bottomalignedright shadow-text">
     Logged in as <%= current_user.email %>
     <%= link_to 'Log Out', logout_path, :class=>"btn btn-log-out btn-main btn-outline-light" %>
