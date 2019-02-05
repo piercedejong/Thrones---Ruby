@@ -1,6 +1,7 @@
 class Character < ApplicationRecord
   before_create :create_uuid
   belongs_to :user
+  default_scope { order(created_at: :asc) }
 
 
 
