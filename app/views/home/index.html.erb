@@ -56,7 +56,9 @@
       <%end%>
     </div>
     <%= link_to 'Drinking Game', drink_path, :style=>"margin-top: 20px",:class=>"btn btn-outline-light btn-main btn-drink" %>
-
+    <% if current_user.role.eql? "admin" %>
+      <%= link_to 'Users', users_path, :class=>"btn btn-outline-light btn-back" %>
+    <% end %>
     </div>
   </div>
 </div>
