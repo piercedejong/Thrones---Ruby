@@ -11,6 +11,10 @@
   font-style: normal;
 }
 
+.user-title{
+  font-family: none
+}
+
 #current-user{
   font-size: 1.75rem;
   color:white;
@@ -53,6 +57,10 @@
 .drink-rule{
   font-size: 1.5rem
 }
+
+.user-list{
+  font-size: 1.5rem
+}
 .drink-odd{
   color:rgb(200,200,200)
 }
@@ -80,6 +88,14 @@
   }
   .btn-log-out{
     font-size: 1.5rem !important
+  }
+  .user-title{
+    font-size: 2.5rem
+  }
+
+  .user-column{
+    padding-left:0px !important;
+    padding-right:5px !important;
   }
 }
 

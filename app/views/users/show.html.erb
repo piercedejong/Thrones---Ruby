@@ -1,16 +1,10 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
+<%= link_to 'Back', root_url, :class=>"topalignedleft btn btn-outline-light btn-back" %><div id="title" class="title user-title text-center shadow-text"><%=@user.email%></div>
 <table style="color:white;margin-left:1vw;margin-bottom: 0.1vw; width:auto" class="table table-condensed ">
   <thead>
     <tr class="shadow-text table-top">
       <th class="text-center">Character</th>
       <th class="text-center">Alive or Dead</th>
-      <th class="text-center">   Wight   </th>
+      <th class="text-center">Wight</th>
     </tr>
   </thead>
   <tbody class="unit-table">
@@ -20,30 +14,28 @@
       <% else %>
         <tr class="tablerow2 shadow-text" style="background-color:rgba(0, 0, 0, 0.4)">
       <% end %>
-        <td id="<%c.name%>" class=" text-center character-name"><%= c.name %></td>
-        <td class="text-center">
+        <td id="<%c.name%>" class=" text-center character-name shadow-text"><%= c.name %></td>
+        <td class="text-center" style="vertical-align:middle">
           <%if c.dead %>
-           <button class="btn btn-dead" id="dead-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_dead(this)">Dead</button>
+           <button class="btn btn-dead nowrap shadow-text" id="dead-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>">Dead</button>
            <%else%>
-           <button class="btn btn-alive" id="dead-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_dead(this)">Alive</button>
+           <button class="btn btn-alive nowrap shadow-text" id="dead-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>">Alive</button>
            <%end%>
         </td>
-        <td class="text-center">
+        <td class="text-center" style="vertical-align:middle">
           <%if c.walker %>
-           <button class="btn btn-walker" id="walker-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_walker(this)">Whitewalker</button>
+           <button class="btn btn-walker nowrap shadow-text" id="walker-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>">Wight</button>
            <%else%>
             <%if c.dead %>
-              <button class="btn btn-just-dead" id="walker-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_walker(this)">Just Dead</button>
+              <button class="btn btn-just-dead nowrap shadow-text" id="walker-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>">Just Dead</button>
             <% else %>
-              <button class="btn btn-just-dead" id="walker-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_walker(this)">N/A</button>
+              <button class="btn btn-just-dead nowrap shadow-text" id="walker-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>">N/A</button>
             <% end %>
-
            <%end%>
         </td>
         </tr>
     <% end %>
   </tbody>
 </table>
-
-<%= link_to 'Edit', edit_user_path(@user.uuid) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', users_path, :class=>"topalignedleft btn btn-outline-light btn-back" %>
+<%= link_to 'Edit', edit_user_path(@user.uuid) %>
