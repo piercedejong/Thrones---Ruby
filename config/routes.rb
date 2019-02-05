@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
   get '/user/dead', to: 'users#dead'
+  get '/user/walker', to: 'users#walker'
 end

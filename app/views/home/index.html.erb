@@ -23,8 +23,8 @@
             <tr class="tablerow2 shadow-text" style="background-color:rgba(0, 0, 0, 0.4)">
           <% end %>
             <td id="<%c.name%>" class=" text-center character-name"><%= c.name %></td>
-            <td class=" text-center character-dead"><button id="dead-<%=c.cid%>" character="<%=c.name%>" onclick="change_dead(this)"><%if c.dead %> Dead <%else%> Alive <%end%></button></td>
-            <td id="walker-<%=c.name%>" class=" text-center character-walker"><button><%if c.walker %> Yes <%else%> No <%end%></button></td>
+            <td class="text-center"><button class="btn btn-dead"   id="dead-<%=c.cid%>" cid="<%=c.cid%>"  character="<%=c.name%>" onclick="change_dead(this)">  <%if c.dead %> Dead <%else%> Alive <%end%></button></td>
+            <td class="text-center"><button class="btn btn-walker" id="walker-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_walker(this)"><%if c.walker %> Whitewalker <%else%> <%if c.dead %> Just Dead <%else%> N/A <%end%><%end%></button></td>
           </tr>
         <% end %>
       </tbody>
@@ -34,14 +34,7 @@
     Logged in as <%= current_user.email %>
     <%= link_to 'Log Out', logout_path, :class=>"btn btn-log-out btn-main btn-outline-light" %>
   </div>
-
-
-
-
-
-
-
-
+  
 <% else %>
 <div class="container-fluid" style="padding-top:2vw">
   <div class="row content">

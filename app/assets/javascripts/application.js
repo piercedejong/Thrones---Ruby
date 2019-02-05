@@ -28,5 +28,19 @@ function change_dead(element){
 	})
   .done(function(response) {
     $("#"+element.getAttribute("id")).text(response["word"])
+    $("#walker-"+element.getAttribute("cid")).text(response["walker"])
+  })
+}
+
+function change_walker(element){
+  $.ajax({
+       method: "GET",
+       data:{
+       	character: element.getAttribute("character")
+       },
+       url: window.location.origin + '/user/walker'
+	})
+  .done(function(response) {
+    $("#"+element.getAttribute("id")).text(response["word"])
   })
 }

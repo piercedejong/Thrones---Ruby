@@ -29,17 +29,41 @@ class UsersController < ApplicationController
 
   def dead
     @word = ""
+    @walker = ""
     @character = current_user.characters.find_by(name: params[:character])
     @character.update(dead: !@character.dead)
     if @character.dead
       @word = "Dead"
+      @walker = "Just Dead"
+      @character.update(walker:false)
     else
       @word = "Alive"
+      @walker = "N/A"
+      @character.update(walker: false)
     end
     if request.xhr?
       render :json => {
-        word: @word
+        word: @word,
+        walker: @walker
       }
+    end
+  end
+
+  def walker
+    @word = ""
+    @character = current_user.characters.find_by(name: params[:character])
+    if @character.dead
+      @character.update(walker: !@character.walker)
+      if @character.walker
+        @word = "Whitewalker"
+      else
+        @word = "Just Dead"
+      end
+      if request.xhr?
+        render :json => {
+          word: @word
+        }
+      end
     end
   end
 
