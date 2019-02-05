@@ -35,7 +35,25 @@
   border-color: rgb(230,230,230)
 }
 
-.btn-dead, .btn-walker{
+.btn-dead, .btn-alive, .btn-walker, .btn-just-dead{
   font-size: 1.5rem;
+  color: white;
+  border-color: grey;
+  background-color: rgba(30,30,30,0.5);
+  padding: 3px;
+  width: 100%;
+}
+
+.btn-dead {
+  color:red;
+}
+.btn-alive{
   color:white
+}
+.btn-just-dead{
+  color:white
+}
+
+.btn-walker {
+  color:#0080ff
 }

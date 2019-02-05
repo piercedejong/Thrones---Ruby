@@ -55,7 +55,7 @@ class UsersController < ApplicationController
     if @character.dead
       @character.update(walker: !@character.walker)
       if @character.walker
-        @word = "Whitewalker"
+        @word = "Whight"
       else
         @word = "Just Dead"
       end

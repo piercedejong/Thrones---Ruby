@@ -27,6 +27,12 @@ function change_dead(element){
        url: window.location.origin + '/user/dead'
 	})
   .done(function(response) {
+    if (response["word"] == "Dead"){
+      $("#"+element.getAttribute("id")).removeClass("btn-alive").addClass("btn-dead")
+    }else{
+      $("#"+element.getAttribute("id")).removeClass("btn-dead").addClass("btn-alive")
+      $("#walker-"+element.getAttribute("cid")).removeClass("btn-walker").addClass("btn-just-dead")
+    }
     $("#"+element.getAttribute("id")).text(response["word"])
     $("#walker-"+element.getAttribute("cid")).text(response["walker"])
   })
@@ -41,6 +47,11 @@ function change_walker(element){
        url: window.location.origin + '/user/walker'
 	})
   .done(function(response) {
+    if (response["word"] == "Whight"){
+      $("#"+element.getAttribute("id")).removeClass("btn-just-dead").addClass("btn-walker")
+    }else{
+      $("#"+element.getAttribute("id")).removeClass("btn-walker").addClass("btn-just-dead")
+    }
     $("#"+element.getAttribute("id")).text(response["word"])
   })
 }
