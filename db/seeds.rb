@@ -12,7 +12,7 @@ Rule.create(
       {rid: 1,rule: "Predict if each character will be alive or dead at the
 end of season 8. 1 point for each correct answer."},
       {rid: 2,rule: "If you predict the character dead, you have the
-option to predict if they become a Wigth.
+option to predict if they become a Wight.
 Gain one extra point if you correctly predict if they
 become a Wight. Lose a point if you predict
 Wight status incorrectly."},
