@@ -9,7 +9,17 @@
 Rule.all.each do |r| r.destroy end
 Drink.all.each do |d| d.destroy end
 Death.all.each do |d| d.destroy end
+Question.all.each do |q| d.destroy end
 Character.all.each do |c| c.update(points: 0) end
+
+
+Question.create(
+  [
+    {qid:1,text:"Is Daenerys pregnant? (1 extra point)"},
+    {qid:2,text:"Who kills the Night King? (2 points)"},
+    {qid:3,text:"Who holds the Iron Throne at the end? (4 points)"},
+  ]
+)
 
 Rule.create(
     [

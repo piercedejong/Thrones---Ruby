@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_06_201925) do
+ActiveRecord::Schema.define(version: 2019_02_06_203004) do
 
   create_table "answers", force: :cascade do |t|
     t.string "text"
@@ -48,6 +48,13 @@ ActiveRecord::Schema.define(version: 2019_02_06_201925) do
     t.boolean "hardcore", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "qid"
   end
 
   create_table "rules", force: :cascade do |t|
