@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_05_170822) do
+ActiveRecord::Schema.define(version: 2019_02_06_154234) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2019_02_05_170822) do
     t.string "uuid"
     t.integer "user_id"
     t.integer "cid"
+    t.integer "point", default: 0
+    t.integer "points", default: 0
   end
 
   create_table "drinks", force: :cascade do |t|

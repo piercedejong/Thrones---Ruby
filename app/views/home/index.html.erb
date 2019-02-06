@@ -2,47 +2,49 @@
 <div id="title" class="title text-center shadow-text">Game of Thrones Death Pool</div>
 <% if current_user %>
   <div id="user-logged-in">
-    <div class="row content" style="marigin-left:0px;margin-right:0px">
+    <div class="row content">
       <div class="col-sm-8">
     <% if current_user.payed %>
       <div id="payed" class="shadow-text">You have paid</div>
     <% else %>
       <div id="scum" class="shadow-text">You have NOT paid yet. PAY ME NOW</div>
       <% end %>
-    <table style="color:white;margin-left:1vw;margin-bottom: 0.1vw; width:auto" class="table table-condensed ">
+    <table class="table table-condensed table-characters">
       <thead>
         <tr class="shadow-text table-top">
           <th class="text-center">Character</th>
           <th class="text-center">Alive or Dead</th>
-          <th class="text-center">   Wight   </th>
+          <th class="text-center">Wight</th>
+          <th class="text-center">Points</th>
         </tr>
       </thead>
       <tbody class="unit-table">
         <% current_user.characters.each do |c| %>
           <% if c.id%2 ==  0 %>
-            <tr class="tablerow1" style="background-color:(240,240,240,0.4)">
+            <tr class="tablerow1 shadow-text">
           <% else %>
-            <tr class="tablerow2 shadow-text" style="background-color:rgba(0, 0, 0, 0.4)">
+            <tr class="tablerow2 shadow-text">
           <% end %>
-            <td id="<%c.name%>" class=" text-center character-name shadow-text"><%= c.name %></td>
-            <td class="text-center" style="vertical-align:middle">
-              <%if c.dead %>
-               <button class="btn btn-dead nowrap shadow-text" id="dead-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_dead(this)">Dead</button>
-               <%else%>
-               <button class="btn btn-alive nowrap shadow-text" id="dead-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_dead(this)">Alive</button>
-               <%end%>
-            </td>
-            <td class="text-center" style="vertical-align:middle">
-              <%if c.walker %>
-               <button class="btn btn-walker nowrap shadow-text" id="walker-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_walker(this)">Wight</button>
-               <%else%>
+              <td id="<%c.name%>" class=" text-center character-name shadow-text"><%= c.name %></td>
+              <td class="text-center align-middle">
                 <%if c.dead %>
-                  <button class="btn btn-just-dead nowrap shadow-text" id="walker-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_walker(this)">Just Dead</button>
-                <% else %>
-                  <button class="btn btn-just-dead nowrap shadow-text" id="walker-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_walker(this)">N/A</button>
-                <% end %>
-               <%end%>
-            </td>
+                 <button class="btn btn-dead nowrap shadow-text" id="dead-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_dead(this)">Dead</button>
+                 <%else%>
+                 <button class="btn btn-alive nowrap shadow-text" id="dead-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_dead(this)">Alive</button>
+                 <%end%>
+              </td>
+              <td class="text-center align-middle">
+                <%if c.walker %>
+                 <button class="btn btn-walker nowrap shadow-text" id="walker-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_walker(this)">Wight</button>
+                 <%else%>
+                  <%if c.dead %>
+                    <button class="btn btn-just-dead nowrap shadow-text" id="walker-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_walker(this)">Just Dead</button>
+                  <% else %>
+                    <button class="btn btn-just-dead nowrap shadow-text" id="walker-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_walker(this)">N/A</button>
+                  <% end %>
+                 <%end%>
+              </td>
+              <td class="text-center align-middle character-name"><%=c.points%>
             </tr>
         <% end %>
       </tbody>

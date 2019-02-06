@@ -85,6 +85,10 @@ html {
   margin-left:0.1vw
 }
 
+.row{
+  marigin-left:0px;margin-right:0px
+}
+
 .bottomaligned {
   position:fixed;
   bottom:0;
@@ -106,4 +110,8 @@ html {
   margin-bottom:0.1vw;
   right: 0;
   margin-right:0.1vw
+ }
+
+ .align-middle{
+   vertical-align: middle
  }
