@@ -4,8 +4,8 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by_email(params[:email])
     if @user && @user.authenticate(params[:password])
-      cookies.permanent.signed[:permanent_user_id] = @user.id
-      session[:user_id] = @user.id
+      cookies.permanent.signed[:permanent_user_id] = @user.uuid
+      session[:user_id] = @user.uuid
       redirect_to root_url, notice: "Logged in!"
     else
       flash.now[:alert] = "Email or password is invalid"
