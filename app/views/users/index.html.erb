@@ -10,7 +10,7 @@
     <% @users.each do |user| %>
       <tr class="" >
         <td class="shadow-text"style="vertical-align:middle"><%= user.email %></td>
-        <td class=""><a email="<%=user.email%>" uid="<%=user.id%>"onclick="paid(this)" style="vertical-align:middle"><%if user.payed%><span id="<%=user.id%>" class="glyphicon glyphicon-ok"></span><%else%><span id="<%=user.id%>" class="glyphicon glyphicon-remove"></span><%end%></a></td>
+        <td class=""><a email="<%=user.email%>" uid="<%=user.id%>"onclick="paid(this)" style="vertical-align:middle"><%if user.payed%><span id="<%=user.id%>" class="glyphicon glyphicon-ok shadow-text"></span><%else%><span id="<%=user.id%>" class="glyphicon glyphicon-remove shadow-text"></span><%end%></a></td>
         <td class="user-column"><%= link_to 'Show', user_path(user.uuid), :class=>"btn btn-outline-light btn-alive"%></td>
         <td class="user-column"><%= link_to 'Edit', edit_user_path(user.uuid),:class=>"btn btn-outline-light btn-alive" %></td>
         <td class="user-column"><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' },:class=>"btn btn-outline-light btn-alive" %></td>
