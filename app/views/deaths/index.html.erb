@@ -1,1 +1,31 @@
-<h1>Hello</h1>
+<div id="title" class="title text-center shadow-text">Character Status</div>
+<div id="status-table">
+<table class="table table-condensed table-characters">
+  <thead>
+    <tr class="shadow-text table-top">
+      <th class="text-center">Character</th>
+      <th class="text-center">Status</th>
+    </tr>
+  </thead>
+  <tbody class="unit-table">
+    <% Death.all.each do |d| %>
+      <% if d.id%2 ==  0 %>
+        <tr class="tablerow1 shadow-text">
+      <% else %>
+        <tr class="tablerow2 shadow-text">
+      <% end %>
+      <td class=" text-center character-name shadow-text"><%= d.name %></td>
+      <td class=" text-center align-middle">
+        <% if d.status.eql? "alive" %>
+          <button id="<%=d.did%>" class="btn btn-alive nowrap" onclick="status(this)">Alive</button>
+        <% elsif d.status.eql? "dead" %>
+          <button id="<%=d.did%>" class="btn btn-dead nowrap" onclick="status(this)">Dead</button>
+        <% else %>
+          <button id="<%=d.did%>" class="btn btn-walker nowrap" onclick="status(this)">Wight</button>
+        <%end%>
+      </td>
+    <%end%>
+  </tbody>
+</table>
+</div>
+<%= link_to 'Back', root_url, :class=>"topalignedleft btn btn-outline-light btn-back" %>
