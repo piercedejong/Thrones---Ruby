@@ -1,7 +1,7 @@
 class DeathsController < ApplicationController
   def index
-    if !current_user.eql? "admin"
-      redirect_to root_path
+    if current_user and !current_user.role.eql? "admin"
+      redirect_to rootpath
     end
   end
 
