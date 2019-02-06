@@ -10,4 +10,13 @@ class User < ApplicationRecord
       self.uuid = SecureRandom.uuid
     end while self.class.exists?(:uuid => uuid)
   end
+
+
+  def points
+    @points = 1
+    self.characters.all.each do |c|
+      @points = @points + c.points
+    end
+    return @points
+  end
 end
