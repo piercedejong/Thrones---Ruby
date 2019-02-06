@@ -91,6 +91,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         Character.create_characters(@user)
+        Answer.create_answer(@user)
         cookies.permanent.signed[:permanent_user_id] = @user.uuid
         session[:user_id] = @user.uuid
         format.html { redirect_to root_path }

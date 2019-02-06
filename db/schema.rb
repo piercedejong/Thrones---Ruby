@@ -10,15 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_06_195025) do
-
-  create_table "answers", force: :cascade do |t|
-    t.string "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.boolean "correct"
-  end
+ActiveRecord::Schema.define(version: 2019_02_06_163531) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
@@ -45,13 +37,6 @@ ActiveRecord::Schema.define(version: 2019_02_06_195025) do
     t.string "rule"
     t.boolean "finish", default: false
     t.boolean "hardcore", default: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "questions", force: :cascade do |t|
-    t.string "text", default: ""
-    t.string "answer", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
