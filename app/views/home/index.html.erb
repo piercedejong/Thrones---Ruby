@@ -59,7 +59,9 @@
     </div>
     <div id="questions" style="padding-left:15px;border-top: 5px double rgb(150,150,150);">
       <div id="rules-title" class="shadow-text ">Bonus Questions</div>
-      
+      <% Question.all.each do |q| %>
+        <div id="question<%=q.qid%>" style="padding-top:5px"class="shadow-text rule"><%=q.qid%>. <%=q.text%></div>
+      <%end%>
     </div>
     <%= link_to 'Drinking Game', drink_path, :style=>"margin-top: 20px",:class=>"btn btn-outline-light btn-main btn-drink" %>
     <% if current_user.role.eql? "admin" %>
