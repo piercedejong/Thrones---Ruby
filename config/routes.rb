@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   get '/user/paid', to: 'users#paid'
 
   get 'drink', to: 'drinks#index', as: 'drink'
+
+  get 'death', to: 'deaths#index', as: 'death'
+  get 'death/status', to: 'deaths#status'
 end

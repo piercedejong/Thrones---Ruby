@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_06_154234) do
+ActiveRecord::Schema.define(version: 2019_02_06_163531) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 2019_02_06_154234) do
     t.integer "cid"
     t.integer "point", default: 0
     t.integer "points", default: 0
+  end
+
+  create_table "deaths", force: :cascade do |t|
+    t.string "name"
+    t.string "status", default: "alive"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "did"
   end
 
   create_table "drinks", force: :cascade do |t|

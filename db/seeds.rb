@@ -8,6 +8,7 @@
 
 Rule.all.each do |r| r.destroy end
 Drink.all.each do |d| d.destroy end
+Death.all.each do |d| d.destroy end
 
 Rule.create(
     [
@@ -39,5 +40,45 @@ Drink.create(
     {rule:"whenever someone says 'Winter is coming'", hardcore:true},
     {rule:"whenever Jorah says 'Khaleesi'", hardcore:true},
     {rule:"whenever the word 'whore' is used", hardcore:true},
+  ]
+)
+
+Death.create(
+  [
+    {did:1, name:"Jon Snow"},
+    {did:2, name:"Arya Stark"},
+    {did:3, name:"Sansa Stark"},
+    {did:4, name:"Bran Stark"},
+    {did:5, name:"Cersei Lannister"},
+    {did:6, name:"Jaime Lannister"},
+    {did:7, name:"Tyrion Lannister"},
+    {did:8, name:"Daenerys Targaryen"},
+    {did:9, name:"Yara Greyjoy"},
+    {did:10, name:"Theon Greyjoy"},
+    {did:11, name:"Euron Greyjoy"},
+    {did:12, name:"Melisandre"},
+    {did:13, name:"Jorah Mormont"},
+    {did:14, name:"The Hound"},
+    {did:15, name:"The Mountain"},
+    {did:16, name:"Samwell Tarley"},
+    {did:17, name:"Gilly"},
+    {did:18, name:"Sam (Child)"},
+    {did:19, name:"Lord Varys"},
+    {did:20, name:"Brienne of Tarth"},
+    {did:21, name:"Davos Seaworth"},
+    {did:22, name:"Bronn"},
+    {did:23, name:"Podrick Payne"},
+    {did:24, name:"Tormund Giantsbane"},
+    {did:25, name:"Qyburn"},
+    {did:26, name:"Grey Worm"},
+    {did:27, name:"Gendry"},
+    {did:28, name:"Beric Dondarrion"},
+    {did:29, name:"Daario"},
+    {did:30, name:"Dolorous Edd"},
+    {did:31, name:"Missandei"},
+    {did:32, name:"Ghost"},
+    {did:33, name:"Nymeria"},
+    {did:34, name:"Drogon"},
+    {did:35, name:"Rhaegal"},
   ]
 )
