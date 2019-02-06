@@ -1,13 +1,13 @@
 <div id="title" class="title text-center shadow-text">Drinking Game</div>
 <div id="drink-table">
-<table style="color:white;margin:0px;width:auto;margin-left:auto;margin-right:auto" class="table table-condensed ">
+<table class="table table-condensed table-characters">
   <tbody class="unit-table">
     <% Drink.all.each do |d| %>
       <% if d.id%2==0 %>
         <% if d.hardcore %>
           <tr class="tablerow1" style="background-color:rgba(240,0,0,0.3)">
         <%else%>
-          <tr class="tablerow1" style="background-color:rgba(240,240,240,0.1)">
+          <tr class="tablerow1">
         <%end%>
           <td class="drink-rule drink-even shadow-text"><%if d.finish %>Finish your drink <%else%>Take a drink <%end%><%= d.rule %></td>
         </tr>
@@ -15,7 +15,7 @@
         <% if d.hardcore %>
           <tr class="tablerow2" style="background-color:rgba(240,0,0,0.3)">
         <%else%>
-          <tr class="tablerow2" style="background-color:rgba(0,0,0,0.4)">
+          <tr class="tablerow2">
         <%end%>
           <td class="drink-rule drink-odd shadow-text"><%if d.finish %>Finish your drink <%else%>Take a drink <%end%><%= d.rule %></td>
           </tr>
