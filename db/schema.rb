@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 2019_02_06_163531) do
     t.string "uuid"
     t.integer "user_id"
     t.integer "cid"
-    t.integer "point", default: 0
     t.integer "points", default: 0
   end
 
