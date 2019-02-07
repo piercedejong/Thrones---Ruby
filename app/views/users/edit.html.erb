@@ -1,6 +1,14 @@
-<h1>Editing User</h1>
-
-<%= render 'form', user: @user %>
+<% content_for :title, "Death Pool - Edit Player"%>
+<div id="sign-in" class="text-center title shadow-text">Edit Player</div>
+<div class="row content" style ="margin-left: 0px;margin-right: 0px;">
+  <div class="col-sm-4">
+  </div>
+  <div class="col-sm-4">
+    <%= render 'form', user: @user %>
+  </div>
+  <div class="col-sm-4">
+  </div>
+</div>
 
 <%= link_to 'Show', user_path(@user.uuid) %> |
 <%= link_to 'Back', users_path %>
