@@ -9,7 +9,7 @@
 Rule.all.each do |r| r.destroy end
 Drink.all.each do |d| d.destroy end
 Death.all.each do |d| d.destroy end
-Question.all.each do |q| d.destroy end
+Question.all.each do |q| q.destroy end
 Character.all.each do |c| c.update(points: 0) end
 
 
