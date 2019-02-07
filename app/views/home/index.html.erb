@@ -59,9 +59,13 @@
     </div>
     <div id="questions" style="padding-left:15px;border-top: 5px double rgb(150,150,150);">
       <div id="rules-title" class="shadow-text ">Bonus Questions</div>
-      <% Question.all.each do |q| %>
-        <div id="question<%=q.qid%>" style="padding-top:5px"class="shadow-text rule"><%=q.qid%>. <%=q.text%></div>
-      <%end%>
+      <%= form_tag "/answers" do %>
+        <% Question.all.each do |q| %>
+          <div id="question<%=q.qid%>" style="padding-top:5px"class="shadow-text rule"><%=q.qid%>. <%=q.text%></div>
+          <%= text_field_tag "answers[][text]", current_user.answers.find_by(rid: q.qid).text, :class=>"answer" %>
+        <% end %>
+        <div style="padding-top:8px"><%= submit_tag "Save Answers", :class=>"btn btn-outline-light", :style=>"font-size:1.75rem" %></div>
+      <% end %>
     </div>
     <%= link_to 'Drinking Game', drink_path, :style=>"margin-top: 20px",:class=>"btn btn-outline-light btn-main btn-drink" %>
     <% if current_user.role.eql? "admin" %>
