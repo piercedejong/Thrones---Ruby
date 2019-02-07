@@ -7,7 +7,6 @@ class AnswersController < ApplicationController
     current_user.answers.first.update(text:@answers[0][:text])
     current_user.answers.second.update(text:@answers[1][:text])
     current_user.answers.third.update(text:@answers[2][:text])
-    binding.pry
     redirect_to root_path
   end
 
