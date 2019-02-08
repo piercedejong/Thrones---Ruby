@@ -6,9 +6,9 @@ class Answer < ApplicationRecord
 
   def self.create_answers(user)
     answers=[
-      {rid:1, text:""},
-      {rid:2, text:""},
-      {rid:3, text:""},
+      {rid:1, text:"",value:1},
+      {rid:2, text:"",value:2},
+      {rid:3, text:"",value:4},
     ]
     answers.each do |a|
       user.answers.create(a)
