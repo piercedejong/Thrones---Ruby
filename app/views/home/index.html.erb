@@ -2,13 +2,12 @@
 <pre class="title text-center shadow-text">Game   of   Thrones   Death   Pool</pre>
 <% if current_user %>
   <div id="user-logged-in">
+    <% if !current_user.payed %>
+      <div id="scum" class="text-center shadow-text">You have NOT paid your entry fee yet</div>
+    <% end %>
     <div class="row content">
       <div class="col-sm-8">
-    <% if current_user.payed %>
-      <div id="payed" class="shadow-text">You have paid</div>
-    <% else %>
-      <div id="scum" class="shadow-text">You have NOT paid yet. PAY ME NOW</div>
-      <% end %>
+
     <table class="table table-condensed table-characters">
       <thead>
         <tr class="shadow-text table-top">
