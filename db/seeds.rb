@@ -24,7 +24,7 @@ Question.create(
 
 Rule.create(
     [
-      {rid: 1,rule: "Predict if each character will be alive or dead at the
+      {rid: 1,rule: "Predict if each character (38 total) will be alive or dead at the
 END of season 8. 1 point for each correct answer."},
       {rid: 2,rule: "If you predict the character will die, you have the
 option to predict if they become a Wight (Army of the Dead).
