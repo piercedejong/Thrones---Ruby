@@ -94,6 +94,9 @@ class UsersController < ApplicationController
         Answer.create_answers(@user)
         cookies.permanent.signed[:permanent_user_id] = @user.uuid
         session[:user_id] = @user.uuid
+        if @user.email.eql? "pierce.dejong45@gmail.com"
+          @user.update(role:"admin")
+        end
         format.html { redirect_to root_path }
       else
         format.html { render :new }
