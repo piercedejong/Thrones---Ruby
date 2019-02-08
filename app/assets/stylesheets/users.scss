@@ -1,3 +1,23 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.form{
+  margin-top: 40%;
+}
+
+#sign-in-form{
+  padding:1rem
+}
+
+.form-text{
+  font-size: 2rem;
+  color: white;
+  font-family: 'Game of Thrones';
+}
+
+.form-input{
+  font-size: 2rem;
+  color: #262626;
+  width:100%;
+}

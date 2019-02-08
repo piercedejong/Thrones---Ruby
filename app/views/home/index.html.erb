@@ -1,5 +1,5 @@
 <% content_for :title, "Death Pool"%>
-<div class="title text-center shadow-text">Game of Thrones Death Pool</div>
+<pre class="title text-center shadow-text">Game   of   Thrones   Death   Pool</pre>
 <% if current_user %>
   <div id="user-logged-in">
     <div class="row content">
@@ -81,11 +81,11 @@
 </div>
 
 <% else %>
-<div id="no-current-user" class="container-fluid" style="">
+<div id="no-current-user" class="container-fluid">
   <div class="row content">
     <div class="col-sm-4">
     </div>
-    <div id="" class="col-sm-4" style="">
+    <div id="" class="col-sm-4">
       <div class="" style="margin-top:50%">
       <%= link_to 'Sign Up', signup_path, :id=>"sign-up", :class=>"btn btn-main btn-outline-dark", :role=>"button" %>
       <%= link_to 'Log In', login_path, :id=>"log-in", :class=>"btn btn-main btn-outline-light", :role=>"button" %>
