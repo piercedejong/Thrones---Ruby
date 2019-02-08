@@ -29,13 +29,12 @@
   color:black;
 }
 
-.btn-dead, .btn-alive, .btn-walker, .btn-just-dead{
+.btn-character{
   font-size: 1.5rem;
-  color: white;
   border-color: grey;
   background-color: rgba(30,30,30,0.5);
-  padding: 3px;
   width: 100%;
+  margin:0px
 }
 
 .btn-dead {

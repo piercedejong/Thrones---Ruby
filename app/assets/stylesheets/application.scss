@@ -26,9 +26,12 @@ html {
   src: url('/assets/GameofThrones.ttf') format('truetype');
 }
 
+.default-color{
+color: #f9f2de;
+}
+
 .title{
   font-size: 7rem;
-  color: rgb(220,220,220);
   font-family: 'Game of Thrones';
   padding-top:1rem
 }
@@ -56,7 +59,7 @@ html {
 }
 
 .nowrap {
-  white-space:nowrap;
+  white-space:nowrap !important;
 }
 
 .text-right {
@@ -117,8 +120,4 @@ html {
   margin-bottom:0.1vw;
   right: 0;
   margin-right:0.1vw
- }
-
- .align-middle{
-   vertical-align: middle
  }

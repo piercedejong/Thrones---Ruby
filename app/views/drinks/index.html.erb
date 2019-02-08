@@ -1,7 +1,7 @@
 <% content_for :title, "Death Pool - Drinking"%>
-<div id="title" class="title text-center shadow-text">Drinking Game</div>
+<pre class="text-center title shadow-text default-color">Drinking   Game</pre>
 <div id="drink-table">
-<table class="table table-condensed table-characters" style="margin-left:auto;margin-right:auto;">
+<table class="table table-condensed table-drink default-color shadow-text">
   <tbody class="unit-table">
     <% Drink.all.each do |d| %>
       <% if d.id%2==0 %>
@@ -10,7 +10,7 @@
         <%else%>
           <tr class="tablerow1">
         <%end%>
-          <td class="drink-rule drink-even shadow-text"><%if d.finish %>Finish your drink <%else%>Take a drink <%end%><%= d.rule %></td>
+          <td class="drink-rule"><%if d.finish %>Finish your drink <%else%>Take a drink <%end%><%= d.rule %></td>
         </tr>
       <% else %>
         <% if d.hardcore %>
@@ -18,7 +18,7 @@
         <%else%>
           <tr class="tablerow2">
         <%end%>
-          <td class="drink-rule drink-odd shadow-text"><%if d.finish %>Finish your drink <%else%>Take a drink <%end%><%= d.rule %></td>
+          <td class="drink-rule"><%if d.finish %>Finish your drink <%else%>Take a drink <%end%><%= d.rule %></td>
           </tr>
       <% end %>
     <%end%>

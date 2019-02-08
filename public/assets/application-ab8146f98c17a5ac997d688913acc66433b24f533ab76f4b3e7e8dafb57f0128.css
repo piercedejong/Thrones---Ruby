@@ -11416,37 +11416,36 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 /* line 32, app/assets/stylesheets/button.scss */
-.btn-dead, .btn-alive, .btn-walker, .btn-just-dead {
+.btn-character {
   font-size: 1.5rem;
-  color: white;
   border-color: grey;
   background-color: rgba(30, 30, 30, 0.5);
-  padding: 3px;
   width: 100%;
+  margin: 0px;
 }
 
-/* line 41, app/assets/stylesheets/button.scss */
+/* line 40, app/assets/stylesheets/button.scss */
 .btn-dead {
   color: red;
 }
 
-/* line 44, app/assets/stylesheets/button.scss */
+/* line 43, app/assets/stylesheets/button.scss */
 .btn-alive {
   color: white;
 }
 
-/* line 47, app/assets/stylesheets/button.scss */
+/* line 46, app/assets/stylesheets/button.scss */
 .btn-just-dead {
   color: white;
 }
 
-/* line 51, app/assets/stylesheets/button.scss */
+/* line 50, app/assets/stylesheets/button.scss */
 .btn-walker {
   color: #0080ff;
 }
 
 @media only screen and (max-width: 800px) {
-  /* line 56, app/assets/stylesheets/button.scss */
+  /* line 55, app/assets/stylesheets/button.scss */
   .btn-back {
     font-size: 2rem;
   }
@@ -11464,14 +11463,18 @@ html {
 }
 
 /* line 30, app/assets/stylesheets/application.scss */
+.default-color {
+  color: #f9f2de;
+}
+
+/* line 34, app/assets/stylesheets/application.scss */
 .title {
   font-size: 7rem;
-  color: gainsboro;
   font-family: 'Game of Thrones';
   padding-top: 1rem;
 }
 
-/* line 37, app/assets/stylesheets/application.scss */
+/* line 40, app/assets/stylesheets/application.scss */
 .background-image {
   background-size: cover;
   background-repeat: no-repeat;
@@ -11482,7 +11485,7 @@ html {
   position: fixed;
 }
 
-/* line 47, app/assets/stylesheets/application.scss */
+/* line 50, app/assets/stylesheets/application.scss */
 .btn-glyph {
   padding: 0px;
   border-radius: 0px;
@@ -11491,32 +11494,32 @@ html {
   font-size: 2rem;
 }
 
-/* line 55, app/assets/stylesheets/application.scss */
+/* line 58, app/assets/stylesheets/application.scss */
 .shadow-text {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-/* line 59, app/assets/stylesheets/application.scss */
+/* line 62, app/assets/stylesheets/application.scss */
 .nowrap {
-  white-space: nowrap;
+  white-space: nowrap !important;
 }
 
-/* line 63, app/assets/stylesheets/application.scss */
+/* line 66, app/assets/stylesheets/application.scss */
 .text-right {
   text-align: right;
 }
 
-/* line 66, app/assets/stylesheets/application.scss */
+/* line 69, app/assets/stylesheets/application.scss */
 .text-left {
   text-align: left;
 }
 
-/* line 70, app/assets/stylesheets/application.scss */
+/* line 73, app/assets/stylesheets/application.scss */
 .middle {
   vertical-align: middle;
 }
 
-/* line 74, app/assets/stylesheets/application.scss */
+/* line 77, app/assets/stylesheets/application.scss */
 .topalignedright {
   position: fixed;
   top: 0;
@@ -11525,17 +11528,17 @@ html {
   margin-right: 0.1vw;
 }
 
-/* line 81, app/assets/stylesheets/application.scss */
+/* line 84, app/assets/stylesheets/application.scss */
 .glyphicon-ok {
   color: green;
 }
 
-/* line 84, app/assets/stylesheets/application.scss */
+/* line 87, app/assets/stylesheets/application.scss */
 .glyphicon-remove {
   color: red;
 }
 
-/* line 88, app/assets/stylesheets/application.scss */
+/* line 91, app/assets/stylesheets/application.scss */
 .topalignedleft {
   position: absolute;
   top: 0;
@@ -11544,13 +11547,13 @@ html {
   margin-left: 0.1vw;
 }
 
-/* line 96, app/assets/stylesheets/application.scss */
+/* line 99, app/assets/stylesheets/application.scss */
 .row {
   margin-left: 0px;
   margin-right: 0px;
 }
 
-/* line 100, app/assets/stylesheets/application.scss */
+/* line 103, app/assets/stylesheets/application.scss */
 .bottomaligned {
   position: fixed;
   bottom: 0;
@@ -11559,7 +11562,7 @@ html {
   margin-left: 0.1vw;
 }
 
-/* line 107, app/assets/stylesheets/application.scss */
+/* line 110, app/assets/stylesheets/application.scss */
 .bottomalignedmiddle {
   margin-left: auto;
   margin-right: auto;
@@ -11570,18 +11573,13 @@ html {
           transform: translate(-50%);
 }
 
-/* line 115, app/assets/stylesheets/application.scss */
+/* line 118, app/assets/stylesheets/application.scss */
 .bottomalignedright {
   position: fixed;
   bottom: 0;
   margin-bottom: 0.1vw;
   right: 0;
   margin-right: 0.1vw;
-}
-
-/* line 123, app/assets/stylesheets/application.scss */
-.align-middle {
-  vertical-align: middle;
 }
 /* line 1, app/assets/stylesheets/button.scss */
 .btn {
@@ -11622,37 +11620,36 @@ html {
 }
 
 /* line 32, app/assets/stylesheets/button.scss */
-.btn-dead, .btn-alive, .btn-walker, .btn-just-dead {
+.btn-character {
   font-size: 1.5rem;
-  color: white;
   border-color: grey;
   background-color: rgba(30, 30, 30, 0.5);
-  padding: 3px;
   width: 100%;
+  margin: 0px;
 }
 
-/* line 41, app/assets/stylesheets/button.scss */
+/* line 40, app/assets/stylesheets/button.scss */
 .btn-dead {
   color: red;
 }
 
-/* line 44, app/assets/stylesheets/button.scss */
+/* line 43, app/assets/stylesheets/button.scss */
 .btn-alive {
   color: white;
 }
 
-/* line 47, app/assets/stylesheets/button.scss */
+/* line 46, app/assets/stylesheets/button.scss */
 .btn-just-dead {
   color: white;
 }
 
-/* line 51, app/assets/stylesheets/button.scss */
+/* line 50, app/assets/stylesheets/button.scss */
 .btn-walker {
   color: #0080ff;
 }
 
 @media only screen and (max-width: 800px) {
-  /* line 56, app/assets/stylesheets/button.scss */
+  /* line 55, app/assets/stylesheets/button.scss */
   .btn-back {
     font-size: 2rem;
   }
@@ -11665,130 +11662,119 @@ html {
 /* line 9, app/assets/stylesheets/home.scss */
 #current-user {
   font-size: 1.75rem;
-  color: white;
   background-color: rgba(40, 40, 40, 0.5);
 }
 
-/* line 15, app/assets/stylesheets/home.scss */
+/* line 14, app/assets/stylesheets/home.scss */
 .table-top {
-  color: white;
   font-size: 2rem;
 }
 
-/* line 20, app/assets/stylesheets/home.scss */
+/* line 18, app/assets/stylesheets/home.scss */
 .character-name {
   font-size: 1.5rem;
   vertical-align: middle !important;
+  font-weight: bold;
 }
 
-/* line 25, app/assets/stylesheets/home.scss */
-.table-characters {
-  color: white;
-  margin-left: 1vw;
+/* line 24, app/assets/stylesheets/home.scss */
+.table {
   margin-bottom: 0.1vw;
   width: auto !important;
 }
 
-/* line 32, app/assets/stylesheets/home.scss */
+/* line 29, app/assets/stylesheets/home.scss */
+.table-drink {
+  font-size: 1.5rem;
+  margin: auto;
+}
+
+/* line 34, app/assets/stylesheets/home.scss */
 .tablerow1 {
   background-color: 240, 240, 240, 0.4;
 }
 
-/* line 35, app/assets/stylesheets/home.scss */
+/* line 37, app/assets/stylesheets/home.scss */
 .tablerow2 {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* line 42, app/assets/stylesheets/home.scss */
-#payed {
-  color: Grey;
-  margin-left: 1vw;
-}
-
-/* line 47, app/assets/stylesheets/home.scss */
+/* line 44, app/assets/stylesheets/home.scss */
 #scum {
   color: red;
   font-size: 2.5rem;
   margin-left: 1vw;
 }
 
-/* line 53, app/assets/stylesheets/home.scss */
+/* line 50, app/assets/stylesheets/home.scss */
 #rules-title {
   font-size: 3rem;
-  color: white;
+}
+
+/* line 54, app/assets/stylesheets/home.scss */
+#rules {
+  padding-left: 1rem;
 }
 
 /* line 58, app/assets/stylesheets/home.scss */
 .rule {
   font-size: 1.5rem;
-  color: white;
+  padding-top: 0.5rem;
 }
 
 /* line 62, app/assets/stylesheets/home.scss */
+#questions {
+  padding: 1rem;
+  margin-top: 1rem;
+  border-top: 5px double #969696;
+}
+
+/* line 67, app/assets/stylesheets/home.scss */
 .answer {
   font-size: 1.5rem;
   color: black;
 }
 
-/* line 66, app/assets/stylesheets/home.scss */
-.drink-rule {
-  font-size: 1.5rem;
-}
-
-/* line 70, app/assets/stylesheets/home.scss */
+/* line 72, app/assets/stylesheets/home.scss */
 .user-list {
   font-size: 1.5rem;
 }
 
-/* line 73, app/assets/stylesheets/home.scss */
-.drink-odd {
-  color: #c8c8c8;
-}
-
-/* line 76, app/assets/stylesheets/home.scss */
+/* line 75, app/assets/stylesheets/home.scss */
 #user-logged-in {
   padding-bottom: 4rem;
 }
 
 @media only screen and (max-width: 800px) {
-  /* line 83, app/assets/stylesheets/home.scss */
+  /* line 82, app/assets/stylesheets/home.scss */
   .character-name {
     font-size: 2rem;
   }
-  /* line 86, app/assets/stylesheets/home.scss */
+  /* line 85, app/assets/stylesheets/home.scss */
   .drink {
     font-size: 3rem;
   }
-  /* line 89, app/assets/stylesheets/home.scss */
-  .drink-rule {
-    font-size: 2rem;
-  }
-  /* line 92, app/assets/stylesheets/home.scss */
+  /* line 88, app/assets/stylesheets/home.scss */
   .title {
     font-size: 4rem;
   }
-  /* line 95, app/assets/stylesheets/home.scss */
+  /* line 91, app/assets/stylesheets/home.scss */
   #current-user {
     font-size: 1.25rem;
   }
-  /* line 98, app/assets/stylesheets/home.scss */
+  /* line 94, app/assets/stylesheets/home.scss */
   .btn-log-out {
     font-size: 1.5rem !important;
   }
-  /* line 101, app/assets/stylesheets/home.scss */
+  /* line 97, app/assets/stylesheets/home.scss */
   .user-title {
     font-size: 2.5rem;
   }
-  /* line 105, app/assets/stylesheets/home.scss */
+  /* line 101, app/assets/stylesheets/home.scss */
   .user-column {
     padding-left: 0px !important;
     padding-right: 5px !important;
   }
-}
-
-/* line 111, app/assets/stylesheets/home.scss */
-.hardcore {
-  color: red;
 }
 /* line 5, app/assets/stylesheets/users.scss */
 .form {

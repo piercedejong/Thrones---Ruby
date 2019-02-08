@@ -8,25 +8,27 @@
 
 #current-user{
   font-size: 1.75rem;
-  color:white;
   background-color: rgba(40,40,40,0.5)
 }
 
 .table-top{
-  color:white;
   font-size:2rem
 }
 
 .character-name{
   font-size: 1.5rem;
   vertical-align:middle !important;
+  font-weight: bold
 }
 
-.table-characters{
-  color:white;
-  margin-left:1vw;
+.table{
   margin-bottom: 0.1vw;
   width:auto !important;
+}
+
+.table-drink{
+  font-size: 1.5rem;
+  margin:auto
 }
 
 .tablerow1{
@@ -39,11 +41,6 @@
 .character-dead,.character-walker{
 }
 
-#payed{
-  color:Grey;
-  margin-left:1vw
-}
-
 #scum{
   color:red;
   font-size: 2.5rem;
@@ -52,26 +49,28 @@
 
 #rules-title{
   font-size: 3rem;
-  color: white;
+}
+
+#rules{
+  padding-left:1rem;
 }
 
 .rule{
   font-size: 1.5rem;
-  color:white
+  padding-top:0.5rem;
+}
+#questions{
+  padding:1rem;
+  margin-top: 1rem;
+  border-top: 5px double rgb(150,150,150);
 }
 .answer{
   font-size: 1.5rem;
   color:black
 }
-.drink-rule{
-  font-size: 1.5rem
-}
 
 .user-list{
   font-size: 1.5rem
-}
-.drink-odd{
-  color:rgb(200,200,200)
 }
  #user-logged-in{
    padding-bottom:4rem
@@ -85,9 +84,6 @@
   }
   .drink {
     font-size: 3rem
-  }
-  .drink-rule{
-   font-size: 2rem;
   }
   .title{
     font-size: 4rem;
@@ -106,8 +102,4 @@
     padding-left:0px !important;
     padding-right:5px !important;
   }
-}
-
-.hardcore{
-  color:red
 }
