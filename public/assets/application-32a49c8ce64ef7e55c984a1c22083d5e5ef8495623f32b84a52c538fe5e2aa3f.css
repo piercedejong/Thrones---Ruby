@@ -11707,7 +11707,7 @@ html {
 }
 
 /* line 50, app/assets/stylesheets/home.scss */
-#rules-title {
+#rules-title, #questions-title {
   font-size: 3rem;
 }
 
@@ -11723,54 +11723,60 @@ html {
 }
 
 /* line 62, app/assets/stylesheets/home.scss */
+.right-side {
+  font-weight: bold;
+}
+
+/* line 65, app/assets/stylesheets/home.scss */
 #questions {
   padding: 1rem;
+  padding-top: 0px;
   margin-top: 1rem;
   border-top: 5px double #969696;
 }
 
-/* line 67, app/assets/stylesheets/home.scss */
+/* line 71, app/assets/stylesheets/home.scss */
 .answer {
   font-size: 1.5rem;
   color: black;
 }
 
-/* line 72, app/assets/stylesheets/home.scss */
+/* line 76, app/assets/stylesheets/home.scss */
 .user-list {
   font-size: 1.5rem;
 }
 
-/* line 75, app/assets/stylesheets/home.scss */
+/* line 79, app/assets/stylesheets/home.scss */
 #user-logged-in {
   padding-bottom: 4rem;
 }
 
 @media only screen and (max-width: 800px) {
-  /* line 82, app/assets/stylesheets/home.scss */
+  /* line 86, app/assets/stylesheets/home.scss */
   .character-name {
     font-size: 2rem;
   }
-  /* line 85, app/assets/stylesheets/home.scss */
+  /* line 89, app/assets/stylesheets/home.scss */
   .drink {
     font-size: 3rem;
   }
-  /* line 88, app/assets/stylesheets/home.scss */
+  /* line 92, app/assets/stylesheets/home.scss */
   .title {
     font-size: 4rem;
   }
-  /* line 91, app/assets/stylesheets/home.scss */
+  /* line 95, app/assets/stylesheets/home.scss */
   #current-user {
     font-size: 1.25rem;
   }
-  /* line 94, app/assets/stylesheets/home.scss */
+  /* line 98, app/assets/stylesheets/home.scss */
   .btn-log-out {
     font-size: 1.5rem !important;
   }
-  /* line 97, app/assets/stylesheets/home.scss */
+  /* line 101, app/assets/stylesheets/home.scss */
   .user-title {
     font-size: 2.5rem;
   }
-  /* line 101, app/assets/stylesheets/home.scss */
+  /* line 105, app/assets/stylesheets/home.scss */
   .user-column {
     padding-left: 0px !important;
     padding-right: 5px !important;

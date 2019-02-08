@@ -1,7 +1,7 @@
 <% content_for :title, "Death Pool - Deaths"%>
 <pre class="text-center title shadow-text default-color">Character   Status</pre>
 <div id="status-table row">
-<table class="table table-condensed table-characters" syle="margin-left:auto;margin-right:auto;">
+<table class="table table-condensed table-middle default-color">
   <thead>
     <tr class="shadow-text table-top">
       <th class="text-center">Character</th>
@@ -18,15 +18,16 @@
       <td class=" text-center character-name shadow-text"><%= d.name %></td>
       <td class=" text-center align-middle">
         <% if d.status.eql? "alive" %>
-          <button id="<%=d.did%>" class="btn btn-alive nowrap" onclick="status(this)">Alive</button>
+          <button id="<%=d.did%>" class="btn btn-character btn-alive nowrap" onclick="status(this)">Alive</button>
         <% elsif d.status.eql? "dead" %>
-          <button id="<%=d.did%>" class="btn btn-dead nowrap" onclick="status(this)">Dead</button>
+          <button id="<%=d.did%>" class="btn btn-character btn-dead nowrap" onclick="status(this)">Dead</button>
         <% else %>
-          <button id="<%=d.did%>" class="btn btn-walker nowrap" onclick="status(this)">Wight</button>
+          <button id="<%=d.did%>" class="btn btn-character btn-walker nowrap" onclick="status(this)">Wight</button>
         <%end%>
       </td>
     <%end%>
   </tbody>
 </table>
 </div>
+<br
 <%= link_to 'Back', root_url, :class=>"topalignedleft btn btn-outline-light btn-back" %>

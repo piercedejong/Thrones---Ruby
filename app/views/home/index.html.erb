@@ -1,5 +1,5 @@
 <% content_for :title, "Death Pool"%>
-<pre class="title text-center shadow-text default-color">Game   of   Thrones   Death   Pool</pre>
+<pre class="title text-center shadow-text default-color" style="margin:0px">Game   of   Thrones   Death   Pool</pre>
 <% if current_user %>
   <div id="user-logged-in">
     <% if !current_user.payed %>
@@ -49,7 +49,7 @@
       </tbody>
     </table>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-4 right-side">
     <div id="rules" class="default-color">
       <div id="rules-title" class="shadow-text">Rules</div>
       <% Rule.all.each do |r| %>
@@ -57,16 +57,16 @@
       <%end%>
     </div>
     <div id="questions" class="default-color">
-      <div id="rules-title" class="shadow-text">Bonus Questions</div>
+      <div id="questions-title" class="shadow-text">Bonus Questions</div>
       <%= form_tag "/answers" do %>
         <% Question.all.each do |q| %>
-          <div id="question<%=q.qid%>" style="padding-top:5px"class="shadow-text rule"><%=q.qid%>. <%=q.text%></div>
+          <div id="question<%=q.qid%>" class="shadow-text rule"><%=q.qid%>. <%=q.text%></div>
           <%= text_field_tag "answers[][text]", current_user.answers.find_by(rid: q.qid).text, :class=>"answer" %>
         <% end %>
         <div style="padding-top:8px"><%= submit_tag "Save Answers", :class=>"btn btn-outline-light", :style=>"font-size:1.75rem" %></div>
       <% end %>
     </div>
-    <%= link_to 'Drinking Game', drink_path, :style=>"margin-top: 20px",:class=>"btn btn-outline-light btn-main " %>
+    <%= link_to 'Drinking Game', drink_path, :style=>"margin-top: 10px",:class=>"btn btn-outline-light btn-main " %>
     <% if current_user.role.eql? "admin" %>
       <%= link_to 'Users', users_path, :class=>"btn btn-outline-light btn-back" %>
       <%= link_to 'Deaths', death_path, :class=>"btn btn-outline-light btn-back" %>

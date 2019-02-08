@@ -26,7 +26,7 @@
   width:auto !important;
 }
 
-.table-drink{
+.table-middle{
   font-size: 1.5rem;
   margin:auto
 }
@@ -47,7 +47,7 @@
   margin-left:1vw
 }
 
-#rules-title{
+#rules-title, #questions-title{
   font-size: 3rem;
 }
 
@@ -59,8 +59,12 @@
   font-size: 1.5rem;
   padding-top:0.5rem;
 }
+.right-side{
+  font-weight: bold
+}
 #questions{
   padding:1rem;
+  padding-top: 0px;
   margin-top: 1rem;
   border-top: 5px double rgb(150,150,150);
 }
