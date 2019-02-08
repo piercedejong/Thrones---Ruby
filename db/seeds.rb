@@ -32,7 +32,7 @@ Gain one extra point if you correctly predict if they
 become a Wight. Lose a point if you guess the character becomes a wight but does not."},
       {rid: 3,rule: "Correctly answer Bonus Questions for more points. (The answer no one does NOT have a double meaning. It cannot both mean Arya and literaly no one at the same time.)"},
       {rid: 4,rule: "The entry with the most points wins the entire pool. At 12:00am on April 14th the form will close and you will NOT be allowed to change your answers. At that point you will be able to see everyone elses forms"},
-      {rid: 5,rule: "Pool Entry Fee is $10.00. 60% to the winner, 25% to 2nd place, 15% to 3rd place"},
+      {rid: 5,rule: "Pool Entry Fee is $10.00. 60% to the winner, 25% to 2nd place, 15% to 3rd place. If you have not payed by 12:00am on April 14th, you will not be allowed to play"},
     ]
 )
 
