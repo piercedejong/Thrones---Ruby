@@ -38,8 +38,8 @@ become a Wight. Lose a point if you guess the character becomes a wight but does
 
 Drink.create(
   [
-    {rule:"whenever the Starks, Lannisters, Baratheons, or Targarens are mentioned"},
-    {rule:"when your religion is mentioned. Pick one: The Old Gods, The Faith of the Seven, The Drowned God,  The Lord of Light, The Many Faced God (Season 5)"},
+    {rule:"whenever the Stark, Lannister, Baratheon, or Targaren family names are mentioned"},
+    {rule:"whenever your religion is mentioned. Pick one: The Old Gods, The Faith of the Seven, The Drowned God,  The Lord of Light, or The Many Faced God (Season 5)"},
     {rule:"whenever someone dies"},
     {rule:"whenever a major character dies", finish: true},
     {rule:"whenever there is nudity on screen"},
@@ -47,10 +47,11 @@ Drink.create(
     {rule:"whenever the White Walkers are mentioned"},
     {rule:"whenever a White Walker or wight is on screen", finish: true},
     {rule:"whenever Hodor says 'hodor'", hardcore:true},
-    {rule:"whenever someone is addressed as mlord or lady, take 2 for your grace", hardcore:true},
+    {rule:"whenever someone is addressed as m'lord or lady, take 2 for your grace", hardcore:true},
     {rule:"whenever someone says 'Winter is coming'", hardcore:true},
     {rule:"whenever Jorah says 'Khaleesi'", hardcore:true},
     {rule:"whenever the word 'whore' is used", hardcore:true},
+    {rule:"whenever the Martell, Tully, Greyjoy, or Tyrell family names are mentioned", hardcore:true},
   ]
 )
 
