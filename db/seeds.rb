@@ -12,12 +12,13 @@ Death.all.each do |d| d.destroy end
 Question.all.each do |q| q.destroy end
 Character.all.each do |c| c.update(points: 0) end
 
-
 Question.create(
   [
-    {qid:1,text:"Is Daenerys pregnant? (1 extra point)"},
-    {qid:2,text:"Who kills the Night King? (2 points)"},
-    {qid:3,text:"Who holds the Iron Throne at the end? (4 points)"},
+    {value:1,qid:1,text:"Is Daenerys pregnant? (Yes/No) ONE Point"},
+    {value:1,qid:2,text:"Will John become a dragon rider? (Yes/No) ONE Point"},
+    {value:1,qid:3,text:"Will The Hound and The Mountain do battle? (Cleganebowl 2K19) (Yes/No) ONE Point"},
+    {value:3,qid:4,text:"Who kills the Night King? (no one is an answer) THREE Points"},
+    {value:5,qid:5,text:"Who holds the Iron Throne at the end of season 8? (no one is an answer) FIVE POINTS"},
   ]
 )
 
