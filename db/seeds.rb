@@ -25,11 +25,11 @@ Question.create(
 Rule.create(
     [
       {rid: 1,rule: "Predict if each character (38 total) will be alive or dead at the
-END of season 8. 1 point for each correct answer."},
+END of season 8. ONE point for each correct answer."},
       {rid: 2,rule: "If you predict the character will die, you have the
 option to predict if they become a Wight (Army of the Dead).
-Gain one extra point if you correctly predict if they
-become a Wight. Lose a point if you guess the character becomes a wight but does not."},
+Gain ONE extra point if you correctly predict if they
+become a Wight. Lose ONE point if you guess the character becomes a wight but does not become one."},
       {rid: 3,rule: "Correctly answer Bonus Questions for more points. (The answer no one does NOT have a double meaning. It cannot both mean Arya and literaly no one at the same time.)"},
       {rid: 4,rule: "The entry with the most points wins the entire pool. At 12:00am on April 14th the form will close and you will NOT be allowed to change your answers. At that point you will be able to see everyone elses forms"},
       {rid: 5,rule: "Pool Entry Fee is $10.00. 60% to the winner, 25% to 2nd place, 15% to 3rd place. If you have not payed by 12:00am on April 14th, you will not be allowed to play"},
