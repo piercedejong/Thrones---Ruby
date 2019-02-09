@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def new
   end
   def create
-    @user = User.find_by_email(params[:email])
+    @user = User.find_by_username(params[:username]) || User.find_by_email(params[:username])
     if @user && @user.authenticate(params[:password])
       cookies.permanent.signed[:permanent_user_id] = @user.uuid
       session[:user_id] = @user.uuid

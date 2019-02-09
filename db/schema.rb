@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_08_022211) do
+ActiveRecord::Schema.define(version: 2019_02_08_203858) do
 
   create_table "answers", force: :cascade do |t|
     t.string "text"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 2019_02_08_022211) do
     t.string "uuid"
     t.string "role", default: "user"
     t.boolean "payed", default: false
+    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
