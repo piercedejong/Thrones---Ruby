@@ -17,7 +17,7 @@
           <% else %>
             <tr class="tablerow2 shadow-text" style="background-color:rgba(0, 0, 0, 0.4)">
           <% end %>
-              <td><%= image_tag "jon.jpg", :class=>"image-character" %></td>
+              <td><%= image_tag "characters/"+c.name+".jpg", :class=>"image-character" %></td>
               <td id="<%c.name%>" class="text-center character-name"><%= c.name %></td>
               <td class="text-center" style="vertical-align:middle">
               <%if c.dead %>
