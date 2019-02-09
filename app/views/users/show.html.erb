@@ -1,42 +1,54 @@
 <%= link_to 'Back', root_url, :class=>"topalignedleft btn btn-outline-light btn-back" %>
 <div class="title user-title text-center shadow-text default-color"><%=@user.username%></div>
-<table class="table table-condensed table-middle default-color">
-  <thead>
-    <tr class="shadow-text table-top">
-      <th class="text-center">Character</th>
-      <th class="text-center">Alive or Dead</th>
-      <th class="text-center">Wight</th>
-    </tr>
-  </thead>
-  <tbody class="unit-table">
-    <% current_user.characters.each do |c| %>
-      <% if c.id%2 ==  0 %>
-        <tr class="tablerow1" style="background-color:(240,240,240,0.4)">
-      <% else %>
-        <tr class="tablerow2 shadow-text" style="background-color:rgba(0, 0, 0, 0.4)">
-      <% end %>
-        <td id="<%c.name%>" class=" text-center character-name shadow-text"><%= c.name %></td>
-        <td class="text-center" style="vertical-align:middle">
-          <%if c.dead %>
-           <button class="btn btn-character btn-dead nowrap shadow-text" id="dead-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>">Dead</button>
-           <%else%>
-           <button class="btn btn-character btn-alive nowrap shadow-text" id="dead-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>">Alive</button>
-           <%end%>
-        </td>
-        <td class="text-center" style="vertical-align:middle">
-          <%if c.walker %>
-           <button class="btn btn-character btn-walker nowrap shadow-text" id="walker-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>">Wight</button>
-           <%else%>
-            <%if c.dead %>
-              <button class="btn btn-character btn-just-dead nowrap shadow-text" id="walker-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>">Just Dead</button>
-            <% else %>
-              <button class="btn btn-character btn-just-dead nowrap shadow-text" id="walker-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>">N/A</button>
-            <% end %>
-           <%end%>
-        </td>
+<div class="row content">
+  <div class="col-sm-8">
+    <table class="table table-condensed default-color">
+      <thead>
+        <tr class="shadow-text table-top">
+          <th class="text-center">Character</th>
+          <th class="text-center">Alive or Dead</th>
+          <th class="text-center">Wight</th>
         </tr>
-    <% end %>
-  </tbody>
-</table>
+      </thead>
+      <tbody class="unit-table">
+        <% current_user.characters.each do |c| %>
+          <% if c.id%2 ==  0 %>
+            <tr class="tablerow1" style="background-color:(240,240,240,0.4)">
+          <% else %>
+            <tr class="tablerow2 shadow-text" style="background-color:rgba(0, 0, 0, 0.4)">
+          <% end %>
+            <td id="<%c.name%>" class=" text-center character-name shadow-text"><%= c.name %></td>
+            <td class="text-center" style="vertical-align:middle">
+              <%if c.dead %>
+               <button class="btn btn-character btn-dead nowrap shadow-text" id="dead-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>">Dead</button>
+               <%else%>
+               <button class="btn btn-character btn-alive nowrap shadow-text" id="dead-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>">Alive</button>
+               <%end%>
+            </td>
+            <td class="text-center" style="vertical-align:middle">
+              <%if c.walker %>
+               <button class="btn btn-character btn-walker nowrap shadow-text" id="walker-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>">Wight</button>
+               <%else%>
+                <%if c.dead %>
+                  <button class="btn btn-character btn-just-dead nowrap shadow-text" id="walker-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>">Just Dead</button>
+                <% else %>
+                  <button class="btn btn-character btn-just-dead nowrap shadow-text" id="walker-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>">N/A</button>
+                <% end %>
+               <%end%>
+            </td>
+            </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-sm-4 right-side">
+    <div id="questions" class="default-color">
+      <div id="questions-title" class="shadow-text">Bonus Questions</div>
+      <% Question.all.each do |q| %>
+        <div id="question<%=q.qid%>" class="shadow-text rule"><%=q.qid%>. <%=q.text%></div>
+        <div id="answer<%=q.qid%>" class="shadow-text rule"><%=current_user.answers.find_by(rid: q.qid).text%></div>
+      <% end %>
+    </div>
+  </div>
+</div>
 <%= link_to 'Back', users_path, :class=>"topalignedleft btn btn-outline-light btn-back" %>
-<%= link_to 'Edit', edit_user_path(@user.uuid) %>

@@ -4,17 +4,17 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    if(current_user and current_user.role.eql? "admin")
-      @users = User.all
-    else
-      redirect_to root_path
-    end
+    @users = User.all
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = User.find_by(uuid: params[:id])
+    if(current_user and current_user.role.eql? "admin")
+      @user = User.find_by(uuid: params[:id])
+    else
+      redirect_to users_path
+    end
   end
 
   # GET /users/new
@@ -87,9 +87,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    binding.pry
     @user = User.new(user_params)
-    binding.pry
     respond_to do |format|
       if @user.save
         Character.create_characters(@user)

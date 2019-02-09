@@ -15,7 +15,7 @@ class User < ApplicationRecord
 
 
   def points
-    @points = 1
+    @points = 0
     self.characters.all.each do |c|
       @points = @points + c.points
     end

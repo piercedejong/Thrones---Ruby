@@ -1,24 +1,32 @@
 <% content_for :title, "Death Pool - Players"%>
-<div id="title" class="title text-center shadow-text">Users</div>
+<div id="title" class="title text-center shadow-text default-color">Players</div>
 <table style="color:white;margin:0px;width:auto;margin-left:auto;margin-right:auto" class="table table-condensed ">
   <thead>
-    <tr class="shadow-text table-top">
-      <th>Email</th>
-      <th colspan="4">Paid</th>
+    <tr class="shadow-text table-top text-center">
+    <% if current_user.role.eql? "admin" %>
+      <th>Paid</th>
+    <%end%>
+      <th>Username</th>
+      <th>Points</th>
+      <th>Form</th>
     </tr>
   </thead>
   <tbody class="user-list">
     <% @users.each do |user| %>
-      <tr class="" >
-        <td class="shadow-text"style="vertical-align:middle"><%= user.email %></td>
-        <td class=""><a email="<%=user.username%>" uid="<%=user.id%>"onclick="paid(this)" style="vertical-align:middle"><%if user.payed%><span id="<%=user.id%>" class="glyphicon glyphicon-ok shadow-text"></span><%else%><span id="<%=user.id%>" class="glyphicon glyphicon-remove shadow-text"></span><%end%></a></td>
-        <td class="user-column"><%= link_to 'Show', user_path(user.uuid), :class=>"btn btn-outline-light btn-character"%></td>
+      <tr class="table-row">
+      <% if current_user.role.eql? "admin" %>
+        <td class=""><a email="<%=user.username%>" uid="<%=user.id%>"onclick="paid(this)" style="vertical-align:middle" class="text-center"><%if user.payed%><span id="<%=user.id%>" class="glyphicon glyphicon-ok shadow-text"></span><%else%><span id="<%=user.id%>" class="glyphicon glyphicon-remove shadow-text"></span><%end%></a></td>
+      <% end %>
+        <td class="shadow-text"style="vertical-align:middle"><%= user.username %></td>
+          <td class="shadow-text text-center"style="vertical-align:middle"><%= user.points %></td>
+        <td class="user-column"><%= link_to 'Show Form', user_path(user.uuid), :class=>"btn btn-outline-light btn-character"%></td>
+      <% if current_user.role.eql? "admin" %>
         <td class="user-column"><%= link_to 'Edit', edit_user_path(user.uuid),:class=>"btn btn-outline-light btn-character" %></td>
         <td class="user-column"><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' },:class=>"btn btn-outline-light btn-character" %></td>
-      </tr>
+      <%end%>
+        </tr>
     <% end %>
   </tbody>
 </table>
 <br>
-<%= link_to 'New User', new_user_path %>
 <%= link_to 'Back', root_url, :class=>"topalignedleft btn btn-outline-light btn-back" %>

@@ -66,10 +66,10 @@
         <div style="padding-top:8px"><%= submit_tag "Save Answers", :class=>"btn btn-outline-light", :style=>"font-size:1.75rem" %></div>
       <% end %>
     </div>
+    <%= link_to 'Leaderboards', users_path, :class=>"btn btn-outline-light btn-main", :style=>"margin-top:10px"%>
     <%= link_to 'Drinking Game', drink_path, :style=>"margin-top: 10px",:class=>"btn btn-outline-light btn-main " %>
     <% if current_user.role.eql? "admin" %>
-      <%= link_to 'Users', users_path, :class=>"btn btn-outline-light btn-back" %>
-      <%= link_to 'Deaths', death_path, :class=>"btn btn-outline-light btn-back" %>
+      <%= link_to 'Deaths', death_path, :class=>"btn btn-outline-light btn-main" %>
     <% end %>
     </div>
   </div>
