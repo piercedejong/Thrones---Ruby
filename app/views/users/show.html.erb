@@ -11,7 +11,7 @@
         </tr>
       </thead>
       <tbody class="unit-table">
-        <% current_user.characters.each do |c| %>
+        <% @user.characters.each do |c| %>
           <% if c.id%2 ==  0 %>
             <tr class="tablerow1" style="background-color:(240,240,240,0.4)">
           <% else %>

@@ -122,9 +122,11 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
+    binding.pry
+    @user = User.find(params[:id])
+    @user.characters.all.each do |x| x.destroy end
+    @user.answers.all.each do |x| x.destroy end
     @user.destroy
-    cookies.permanent.signed[:permanent_user_id] = nil
-    session[:user_id] = nil
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
