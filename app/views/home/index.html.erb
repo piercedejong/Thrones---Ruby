@@ -6,11 +6,11 @@
       <div id="scum" class="text-center shadow-text">You have NOT paid your entry fee yet</div>
     <% end %>
     <div class="row content">
-      <div class="col-sm-3">
+      <div class="col-sm-4">
         <table class="table table-condensed default-color">
           <thead>
             <tr class="shadow-text table-top">
-              <th class="text-center">Character</th>
+              <th class="text-center" colspan="2">Character</th>
               <th class="text-center">Alive or Dead</th>
               <th class="text-center">Wight</th>
               <!-- <th class="text-center">Points</th> -->
@@ -23,7 +23,8 @@
               <% else %>
                 <tr class="tablerow2 shadow-text">
               <% end %>
-                  <td id="<%c.name%>" class="text-center character-name"><div style="display:flex"><div class="test"><div class="test1"><%= image_tag "jon.jpg", :style=>"height:5rem;width:5rem"%></div><div class="test2"><%= c.name %></div></div></td>
+                  <td><%= image_tag "jon.jpg", :class=>"image-character" %></td>
+                  <td id="<%c.name%>" class="text-center character-name"><%= c.name %></td>
                   <td class="text-center align-middle">
                     <%if c.dead %>
                      <button class="btn btn-dead btn-character nowrap shadow-text" id="dead-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_dead(this)">Dead</button>
@@ -48,7 +49,7 @@
           </tbody>
         </table>
       </div>
-      <div class="col-sm-5"></div>
+      <div class="col-sm-4"></div>
       <div class="col-sm-4 right-side">
       <div id="rules" class="default-color">
         <div id="rules-title" class="shadow-text">Rules</div>

@@ -4,7 +4,7 @@
 <table class="table table-condensed table-middle default-color">
   <thead>
     <tr class="shadow-text table-top">
-      <th class="text-center">Character</th>
+      <th class="text-center" colspan="2">Character</th>
       <th class="text-center">Status</th>
     </tr>
   </thead>
@@ -15,7 +15,8 @@
       <% else %>
         <tr class="tablerow2 shadow-text">
       <% end %>
-      <td class=" text-center character-name shadow-text"><%= d.name %></td>
+      <td><%= image_tag "jon.jpg", :class=>"image-character" %></td>
+      <td id="<%d.name%>" class="text-center character-name"><%= d.name %></td>
       <td class=" text-center align-middle">
         <% if d.status.eql? "alive" %>
           <button id="<%=d.did%>" class="btn btn-character btn-alive nowrap" onclick="status(this)">Alive</button>

@@ -5,7 +5,7 @@
     <table class="table table-condensed default-color">
       <thead>
         <tr class="shadow-text table-top">
-          <th class="text-center">Character</th>
+          <th class="text-center" colspan="2">Character</th>
           <th class="text-center">Alive or Dead</th>
           <th class="text-center">Wight</th>
         </tr>
@@ -17,8 +17,9 @@
           <% else %>
             <tr class="tablerow2 shadow-text" style="background-color:rgba(0, 0, 0, 0.4)">
           <% end %>
-            <td id="<%c.name%>" class=" text-center character-name shadow-text"><%= c.name %></td>
-            <td class="text-center" style="vertical-align:middle">
+              <td><%= image_tag "jon.jpg", :class=>"image-character" %></td>
+              <td id="<%c.name%>" class="text-center character-name"><%= c.name %></td>
+              <td class="text-center" style="vertical-align:middle">
               <%if c.dead %>
                <button class="btn btn-character btn-dead nowrap shadow-text" id="dead-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>">Dead</button>
                <%else%>
