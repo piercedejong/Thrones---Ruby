@@ -3,7 +3,7 @@ class User < ApplicationRecord
   before_create :create_uuid
   has_many :characters
   has_many :answers
-  validates :email, presence: true, :uniqueness => { :case_sensitive => false }
+  validates :email, presence: true, :uniqueness => { :case_sensitive => false }, format: { with: URI::MailTo::EMAIL_REGEXP } 
   validates :username, presence: true, :uniqueness => { :case_sensitive => false }
   default_scope { order(created_at: :asc) }
 
