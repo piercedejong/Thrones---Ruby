@@ -3,8 +3,8 @@ class User < ApplicationRecord
   before_create :create_uuid
   has_many :characters
   has_many :answers
-  validates :email, presence: true, :uniqueness => true
-  validates :username, presence: true, :uniqueness => true
+  validates :email, presence: true, :uniqueness => { :case_sensitive => false }
+  validates :username, presence: true, :uniqueness => { :case_sensitive => false }
   default_scope { order(created_at: :asc) }
 
   def create_uuid
