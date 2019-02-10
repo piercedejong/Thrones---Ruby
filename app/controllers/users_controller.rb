@@ -127,9 +127,10 @@ class UsersController < ApplicationController
     @user.characters.all.each do |x| x.destroy end
     @user.answers.all.each do |x| x.destroy end
     @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
+    if current_user
+      redirect_to users_path
+    else
+      redirect_to root_path
     end
   end
 
