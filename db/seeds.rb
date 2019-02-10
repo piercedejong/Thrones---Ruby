@@ -15,8 +15,8 @@ Character.all.each do |c| c.update(points: 0) end
 Question.create(
   [
     {value:1,qid:1,text:"Is Daenerys pregnant? (Yes/No) ONE Point"},
-    {value:1,qid:2,text:"Will John become a dragon rider? (Yes/No) ONE Point"},
     {value:1,qid:3,text:"Will The Hound and The Mountain do battle? (Cleganebowl 2K19) (Yes/No) ONE Point"},
+    {value:1,qid:2,text:"Who (if anyone) wil ride Rhaegal? (no one is an answer) TWO Point"},
     {value:3,qid:4,text:"Who kills the Night King? (no one is an answer) THREE Points"},
     {value:5,qid:5,text:"Who holds the Iron Throne at the end of season 8? (no one is an answer) FIVE POINTS"},
   ]
@@ -32,7 +32,7 @@ Gain ONE extra point if you correctly predict if they
 become a Wight. Lose ONE point if you guess the character becomes a wight but does not become one."},
       {rid: 3,rule: "Correctly answer Bonus Questions for more points. (The answer no one does NOT have a double meaning. It cannot both mean Arya and literaly no one at the same time.)"},
       {rid: 4,rule: "The entry with the most points wins the entire pool. At 12:00am on April 14th the form will close and you will NOT be allowed to change your answers. At that point you will be able to see everyone elses forms"},
-      {rid: 5,rule: "Pool Entry Fee is $10.00. 60% to the winner, 25% to 2nd place, 15% to 3rd place. If you have not payed by 12:00am on April 14th, you will not be allowed to play"},
+      {rid: 5,rule: "Pool Entry Fee is $10.00. 60% to the winner, 25% to 2nd place, 15% to 3rd place. If you have not paid by 12:00am on April 14th, you will not be allowed to play"},
     ]
 )
 
