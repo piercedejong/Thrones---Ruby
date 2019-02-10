@@ -122,7 +122,6 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    binding.pry
     @user = User.find(params[:id])
     @user.characters.all.each do |x| x.destroy end
     @user.answers.all.each do |x| x.destroy end
