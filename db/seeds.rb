@@ -18,7 +18,7 @@ Question.create(
     {value:1,qid:2,text:"Will The Hound and The Mountain do battle? (Cleganebowl 2K19) (Yes/No) ONE Point"},
     {value:1,qid:3,text:"Who (if anyone) wil ride Rhaegal? (no one is an answer) TWO Points"},
     {value:3,qid:4,text:"Who kills the Night King? (no one is an answer) THREE Points"},
-    {value:5,qid:5,text:"Who holds the Iron Throne at the end of season 8? (no one is an answer) FIVE POINTS"},
+    {value:5,qid:5,text:"Who holds the Iron Throne at the end of season 8? (no one is an answer) FIVE Points"},
   ]
 )
 
