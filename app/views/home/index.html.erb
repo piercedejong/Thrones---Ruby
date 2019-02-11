@@ -69,6 +69,7 @@
       </div>
       <%= link_to 'Leaderboards', users_path, :class=>"btn btn-outline-light btn-main", :style=>"margin-top:10px"%>
       <%= link_to 'Drinking Game', drink_path, :style=>"margin-top: 10px",:class=>"btn btn-outline-light btn-main " %>
+      <%= link_to 'Statistics', statistics_path, :style=>"margin-top: 10px",:class=>"btn btn-outline-light btn-main " %>
       <% if current_user.role.eql? "admin" %>
         <%= link_to 'Character Status', death_path, :class=>"btn btn-outline-light btn-main", :style=>"margin-top: 10px" %>
       <% end %>

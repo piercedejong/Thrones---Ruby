@@ -13,6 +13,11 @@ Rails.application.routes.draw do
 
   get 'drink', to: 'drinks#index', as: 'drink'
 
+  get 'statistics', to: 'characters#index', as: 'statistics'
+  get 'alive', to: 'characters#alive'
+  get 'dead', to: 'characters#dead'
+  get 'wight', to: 'characters#wight'
+
   get 'death', to: 'deaths#index', as: 'death'
   get 'death/status', to: 'deaths#status'
 end
