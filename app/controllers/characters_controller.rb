@@ -1,6 +1,5 @@
 class CharactersController < ApplicationController
 
-  helper_method :alive
   def index
   end
 
@@ -34,39 +33,38 @@ class CharactersController < ApplicationController
 
 
   def alive(name)
-    characters = Character.where(name: params[:id])
+    characters = Character.where(name: name)
     @alive = 0.0
     characters.all.each do |c|
-      if c.alive
+      if !c.dead
         @alive+=1
       end
     end
-    @alive = @alive / User.count
-    binding.pry
-    return @alive
+    @alive = @alive / User.count * 100
+    return @alive.to_i.to_s+"%"
   end
 
-  def dead
-    characters = Character.where(name: params[:id])
+  def dead(name)
+    characters = Character.where(name: name)
     @dead = 0.0
     characters.all.each do |c|
       if c.dead and !c.walker
         @dead+=1
       end
     end
-    @dead = @dead / User.count
-    return @dead
+    @dead = @dead / User.count * 100
+    return @dead.to_i.to_s+"%"
   end
 
-  def wight
-    characters = Character.where(name: params[:id])
+  def wight(name)
+    characters = Character.where(name: name)
     @wight = 0.0
     characters.all.each do |c|
       if c.walker
         @wight+=1
       end
     end
-    @wight = @wight / User.count
-    return @wight
+    @wight = @wight / User.count * 100
+    return @wight.to_i.to_s+"%"
   end
 end

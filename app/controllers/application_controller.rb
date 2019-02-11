@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
 
   helper_method :current_user
+  helper_method :alive
+  helper_method :dead
+  helper_method :wight
 
   def current_user
     return unless cookies.signed[:permanent_user_id] || session[:user_id]
@@ -10,4 +13,5 @@ class ApplicationController < ActionController::Base
       nil
     end
   end
+
 end
