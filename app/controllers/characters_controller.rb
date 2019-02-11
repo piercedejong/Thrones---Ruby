@@ -41,7 +41,7 @@ class CharactersController < ApplicationController
       end
     end
     @alive = @alive / User.count * 100
-    return @alive.to_i.to_s+"%"
+    return @alive.to_i
   end
 
   def dead(name)
@@ -53,7 +53,7 @@ class CharactersController < ApplicationController
       end
     end
     @dead = @dead / User.count * 100
-    return @dead.to_i.to_s+"%"
+    return @dead.to_i
   end
 
   def wight(name)
@@ -65,6 +65,6 @@ class CharactersController < ApplicationController
       end
     end
     @wight = @wight / User.count * 100
-    return @wight.to_i.to_s+"%"
+    return @wight.to_i
   end
 end

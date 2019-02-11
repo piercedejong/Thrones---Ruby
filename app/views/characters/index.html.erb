@@ -11,31 +11,30 @@
   </div>
 </div>
 
-<table style="color:white;margin:0px;width:auto;margin-left:auto;margin-right:auto" class="table table-condensed ">
-  <thead>
-    <tr class="shadow-text table-top text-center">
-      <th colspan="2">Character</th>
-      <th>Alive</th>
-      <th>Dead</th>
-      <th>Wight</th>
-    </tr>
-  </thead>
-  <tbody class="unit-table">
-    <% Death.all.each do |d| %>
-      <% if d.id%2 ==  0 %>
-        <tr class="tablerow1 shadow-text">
-      <% else %>
-        <tr class="tablerow2 shadow-text">
+<div class="row content">
+  <div class="col-sm-2">
+  </div>
+  <div class="col-sm-8 default-color shadow-text">
+    <div>
+      <% Death.all.each do |d| %>
+      <div class="row content" style="margin-top:20px">
+        <div class="col-sm-3" style="display:flex">
+          <%= image_tag "characters/"+d.name+".jpg", :class=>"image-character" %>
+          <div class="character-name" style="margin:auto"id="<%=d.name%>"><%=d.name%></div>
+        </div>
+        <div class="col-sm-7" style="display:flex">
+          <div class="progress character-name">
+            <div role="progressbar" class="progress-bar " style="display:inline-block;background-color:#52ad6a;width:<%=alive(d.name)%>%"><span style="margin:auto"><i class="fas fa-heart"></i> <%=alive(d.name)%>%</span></div>
+            <div role="progressbar" class="progress-bar" style="display:inline-block;background-color:#ad5252;width:<%=dead(d.name)%>%"><span style="margin:auto"><i class="fas fa-skull-crossbones"></i> <%=dead(d.name)%>%</span></div>
+            <div role="progressbar" class="progress-bar" style="display:inline-block;background-color:#5296ad;width:<%=wight(d.name)%>%"><span style="margin:auto"><i class="fas fa-skull"></i> <%=wight(d.name)%>%</span></div>
+          </div>
+        </div>
+      </div>
       <% end %>
-      <td><%= image_tag "characters/"+d.name+".jpg", :class=>"image-character" %></td>
-      <td id="<%d.name%>" class="text-center character-name"><%= d.name %></td>
-      <td id="<%d.name%>" class="text-center character-name"><%= alive(d.name) %></td>
-      <td id="<%d.name%>" class="text-center character-name"><%= dead(d.name) %></td>
-      <td id="<%d.name%>" class="text-center character-name"><%= wight(d.name) %></td>
-      </tr>
-    <%end%>
-  </tbody>
-</table>
-
+    </div>
+  </div>
+  <div class="col-sm-2">
+  </div>
+</div>
 
 <%= link_to 'Back', root_url, :class=>"topalignedleft btn btn-outline-light btn-back shadow-text" %>
