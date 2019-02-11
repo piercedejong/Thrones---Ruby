@@ -47,7 +47,7 @@
       <div id="questions-title" class="shadow-text">Bonus Questions</div>
       <% Question.all.each do |q| %>
         <div id="question<%=q.qid%>" class="shadow-text rule"><%=q.qid%>. <%=q.text%></div>
-        <div id="answer<%=q.qid%>" class="shadow-text rule"><%=current_user.answers.find_by(rid: q.qid).text%></div>
+        <div id="answer<%=q.qid%>" class="shadow-text rule"><%=@user.answers.find_by(rid: q.qid).text%></div>
       <% end %>
     </div>
   </div>
