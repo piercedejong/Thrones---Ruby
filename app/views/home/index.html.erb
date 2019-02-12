@@ -1,5 +1,5 @@
 <% content_for :title, "Death Pool"%>
-<pre class="title text-center shadow-text default-color" style="margin:0px">Game   of   Thrones   Death   Pool</pre>
+<pre class="title text-center shadow-text " style="margin:0px">Game   of   Thrones   Death   Pool</pre>
 <% if current_user %>
   <div id="user-logged-in">
     <% if !current_user.payed %>
@@ -7,7 +7,7 @@
     <% end %>
     <div class="row content">
       <div class="col-sm-4">
-        <table class="table table-condensed default-color">
+        <table class="table table-condensed ">
           <thead>
             <tr class="shadow-text table-top">
               <th class="text-center" colspan="2">Character</th>
@@ -51,13 +51,13 @@
       </div>
       <div class="col-sm-4"></div>
       <div class="col-sm-4 right-side">
-      <div id="rules" class="default-color">
+      <div id="rules" class="">
         <div id="rules-title" class="shadow-text">Rules</div>
         <% Rule.all.each do |r| %>
           <div id="rule<%=r.rid%>" class="shadow-text rule"><%=r.rid%>. <%=r.rule%></div>
         <%end%>
       </div>
-      <div id="questions" class="default-color">
+      <div id="questions" class="">
         <div id="questions-title" class="shadow-text">Bonus Questions</div>
         <%= form_tag "/answers" do %>
           <% Question.all.each do |q| %>
@@ -75,7 +75,7 @@
       <% end %>
       </div>
     </div>
-    <div id="current-user" class=" bottomalignedright shadow-text default-color">
+    <div id="current-user" class=" bottomalignedright shadow-text ">
       Logged in as <%= current_user.username %>
       <%= link_to 'Log Out', logout_path, :class=>"btn btn-log-out btn-main btn-outline-light" %>
     </div>

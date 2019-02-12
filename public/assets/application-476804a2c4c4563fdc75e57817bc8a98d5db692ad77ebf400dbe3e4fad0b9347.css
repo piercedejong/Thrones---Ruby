@@ -11463,23 +11463,23 @@ html {
 }
 
 /* line 30, app/assets/stylesheets/application.scss */
-. {
+pre, div, table, body {
   color: #f9f2de;
 }
 
-/* line 34, app/assets/stylesheets/application.scss */
+/* line 35, app/assets/stylesheets/application.scss */
 .title {
   font-size: 6.5rem;
   font-family: 'Game of Thrones';
   padding-top: 1rem;
 }
 
-/* line 40, app/assets/stylesheets/application.scss */
+/* line 41, app/assets/stylesheets/application.scss */
 .sub-title {
   font-size: 2.5rem;
 }
 
-/* line 44, app/assets/stylesheets/application.scss */
+/* line 45, app/assets/stylesheets/application.scss */
 .background-image {
   background-size: cover;
   background-repeat: no-repeat;
@@ -11490,7 +11490,7 @@ html {
   position: fixed;
 }
 
-/* line 54, app/assets/stylesheets/application.scss */
+/* line 55, app/assets/stylesheets/application.scss */
 .btn-glyph {
   padding: 0px;
   border-radius: 0px;
@@ -11499,32 +11499,32 @@ html {
   font-size: 2rem;
 }
 
-/* line 62, app/assets/stylesheets/application.scss */
+/* line 63, app/assets/stylesheets/application.scss */
 .shadow-text {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-/* line 66, app/assets/stylesheets/application.scss */
+/* line 67, app/assets/stylesheets/application.scss */
 .nowrap {
   white-space: nowrap !important;
 }
 
-/* line 70, app/assets/stylesheets/application.scss */
+/* line 71, app/assets/stylesheets/application.scss */
 .text-right {
   text-align: right;
 }
 
-/* line 73, app/assets/stylesheets/application.scss */
+/* line 74, app/assets/stylesheets/application.scss */
 .text-left {
   text-align: left;
 }
 
-/* line 77, app/assets/stylesheets/application.scss */
+/* line 78, app/assets/stylesheets/application.scss */
 .middle {
   vertical-align: middle;
 }
 
-/* line 81, app/assets/stylesheets/application.scss */
+/* line 82, app/assets/stylesheets/application.scss */
 .topalignedright {
   position: fixed;
   top: 0;
@@ -11533,17 +11533,17 @@ html {
   margin-right: 0.1vw;
 }
 
-/* line 88, app/assets/stylesheets/application.scss */
+/* line 89, app/assets/stylesheets/application.scss */
 .glyphicon-ok {
   color: green;
 }
 
-/* line 91, app/assets/stylesheets/application.scss */
+/* line 92, app/assets/stylesheets/application.scss */
 .glyphicon-remove {
   color: red;
 }
 
-/* line 95, app/assets/stylesheets/application.scss */
+/* line 96, app/assets/stylesheets/application.scss */
 .topalignedleft {
   position: absolute;
   top: 0;
@@ -11552,13 +11552,13 @@ html {
   margin-left: 0.1vw;
 }
 
-/* line 103, app/assets/stylesheets/application.scss */
+/* line 104, app/assets/stylesheets/application.scss */
 .row {
   margin-left: 0px;
   margin-right: 0px;
 }
 
-/* line 107, app/assets/stylesheets/application.scss */
+/* line 108, app/assets/stylesheets/application.scss */
 .bottomaligned {
   position: fixed;
   bottom: 0;
@@ -11567,7 +11567,7 @@ html {
   margin-left: 0.1vw;
 }
 
-/* line 114, app/assets/stylesheets/application.scss */
+/* line 115, app/assets/stylesheets/application.scss */
 .bottomalignedmiddle {
   margin-left: auto;
   margin-right: auto;
@@ -11578,7 +11578,7 @@ html {
           transform: translate(-50%);
 }
 
-/* line 122, app/assets/stylesheets/application.scss */
+/* line 123, app/assets/stylesheets/application.scss */
 .bottomalignedright {
   position: fixed;
   bottom: 0;
@@ -11587,7 +11587,7 @@ html {
   margin-right: 0.1vw;
 }
 
-/* line 130, app/assets/stylesheets/application.scss */
+/* line 131, app/assets/stylesheets/application.scss */
 .progress-bar {
   display: flex;
   flex-direction: column;
@@ -11599,7 +11599,7 @@ html {
   transition: width .6s ease;
 }
 
-/* line 141, app/assets/stylesheets/application.scss */
+/* line 142, app/assets/stylesheets/application.scss */
 .progress {
   width: 100%;
   display: flex;

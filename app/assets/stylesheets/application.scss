@@ -26,9 +26,10 @@ html {
   src: url('/assets/GameofThrones.ttf') format('truetype');
 }
 
-.default-color{
-color: #f9f2de;
+pre, div, table, body{
+  color: #f9f2de;
 }
+
 
 .title{
   font-size: 6.5rem;

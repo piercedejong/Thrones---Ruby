@@ -1,8 +1,8 @@
 <%= link_to 'Back', root_url, :class=>"topalignedleft btn btn-outline-light btn-back" %>
-<div class="title user-title text-center shadow-text default-color"><%=@user.username%></div>
+<div class="title user-title text-center shadow-text "><%=@user.username%></div>
 <div class="row content">
   <div class="col-sm-8">
-    <table class="table table-condensed default-color">
+    <table class="table table-condensed ">
       <thead>
         <tr class="shadow-text table-top">
           <th class="text-center" colspan="2">Character</th>
@@ -43,7 +43,7 @@
     </table>
   </div>
   <div class="col-sm-4 right-side">
-    <div id="questions" class="default-color">
+    <div id="questions" class="">
       <div id="questions-title" class="shadow-text">Bonus Questions</div>
       <% Question.all.each do |q| %>
         <div id="question<%=q.qid%>" class="shadow-text rule"><%=q.qid%>. <%=q.text%></div>
