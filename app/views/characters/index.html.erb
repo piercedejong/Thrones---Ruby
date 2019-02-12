@@ -1,20 +1,51 @@
-<pre class="title text-center shadow-text default-color" style="margin:0px">Character   Statistics</pre>
-<div class="row content">
+<pre class="title text-center shadow-text " style="margin:0px">Character   Statistics</pre>
+<div class="row content ">
   <div class="col-sm-4">
-    <pre class="title sub-title text-center shadow-text default-color" style="margin:0px">Most Predicted to stay alive</pre>
+    <pre class="title sub-title text-center  shadow-text" style="margin:0px">Most Predicted as Alive</pre>
+    <table class="table table-condensed ">
+      <tbody class="unit-table">
+        <% Death.order(alive: :desc).first(5).each do |d| %>
+          <tr class="tablerow1 shadow-text">
+            <td><%= image_tag "characters/"+d.name+".jpg", :class=>"image-character" %></td>
+            <td class="align-middle character-name"><%=d.alive%>% of people think <%=d.name%> will live</td>
+            </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
   <div class="col-sm-4">
-    <pre class="title sub-title text-center shadow-text default-color" style="margin:0px">Most Predicted to die</pre>
+    <pre class="title sub-title text-center  shadow-text" style="margin:0px">Most Predicted as Dead</pre>
+    <table class="table table-condensed ">
+      <tbody class="unit-table">
+        <% Death.order(dead: :desc).first(5).each do |d| %>
+          <tr class="tablerow1 shadow-text">
+            <td><%= image_tag "characters/"+d.name+".jpg", :class=>"image-character" %></td>
+            <td class="align-middle character-name"><%=d.dead%>% of people think <%=d.name%> will die</td>
+            </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
   <div class="col-sm-4">
-    <pre class="title sub-title text-center shadow-text default-color" style="margin:0px">MOst predicted to be a wight</pre>
+    <pre class="title sub-title text-center  shadow-text" style="margin:0px">Most predicted as Wight</pre>
+    <table class="table table-condensed ">
+      <tbody class="unit-table">
+        <% Death.order(wight: :desc).first(5).each do |d| %>
+          <tr class="tablerow1 shadow-text">
+            <td><%= image_tag "characters/"+d.name+".jpg", :class=>"image-character" %></td>
+            <td class="align-middle character-name"><%=d.wight%>% of people think <%=d.name%> will become a wight</td>
+            </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
 
-<div class="row content">
+<div class="row content ">
   <div class="col-sm-2">
   </div>
-  <div class="col-sm-8 default-color shadow-text">
+  <div class="col-sm-8 shadow-text">
+    <pre class="title sub-title text-center  shadow-text" style="margin:0px">Overall    Predictions</pre>
     <div>
       <% Death.order(alive: :desc).all.each do |d| %>
       <div class="row content" style="margin-top:20px">
@@ -23,7 +54,7 @@
           <div class="character-name" style="margin:auto"id="<%=d.name%>"><%=d.name%></div>
         </div>
         <div class="col-sm-7" style="display:flex">
-          <div class="progress character-name">
+          <div class="progress character-name" style="font-size:1.5rem">
             <div role="progressbar" class="progress-bar " style="display:inline-block;background-color:#52ad6a;width:<%=d.alive%>%"><span style="margin:auto"><i class="fas fa-heart"></i> <%=d.alive%>%</span></div>
             <div role="progressbar" class="progress-bar" style="display:inline-block;background-color:#ad5252;width:<%=d.dead%>%"><span style="margin:auto"><i class="fas fa-skull-crossbones"></i> <%=d.dead%>%</span></div>
             <div role="progressbar" class="progress-bar" style="display:inline-block;background-color:#5296ad;width:<%=d.wight%>%"><span style="margin:auto"><i class="fas fa-skull"></i> <%=d.wight%>%</span></div>
