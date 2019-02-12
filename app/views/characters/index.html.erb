@@ -16,7 +16,7 @@
   </div>
   <div class="col-sm-8 default-color shadow-text">
     <div>
-      <% Death.all.each do |d| %>
+      <% Death.order(alive: :desc).all.each do |d| %>
       <div class="row content" style="margin-top:20px">
         <div class="col-sm-3" style="display:flex">
           <%= image_tag "characters/"+d.name+".jpg", :class=>"image-character" %>
@@ -24,9 +24,9 @@
         </div>
         <div class="col-sm-7" style="display:flex">
           <div class="progress character-name">
-            <div role="progressbar" class="progress-bar " style="display:inline-block;background-color:#52ad6a;width:<%=alive(d.name)%>%"><span style="margin:auto"><i class="fas fa-heart"></i> <%=alive(d.name)%>%</span></div>
-            <div role="progressbar" class="progress-bar" style="display:inline-block;background-color:#ad5252;width:<%=dead(d.name)%>%"><span style="margin:auto"><i class="fas fa-skull-crossbones"></i> <%=dead(d.name)%>%</span></div>
-            <div role="progressbar" class="progress-bar" style="display:inline-block;background-color:#5296ad;width:<%=wight(d.name)%>%"><span style="margin:auto"><i class="fas fa-skull"></i> <%=wight(d.name)%>%</span></div>
+            <div role="progressbar" class="progress-bar " style="display:inline-block;background-color:#52ad6a;width:<%=d.alive%>%"><span style="margin:auto"><i class="fas fa-heart"></i> <%=d.alive%>%</span></div>
+            <div role="progressbar" class="progress-bar" style="display:inline-block;background-color:#ad5252;width:<%=d.dead%>%"><span style="margin:auto"><i class="fas fa-skull-crossbones"></i> <%=d.dead%>%</span></div>
+            <div role="progressbar" class="progress-bar" style="display:inline-block;background-color:#5296ad;width:<%=d.wight%>%"><span style="margin:auto"><i class="fas fa-skull"></i> <%=d.wight%>%</span></div>
           </div>
         </div>
       </div>

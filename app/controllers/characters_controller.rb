@@ -1,33 +1,28 @@
 class CharactersController < ApplicationController
 
   def index
+    stat
   end
 
 
   def stat
-    @dead=0
-    @alive=0
-    @wight=0
     Death.all.each do |d|
-      @dead=0
-      @alive=0
-      @wight=0
-      @character = Character.where(name: d.name)
-      @character.all.each do |c|
-        if c.walker
-          @wight+=1.0
-        elsif c.dead
-          @dead+=1.0
+      @alive = 0.0
+      @dead = 0.0
+      @wight = 0.0
+      characters = Character.where(name: d.name)
+      characters.all.each do |c|
+        if !c.dead
+          @alive +=1
+        elsif c.walker
+          @wight+=1
         else
-          @alive+=1.0
+          @dead +=1
         end
       end
-      @alive = @alive / User.count
-      @dead = @dead / User.count
-      @wight = @wight / User.count
-      puts @alive
-      puts @wight
-      puts @alive
+      d.update(alive: @alive*100/User.count)
+      d.update(dead: @dead*100/User.count)
+      d.update(wight: @wight*100/User.count)
     end
   end
 
