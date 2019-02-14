@@ -15,10 +15,9 @@ class CharactersController < ApplicationController
           @dead +=1
         end
       end
-      d.update(alive: @alive*100/User.count)
-      d.update(dead: @dead*100/User.count)
-      d.update(wight: @wight*100/User.count)
-      puts d
+      d.update(alive: (@alive*100/User.count).round(2))
+      d.update(dead: (@dead*100/User.count).round(2))
+      d.update(wight: (@wight*100/User.count).round(2))
     end
   end
 
@@ -41,7 +40,6 @@ class CharactersController < ApplicationController
       d.update(alive: @alive*100/User.count)
       d.update(dead: @dead*100/User.count)
       d.update(wight: @wight*100/User.count)
-      puts d
     end
   end
 
