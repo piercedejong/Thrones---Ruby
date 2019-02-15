@@ -1,19 +1,35 @@
 <% content_for :title, "Death Pool"%>
 <pre class="title text-center shadow-text">Game   of   Thrones   Death   Pool</pre>
-<% if current_user %>
 <div class="container">
-  <div class="row shadow-text">
-    <div class="col-sm-2"></div>
-    <div class="col-sm-4 text-center">
-      <div style="font-size:2rem">Players</div>
-      <div style="font-size:3rem"><%=User.count%></div>
+  <div class="row">
+    <div class="col-sm-4 align-items-center justify-content-center">
+      <div class="text-center">
+        <div style="font-size:1rem"class="text-center">Predictions can be made unitl <strong>ONE</strong> hour before season 8 starts</div>
+        <div style="">
+          <ul class=list-inline>
+            <li class="list-inline-item">
+              <p id="day" class="time"></p>
+              <p class="date">Days</p>
+            </li>
+            <li class="list-inline-item">
+              <p id="hour" class="time"></p>
+              <p class="date">Hours</p>
+            </li>
+            <li class="list-inline-item">
+              <p id="minute" class="time"></p>
+              <p class="date">Min</p>
+            </li>
+            <li class="list-inline-item">
+              <p id="second" class="time"></p>
+              <p class="date">Sec</p>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="col-sm-4 text-center">
-      <div style="font-size:2rem">Pot</div>
-      <div style="font-size:3rem">$<%=User.count*10%></div>
-    </div>
-    <div class="col-sm-2"></div>
+    <div class="col-sm-8"></div>
   </div>
+<% if current_user %>
   <br>
   <br>
   <br>
@@ -90,8 +106,6 @@
 </div>
 </div>
 <% else %>
-
-<div class="container">
   <div class='row'>
     <div class="col-sm-4">
     </div>
@@ -132,3 +146,48 @@
 </div>
 <% end %>
 <p id=”notice”><%= notice %></p>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Apr 14, 2019 18:00:0").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  if(days<10){
+    days = "0" +days
+  }
+  if(hours<10){
+    hours = "0" +hours
+  }
+  if(minutes<10){
+    minutes = "0" +minutes
+  }
+  if(seconds<10){
+    seconds = "0" +seconds
+  }
+
+  $("#day").text(days+" :");
+  $("#hour").text(hours+" :");
+  $("#minute").text(minutes+" :");
+  $("#second").text(seconds);
+
+  // If the count down is over, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
