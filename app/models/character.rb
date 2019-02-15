@@ -42,10 +42,13 @@ class Character < ApplicationRecord
       {cid:32, name:"Lyanna Mormont"},
       {cid:33, name:"Meera Reed"},
       {cid:34, name:"Yohn Royce"},
-      {cid:35, name:"Ghost"},
-      {cid:36, name:"Nymeria"},
-      {cid:37, name:"Drogon"},
-      {cid:38, name:"Rhaegal"},
+      {cid:35, name:"Edmure Tully"},
+      {cid:36, name:"Ghost"},
+      {cid:37, name:"Nymeria"},
+      {cid:38, name:"Drogon"},
+      {cid:39, name:"Rhaegal"},
+      {cid:40, name:"Viserion"},
+      {cid:41, name:"The Night King"},
     ]
     characters.each do |c|
       user.characters.create(c)

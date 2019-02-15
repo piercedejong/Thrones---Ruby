@@ -30,13 +30,14 @@ END of season 8. ONE point for each correct answer."},
 option to predict if they become a Wight (Army of the Dead).
 Gain ONE extra point if you correctly predict if they
 become a Wight. Lose ONE point if you guess the character becomes a wight but does not become one."},
-      {rid: 3,rule: "All characters that have been resurrected on the show are considered to be alive at the start of the season. E.g. Jon Snow, The Mountain, Beric Dondarrion"}
-      {rid: 4,rule: "Correctly answer Bonus Questions for more points. (The answer no one does NOT have a double meaning. It cannot both mean Arya and literally no one at the same time.)"},
-      {rid: 5,rule: "Points for dead and wight characters will be awarded as the season goes on. Alive characters will only be counted after the end of the season. Bonus Points will be awarded as they get answered"},
-      {rid: 6,rule: "The entry with the most points wins the entire pool. At 6:00pm MT / 7:00pm, CT on April 14th the form will close and you will NOT be allowed to change your entry. At this point you wil be allowed to view everyone elses predicitions."},
-      {rid: 7,rule: "Pool Entry Fee is $10.00. 60% to the winner, 25% to 2nd place, 15% to 3rd place. If you have not paid by 12:00pm MT / 1:00pm CT on April 14th, your form will be deleted."},
-      {rid: 8,rule: "Payment can be made in person with cash, e-transfer to pierce.dejong45@gmail.com, or venmo Pierce-deJong"},
-      {rid: 9,rule: "If you have any questions or need clarification, email Pierce at pierce.dejong45@gmail.com"},
+      {rid: 3,rule: "All characters that have been resurrected on the show are considered to be alive at the start of the season. E.g. Jon Snow, The Mountain, Beric Dondarrion"},
+      {rid: 4,rule: "The Night King and Viserion are both considered alive at the start of season 8 and can only be alive or dead. They cannot be predicted to become a wight"},
+      {rid: 5,rule: "Correctly answer Bonus Questions for more points. (The answer no one does NOT have a double meaning. It cannot both mean Arya and literally no one at the same time.)"},
+      {rid: 6,rule: "Points for dead and wight characters will be awarded as the season goes on. Alive characters will only be counted after the end of the season. Bonus Points will be awarded as they get answered"},
+      {rid: 7,rule: "The entry with the most points wins the entire pool. At 6:00pm MT / 7:00pm, CT on April 14th the form will close and you will NOT be allowed to change your entry. At this point you wil be allowed to view everyone elses predicitions."},
+      {rid: 8,rule: "Pool Entry Fee is $10.00. 60% to the winner, 25% to 2nd place, 15% to 3rd place. If you have not paid by 12:00pm MT / 1:00pm CT on April 14th, your form will be deleted."},
+      {rid: 9,rule: "Payment can be made in person with cash, e-transfer to pierce.dejong45@gmail.com, or venmo Pierce-deJong"},
+      {rid: 10,rule: "If you have any questions or need clarification, email Pierce at pierce.dejong45@gmail.com"},
     ]
 )
 
@@ -95,9 +96,12 @@ Death.create(
     {did:32, name:"Lyanna Mormont"},
     {did:33, name:"Meera Reed"},
     {did:34, name:"Yohn Royce"},
-    {did:35, name:"Ghost"},
-    {did:36, name:"Nymeria"},
-    {did:37, name:"Drogon"},
-    {did:38, name:"Rhaegal"},
+    {did:35, name:"Edmure Tully"},
+    {did:36, name:"Ghost"},
+    {did:37, name:"Nymeria"},
+    {did:38, name:"Drogon"},
+    {did:39, name:"Rhaegal"},
+    {did:40, name:"Viserion"},
+    {did:41, name:"The Night King"},
   ]
 )
