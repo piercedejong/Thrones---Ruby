@@ -30,9 +30,9 @@ END of season 8. ONE point for each correct answer."},
 option to predict if they become a Wight (Army of the Dead).
 Gain ONE extra point if you correctly predict if they
 become a Wight. Lose ONE point if you guess the character becomes a wight but does not become one."},
-      {rid: 3,rule: "Correctly answer Bonus Questions for more points. (The answer no one does NOT have a double meaning. It cannot both mean Arya and literaly no one at the same time.)"},
+      {rid: 3,rule: "Correctly answer Bonus Questions for more points. (The answer no one does NOT have a double meaning. It cannot both mean Arya and literally no one at the same time.)"},
       {rid: 4,rule: "Points for dead and wight characters will be awarded as the season goes on. Alive characters will only be counted after the end of the season. Bonus Points will be awarded as they get answered"},
-      {rid: 5,rule: "The entry with the most points wins the entire pool. At 6:00pm MT / 7:00pm, CT on April 14th the form will close and you will NOT be allowed to change your entry. At this point oyu wil be allowed to view everytone elses predicitions"},
+      {rid: 5,rule: "The entry with the most points wins the entire pool. At 6:00pm MT / 7:00pm, CT on April 14th the form will close and you will NOT be allowed to change your entry. At this point you wil be allowed to view everytone elses predicitions"},
       {rid: 6,rule: "Pool Entry Fee is $10.00. 60% to the winner, 25% to 2nd place, 15% to 3rd place. If you have not paid by 12:00pm MT / 1:00pm CT on April 14th, your form will be deleted"},
       {rid: 7,rule: "Payment can be made in person with cash, e-transfer to pierce.dejong45@gmail.com, or venmo Pierce-deJong"},
       {rid: 8,rule: "If you have any questions or need clarification, email Pierce at pierce.dejong45@gmail.com"},
