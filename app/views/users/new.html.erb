@@ -1,12 +1,19 @@
 <% content_for :title, "Death Pool - Sign Up"%>
 <pre class="text-center title shadow-text ">New   Player</pre>
-<div class="row content" style ="margin-left: 0px;margin-right: 0px;">
-  <div class="col-sm-4">
-  </div>
-  <div class="col-sm-4">
-    <%= render 'form', user: @user %>
-  </div>
-  <div class="col-sm-4">
+<%= link_to 'Back', root_url, :class=>"bottomaligned btn btn-outline-light" %>
+<div class="container">
+  <div class='row'>
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4">
+      <div class="card">
+      <article class="card-body">
+      	<h4 class="card-title text-center mb-4 mt-1" style="color:black;font-size:2rem">Signup</h4>
+        <%= render 'form', user: @user %>
+      </article>
+      </div> <!-- card.// -->
+    </div>
+    <div class="col-sm-4">
+    </div>
   </div>
 </div>
-<%= link_to 'Back', root_url, :class=>"bottomaligned btn btn-outline-light" %>
