@@ -10,6 +10,19 @@
   font-size: 1.75rem;
   background-color: rgba(40,40,40,0.5)
 }
+.list-inline-item{
+}
+.time,.date{
+  color:#262626;
+  margin-bottom:0px
+}
+.time{
+  font-size: 3rem;
+  font-weight: bold;
+}
+.date{
+  font-size: 1.5rem;
+}
 
 .table-top{
   font-size:2rem
@@ -82,7 +95,8 @@
 }
 .answer{
   font-size: 1.5rem;
-  color:black
+  color:black;
+  width:100%
 }
 
 .user-list{
