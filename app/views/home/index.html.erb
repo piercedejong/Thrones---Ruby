@@ -90,15 +90,41 @@
 </div>
 </div>
 <% else %>
-<div id="no-current-user" class="container-fluid">
-  <div class="row content">
+
+<div class="container">
+  <div class='row'>
     <div class="col-sm-4">
     </div>
-    <div id="" class="col-sm-4">
-      <div class="" style="margin-top:50%">
-      <%= link_to 'Sign Up', signup_path, :id=>"sign-up", :class=>"btn btn-main btn-outline-dark", :role=>"button" %>
-      <%= link_to 'Log In', login_path, :id=>"log-in", :class=>"btn btn-main btn-outline-light", :role=>"button" %>
-      <div>
+    <div class="col-sm-4">
+      <div class="card">
+      <article class="card-body">
+        <%= link_to 'Sign Up', signup_path, :id=>"sign-up", :class=>"btn btn-outline-dark top-aligned-left", :role=>"button" %>
+      	<h4 class="card-title text-center mb-4 mt-1" style="color:black;font-size:2rem">Login</h4>
+        <%= form_tag sessions_path do |form| %>
+        	<form>
+        	<div class="form-group">
+        	<div class="input-group">
+        		<div class="input-group-prepend">
+        		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+        		 </div>
+             <%= text_field_tag :username, "", placeholder:"Email or Username", class:"form-control" %>
+        	</div> <!-- input-group.// -->
+        	</div> <!-- form-group// -->
+        	<div class="form-group">
+        	<div class="input-group">
+        		<div class="input-group-prepend">
+        		    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+        		 </div>
+             <%= password_field_tag :password, "", placeholder:"Password",  class:"form-control"%>
+        	</div> <!-- input-group.// -->
+        	</div> <!-- form-group// -->
+        	<div class="form-group">
+        	<button type="submit" class="btn btn-primary btn-block"> Login  </button>
+        	</div> <!-- form-group// -->
+        	</form>
+        <% end %>
+      </article>
+      </div> <!-- card.// -->
     </div>
     <div class="col-sm-4">
     </div>
