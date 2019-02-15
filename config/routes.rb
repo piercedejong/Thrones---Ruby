@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
-  get '/user/dead', to: 'users#dead'
+  get '/user/character_status', to: 'users#character_status'
   get '/user/walker', to: 'users#walker'
   get '/user/paid', to: 'users#paid'
   get 'leaderboards', to: 'users#index', as:'leaderboards'
