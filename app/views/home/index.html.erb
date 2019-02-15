@@ -57,18 +57,6 @@
   <br>
   <div class="row">
     <div class="col-sm-2 text-center shadow-text">
-      <i style="font-size:5rem;" class="far fa-chart-bar"></i>
-      <div style="font-size:2rem">Statistics</div>
-      <div style="font-size:1.25rem">The average prediction of each character</div>
-      <%= link_to 'Statistics', statistics_path, :class=>"btn btn-outline-light btn-main color", :style=>"margin:auto;margin-top:1rem"%>
-    </div>
-    <div class="col-sm-2 text-center shadow-text">
-      <i style="font-size:5rem;" class="fab fa-wpforms"></i>
-      <div style="font-size:2rem">Entry</div>
-      <div style="font-size:1.25em">View and edit your entry and bonus questions</div>
-      <%= link_to 'View/Update', user_path(current_user.uuid), :class=>"btn btn-outline-light btn-main color", :style=>"margin:auto;margin-top:1rem"%>
-    </div>
-    <div class="col-sm-2 text-center shadow-text">
       <i style="font-size:5rem;backgorund-color:red" class="fas fa-gavel"></i>
       <div style="font-size:2rem">Rules</div>
       <div style="font-size:1.25rem">Read the rules and FAQ</div>
@@ -76,12 +64,24 @@
       <%= link_to 'View the Rules', rules_path, :class=>"btn btn-outline-light btn-main color", :style=>"margin:auto;margin-top:1rem"%>
     </div>
     <div class="col-sm-2 text-center shadow-text">
+      <i style="font-size:5rem;" class="far fa-chart-bar"></i>
+      <div style="font-size:2rem">Statistics</div>
+      <div style="font-size:1.25rem">The average prediction of each character</div>
+      <%= link_to 'Statistics', statistics_path, :class=>"btn btn-outline-light btn-main color", :style=>"margin:auto;margin-top:1rem"%>
+    </div>
+    <div class="col-sm-2 text-center shadow-text">
+      <i style="font-size:5rem;" class="fab fa-wpforms"></i>
+      <div style="font-size:2rem">Predictions</div>
+      <div style="font-size:1.25em">View and edit your entry and bonus questions</div>
+      <%= link_to 'Make Predictions', user_path(current_user.uuid), :class=>"btn btn-outline-primary btn-main color", :style=>"margin:auto;margin-top:1rem"%>
+    </div>
+    <div class="col-sm-2 text-center shadow-text">
       <i style="font-size:5rem"class="fas fa-poll"></i>
       <div style="font-size:2rem">Leaderboards</div>
       <div style="font-size:1.25rem">Check out everyones current poistion!</div>
       <!-- <div style="font-size:1.25rem"><strong>SPOILERS AHEAD</strong></div> -->
       <%= link_to 'Leaderboards', leaderboards_path, :class=>"btn btn-outline-light btn-main color", :style=>"margin:auto;margin-top:1rem"%>
-      <%= link_to 'Spoiler-Free Leaderboards', spoilerfree_path, :class=>"btn btn-outline-dark color", :style=>"margin:auto;margin-top:1rem"%>
+      <!--<%= link_to 'Spoiler-Free Leaderboards', spoilerfree_path, :class=>"btn btn-outline-dark color", :style=>"margin:auto;margin-top:1rem"%> -->
     </div>
     <div class="col-sm-2 text-center shadow-text">
       <i style="font-size:5rem"class="fas fa-wine-glass-alt"></i>
