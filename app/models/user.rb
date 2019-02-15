@@ -13,7 +13,6 @@ class User < ApplicationRecord
     end while self.class.exists?(:uuid => uuid)
   end
 
-
   def points
     @points = 0
     self.characters.all.each do |c|

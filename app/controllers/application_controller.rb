@@ -55,4 +55,13 @@ class ApplicationController < ActionController::Base
     return @third_place
   end
 
+  def reset
+    User.all.each do |u|
+      u.characters.all.each do |c|
+        c.destroy
+      end
+      Character.create_characters(u)
+    end
+  end
+
 end

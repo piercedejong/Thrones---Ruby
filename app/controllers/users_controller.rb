@@ -58,6 +58,25 @@ class UsersController < ApplicationController
     end
   end
 
+  def create
+    @user = User.new(user_params)
+    respond_to do |format|
+      if @user.save
+        Character.create_characters(@user)
+        Answer.create_answers(@user)
+        cookies.permanent.signed[:permanent_user_id] = @user.uuid
+        session[:user_id] = @user.uuid
+        if @user.email.eql? "pierce.dejong45@gmail.com"
+          @user.update(role:"admin")
+        end
+        format.html { redirect_to root_path }
+      else
+        format.html { render :new }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
