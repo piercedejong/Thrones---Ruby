@@ -33,15 +33,21 @@
     </div>
     <div class="col-sm-2"></div>
   </div>
-  <div id="questions" class="">
-    <div id="questions-title" class="shadow-text">Bonus Questions</div>
-    <%= form_tag "/answers" do %>
-      <% Question.all.each do |q| %>
-        <div id="question<%=q.qid%>" class="shadow-text rule"><%=q.qid%>. <%=q.text%></div>
-        <%= text_field_tag "answers[][text]", current_user.answers.find_by(rid: q.qid).text, :class=>"answer" %>
-      <% end %>
-      <div style="padding-top:8px"><%= submit_tag "Save Answers", :class=>"btn btn-outline-light btn-main shadow-text", :style=>"font-size:1.75rem;width:auto" %></div>
-    <% end %>
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <div id="questions" class="">
+        <div id="questions-title" class="shadow-text">Bonus Questions</div>
+        <%= form_tag "/answers" do %>
+          <% Question.all.each do |q| %>
+            <div id="question<%=q.qid%>" class="shadow-text rule"><%=q.qid%>. <%=q.text%></div>
+            <%= text_field_tag "answers[][text]", current_user.answers.find_by(rid: q.qid).text, :class=>"answer" %>
+          <% end %>
+          <div style="padding-top:8px"><%= submit_tag "Save Answers", :class=>"btn btn-outline-light btn-main shadow-text", :style=>"font-size:1.75rem;width:auto" %></div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-sm-3"></div>
   </div>
 </div>
 <%= link_to 'Back', root_url, :class=>"topalignedleft btn btn-outline-light btn-back" %>
