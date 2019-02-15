@@ -23,6 +23,11 @@
 }
 
 .image-character{
+  height:8rem;width:8rem;
+  border-radius:50%;
+}
+
+.image-character-stats{
   height:5rem;width:5rem;
   border-radius:50%;
 }
@@ -30,12 +35,12 @@
 
 .table{
   margin-bottom: 0.1vw;
-  width:auto !important;
 }
 
 .table-middle{
   font-size: 1.5rem;
-  margin:auto
+  margin:auto;
+  width: auto
 }
 
 .tablerow1{

@@ -1,63 +1,45 @@
 <%= link_to 'Back', root_url, :class=>"topalignedleft btn btn-outline-light btn-back" %>
-<div class="title user-title text-center shadow-text "><%=@user.username%></div>
 <div class="container">
-<div class="row content">
-  <div class="col-sm-4">
-    <table class="table table-condensed ">
-      <thead>
-        <tr class="shadow-text table-top">
-          <th class="text-center" colspan="2">Character</th>
-          <th class="text-center">Alive or Dead</th>
-          <th class="text-center">Wight</th>
-          <!-- <th class="text-center">Points</th> -->
-        </tr>
-      </thead>
-      <tbody class="unit-table">
-        <% current_user.characters.each do |c| %>
-          <% if c.id%2 ==  0 %>
-            <tr class="tablerow1 shadow-text">
-          <% else %>
-            <tr class="tablerow2 shadow-text">
-          <% end %>
-              <td><%= image_tag "characters/"+c.name+".jpg", :class=>"image-character" %></td>
-              <td id="<%c.name%>" class="text-center character-name"><%= c.name %></td>
-              <td class="text-center align-middle">
-                <%if c.dead %>
-                 <button class="btn btn-dead btn-character nowrap shadow-text" id="dead-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_dead(this)">Dead</button>
-                 <%else%>
-                 <button class="btn btn-alive btn-character nowrap shadow-text" id="dead-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_dead(this)">Alive</button>
-                 <%end%>
-              </td>
-              <td class="text-center align-middle">
-                <%if c.walker %>
-                 <button class="btn btn-walker btn-character nowrap shadow-text" id="walker-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_walker(this)">Wight</button>
-                 <%else%>
-                  <%if c.dead %>
-                    <button class="btn btn-just-dead btn-character nowrap shadow-text" id="walker-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_walker(this)">Just Dead</button>
-                  <% else %>
-                    <button class="btn btn-just-dead btn-character nowrap shadow-text" id="walker-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_walker(this)">N/A</button>
-                  <% end %>
-                 <%end%>
-              </td>
-              <!-- <td class="text-center align-middle character-name"><%=c.points%> -->
+  <div class="title user-title text-center shadow-text "><%=@user.username%></div>
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th colspan="2">Character</th>
+              <th>Prediction</th>
+              <th></th>
             </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-  <div class="col-sm-4"></div>
-  <div class="col-sm-4 right-side">
-    <div id="questions" class="">
-      <div id="questions-title" class="shadow-text">Bonus Questions</div>
-      <%= form_tag "/answers" do %>
-        <% Question.all.each do |q| %>
-          <div id="question<%=q.qid%>" class="shadow-text rule"><%=q.qid%>. <%=q.text%></div>
-          <%= text_field_tag "answers[][text]", current_user.answers.find_by(rid: q.qid).text, :class=>"answer" %>
-        <% end %>
-        <div style="padding-top:8px"><%= submit_tag "Save Answers", :class=>"btn btn-outline-light btn-main shadow-text", :style=>"font-size:1.75rem;width:auto" %></div>
-      <% end %>
+          </thead>
+          <tbody>
+            <% current_user.characters.each do |c| %>
+            <tr>
+              <td style="width:10%"><%= image_tag "characters/"+c.name+".jpg", :class=>"image-character" %></td>
+              <td id="<%c.name%>" style="width:30%"class="text-center character-name shadow-text"><%= c.name %></td>
+              <td style="vertical-align:middle">
+                <div class="d-flex shadow-text">
+                  <button class="btn btn-character">Alive</button><button class="btn btn-character">Dead</button><button class="btn btn-character">Wight</button>
+                </div>
+              </td>
+            </tr>
+            <%end%>
+          </tbody>
+        </table>
+      </div>
     </div>
+    <div class="col-sm-2"></div>
   </div>
-</div>
+  <div id="questions" class="">
+    <div id="questions-title" class="shadow-text">Bonus Questions</div>
+    <%= form_tag "/answers" do %>
+      <% Question.all.each do |q| %>
+        <div id="question<%=q.qid%>" class="shadow-text rule"><%=q.qid%>. <%=q.text%></div>
+        <%= text_field_tag "answers[][text]", current_user.answers.find_by(rid: q.qid).text, :class=>"answer" %>
+      <% end %>
+      <div style="padding-top:8px"><%= submit_tag "Save Answers", :class=>"btn btn-outline-light btn-main shadow-text", :style=>"font-size:1.75rem;width:auto" %></div>
+    <% end %>
+  </div>
 </div>
 <%= link_to 'Back', root_url, :class=>"topalignedleft btn btn-outline-light btn-back" %>
