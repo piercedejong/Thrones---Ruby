@@ -35,7 +35,6 @@
       <div style="font-size:1rem"><%=third_place.points%> points</div>
     </div>
     <div class="col-sm-1"></div>
-    <%= link_to 'Spoiler-Free Leaderboards', spoilerfree_path, :class=>"btn btn-outline-dark color", :style=>"margin:auto;margin-top:1rem"%>
   </div>
   <br>
   <br>
@@ -66,6 +65,7 @@
       <div style="font-size:1.25rem">Check out everyones current poistion!</div>
       <!-- <div style="font-size:1.25rem"><strong>SPOILERS AHEAD</strong></div> -->
       <%= link_to 'Leaderboards', leaderboards_path, :class=>"btn btn-outline-light btn-main color", :style=>"margin:auto;margin-top:1rem"%>
+      <%= link_to 'Spoiler-Free Leaderboards', spoilerfree_path, :class=>"btn btn-outline-dark color", :style=>"margin:auto;margin-top:1rem"%>
     </div>
     <div class="col-sm-2 text-center shadow-text">
       <i style="font-size:5rem"class="fas fa-wine-glass-alt"></i>
@@ -86,7 +86,7 @@
 <% end %>
 <div id="current-user" class=" bottomalignedright shadow-text ">
   Welcome <%= current_user.username %>
-  <%= link_to 'Log Out', logout_path, :class=>"btn btn-log-out btn-main btn-outline-light" %>
+  <%= link_to 'Log Out', logout_path, :class=>"btn btn-log-out btn-outline-light" %>
 </div>
 </div>
 <% else %>
