@@ -20,7 +20,9 @@
               <td id="<%c.name%>" style="width:30%"class="text-center character-name shadow-text"><%= c.name %></td>
               <td style="vertical-align:middle">
                 <div class="d-flex shadow-text">
-                  <button class="btn btn-character">Alive</button><button class="btn btn-character">Dead</button><button class="btn btn-character">Wight</button>
+                  <button id="alive-<%=c.cid%>" character="<%=c.name%>" cid="<%=c.cid%>" status="alive" role="button" class="btn btn-character <%= 'btn-alive' if c.status.eql?"alive" %>" onclick="character_status(this)">Alive</button>
+                  <button id="dead-<%=c.cid%>"  character="<%=c.name%>" cid="<%=c.cid%>" status="dead"  role="button" class="btn btn-character <%= 'btn-dead' if c.status.eql?"dead" %>" onclick="character_status(this)">Dead</button>
+                  <button id="wight-<%=c.cid%>" character="<%=c.name%>" cid="<%=c.cid%>" status="wight" role="button" class="btn btn-character <%= 'btn-wight' if c.status.eql?"wight" %>" onclick="character_status(this)">Wight</button>
                 </div>
               </td>
             </tr>

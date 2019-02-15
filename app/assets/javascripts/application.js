@@ -18,41 +18,28 @@
 //= require popper
 //= require bootstrap
 
-function change_dead(element){
+function character_status(element){
+  console.log("Hello")
   $.ajax({
        method: "GET",
        data:{
-       	character: element.getAttribute("character")
+       	character: element.getAttribute("character"),
+        cid: element.getAttribute("cid"),
+        status: element.getAttribute("status")
        },
-       url: window.location.origin + '/user/dead'
+       url: window.location.origin + '/user/character_status'
 	})
   .done(function(response) {
-    if (response["word"] == "Dead"){
-      $("#"+element.getAttribute("id")).removeClass("btn-alive").addClass("btn-dead")
+    $("#alive-"+element.getAttribute("cid")).removeClass("btn-alive")
+    $("#dead-"+element.getAttribute("cid")).removeClass("btn-dead")
+    $("#wight-"+element.getAttribute("cid")).removeClass("btn-wight")
+    if (response["status"] == "alive"){
+      $("#alive-"+element.getAttribute("cid")).addClass("btn-alive")
+    }else if ((response["status"] == "dead")){
+      $("#dead-"+element.getAttribute("cid")).addClass("btn-dead")
     }else{
-      $("#"+element.getAttribute("id")).removeClass("btn-dead").addClass("btn-alive")
-      $("#walker-"+element.getAttribute("cid")).removeClass("btn-walker").addClass("btn-just-dead")
+      $("#wight-"+element.getAttribute("cid")).addClass("btn-wight")
     }
-    $("#"+element.getAttribute("id")).text(response["word"])
-    $("#walker-"+element.getAttribute("cid")).text(response["walker"])
-  })
-}
-
-function change_walker(element){
-  $.ajax({
-       method: "GET",
-       data:{
-       	character: element.getAttribute("character")
-       },
-       url: window.location.origin + '/user/walker'
-	})
-  .done(function(response) {
-    if (response["word"] == "Wight"){
-      $("#"+element.getAttribute("id")).removeClass("btn-just-dead").addClass("btn-walker")
-    }else{
-      $("#"+element.getAttribute("id")).removeClass("btn-walker").addClass("btn-just-dead")
-    }
-    $("#"+element.getAttribute("id")).text(response["word"])
   })
 }
 
