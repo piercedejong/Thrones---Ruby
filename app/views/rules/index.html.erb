@@ -1,15 +1,26 @@
 <div class="content">
+  <pre class="title text-center shadow-text">Rules</pre>
   <div class="row">
     <div class="col-sm-4"></div>
-    <div class="col-sm-4 shadow-text">
+    <div class="col-sm-4">
       <div id="rules" class="">
-        <div id="rules-title" class="text-center shadow-text">Rules</div>
-        <% Rule.all.each do |r| %>
-          <div id="rule<%=r.rid%>" class="shadow-text rule"><%=r.rid%>. <%=r.rule%></div>
-        <%end%>
+        <ul class="list-group list-group-flush">
+          <% Rule.all.each do |r| %>
+            <li id="rule<%=r.rid%>"class="list-group-item rule"><%=r.rid%>. <%=r.rule%></li >
+          <%end%>
+        </ul>
       </div>
     </div>
     <div class="col-sm-4 text-center shadow-text">
     </div>
 </div>
 <%= link_to 'Back', root_url, :class=>"topalignedleft btn btn-outline-light btn-back" %>
+
+<script>
+$(window).on('load', function() {
+ bg = $("#background").css("background-image")
+ if(bg.includes("got4") || bg.includes("got5")){
+   $(".rule").css('color',"#f9f2de").addClass("shadow-text");
+ }
+});
+</script>
