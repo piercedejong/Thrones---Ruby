@@ -148,6 +148,13 @@
 <p id=”notice”><%= notice %></p>
 
 <script>
+$(window).on('load', function() {
+ bg = $("#background").css("background-image")
+ if(bg.includes("got4") || bg.includes("got5")){
+   $(".time").css('color',"#f9f2de")
+   $(".date").css('color',"#f9f2de")
+ }
+});
 // Set the date we're counting down to
 var countDownDate = new Date("Apr 14, 2019 18:00:0").getTime();
 

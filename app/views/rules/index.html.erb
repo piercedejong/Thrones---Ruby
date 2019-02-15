@@ -15,3 +15,12 @@
     </div>
 </div>
 <%= link_to 'Back', root_url, :class=>"topalignedleft btn btn-outline-light btn-back" %>
+
+<script>
+$(window).on('load', function() {
+ bg = $("#background").css("background-image")
+ if(bg.includes("got4") || bg.includes("got5")){
+   $(".rule").css('color',"#f9f2de").addClass("shadow-text");
+ }
+});
+</script>
