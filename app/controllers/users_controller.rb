@@ -14,10 +14,10 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    if(current_user and current_user.role.eql? "admin")
+    if current_user and current_user.uuid.eql?params[:id]
       @user = User.find_by(uuid: params[:id])
     elsif (current_user)
-      redirect_to users_path
+      redirect_to leaderboards_path
     else
       redirect_to root_path
     end

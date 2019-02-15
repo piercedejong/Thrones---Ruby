@@ -1,85 +1,94 @@
 <% content_for :title, "Death Pool"%>
 <pre class="title text-center shadow-text " style="margin:0px">Game   of   Thrones   Death   Pool</pre>
 <% if current_user %>
-  <div id="user-logged-in">
-    <% if !current_user.payed %>
-      <div id="scum" class="text-center shadow-text">You have NOT paid your entry fee yet</div>
-    <% end %>
-    <div class="row content">
-      <div class="col-sm-4">
-        <table class="table table-condensed ">
-          <thead>
-            <tr class="shadow-text table-top">
-              <th class="text-center" colspan="2">Character</th>
-              <th class="text-center">Alive or Dead</th>
-              <th class="text-center">Wight</th>
-              <!-- <th class="text-center">Points</th> -->
-            </tr>
-          </thead>
-          <tbody class="unit-table">
-            <% current_user.characters.each do |c| %>
-              <% if c.id%2 ==  0 %>
-                <tr class="tablerow1 shadow-text">
-              <% else %>
-                <tr class="tablerow2 shadow-text">
-              <% end %>
-                  <td><%= image_tag "characters/"+c.name+".jpg", :class=>"image-character" %></td>
-                  <td id="<%c.name%>" class="text-center character-name"><%= c.name %></td>
-                  <td class="text-center align-middle">
-                    <%if c.dead %>
-                     <button class="btn btn-dead btn-character nowrap shadow-text" id="dead-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_dead(this)">Dead</button>
-                     <%else%>
-                     <button class="btn btn-alive btn-character nowrap shadow-text" id="dead-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_dead(this)">Alive</button>
-                     <%end%>
-                  </td>
-                  <td class="text-center align-middle">
-                    <%if c.walker %>
-                     <button class="btn btn-walker btn-character nowrap shadow-text" id="walker-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_walker(this)">Wight</button>
-                     <%else%>
-                      <%if c.dead %>
-                        <button class="btn btn-just-dead btn-character nowrap shadow-text" id="walker-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_walker(this)">Just Dead</button>
-                      <% else %>
-                        <button class="btn btn-just-dead btn-character nowrap shadow-text" id="walker-<%=c.cid%>" cid="<%=c.cid%>" character="<%=c.name%>" onclick="change_walker(this)">N/A</button>
-                      <% end %>
-                     <%end%>
-                  </td>
-                  <!-- <td class="text-center align-middle character-name"><%=c.points%> -->
-                </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
-      <div class="col-sm-4"></div>
-      <div class="col-sm-4 right-side">
-      <div id="rules" class="">
-        <div id="rules-title" class="shadow-text">Rules</div>
-        <% Rule.all.each do |r| %>
-          <div id="rule<%=r.rid%>" class="shadow-text rule"><%=r.rid%>. <%=r.rule%></div>
-        <%end%>
-      </div>
-      <div id="questions" class="">
-        <div id="questions-title" class="shadow-text">Bonus Questions</div>
-        <%= form_tag "/answers" do %>
-          <% Question.all.each do |q| %>
-            <div id="question<%=q.qid%>" class="shadow-text rule"><%=q.qid%>. <%=q.text%></div>
-            <%= text_field_tag "answers[][text]", current_user.answers.find_by(rid: q.qid).text, :class=>"answer" %>
-          <% end %>
-          <div style="padding-top:8px"><%= submit_tag "Save Answers", :class=>"btn btn-outline-light btn-main shadow-text", :style=>"font-size:1.75rem;width:auto" %></div>
-        <% end %>
-      </div>
-      <%= link_to 'Leaderboards', users_path, :class=>"btn btn-outline-light btn-main shadow-text", :style=>"margin-top:10px"%>
-      <%= link_to 'Drinking Game', drink_path, :style=>"margin-top: 10px",:class=>"btn btn-outline-light btn-main shadow-text" %>
-      <%= link_to 'Statistics', statistics_path, :style=>"margin-top: 10px",:class=>"btn btn-outline-light btn-main shadow-text" %>
-      <% if current_user.role.eql? "admin" %>
-        <%= link_to 'Character Status', death_path, :class=>"btn btn-outline-light btn-main shadow-text", :style=>"margin-top: 10px" %>
-      <% end %>
-      </div>
+<div class="container">
+  <div class="row shadow-text">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4 text-center">
+      <div style="font-size:2rem">Players</div>
+      <div style="font-size:3rem"><%=User.count%></div>
     </div>
-    <div id="current-user" class=" bottomalignedright shadow-text ">
-      Logged in as <%= current_user.username %>
-      <%= link_to 'Log Out', logout_path, :class=>"btn btn-log-out btn-main btn-outline-light" %>
+    <div class="col-sm-4 text-center">
+      <div style="font-size:2rem">Pot</div>
+      <div style="font-size:3rem">$<%=User.count*10%></div>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-3 text-center shadow-text">
+      <div style="font-size:3rem">1st Place</div>
+      <div style="font-size:2rem"><%=first_place.username%></div>
+      <div style="font-size:1rem"><%=first_place.points%> points</div>
+    </div>
+    <div class="col-sm-4 text-center shadow-text">
+      <div style="font-size:3rem">2nd Place</div>
+      <div style="font-size:2rem"><%=second_place.username%></div>
+      <div style="font-size:1rem"><%=second_place.points%> points</div>
+    </div>
+    <div class="col-sm-3 text-center shadow-text">
+      <div style="font-size:3rem">3rd Place</div>
+      <div style="font-size:2rem"><%=third_place.username%></div>
+      <div style="font-size:1rem"><%=third_place.points%> points</div>
+    </div>
+    <div class="col-sm-1"></div>
+    <%= link_to 'Spoiler-Free Leaderboards', spoilerfree_path, :class=>"btn btn-outline-dark color", :style=>"margin:auto;margin-top:1rem"%>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-sm-2 text-center shadow-text">
+      <i style="font-size:5rem;" class="far fa-chart-bar"></i>
+      <div style="font-size:2rem">Statistics</div>
+      <div style="font-szie:1rem">See the average prediction of each character</div>
+      <%= link_to 'Statistics', statistics_path, :class=>"btn btn-outline-light btn-main color", :style=>"margin:auto;margin-top:1rem"%>
+    </div>
+    <div class="col-sm-2 text-center shadow-text">
+      <i style="font-size:5rem;" class="fab fa-wpforms"></i>
+      <div style="font-size:2rem">Entry</div>
+      <div style="font-szie:1rem">View and edit your entry and bonus questions</div>
+      <%= link_to 'View/Update', user_path(current_user.uuid), :class=>"btn btn-outline-light btn-main color", :style=>"margin:auto;margin-top:1rem"%>
+    </div>
+    <div class="col-sm-2 text-center shadow-text">
+      <i style="font-size:5rem;backgorund-color:red" class="fas fa-gavel"></i>
+      <div style="font-size:2rem">Rules</div>
+      <div style="font-szie:1rem">Read the rules and FAQ</div>
+      <pre style="font-szie:1rem"></pre>
+      <%= link_to 'View the Rules', rules_path, :class=>"btn btn-outline-light btn-main color", :style=>"margin:auto;margin-top:1rem"%>
+    </div>
+    <div class="col-sm-2 text-center shadow-text">
+      <i style="font-size:5rem"class="fas fa-poll"></i>
+      <div style="font-size:2rem">Leaderboards</div>
+      <div style="font-szie:1rem">Check out the Leaderboards and see who is in the lead!</div>
+      <div style="font-szie:1rem"><strong>Warning: SPOILERS ahead</strong></div>
+      <%= link_to 'Leaderboards', leaderboards_path, :class=>"btn btn-outline-light btn-main color", :style=>"margin:auto;margin-top:1rem"%>
+    </div>
+    <div class="col-sm-2 text-center shadow-text">
+      <i style="font-size:5rem"class="fas fa-wine-glass-alt"></i>
+      <div style="font-size:2rem">Drinking Game</div>
+      <div style="font-szie:1rem">See the rules for the Game of Thrones drinking game.</div>
+      <%= link_to 'Drinking Game', drink_path, :class=>"btn btn-outline-light btn-main color", :style=>"margin:auto;margin-top:1rem"%>
+    </div>
+    <div class="col-sm-2 text-center shadow-text">
+      <i style="font-size:5rem"class="fas fa-cogs"></i>
+      <div style="font-size:2rem">Account Settings</div>
+      <div style="font-szie:1rem">View, update, and edit your account</div>
+      <%= link_to 'Account', edit_user_path(current_user.uuid), :class=>"btn btn-outline-light btn-main color", :style=>"margin:auto;margin-top:1rem"%>
     </div>
   </div>
+</div>
+<% if !current_user.payed %>
+  <div id="scum" class="text-center shadow-text">You have NOT paid your entry fee yet</div>
+<% end %>
+<div id="current-user" class=" bottomalignedright shadow-text ">
+  Welcome <%= current_user.username %>
+  <%= link_to 'Log Out', logout_path, :class=>"btn btn-log-out btn-main btn-outline-light" %>
+</div>
+</div>
 <% else %>
 <div id="no-current-user" class="container-fluid">
   <div class="row content">
