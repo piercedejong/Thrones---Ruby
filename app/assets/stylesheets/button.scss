@@ -19,23 +19,28 @@
 .btn-character{
   font-size: 1.5rem;
   border-color: grey;
-  background-color: rgba(30,30,30,0.5);
+  background-color: rgba(30,30,30,0.2);
   width: 100%;
-  margin:0px
+  color:#f9f2de;
+}
+
+.btn-character:hover{
+  background-color: rgba(30,30,30,0.7);
+  color:#f9f2de;
 }
 
 .btn-dead {
-  color:red;
+  background-color:red;
 }
 .btn-alive{
-  color:white
+  background-color:rgb(200,200,200)
 }
 .btn-just-dead{
   color:white;
 }
 
 .btn-walker {
-  color:#0080ff
+  background-color:#0080ff
 }
 
 @media only screen and (max-width: 800px) {

@@ -11,8 +11,7 @@ class DeathsController < ApplicationController
     if @character.status.eql? "alive"
       @character.update(status: "dead")
       Character.where(name: @character.name).all.each do |c|
-        puts c.name
-        if c.dead and !c.walker
+        if c.status.eql?"dead"
           c.update(points: 1)
         else
           c.update(points: 0)
@@ -21,7 +20,7 @@ class DeathsController < ApplicationController
     elsif @character.status.eql? "dead"
       @character.update(status: "wight")
       Character.where(name: @character.name).all.each do |c|
-        if c.walker
+        if c.status.eql?"walker"
           c.update(points: 2)
         else
           c.update(points: 0)
@@ -30,7 +29,7 @@ class DeathsController < ApplicationController
     else
       @character.update(status: "alive")
       Character.where(name: @character.name).all.each do |c|
-        if !c.dead
+        if c.status.eql?"alive"
           c.update(points: 1)
         else
           c.update(points: 0)

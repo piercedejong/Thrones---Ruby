@@ -50,7 +50,7 @@
       <% Death.order(alive: :desc).all.each do |d| %>
       <div class="row content" style="margin-top:20px">
         <div class="col-sm-3" style="display:flex">
-          <%= image_tag "characters/"+d.name+".jpg", :class=>"image-character" %>
+          <%= image_tag "characters/"+d.name+".jpg", :class=>"image-character-stats" %>
           <div class="character-name" style="margin:auto"id="<%=d.name%>"><%=d.name%></div>
         </div>
         <div class="col-sm-7" style="display:flex">

@@ -7,9 +7,9 @@ class CharactersController < ApplicationController
       @wight = 0.0
       characters = Character.where(name: d.name)
       characters.all.each do |c|
-        if !c.dead
+        if c.status.eql?"alive"
           @alive +=1
-        elsif c.walker
+        elsif c.status.eql?"wight"
           @wight+=1
         else
           @dead +=1
