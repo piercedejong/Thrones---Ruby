@@ -1,32 +1,19 @@
 .btn{
-  font-size: 3rem;
-  padding:5px;
-  margin:0.1rem;
   white-space: pre-wrap;
-  border-width:0.15rem;
-  border-color: black;
-  border-radius: 4px;
 }
 
 .btn-main{
+  font-size: 1.5rem;
   width:100%;
-  background-color:rgba(40,40,40,0.1);
+  color: #f9f2de;
 }
 
 .btn-main:hover, .btn-back:hover{
   text-shadow: none;
 }
 
-.btn-log-out{
-  font-size: 2rem;
-  width:unset;
-}
-
 .btn-outline-light{
   border-color: rgb(230,230,230)
-}
-.btn-outline-dark{
-  color:black;
 }
 
 .btn-character{

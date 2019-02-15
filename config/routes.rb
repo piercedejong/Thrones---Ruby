@@ -10,8 +10,13 @@ Rails.application.routes.draw do
   get '/user/dead', to: 'users#dead'
   get '/user/walker', to: 'users#walker'
   get '/user/paid', to: 'users#paid'
+  get 'leaderboards', to: 'users#index', as:'leaderboards'
+
+  get 'spoilerfree', to: 'home#show', as: 'spoilerfree'
 
   get 'drink', to: 'drinks#index', as: 'drink'
+
+  get 'rules', to: 'rules#index', as: 'rules'
 
   get 'statistics', to: 'characters#index', as: 'statistics'
   post 'alive', to: 'characters#alive'

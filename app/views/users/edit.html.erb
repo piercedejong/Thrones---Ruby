@@ -3,12 +3,11 @@
 <div class="row content" style ="margin-left: 0px;margin-right: 0px;">
   <div class="col-sm-4">
   </div>
-  <div class="col-sm-4">
+  <!-- <div class="col-sm-4">
     <%= render 'form', user: @user %>
-  </div>
+  </div> -->
   <div class="col-sm-4">
   </div>
 </div>
 
-<%= link_to 'Show', user_path(@user.uuid) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', root_url, :class=>"topalignedleft btn btn-outline-light btn-back" %>

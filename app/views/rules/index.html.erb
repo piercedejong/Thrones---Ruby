@@ -1,0 +1,15 @@
+<div class="content">
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4 shadow-text">
+      <div id="rules" class="">
+        <div id="rules-title" class="text-center shadow-text">Rules</div>
+        <% Rule.all.each do |r| %>
+          <div id="rule<%=r.rid%>" class="shadow-text rule"><%=r.rid%>. <%=r.rule%></div>
+        <%end%>
+      </div>
+    </div>
+    <div class="col-sm-4 text-center shadow-text">
+    </div>
+</div>
+<%= link_to 'Back', root_url, :class=>"topalignedleft btn btn-outline-light btn-back" %>
