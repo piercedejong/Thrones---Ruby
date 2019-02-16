@@ -1,8 +1,8 @@
-<div class="content">
+<div class="container">
   <pre class="title text-center shadow-text">Rules</pre>
   <div class="row">
-    <div class="col-sm-4"></div>
-    <div class="col-sm-4">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
       <div id="rules" class="">
         <ul class="list-group list-group-flush">
           <% Rule.all.each do |r| %>
@@ -11,13 +11,14 @@
         </ul>
       </div>
     </div>
-    <div class="col-sm-4 text-center shadow-text">
+    <div class="col-sm-2">
     </div>
+</div>
 </div>
 <%= link_to 'Back', root_url, :class=>"topalignedleft btn btn-outline-light btn-back" %>
 
 <script>
-$(window).on('load', function() {
+$(document).ready(function () {
  bg = $("#background").css("background-image")
  if(bg.includes("got4") || bg.includes("got5")){
    $(".rule").css('color',"#f9f2de").addClass("shadow-text");

@@ -152,7 +152,7 @@
 <p id=”notice”><%= notice %></p>
 
 <script>
-$(window).on('load', function() {
+$(document).ready(function () {
  bg = $("#background").css("background-image")
  if(bg.includes("got4") || bg.includes("got5")){
    $(".time").css('color',"#f9f2de")
