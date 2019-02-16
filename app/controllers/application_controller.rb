@@ -43,16 +43,18 @@ class ApplicationController < ActionController::Base
   end
 
   def third_place
-    @second = second_place
-    @third_place
-    points = -1
-    User.all.each do |u|
-      if u.points > points and u.points <= @second.points and u != @second and u != first_place
-        @third_place = u
-        points = @third_place.points
+    if second_place
+      @second = second_place
+      @third_place
+      points = -1
+      User.all.each do |u|
+        if u.points > points and u.points <= @second.points and u != @second and u != first_place
+          @third_place = u
+          points = @third_place.points
+        end
       end
+      return @third_place
     end
-    return @third_place
   end
 
   def reset

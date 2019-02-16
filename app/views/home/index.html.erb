@@ -41,14 +41,18 @@
       <div style="font-size:1rem"><%=first_place.points%> points</div>
     </div>
     <div class="col-sm-4 text-center shadow-text">
+      <%if second_place%>
       <div style="font-size:3rem">2nd Place</div>
       <div style="font-size:2rem"><%=second_place.username%></div>
       <div style="font-size:1rem"><%=second_place.points%> points</div>
+      <%end%>
     </div>
     <div class="col-sm-3 text-center shadow-text">
+      <%if third_place%>
       <div style="font-size:3rem">3rd Place</div>
       <div style="font-size:2rem"><%=third_place.username%></div>
       <div style="font-size:1rem"><%=third_place.points%> points</div>
+      <%end%>
     </div>
     <div class="col-sm-1"></div>
   </div>
