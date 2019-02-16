@@ -117,6 +117,16 @@
 #drink-table{
 }
 
+.position{
+  min-height:40rem
+}
+.objects{
+  min-height:20rem
+}
+.clock{
+  min-height:10rem
+}
+
 @media only screen and (max-width: 800px) {
   .character-name{
     font-size: 2rem;
@@ -143,8 +153,11 @@
   }
 }
 
-@media only screen and (min-width:2000px){
-  #position{
-    min-height: 20rem;
+@media only screen and (max-width:1440px){
+  .position{
+    min-height: 20rem !important;
+  }
+  .objects{
+    min-height: 10rem !important;
   }
 }
