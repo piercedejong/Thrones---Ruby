@@ -12,7 +12,7 @@
 }
 .list-inline-item{
 }
-.time,.date{
+.time,.date,.time-info{
   color:#262626;
   margin-bottom:0px
 }
@@ -23,6 +23,11 @@
 .date{
   font-size: 1.5rem;
 }
+
+.time-info{
+  font-size: 1rem;
+}
+
 
 .table-top{
   font-size:2rem
