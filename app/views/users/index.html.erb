@@ -8,7 +8,7 @@
     <%end%>
       <th>Username</th>
       <th>Points</th>
-      <th>Form</th>
+      <th>Prediction</th>
     </tr>
   </thead>
   <tbody class="user-list">
@@ -19,7 +19,7 @@
       <% end %>
         <td class="shadow-text"style="vertical-align:middle"><%= user.username %></td>
           <td class="shadow-text text-center"style="vertical-align:middle"><%= user.points %></td>
-        <td class="user-column"><%= link_to 'Show Form', user_path(user.uuid), :class=>"btn btn-outline-light btn-character"%></td>
+        <td class="user-column"><%= link_to 'View Entry', user_path(user.uuid), :class=>"btn btn-outline-light btn-main shadow-text"%></td>
       <% if current_user.role.eql? "admin" %>
         <td class="user-column"><%= link_to 'Edit', edit_user_path(user.uuid),:class=>"btn btn-outline-light btn-character" %></td>
         <td class="user-column"><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' },:class=>"btn btn-outline-light btn-character" %></td>
