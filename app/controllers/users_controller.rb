@@ -81,12 +81,12 @@ class UsersController < ApplicationController
     end
   end
 
-  def update
-    @user = User.find(params[:id])
+  def update_password
+    @user = User.find_by(uuid:password_update_params[:uuid])
     respond_to do |format|
-      if @user and @user.authenticate(params[:user][:password_current])
-        @user.password = params[:user][:password_new]
-        @user.password_confirmation = params[:user][:password_confirmation]
+      if @user and @user.authenticate(password_update_params[:password_current])
+        @user.password = password_update_params[:password_new]
+        @user.password_confirmation = password_update_params[:password_confirmation]
         if @user.save
           format.html { redirect_to root_path, alert: 'Password Updated' }
         else
@@ -109,5 +109,9 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:email, :username, :password, :password_confirmation)
+    end
+
+    def password_update_params
+      params.require(:user).permit(:uuid, :password_new, :password_current, :password_confirmation)
     end
 end
