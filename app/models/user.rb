@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :answers
   validates :email, presence: true, :uniqueness => { :case_sensitive => false }, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :username, presence: true, :uniqueness => { :case_sensitive => false }, format: { without: /\s/ }
+  validates :password, presence:true, length: { in: 6..20}
   default_scope { order(created_at: :asc) }
 
   def create_uuid

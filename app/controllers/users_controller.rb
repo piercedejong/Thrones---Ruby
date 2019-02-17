@@ -91,9 +91,11 @@ class UsersController < ApplicationController
           format.html { redirect_to root_path, alert: 'Password Updated' }
         else
           format.html { redirect_to account_path(@user.uuid),alert: 'Password Confirmation does not match New Password' }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
         end
       else
         format.html { redirect_to account_path(@user.uuid),alert: 'Incorrect Current Password' }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end

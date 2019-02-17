@@ -1,14 +1,42 @@
 <% content_for :title, "Death Pool - Sign Up"%>
-<pre class="text-center title shadow-text ">New   Player</pre>
-<%= link_to 'Back', root_url, :class=>"bottomaligned btn btn-outline-light" %>
+<pre class="title text-center shadow-text">Game   of   Thrones   Death   Pool</pre>
 <div class="container">
-  <div class='row'>
+  <div class="row m-auto clock">
+    <div class="col-sm-4 align-items-center justify-content-center">
+      <div class="text-center">
+        <div class="time-info text-center">Predictions can be made until <strong>ONE</strong> hour before season 8 starts</div>
+        <div style="">
+          <ul class=list-inline>
+            <li class="list-inline-item">
+              <p id="day" class="time"></p>
+              <p class="date">Days</p>
+            </li>
+            <li class="list-inline-item">
+              <p id="hour" class="time"></p>
+              <p class="date">Hours</p>
+            </li>
+            <li class="list-inline-item">
+              <p id="minute" class="time"></p>
+              <p class="date">Min</p>
+            </li>
+            <li class="list-inline-item">
+              <p id="second" class="time"></p>
+              <p class="date">Sec</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8"></div>
+  </div>
+  <div class='position row align-items-center'>
     <div class="col-sm-4">
     </div>
     <div class="col-sm-4">
       <div class="card">
       <article class="card-body">
-      	<h4 class="card-title text-center mb-4 mt-1" style="color:black;font-size:2rem">Signup</h4>
+        <%= link_to 'Log in', root_url, :class=>"btn btn-outline-dark top-aligned-left", :role=>"button" %>
+      	<h4 class="card-title text-center mb-4 mt-1" style="color:black;font-size:2rem">Sign Up</h4>
         <%= render 'form', user: @user %>
       </article>
       </div> <!-- card.// -->
@@ -17,3 +45,14 @@
     </div>
   </div>
 </div>
+<script>
+$(document).ready(function () {
+ bg = $("#background").css("background-image")
+ if(bg.includes("got1") || bg.includes("got5")){
+   $(".time").css('color',"#f9f2de")
+   $(".date").css('color',"#f9f2de")
+   $(".time-info").css('color',"#f9f2de")
+ }
+});
+// Set the date we're counting down to
+</script>

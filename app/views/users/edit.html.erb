@@ -4,10 +4,13 @@
 <% end %>
 <div class="container">
   <div class="text-center title shadow-text">Account Settings</div>
-  <div class="text-center sub-title shadow-text"><%=@user.username%></div>
+  <div class="text-center user shadow-text"><%=@user.username%></div>
   <div class="row">
     <div class="col-sm-4"></div>
-    <div class="col-sm-4"><%= render 'formEdit', user: @user %></div>
+    <div class="col-sm-4">
+      <div class="text-center sub-title shadow-text">Update Password</div>
+      <%= render 'formEdit', user: @user %>
+    </div>
     <div class="col-sm-4"></div>
   </div>
 </div>
