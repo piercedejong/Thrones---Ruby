@@ -1,0 +1,16 @@
+<%= form_for @user, url: update_answers_path, method: :post  do |form| %>
+  <form>
+    <% Question.all.each do |q| %>
+      <div class="form-group">
+        <label class="shadow-text question"><%=q.qid%>. <%=q.text%></label>
+        <div class="input-group-prepend">
+          <span class="input-group-text"> <i class="fas fa-baby"></i></span>
+          <%= form.text_field :"answer#{q.qid}", value: current_user.answers.find_by(rid: q.qid).text, :class=>"answer form-control" %>
+        </div>
+      </div> <!-- input-group.// -->
+
+    <% end %>
+    <%= form.hidden_field :uuid, value: @user.uuid  %>
+    <%= submit_tag "Save Answers", :class=>"btn btn-outline-light btn-main shadow-text"%>
+  </form>
+<% end %>

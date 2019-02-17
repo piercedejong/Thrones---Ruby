@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'leaderboards', to: 'users#index', as:'leaderboards'
 
   post 'update_password', to: 'users#update_password'
+  post 'update_answers', to: 'users#update_answers'
 
   get 'account', to: 'users#edit', as:'account'
 

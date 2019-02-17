@@ -81,6 +81,22 @@ class UsersController < ApplicationController
     end
   end
 
+  def update_answers
+    @user = User.find_by(uuid: answers_update_params[:uuid])
+    respond_to do |format|
+      if current_user and @user.eql?current_user
+        @user.answers.all.each do |a|
+          a.update(text: answers_update_params["answer#{a.rid}"])
+        end
+        format.html { redirect_to user_path(@user.uuid),alert: 'Bonus Questions Saved' }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      else
+        format.html { redirect_to user_path(@user.uuid),alert: 'You are not allowed to change soemone elses answers' }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def update_password
     @user = User.find_by(uuid:password_update_params[:uuid])
     respond_to do |format|
@@ -113,5 +129,9 @@ class UsersController < ApplicationController
 
     def password_update_params
       params.require(:user).permit(:uuid, :password_new, :password_current, :password_confirmation)
+    end
+
+    def answers_update_params
+      params.require(:user).permit(:uuid, :answer1, :answer2, :answer3, :answer4, :answer5)
     end
 end
