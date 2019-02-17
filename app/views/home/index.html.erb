@@ -1,7 +1,7 @@
 <% content_for :title, "Death Pool"%>
 <pre class="title text-center shadow-text">Game   of   Thrones   Death   Pool</pre>
-<div class="container" style="min-height:60rem">
-  <div class="row m-auto" style="min-height:10rem">
+<div class="container">
+  <div class="row m-auto clock">
     <div class="col-sm-4 align-items-center justify-content-center">
       <div class="text-center">
         <div class="time-info text-center">Predictions can be made until <strong>ONE</strong> hour before season 8 starts</div>
@@ -30,7 +30,7 @@
     <div class="col-sm-8"></div>
   </div>
 <% if current_user %>
-  <div id="position"class="row align-items-center" style="min-height:40rem">
+  <div class="position row align-items-center" style="">
     <div class="col-sm-4 text-center shadow-text">
       <div style="font-size:3rem">1st Place</div>
       <div style="font-size:2rem"><%=first_place.username%></div>
@@ -51,7 +51,7 @@
       <%end%>
     </div>
   </div>
-  <div class="row align-items-end" style="min-height:20rem">
+  <div class="objects row align-items-end">
     <div class="col-sm-2 text-center shadow-text">
       <i style="font-size:5rem;backgorund-color:red" class="fas fa-gavel"></i>
       <div style="font-size:2rem">Rules</div>

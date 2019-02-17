@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2019_02_15_084814) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "did"
+    t.float "death"
     t.float "alive"
     t.float "dead"
     t.float "wight"
