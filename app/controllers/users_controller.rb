@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     if current_user and (current_user.uuid.eql?params[:id] or current_user.role.eql? "admin")
-      @user = User.find_by(uuid: params[:id])
+      @user = User.find_by(uuid: params[:format])
     else
       redirect_to root_path
     end
@@ -77,6 +77,23 @@ class UsersController < ApplicationController
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def update
+    @user = User.find(params[:id])
+    respond_to do |format|
+      if @user and @user.authenticate(params[:user][:password_current])
+        @user.password = params[:user][:password_new]
+        @user.password_confirmation = params[:user][:password_confirmation]
+        if @user.save
+          format.html { redirect_to root_path, alert: 'Password Updated' }
+        else
+          format.html { redirect_to account_path(@user.uuid),alert: 'Password Confirmation does not match New Password' }
+        end
+      else
+        format.html { redirect_to account_path(@user.uuid),alert: 'Incorrect Current Password' }
       end
     end
   end

@@ -1,4 +1,7 @@
 <% content_for :title, "Death Pool"%>
+<% flash.each do |key, value| %>
+      <div class="alert alert-success text-center" role="alert"><%= value %></div>
+<% end %>
 <pre class="title text-center shadow-text">Game   of   Thrones   Death   Pool</pre>
 <div class="container">
   <div class="row m-auto clock">

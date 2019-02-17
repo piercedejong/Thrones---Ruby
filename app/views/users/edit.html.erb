@@ -1,13 +1,14 @@
 <% content_for :title, "Death Pool - Edit Player"%>
-<div id="sign-in" class="text-center title shadow-text">Edit Player</div>
-<div class="text-center shadow-text">
-  Under Construction
-  <div class="col-sm-4">
-  </div>
-  <!-- <div class="col-sm-4">
-    <%= render 'formEdit', user: @user %>
-  </div> -->
-  <div class="col-sm-4">
+<% flash.each do |key, value| %>
+      <div class="alert alert-danger text-center" role="alert"><%= value %></div>
+<% end %>
+<div class="container">
+  <div class="text-center title shadow-text">Account Settings</div>
+  <div class="text-center sub-title shadow-text"><%=@user.username%></div>
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"><%= render 'formEdit', user: @user %></div>
+    <div class="col-sm-4"></div>
   </div>
 </div>
 

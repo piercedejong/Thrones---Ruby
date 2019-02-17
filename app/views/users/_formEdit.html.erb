@@ -1,0 +1,41 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation" class="">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being created:</h2>
+      <ul >
+      <% user.errors.full_messages.each do |message| %>
+        <li style="font-size:2rem"><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <form>
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+         </div>
+         <%= form.password_field :password_current, placeholder:"Current Password", class:"form-control" %>
+      </div> <!-- input-group.// -->
+      </div> <!-- form-group// -->
+      <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+          <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+       </div>
+       <%= form.password_field :password_new, placeholder:"New Password", class:"form-control" %>
+    </div> <!-- input-group.// -->
+    </div> <!-- form-group// -->
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+         </div>
+         <%= form.password_field :password_confirmation, placeholder:"Confirm Password",  class:"form-control"%>
+      </div> <!-- input-group.// -->
+    </div> <!-- form-group// -->
+    <div class="form-group">
+    <%= form.submit "Update Password", :class=>"btn btn-block btn-primary" %>
+    </div> <!-- form-group// -->
+  </form>
+<% end %>
