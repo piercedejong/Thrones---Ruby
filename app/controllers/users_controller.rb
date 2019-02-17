@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    if current_user and current_user.uuid.eql?params[:id]
+    if current_user and (current_user.uuid.eql?params[:id] or current_user.role.eql? "admin")
       @user = User.find_by(uuid: params[:id])
     elsif (current_user)
       redirect_to leaderboards_path
@@ -30,7 +30,11 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @user = User.find_by(uuid: params[:id])
+    if current_user and (current_user.uuid.eql?params[:id] or current_user.role.eql? "admin")
+      @user = User.find_by(uuid: params[:id])
+    else
+      redirect_to root_path
+    end
   end
 
   def character_status

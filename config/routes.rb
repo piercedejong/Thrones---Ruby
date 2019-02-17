@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get '/user/paid', to: 'users#paid'
   get 'leaderboards', to: 'users#index', as:'leaderboards'
 
+  get 'account', to: 'users#edit', as:'account'
+
   get 'spoilerfree', to: 'home#show', as: 'spoilerfree'
 
   get 'drink', to: 'drinks#index', as: 'drink'
