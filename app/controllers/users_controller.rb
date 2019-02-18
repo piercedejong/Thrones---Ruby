@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    if current_user and current_user.uuid.eql?params[:id]
+    if current_user and (current_user.uuid.eql?params[:format] or current_user.role.eql? "admin")
       @user = User.find_by(uuid: params[:format])
     else
       redirect_to root_path
