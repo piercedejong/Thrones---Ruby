@@ -16,28 +16,25 @@ Question.create(
   [
     {value:1,qid:1,text:"Is Daenerys pregnant? (Yes/No) ONE Point"},
     {value:1,qid:2,text:"Will The Hound and The Mountain do battle? (Cleganebowl 2K19) (Yes/No) ONE Point"},
-    {value:1,qid:3,text:"Who (if anyone) wil ride Rhaegal? (no one is an answer) TWO Points"},
-    {value:3,qid:4,text:"Who kills the Night King? (no one is an answer) THREE Points"},
-    {value:5,qid:5,text:"Who holds the Iron Throne at the end of season 8? (no one is an answer) FIVE Points"},
+    {value:2,qid:3,text:"Who (if anyone) wil ride Rhaegal? (no one is an answer) TWO Points"},
+    {value:2,qid:4,text:"Who will be the the first character to die in season 8? (no one is an answer) TWO Points"},
+    {value:3,qid:5,text:"Who kills the Night King? (no one is an answer) THREE Points"},
+    {value:5,qid:6,text:"Who holds the Iron Throne at the end of season 8? (no one is an answer) FIVE Points"},
   ]
 )
 
 Rule.create(
     [
-      {rid: 1,rule: "Predict if each character (38 total) will be alive or dead at the
-END of season 8. ONE point for each correct answer."},
-      {rid: 2,rule: "If you predict the character will die, you have the
-option to predict if they become a Wight (Army of the Dead).
-Gain ONE extra point if you correctly predict if they
-become a Wight. Lose ONE point if you guess the character becomes a wight but does not become one."},
-      {rid: 3,rule: "All characters that have been resurrected on the show are considered to be alive at the start of the season. E.g. Jon Snow, The Mountain, Beric Dondarrion"},
-      {rid: 4,rule: "The Night King and Viserion are both considered alive at the start of season 8 and can only be alive or dead. They cannot be predicted to become a wight"},
+      {rid: 1,rule: "Predict if each character (38 total) will be alive or dead at the END of season 8. ONE point for each correct answer."},
+      {rid: 2,rule: "If you predict the character will die, you have the option to predict if they become a Wight (Army of the Dead). Gain ONE extra point if you correctly predict if they become a Wight. Lose ONE point if you guess the character becomes a wight but does not become one."},
+      {rid: 3,rule: "All characters that have been resurrected on the show are considered to be alive at the start of the season. E.g. Jon Snow, The Mountain, Beric Dondarrion."},
+      {rid: 4,rule: "The Night King and Viserion are both considered alive at the start of season 8 and can only be alive or dead. They cannot be predicted to become a wight."},
       {rid: 5,rule: "Correctly answer Bonus Questions for more points. (The answer no one does NOT have a double meaning. It cannot both mean Arya and literally no one at the same time.)"},
       {rid: 6,rule: "Points for dead and wight characters will be awarded as the season goes on. Alive characters will only be counted after the end of the season. Bonus Points will be awarded as they get answered"},
       {rid: 7,rule: "The entry with the most points wins the entire pool. At 6:00pm MT / 7:00pm, CT on April 14th the form will close and you will NOT be allowed to change your entry. At this point you wil be allowed to view everyone elses predicitions."},
-      {rid: 8,rule: "Pool Entry Fee is $10.00. 60% to the winner, 25% to 2nd place, 15% to 3rd place. If you have not paid by 12:00pm MT / 1:00pm CT on April 14th, your form will be deleted."},
-      {rid: 9,rule: "Payment can be made in person with cash, e-transfer to pierce.dejong45@gmail.com, or venmo Pierce-deJong. Please add the email and username you used to the e-transfer/venmo"},
-      {rid: 10,rule: "If you have any questions or need clarification, email Pierce at pierce.dejong45@gmail.com"},
+      {rid: 8,rule: "Pool Entry Fee is $20.00 CAD / $15.00 USD. 60% to the winner, 25% to 2nd place, 15% to 3rd place. If you have not paid by 12:00pm MT / 1:00pm CT on April 14th, your form will be deleted."},
+      {rid: 9,rule: "Payment can be made in person with cash, e-transfer to pierce.dejong45@gmail.com, or venmo Pierce-deJong. Please add the email and username you used to the e-transfer/venmo."},
+      {rid: 10,rule: "If you have any questions or need clarification, contact Pierce at wwdeathpool@gmail.com. Please use the email you signed up."},
     ]
 )
 
