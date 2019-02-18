@@ -32,7 +32,7 @@ Rule.create(
       {rid: 5,rule: "Correctly answer Bonus Questions for more points. (The answer no one does NOT have a double meaning. It cannot both mean Arya and literally no one at the same time.)"},
       {rid: 6,rule: "Points for dead and wight characters will be awarded as the season goes on. Alive characters will only be counted after the end of the season. Bonus Points will be awarded as they get answered"},
       {rid: 7,rule: "The entry with the most points wins the entire pool. At 6:00pm MT / 7:00pm, CT on April 14th the form will close and you will NOT be allowed to change your entry. At this point you wil be allowed to view everyone elses predicitions."},
-      {rid: 8,rule: "Pool Entry Fee is $10 CAD / %7.50 USD. 60% to the winner, 25% to 2nd place, 15% to 3rd place. If you have not paid by 12:00pm MT / 1:00pm CT on April 14th, your form will be deleted."},
+      {rid: 8,rule: "Pool Entry Fee is $10 CAD / $7.50 USD. 60% to the winner, 25% to 2nd place, 15% to 3rd place. If you have not paid by 12:00pm MT / 1:00pm CT on April 14th, your form will be deleted."},
       {rid: 9,rule: "Payment can be made in person with cash, e-transfer to pierce.dejong45@gmail.com, or venmo Pierce-deJong. Please add the email and username you used to the e-transfer/venmo."},
       {rid: 10,rule: "If you have any questions or need clarification, contact Pierce at wwdeathpool@gmail.com. Please use the email you signed up when contacting Pierce."},
     ]
