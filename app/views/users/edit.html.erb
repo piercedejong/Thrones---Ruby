@@ -1,6 +1,10 @@
 <% content_for :title, "Death Pool - Account"%>
 <% flash.each do |key, value| %>
-      <div class="alert alert-danger text-center" role="alert"><%= value %></div>
+  <% if value.include? "Error" %>
+    <div class="alert alert-danger text-center" role="alert"><%= value %></div>
+  <% else %>
+    <div class="alert alert-success text-center" role="alert"><%= value %></div>
+  <%end%>
 <% end %>
 <div class="container">
   <div class="text-center title shadow-text">Account Settings</div>
