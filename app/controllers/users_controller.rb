@@ -131,7 +131,7 @@ end
   def update_password
     @user = User.find_by(uuid:password_update_params[:uuid])
     respond_to do |format|
-      if @user and @user.authenticate(password_update_params[:password_current])
+      if @user and @user.authenticate(password_update_params[:password_current]) and @user.eql? urrent_user
         @user.password = password_update_params[:password_new]
         @user.password_confirmation = password_update_params[:password_confirmation]
         if @user.save
@@ -143,6 +143,20 @@ end
       else
         format.html { redirect_to account_path(@user.uuid),alert: 'Incorrect Current Password' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def update_username
+    @user = User.find_by(uuid: username_update_params[:uuid])
+    respond_to do |format|
+      password = username_update_params[:password]
+      if @user and @user.authenticate(password)
+        @user.update_column(:username, username_update_params[:username])
+        @user.save
+        format.html { redirect_to root_path, alert: 'Username Updated' }
+      else
+        format.html { redirect_to account_path(@user.uuid),alert: 'Error: Incorrect Password'}
       end
     end
   end
@@ -164,5 +178,9 @@ end
 
     def answers_update_params
       params.require(:user).permit(:uuid, :answer1, :answer2, :answer3, :answer4, :answer5)
+    end
+
+    def username_update_params
+      params.require(:user).permit(:uuid, :username, :password)
     end
 end
