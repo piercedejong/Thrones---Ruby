@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_15_084814) do
+ActiveRecord::Schema.define(version: 2019_02_18_023004) do
 
   create_table "answers", force: :cascade do |t|
     t.string "text"
@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(version: 2019_02_15_084814) do
     t.string "role", default: "user"
     t.boolean "payed", default: false
     t.string "username"
+    t.boolean "paid", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

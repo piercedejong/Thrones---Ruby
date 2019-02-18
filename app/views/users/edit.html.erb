@@ -5,8 +5,13 @@
 <div class="container">
   <div class="text-center title shadow-text">Account Settings</div>
   <div class="text-center user shadow-text"><%=@user.username%></div>
-  <div class="row">
-    <div class="col-sm-4"></div>
+  <div class="text-center sub-title shadow-text"><%=@user.email%></div>
+  <div class="row" style="margin-top:4rem">
+    <div class="col-sm-4">
+      <div class="text-center sub-title shadow-text">Reset Prediction</div>
+      <h4 class="shadow-text">This will reset all of your character predictions and any bonus questons you have answered</h4>
+        <%= link_to "Reset Predictions", reset_entry_path(@user.uuid), :class=>"btn btn-outline-light btn-main shadow-text", :data => {:confirm => 'Are you sure? There is no way to reverse this'} %>
+    </div>
     <div class="col-sm-4">
       <div class="text-center sub-title shadow-text">Update Password</div>
       <%= render 'formEdit', user: @user %>
@@ -16,7 +21,7 @@
   <div class="clock row align-items-center">
     <div class="col-sm-4"></div>
     <div class="col-sm-4">
-      <%= link_to "Reset Predictions", reset_entry_path(@user.uuid), :class=>"btn btn-outline-light btn-main shadow-text", :data => {:confirm => 'Are you sure you want to reset all of your predictions and bonus questions?'} %>
+
     </div>
     <div class="col-sm-4"></div>
   </div>

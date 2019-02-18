@@ -15,10 +15,17 @@
     <% @users.each do |user| %>
       <tr class="table-row">
       <% if current_user.role.eql? "admin" %>
-        <td class=""><a email="<%=user.email%>" uid="<%=user.id%>"onclick="paid(this)" style="vertical-align:middle" class="text-center"><%if user.payed%><span id="<%=user.id%>" class="glyphicon glyphicon-ok shadow-text"></span><%else%><span id="<%=user.id%>" class="glyphicon glyphicon-remove shadow-text"></span><%end%></a></td>
+        <td class=""><a uid="<%=user.id%>"onclick="paid(this)" style="vertical-align:middle" class="text-center">
+          
+          <%if user.paid%>
+            <span id="<%=user.id%>" class="glyphicon glyphicon-ok shadow-text"></span>
+          <%else%>
+            <span id="<%=user.id%>" class="glyphicon glyphicon-remove shadow-text"></span>
+          <%end%>
+        </a></td>
       <% end %>
         <td class="shadow-text"style="vertical-align:middle"><%= user.username %></td>
-          <td class="shadow-text text-center"style="vertical-align:middle"><%= user.points %></td>
+        <td class="shadow-text text-center"style="vertical-align:middle"><%= user.points %></td>
         <td class="user-column"><%= link_to 'View Entry', user_path(user.uuid), :class=>"btn btn-outline-light btn-main shadow-text"%></td>
       <% if current_user.role.eql? "admin" %>
         <td class="user-column"><%= link_to 'Edit', edit_user_path(user.uuid),:class=>"btn btn-outline-light btn-character" %></td>

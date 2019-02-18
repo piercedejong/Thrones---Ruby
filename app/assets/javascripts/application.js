@@ -47,7 +47,7 @@ function paid(element){
   $.ajax({
        method: "GET",
        data:{
-       	email: element.getAttribute("email")
+       	id: element.getAttribute("uid")
        },
        url: window.location.origin + '/user/paid'
 	})

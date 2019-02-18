@@ -75,6 +75,24 @@ class UsersController < ApplicationController
     end
   end
 
+  def paid
+  @word=""
+  @user = User.find(params[:id])
+  if @user.paid
+    @user.update_column(:paid, false)
+    @word="false"
+  else
+    @user.update_column(:paid, true)
+    @word = "true"
+  end
+  @user.save
+  if request.xhr?
+    render :json => {
+      word: @word
+    }
+  end
+end
+
   def create
     @user = User.new(user_params)
     respond_to do |format|
