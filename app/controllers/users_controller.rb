@@ -48,6 +48,19 @@ class UsersController < ApplicationController
     end
   end
 
+  def reset_entry
+    @user = User.find_by(uuid: params[:format])
+    if current_user and current_user.eql?@user
+      @user.characters.all.each do |c|
+        c.update(status: "none")
+      end
+      @user.answers.all.each do |a|
+        a.update(text: "")
+      end
+    end
+    redirect_to root_path, alert: 'Predictions Reset'
+  end
+
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
