@@ -5,7 +5,7 @@
         <label class="shadow-text question"><%=q.qid%>. <%=q.text%></label>
         <div class="input-group-prepend">
           <span class="input-group-text"> <i class="fas fa-baby"></i></span>
-          <%= form.text_field :"answer#{q.qid}", value: current_user.answers.find_by(rid: q.qid).text, :class=>"answer form-control" %>
+          <%= form.text_field :"answer#{q.qid}", value: @user.answers.find_by(rid: q.qid).text, :class=>"answer form-control" %>
         </div>
       </div> <!-- input-group.// -->
 

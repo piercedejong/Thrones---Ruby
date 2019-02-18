@@ -17,7 +17,7 @@
             </tr>
           </thead>
           <tbody>
-            <% current_user.characters.each do |c| %>
+            <% @user.characters.each do |c| %>
             <tr>
               <td style="width:10%"><%= image_tag "characters/"+c.name+".jpg", :class=>"image-character" %></td>
               <td id="<%c.name%>" style="width:30%"class="text-center character-name shadow-text"><%= c.name %></td>
