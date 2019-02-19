@@ -32,8 +32,10 @@
     </div>
     <div class="col-sm-4"></div>
     <div class="col-sm-4">
+      <% if current_user and current_user.house %>
       <div class="sub-title text-center shadow-text">Your House</div>
       <div class="text-center"><%= image_tag current_user.house.image, class:"image-house" %></div>
+      <%end %>
     </div>
   </div>
 <% if current_user %>

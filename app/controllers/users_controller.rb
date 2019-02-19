@@ -63,22 +63,22 @@ class UsersController < ApplicationController
   end
 
   def paid
-  @word=""
-  @user = User.find(params[:id])
-  if @user.paid
-    @user.update_column(:paid, false)
-    @word="false"
-  else
-    @user.update_column(:paid, true)
-    @word = "true"
+    @word=""
+    @user = User.find(params[:id])
+    if @user.paid
+      @user.update_column(:paid, false)
+      @word="false"
+    else
+      @user.update_column(:paid, true)
+      @word = "true"
+    end
+    @user.save
+    if request.xhr?
+      render :json => {
+        word: @word
+      }
+    end
   end
-  @user.save
-  if request.xhr?
-    render :json => {
-      word: @word
-    }
-  end
-end
 
   def create
     @user = User.new(user_params)
@@ -182,7 +182,7 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :username, :password, :password_confirmation)
+      params.require(:user).permit(:email, :username, :house_id, :password, :password_confirmation)
     end
 
     def password_update_params

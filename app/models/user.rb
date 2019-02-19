@@ -7,6 +7,7 @@ class User < ApplicationRecord
   validates :email, presence: true, :uniqueness => { :case_sensitive => false }, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :username, presence: true, :uniqueness => { :case_sensitive => false }, format: { without: /\s/ }, length: { in: 5..15}
   validates :password, presence:true, length: { in: 6..20}
+  validates :house_id, presence:true
   default_scope { order(created_at: :asc) }
 
   def create_uuid
