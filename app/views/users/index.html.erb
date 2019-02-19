@@ -6,7 +6,7 @@
     <% if current_user.role.eql? "admin" %>
       <th>Paid</th>
     <%end%>
-      <th>Username</th>
+      <th>User</th>
       <th>Points</th>
       <th>Prediction</th>
     </tr>
@@ -16,7 +16,7 @@
       <tr class="table-row">
       <% if current_user.role.eql? "admin" %>
         <td class=""><a uid="<%=user.id%>"onclick="paid(this)" style="vertical-align:middle" class="text-center">
-          
+
           <%if user.paid%>
             <span id="<%=user.id%>" class="glyphicon glyphicon-ok shadow-text"></span>
           <%else%>
