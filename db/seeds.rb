@@ -14,12 +14,12 @@ Character.all.each do |c| c.update(points: 0) end
 
 Question.create(
   [
-    {value:1,qid:1,text:"Is Daenerys pregnant? (Yes/No) ONE Point"},
-    {value:1,qid:2,text:"Will The Hound and The Mountain do battle? (Cleganebowl 2K19) (Yes/No) ONE Point"},
-    {value:2,qid:3,text:"Who (if anyone) wil ride Rhaegal? (no one is an answer) TWO Points"},
-    {value:2,qid:4,text:"Who will be the the first character to die in season 8? (no one is an answer) TWO Points"},
-    {value:3,qid:5,text:"Who kills the Night King? (no one is an answer) THREE Points"},
-    {value:5,qid:6,text:"Who holds the Iron Throne at the end of season 8? (no one is an answer) FIVE Points"},
+    {value:1,qid:1,glyph:"fas fa-baby",text:"Is Daenerys pregnant? ONE Point"},
+    {value:1,qid:2,glyph:"fas fa-shield-alt",text:"Will The Hound and The Mountain do battle? (Cleganebowl 2K19) ONE Point"},
+    {value:2,qid:3,glyph:"fas fa-dragon",text:"Who (if anyone) will ride Rhaegal? TWO Points"},
+    {value:2,qid:4,glyph:"fas fa-book-dead",text:"Who will be the the first character to die in season 8? TWO Points"},
+    {value:3,qid:5,glyph:"fas fa-skull-crossbones",text:"Who kills The Night King? THREE Points"},
+    {value:5,qid:6,glyph:"fas fa-trophy",text:"Who holds The Iron Throne at the end of season 8? FIVE Points"},
   ]
 )
 
@@ -100,5 +100,6 @@ Death.create(
     {did:39, name:"Rhaegal"},
     {did:40, name:"Viserion"},
     {did:41, name:"The Night King"},
+    {did:41, name:"No One"},
   ]
 )

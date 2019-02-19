@@ -190,7 +190,7 @@ end
     end
 
     def answers_update_params
-      params.require(:user).permit(:uuid, :answer1, :answer2, :answer3, :answer4, :answer5)
+      params.require(:user).permit(:uuid, :answer1, :answer2, :answer3, :answer4, :answer5, :answer6)
     end
 
     def username_update_params

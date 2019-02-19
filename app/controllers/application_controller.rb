@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   helper_method :first_place
   helper_method :second_place
   helper_method :third_place
+  helper_method :selected_answer
 
   def current_user
     return unless cookies.signed[:permanent_user_id] || session[:user_id]
@@ -64,6 +65,10 @@ class ApplicationController < ActionController::Base
       end
       Character.create_characters(u)
     end
+  end
+
+  def selected_answer(user, qid)
+
   end
 
 end
