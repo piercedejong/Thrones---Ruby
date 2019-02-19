@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_18_235135) do
+ActiveRecord::Schema.define(version: 2019_02_19_021718) do
 
   create_table "answers", force: :cascade do |t|
     t.string "text"
@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 2019_02_18_235135) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "did"
-    t.float "death"
     t.float "alive"
     t.float "dead"
     t.float "wight"
@@ -54,6 +53,15 @@ ActiveRecord::Schema.define(version: 2019_02_18_235135) do
     t.boolean "hardcore", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "houses", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image"
+    t.integer "points"
+    t.integer "hid"
+    t.string "name"
   end
 
   create_table "questions", force: :cascade do |t|
