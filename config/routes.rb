@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   post 'update_password', to: 'users#update_password'
   post 'update_answers', to: 'users#update_answers'
   post 'update_username', to: 'users#update_username'
+  post 'update_house', to: 'users#update_house'
 
   get 'reset_entry', to: 'users#reset_entry'
 

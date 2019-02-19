@@ -1,0 +1,30 @@
+<%= form_for @user, url: update_house_path, :html => {:autocomplete => "off"},  method: :post  do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation" class="">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being created:</h2>
+      <ul >
+      <% user.errors.full_messages.each do |message| %>
+        <li style="font-size:2rem"><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <form>
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend"><span class="input-group-text"> <i class="fas fa-flag"></i></span></div>
+         <%= select_tag "user[house_id]", content_tag(:option,'Select a House...',:value=>"")+options_for_select([["House Stark",1],["House Lannister",2],["House Targaryen",3],["House Baratheon",5],["House Martell",6],["House Tully",8],["House Tyrell",7],["House Greyjoy",9],["House Arryn",10],["Free Folk",4]]), style: 'width:92%' %>
+    </div>
+    </div> <!-- form-group// -->
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend"><span class="input-group-text"> <i class="fa fa-lock"></i> </span></div>
+         <%= form.password_field :password, placeholder:"Password", class:"form-control" %>
+       </div> <!-- input-group.// -->
+    </div> <!-- form-group// -->
+    <div class="form-group">
+    <%= form.hidden_field :uuid, value: @user.uuid  %>
+    <%= form.submit "Update House", :class=>"btn btn-outline-light btn-main shadow-text" %>
+    </div> <!-- form-group// -->
+  </form>
+<% end %>

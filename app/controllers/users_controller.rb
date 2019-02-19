@@ -100,7 +100,7 @@ class UsersController < ApplicationController
   end
 
   def reset_entry
-    @user = User.find_by(uuid: params[:format])
+    @user = User.find_by(uuid:params[:format])
     if current_user and current_user.eql?@user
       @user.characters.all.each do |c|
         c.update(status: "none")
@@ -113,7 +113,7 @@ class UsersController < ApplicationController
   end
 
   def update_answers
-    @user = User.find_by(uuid: answers_update_params[:uuid])
+    @user = User.find_by(uuid:answers_update_params[:uuid])
     respond_to do |format|
       if current_user and @user.eql?current_user
         @user.answers.all.each do |a|
@@ -123,6 +123,31 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       else
         format.html { redirect_to user_path(@user.uuid),alert: 'Error: You are not allowed to change soemone elses answers' }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def update_house
+    @user = User.find_by(uuid:house_update_params[:uuid])
+    respond_to do |format|
+      binding.pry
+      if current_user and @user.eql?current_user
+        if @user and @user.authenticate(house_update_params[:password])
+          if house_update_params.eql?nil
+            format.html { redirect_to account_path(@user.uuid),alert: 'Error: You must select a house' }
+            format.json { render json: @user.errors, status: :unprocessable_entity }
+          else
+            @user.update_column(:house_id, house_update_params[:house_id])
+            format.html { redirect_to account_path(@user.uuid),alert: 'House Updated' }
+            format.json { render json: @user.errors, status: :unprocessable_entity }
+          end
+        else
+          format.html { redirect_to account_path(@user.uuid),alert: 'Error: Incorrect Password' }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
+        end
+      else
+        format.html { redirect_to account_path(@user.uuid),alert: 'Error: You are not allowed to change soemone elses house' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -156,7 +181,7 @@ class UsersController < ApplicationController
   end
 
   def update_username
-    @user = User.find_by(uuid: username_update_params[:uuid])
+    @user = User.find_by(uuid:username_update_params[:uuid])
     respond_to do |format|
       password = username_update_params[:password] and @user.eql? current_user
       if @user and @user.authenticate(password)
@@ -195,5 +220,9 @@ class UsersController < ApplicationController
 
     def username_update_params
       params.require(:user).permit(:uuid, :username, :password)
+    end
+
+    def house_update_params
+      params.require(:user).permit(:uuid, :house_id,:password)
     end
 end
