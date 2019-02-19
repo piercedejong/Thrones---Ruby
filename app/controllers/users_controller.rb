@@ -131,7 +131,6 @@ class UsersController < ApplicationController
   def update_house
     @user = User.find_by(uuid:house_update_params[:uuid])
     respond_to do |format|
-      binding.pry
       if current_user and @user.eql?current_user
         if @user and @user.authenticate(house_update_params[:password])
           if house_update_params.eql?nil
