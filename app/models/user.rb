@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
   before_create :create_uuid
+  belongs_to :house
   has_many :characters
   has_many :answers
   validates :email, presence: true, :uniqueness => { :case_sensitive => false }, format: { with: URI::MailTo::EMAIL_REGEXP }

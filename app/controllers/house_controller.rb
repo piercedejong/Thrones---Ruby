@@ -4,4 +4,5 @@ class HouseController < ApplicationController
 
   def show
   end
+
 end
