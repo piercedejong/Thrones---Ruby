@@ -28,9 +28,8 @@
         <td class="shadow-text"style="vertical-align:middle"><%= user.username %></td>
         <td class="shadow-text text-center"style="vertical-align:middle"><strong><%= user.points %></strong></td>
         <td class="text-center"><%= image_tag user.house.image, class:"image-house-sm" %></td>
-        <td class="user-column"style="vertical-align:middle"><%= link_to 'View Entry', user_path(user.uuid), :class=>"btn btn-outline-light btn-main shadow-text"%></td>
+        <td class="user-column"style="vertical-align:middle"><%= link_to 'View Entry', user_path(user.uuid), :class=>"btn btn-outline-light btn-main btn-character shadow-text"%></td>
       <% if current_user.role.eql? "admin" %>
-        <td class="user-column"><%= link_to 'Edit', edit_user_path(user.uuid),:class=>"btn btn-outline-light btn-character" %></td>
         <td class="user-column"><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' },:class=>"btn btn-outline-light btn-character" %></td>
       <%end%>
         </tr>
