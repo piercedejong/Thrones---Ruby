@@ -50,19 +50,21 @@
       <pre class="title sub-title text-center  shadow-text" style="margin:0px">Overall    Predictions</pre>
       <div>
         <% Death.order(alive: :desc).all.each do |d| %>
-        <div class="row content" style="margin-top:20px">
-          <div class="col-sm-4" style="display:flex">
-            <%= image_tag "characters/"+d.name+".jpg", :class=>"image-character-stats" %>
-            <div class="character-name" style="margin:auto"id="<%=d.name%>"><%=d.name%></div>
-          </div>
-          <div class="col-sm-7" style="display:flex">
-            <div class="progress character-name" style="font-size:1.5rem">
-              <div role="progressbar" class="progress-bar " style="display:inline-block;background-color:#52ad6a;width:<%=d.alive%>%"><span style="margin:auto"><i class="fas fa-heart"></i> <%=d.alive%>%</span></div>
-              <div role="progressbar" class="progress-bar" style="display:inline-block;background-color:#ad5252;width:<%=d.dead%>%"><span style="margin:auto"><i class="fas fa-skull-crossbones"></i> <%=d.dead%>%</span></div>
-              <div role="progressbar" class="progress-bar" style="display:inline-block;background-color:#5296ad;width:<%=d.wight%>%"><span style="margin:auto"><i class="fas fa-skull"></i> <%=d.wight%>%</span></div>
+        <% if !d.eql? Death.last %>
+          <div class="row content" style="margin-top:20px">
+            <div class="col-sm-4" style="display:flex">
+              <%= image_tag "characters/"+d.name+".jpg", :class=>"image-character-stats" %>
+              <div class="character-name" style="margin:auto"id="<%=d.name%>"><%=d.name%></div>
+            </div>
+            <div class="col-sm-7" style="display:flex">
+              <div class="progress character-name" style="font-size:1.5rem">
+                <div role="progressbar" class="progress-bar " style="display:inline-block;background-color:#52ad6a;width:<%=d.alive%>%"><span style="margin:auto"><i class="fas fa-heart"></i> <%=d.alive%>%</span></div>
+                <div role="progressbar" class="progress-bar" style="display:inline-block;background-color:#ad5252;width:<%=d.dead%>%"><span style="margin:auto"><i class="fas fa-skull-crossbones"></i> <%=d.dead%>%</span></div>
+                <div role="progressbar" class="progress-bar" style="display:inline-block;background-color:#5296ad;width:<%=d.wight%>%"><span style="margin:auto"><i class="fas fa-skull"></i> <%=d.wight%>%</span></div>
+              </div>
             </div>
           </div>
-        </div>
+        <%end%>
         <% end %>
       </div>
     </div>
