@@ -33,8 +33,9 @@
     <div class="col-sm-4"></div>
     <div class="col-sm-4">
       <% if current_user and current_user.house %>
-        <div class="sub-title text-center shadow-text"><%=current_user.house.name%></div>
-        <div class="text-center"><%= image_tag current_user.house.image, class:"image-house" %></div>
+        <div id="house" class="sub-title text-center shadow-text"><%=current_user.house.name%></div>
+        <div id="sigil" class="text-center"><%= image_tag current_user.house.image, class:"image-house" %></div>
+        <pre id="words" class="title words text-center shadow-text"><%=current_user.house.words%></pre>
       <%end %>
     </div>
   </div>
@@ -160,6 +161,9 @@ $(document).ready(function () {
    $(".date").css('color',"#f9f2de")
    $(".time-info").css('color',"#f9f2de")
  }
+ if(bg.includes("got0")){
+   $("#house").css("color","#262626").removeClass("shadow-text")
+   $("#words").css("color","#262626").removeClass("shadow-text")
+ }
 });
-// Set the date we're counting down to
 </script>
