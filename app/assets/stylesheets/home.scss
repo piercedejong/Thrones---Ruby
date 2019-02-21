@@ -151,11 +151,19 @@
     padding-left:0px !important;
     padding-right:5px !important;
   }
+
+  .sub-title{
+    font-size: 2rem
+  }
+
+  .words{
+    font-size: 1rem
+  }
 }
 
 @media only screen and (max-width:1440px){
   .position{
-    min-height: 25rem !important;
+    min-height: 20rem !important;
   }
   .objects{
     min-height: 10rem !important;
