@@ -129,7 +129,7 @@
 
 @media only screen and (max-width: 800px) {
   .character-name{
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .drink {
     font-size: 3rem
@@ -158,6 +158,20 @@
 
   .words{
     font-size: 1rem
+  }
+
+  #picks{
+    padding:0px
+  }
+
+  #table{
+    margin-left:0px;
+    margin-right:0px;
+  }
+
+  .image-character{
+    height: 5rem;
+    width: 5rem;
   }
 }
 
