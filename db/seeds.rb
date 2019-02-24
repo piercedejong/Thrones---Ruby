@@ -25,7 +25,7 @@ Question.create(
 
 Rule.create(
     [
-      {rid: 1,rule: "Predict if each character (38 total) will be alive or dead at the END of season 8. ONE point for each correct answer."},
+      {rid: 1,rule: "Predict if each character (41 total) will be alive or dead at the END of season 8. ONE point for each correct answer."},
       {rid: 2,rule: "If you predict the character will die, you have the option to predict if they become a Wight (Army of the Dead). Gain ONE extra point if you correctly predict if they become a Wight. Lose ONE point if you guess the character becomes a wight but does not become one."},
       {rid: 3,rule: "All characters that have been resurrected on the show are considered to be alive at the start of the season. E.g. Jon Snow, The Mountain, Beric Dondarrion."},
       {rid: 4,rule: "The Night King and Viserion are both considered alive at the start of season 8 and can only be alive or dead. They cannot be predicted to become a wight."},
