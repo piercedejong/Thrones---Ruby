@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Rule.all.each do |r| r.destroy end
+Rule.destroy_all
 Faq.destroy_all
-Drink.all.each do |d| d.destroy end
-Death.all.each do |d| d.destroy end
-Question.all.each do |q| q.destroy end
+Drink.destroy_all
+Death.destroy_all
+Question.destroy_all
 Character.all.each do |c| c.update(points: 0) end
 
 Question.create(
