@@ -27,16 +27,24 @@ Rule.create(
     [
       {rid: 1,rule: "Predict if each character (41 total) will be alive or dead at the END of season 8. ONE point for each correct answer."},
       {rid: 2,rule: "If you predict the character will die, you have the option to predict if they become a Wight (Army of the Dead). Gain ONE extra point if you correctly predict if they become a Wight. Lose ONE point if you guess the character becomes a wight but does not become one."},
-      {rid: 3,rule: "All characters that have been resurrected on the show are considered to be alive at the start of the season. E.g. Jon Snow, The Mountain, Beric Dondarrion."},
-      {rid: 4,rule: "The Night King and Viserion are both considered alive at the start of season 8 and can only be alive or dead. They cannot be predicted to become a wight."},
       {rid: 5,rule: "Correctly answer Bonus Questions for more points. (The answer no one does NOT have a double meaning. It cannot both mean Arya and literally no one at the same time.)"},
       {rid: 6,rule: "Points for dead and wight characters will be awarded as the season goes on. Alive characters will only be counted after the end of the season. Bonus Points will be awarded as they get answered"},
-      {rid: 7,rule: "The entry with the most points wins the entire pool. At 6:00pm MT / 7:00pm, CT on April 14th the form will close and you will NOT be allowed to change your entry. At this point you wil be allowed to view everyone elses predicitions."},
-      {rid: 8,rule: "Pool Entry Fee is $10 CAD / $7.50 USD. 60% to the winner, 25% to 2nd place, 15% to 3rd place. If you have not paid by 12:00pm MT / 1:00pm CT on April 14th, your form will be deleted."},
+      {rid: 8,rule: "The Pool Entry Fee is $10 CAD / $7.50 USD. 60% to the winner, 25% to 2nd place, 15% to 3rd place."},
       {rid: 9,rule: "Payment can be made in person with cash, e-transfer to pierce.dejong45@gmail.com, or venmo Pierce-deJong. Please add the email and username you used to the e-transfer/venmo."},
-      {rid: 10,rule: "If you have any questions or need clarification, contact Pierce at wwdeathpool@gmail.com. Please use the email you signed up when contacting Pierce."},
     ]
 )
+
+Faq.create{
+  [
+    {faq:1, question:"When is the payment due?", answer:"Payement is due by 12:00pm MT / 1:00pm CT on April 14th. If you have not payed by then, your predictions will be deleted."},
+    {faq:2, question:"How long do I have to make my predictions?", answer:"You have until 1 hour before season 8 starts (6:00pm MT / 7:00pm CT, April 14th). At this point your preicitons will be submitted and you will not be allowed ot change them. "},
+    {faq:3,question:"How do character that have been revived work in this pool?", answer:"All characters that have been resurrected on the show are considered to be alive at the start of the season. E.g. Jon Snow, The Mountain, Beric Dondarrion."},
+    {faq:4,question:"How do I predict the Night King and Viserion in the pool?", answer:"The Night King and Viserion are both considered alive at the start of season 8 and can only be predicted to be alive or dead at the end of the season. They cannot be predicted to become a wight."},
+    {faq:5, question:"What happend if someone ties for first, second or third palce?", answer:"If two people tie for first place, the money from second place will be added to the first place pool and will split between the two people on first place. The third palce pool will then be given to the person in second place. I.e. the two people in first place will split 85% of the pot and the person in second will get the third place pot. If there is a three way or more tie for first place, the entire pool is split between the victors. If there is a tie for sceond place, the third place prize is added to the second place prize and us split between all who are in second place. If there is a third place tie, the thrid place pool is simply spliy between all of the persons in third place"},
+    {faq:6, question:"What determines if a character is alive, dead or a  at the end of the season?", answer: "If a character is not seen killed on screen or explicitly stated as dead by another character (Stannis Baratheon), they are considered to be alive. If the character is seen to be killed on screen or said to have died off screen by another character, they are considered to to be dead. If a character has died and then risen as a wight, they are considered to be a wight for the remainder of the season no matter what happens to the character. (If a character is slain as a wight they are still considered to be a wight and not as dead)"},
+    {faq:7, question:"",answer:"If you have any other questions or need clarification, contact Pierce at wwdeathpool@gmail.com. Please use the email you signed up when contacting Pierce."},
+  ]
+ }
 
 Drink.create(
   [
