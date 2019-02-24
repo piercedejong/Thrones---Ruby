@@ -1,0 +1,2 @@
+class Fag < ApplicationRecord
+end
