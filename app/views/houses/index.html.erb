@@ -3,15 +3,15 @@
 <div class="container">
   <% House.all.each do |h| %>
   <div class="row">
-    <div class="col-sm-10 mt-4">
+    <div class="col-sm-10 mt-4 mb-4">
       <div class="d-flex ">
         <div id="sigil" class="text-center"><%= image_tag h.image, class:"image-house" %></div>
-        <div id="house-<%=h.hid%>">
+        <div id="house-<%=h.hid%>" class="ml-4">
           <div class="d-flex">
-            <pre style="margin:auto; margin-left:2rem"class="house-title shadow-text"><%=h.name%></pre>
+            <pre style="margin:auto; margin-left:0rem"class="house-title shadow-text"><%=h.name%></pre>
             <pre style="margin:auto; margin-left:0rem"class="sub-title shadow-text"> - <%=h.points%> points</pre>
           </div>
-          <pre id="words" class="ml-4 title words shadow-text"><%=h.words%></pre>
+          <pre id="words" class="title words shadow-text"><%=h.words%></pre>
         </div>
       </div>
     </div>
