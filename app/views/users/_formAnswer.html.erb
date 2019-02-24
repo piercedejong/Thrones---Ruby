@@ -8,9 +8,9 @@
           <span class="input-group-text"> <i class="<%=q.glyph%>"></i></span>
         </div>
         <% if q.qid == 1 %>
-          <%= select_tag "user[answer#{q.qid}]", content_tag(:option,'Select a Answer...',:value=>"")+options_for_select(["Yes","No"], @user.answers.find_by(rid: q.qid).text), style: 'font-size:1.5rem', id: '' %>
+          <%= select_tag "user[answer#{q.qid}]", content_tag(:option,'Select an Answer...',:value=>"")+options_for_select(["Yes","No"], @user.answers.find_by(rid: q.qid).text), style: 'font-size:1.5rem', id: '' %>
         <% elsif q.qid ==2 %>
-          <%= select_tag "user[answer#{q.qid}]", content_tag(:option,'Select a Answer...',:value=>"")+options_for_select(["Yes! WHAT IS HYPE MAY NEVER DIE","No, I have no hype"], @user.answers.find_by(rid: q.qid).text), style: 'font-size:1.5rem', id: '' %>
+          <%= select_tag "user[answer#{q.qid}]", content_tag(:option,'Select an Answer...',:value=>"")+options_for_select(["Yes! WHAT IS HYPE MAY NEVER DIE","No, I have no hype"], @user.answers.find_by(rid: q.qid).text), style: 'font-size:1.5rem', id: '' %>
         <% else %>
           <%= select_tag "user[answer#{q.qid}]", content_tag(:option,'Select a Character...',:value=>"")+options_from_collection_for_select(Death.all.order(created_at: :asc), "name", "name", selected=@user.answers.find_by(rid: q.qid).text), style: 'font-size:1.5rem', id: '' %>
         <% end %>          <%# <%= form.text_field :"answer#{q.qid}", value: @user.answers.find_by(rid: q.qid).text, :class=>"answer form-control" %>
