@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get '/user/paid', to: 'users#paid'
   get 'leaderboards', to: 'users#index', as:'leaderboards'
 
+  get 'houses', to: 'houses#index'
+
   post 'update_password', to: 'users#update_password'
   post 'update_answers', to: 'users#update_answers'
   post 'update_username', to: 'users#update_username'
