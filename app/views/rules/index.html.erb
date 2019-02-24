@@ -1,13 +1,24 @@
 <% content_for :title, "Death Pool - Rules"%>
 <div class="container">
-  <pre class="title text-center shadow-text">Rules</pre>
   <div class="row" style="margin-bottom:5rem">
     <div class="col-sm-2"></div>
-    <div class="col-sm-8">
+    <div class="col-sm-4">
+      <pre class="title text-center shadow-text">Rules</pre>
       <div id="rules" class="">
         <ul class="list-group list-group-flush">
           <% Rule.all.each do |r| %>
             <li id="rule<%=r.rid%>"class="list-group-item rule"><%=r.rid%>. <%=r.rule%></li >
+          <%end%>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-4">
+        <pre class="title text-center shadow-text">FAQs</pre>
+      <div id="rules" class="">
+        <ul class="list-group list-group-flush">
+          <% Faq.all.each do |f| %>
+            <li id="rule<%=f.fid%>"class="list-group-item rule"><%=f.fid%>. <strong><%=f.question%></strong></li>
+            <li id="rule<%=f.fid%>"class="list-group-item rule"><%=f.answer%></li>
           <%end%>
         </ul>
       </div>
