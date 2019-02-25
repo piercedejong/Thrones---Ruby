@@ -1,8 +1,8 @@
 <% content_for :title, "Death Pool - Rules"%>
 <div class="container">
   <div class="row" style="margin-bottom:5rem">
-    <div class="col-sm-2"></div>
-    <div class="col-sm-4">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-5 rule_container">
       <pre class="title text-center shadow-text">Rules</pre>
       <div id="rules" class="">
         <ul class="list-group list-group-flush">
@@ -12,19 +12,39 @@
         </ul>
       </div>
     </div>
-    <div class="col-sm-4">
-        <pre class="title text-center shadow-text">FAQs</pre>
-      <div id="rules" class="">
-        <ul class="list-group list-group-flush">
-          <% Faq.all.each do |f| %>
-            <li id="rule<%=f.fid%>"class="list-group-item rule"><%=f.fid%>. <strong><%=f.question%></strong></li>
-            <li id="rule<%=f.fid%>"class="list-group-item rule"><%=f.answer%></li>
-          <%end%>
-        </ul>
+    <div class="col-sm-5 faq_container">
+      <pre class="title text-center shadow-text">FAQs</pre>
+      <div class="tab-content" id="faq-tab-content">
+        <div class="tab-pane show active" id="tab1" role="tabpanel" aria-labelledby="tab1">
+          <div class="accordion" id="accordion-tab-1">
+            <% Faq.all.each do |f| %>
+            <div class="faq-border">
+              <div class="card faq-card">
+                <div class="card-header faq-card-header" id="accordion-tab-1-heading-<%=f.fid%>">
+                  <button class="btn btn-faq btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-1-content-<%=f.fid%>" aria-expanded="false" aria-controls="accordion-tab-1-content-<%=f.fid%>"><%=f.fid%>. <strong><%=f.question%> </strong> <span><i class="fas fa-arrow-down"> </i></span></button>
+                </div>
+                <div class="collapse" id="accordion-tab-1-content-<%=f.fid%>" aria-labelledby="accordion-tab-1-heading-<%=f.fid%>" data-parent="#accordion-tab-1">
+                  <div class="card-body faq-card-body">
+                    <p style="color:#262626"><%=f.answer%></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <%end%>
+            </div>
+          </div>
       </div>
     </div>
-    <div class="col-sm-2">
+    <div class="col-sm-1">
     </div>
 </div>
 </div>
 <%= link_to 'Home', root_url, :class=>"topalignedleft btn btn-outline-light btn-back shadow-text" %>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+    </div>
+  </div>
+</div>

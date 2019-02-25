@@ -54,6 +54,25 @@
   background-color:#0080ff
 }
 
+.btn-faq {
+    display: block;
+    width: 100%;
+    color: #262626;
+    text-align: left;
+    white-space: normal;
+    font-size: 1.5rem;
+    padding:0;
+    margin:0;
+    border:0;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:hover:active {
+        text-decoration: none;
+    }
+}
+
 @media only screen and (max-width: 800px) {
   .btn-back{
     font-size: 2rem
