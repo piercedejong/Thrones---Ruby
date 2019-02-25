@@ -12,6 +12,7 @@
             <div class="sub-title shadow-text"> - <%=h.points%> points</div>
           </div>
           <pre id="words" class="pt-0 title words shadow-text"><%=h.words%></pre>
+          <%= link_to 'House Predictions', house_path(h.name), :class=>"btn btn-outline-warning"%>
           <div id="members-<%h.hid%>">
             <% h.users.all.each do |u| %>
             <li class="sub-title shadow-text"><%=u.username%></li>
