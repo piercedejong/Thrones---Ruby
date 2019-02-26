@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     if current_user and (current_user.uuid.eql?params[:id] or current_user.role.eql? "admin")
       @user = User.find_by(uuid: params[:uuid])
     elsif (current_user)
-      redirect_to leaderboards_path
+      redirect_to users_path
     else
       redirect_to root_path
     end

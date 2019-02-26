@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :answers
   resources :sessions, only: [:new, :create, :destroy]
-  get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
@@ -11,14 +10,17 @@ Rails.application.routes.draw do
   post '/update_username', to: 'users#update_username'
   post '/update_house', to: 'users#update_house'
 
+  post '/leaderboards', to: 'users#create'
+
   get '/reset_entry', to: 'users#reset_entry'
   get '/user/character_status', to: 'users#character_status'
   get '/user/walker', to: 'users#walker'
   get '/user/paid', to: 'users#paid'
 
+  get 'signup', to: 'users#new', as: 'signup'
   get '/account/:uuid', to: 'users#edit', as: 'edit_user'
   get '/predictions/:uuid', to: 'users#show', as: 'user'
-  get '/leaderboards', to: 'users#index', as:"users_test"
+  get '/leaderboards', to: 'users#index', as: 'users'
   get '/spoilerfree', to: 'home#show', as: 'spoilerfree'
   get '/drinking', to: 'drinks#index', as: 'drinks'
   get '/rules', to: 'rules#index', as: 'rules'
