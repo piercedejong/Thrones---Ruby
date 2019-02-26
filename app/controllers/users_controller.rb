@@ -184,8 +184,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       password = username_update_params[:password] and @user.eql? current_user
       if @user and @user.authenticate(password)
-        @user.update_column(:username, username_update_params[:username])
-        if @user.save
+        if @user.update_column(:username, username_update_params[:username])
           format.html { redirect_to account_path(@user.uuid), alert: 'Username Updated' }
         else
           format.html { redirect_to account_path(@user.uuid), alert: 'Error: Username alreay taken or is not long enough' }
