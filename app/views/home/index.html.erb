@@ -46,22 +46,22 @@
       <div class="sub-title text-center shadow-text">Current Leaders</div>
       <div class="row align-items-center" style="">
         <div class="col-sm-4 text-center shadow-text">
-          <div style="font-size:3rem">1st</div>
-          <div style="font-size:2rem"><%=first_place.username%></div>
-          <div style="font-size:1rem"><%=first_place.points%> points</div>
+          <h1>1st</h1>
+          <h2><%=first_place.username%></h2>
+          <h4><%=first_place.points%> points</h4>
         </div>
         <div class="col-sm-4 text-center shadow-text">
           <%if second_place%>
-          <div style="font-size:3rem">2nd</div>
-          <div style="font-size:2rem"><%=second_place.username%></div>
-          <div style="font-size:1rem"><%=second_place.points%> points</div>
+          <h1>2nd</h1>
+          <h2><%=second_place.username%></h2>
+          <h4><%=second_place.points%> points</h4>
           <%end%>
         </div>
         <div class="col-sm-4 text-center shadow-text">
           <%if third_place%>
-          <div style="font-size:3rem">3rd</div>
-          <div style="font-size:2rem"><%=third_place.username%></div>
-          <div style="font-size:1rem"><%=third_place.points%> points</div>
+          <h1>3rd</h1>
+          <h2><%=third_place.username%></h2>
+          <h4><%=third_place.points%> points</h4>
           <%end%>
         </div>
       </div>
