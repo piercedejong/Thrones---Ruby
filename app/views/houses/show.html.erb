@@ -1,1 +1,4 @@
-<h1><%=@house.name%></h1>
+<%= link_to 'Back', houses_path, :class=>"topalignedleft btn btn-outline-light btn-back shadow-text" %>
+<div class="title text-center shadow-text"><%=@house.name%></div>
+<pre id="words" class="title words text-center shadow-text"><%=@house.words%></pre>
+<div id="sigil" class="text-center"><%= image_tag @house.image, class:"image-house" %></div>

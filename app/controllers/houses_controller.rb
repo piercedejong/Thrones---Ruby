@@ -3,7 +3,6 @@ class HousesController < ApplicationController
   end
 
   def show
-    binding.pry
     @house = House.find_by(name: params[:name])
   end
 
