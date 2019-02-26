@@ -6,11 +6,6 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
-
-
-  get 'houses', to: 'houses#index'
-  get '/house/:name', to: 'houses#show', as: 'house'
-
   post '/update_password', to: 'users#update_password'
   post '/update_answers', to: 'users#update_answers'
   post '/update_username', to: 'users#update_username'
@@ -22,16 +17,15 @@ Rails.application.routes.draw do
   get '/user/paid', to: 'users#paid'
 
   get '/account/:uuid', to: 'users#edit', as: 'edit_user'
-  get '/prediction/:uuid', to: 'users#show', as: 'user'
-  get '/leaderboards', to: 'users#index', as:"users"
+  get '/predictions/:uuid', to: 'users#show', as: 'user'
+  get '/leaderboards', to: 'users#index', as:"users_test"
+  get '/spoilerfree', to: 'home#show', as: 'spoilerfree'
+  get '/drinking', to: 'drinks#index', as: 'drinks'
+  get '/rules', to: 'rules#index', as: 'rules'
+  get '/statistics', to: 'characters#index', as: 'characters'
+  get '/houses', to: 'houses#index'
+  get '/house/:name', to: 'houses#show', as: 'house'
 
-  get 'spoilerfree', to: 'home#show', as: 'spoilerfree'
-
-  get 'drink', to: 'drinks#index', as: 'drinks'
-
-  get 'rules', to: 'rules#index', as: 'rules'
-
-  get 'statistics', to: 'characters#index', as: 'characters'
   post 'alive', to: 'characters#alive'
   get 'dead', to: 'characters#dead'
   get 'wight', to: 'characters#wight'

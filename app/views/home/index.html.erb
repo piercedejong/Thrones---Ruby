@@ -77,39 +77,39 @@
       <div style="font-size:2rem">Rules</div>
       <div style="font-size:1.25rem">Read the rules and FAQ</div>
       <div style="font-size:1.25rem;color:transparent;text-shadow:none">.</div>
-      <%= link_to 'View the Rules', rules_path, :class=>"btn btn-outline-light btn-main color", :style=>"margin:auto;margin-top:1rem"%>
+      <%= link_to 'View the Rules', rules_path, :class=>"btn btn-outline-light btn-main btn-block", :style=>"margin:auto;margin-top:1rem"%>
     </div>
     <div class="col-sm-2 text-center shadow-text">
       <i style="font-size:5rem;" class="far fa-chart-bar"></i>
       <div style="font-size:2rem">Statistics</div>
       <div style="font-size:1.25rem">The average prediction of each character</div>
-      <%= link_to 'Statistics', characters_path, :class=>"btn btn-outline-light btn-main color", :style=>"margin:auto;margin-top:1rem"%>
+      <%= link_to 'Statistics', characters_path, :class=>"btn btn-outline-light btn-main btn-block", :style=>"margin:auto;margin-top:1rem"%>
     </div>
     <div class="col-sm-2 text-center shadow-text">
       <i style="font-size:5rem;" class="fas fa-home"></i>
       <div style="font-size:2rem">Houses</div>
       <div style="font-size:1.25em">See the house standings and house members</div>
-      <%= link_to 'Houses', houses_path, :class=>"btn btn-outline-light btn-main color", :style=>"margin:auto;margin-top:1rem"%>
+      <%= link_to 'Houses', houses_path, :class=>"btn btn-outline-light btn-main btn-block", :style=>"margin:auto;margin-top:1rem"%>
     </div>
     <div class="col-sm-2 text-center shadow-text">
       <i style="font-size:5rem"class="fas fa-poll"></i>
       <div style="font-size:2rem">Leaderboards</div>
       <div style="font-size:1.25rem">Check out everyones current poistion!</div>
       <!-- <div style="font-size:1.25rem"><strong>SPOILERS AHEAD</strong></div> -->
-      <%= link_to 'Leaderboards', users_path, :class=>"btn btn-outline-light btn-main color", :style=>"margin:auto;margin-top:1rem"%>
+      <%= link_to 'Leaderboards', users_test_path, :class=>"btn btn-outline-light btn-main btn-block", :style=>"margin:auto;margin-top:1rem"%>
       <!--<%= link_to 'Spoiler-Free Leaderboards', spoilerfree_path, :class=>"btn btn-outline-dark color", :style=>"margin:auto;margin-top:1rem"%> -->
     </div>
     <div class="col-sm-2 text-center shadow-text">
       <i style="font-size:5rem"class="fas fa-wine-glass-alt"></i>
       <div style="font-size:2rem">Drinking Game</div>
       <div style="font-size:1.25rem">The rules for the Game of Thrones drinking game.</div>
-      <%= link_to 'Drinking Game', drinks_path, :class=>"btn btn-outline-light btn-main color", :style=>"margin:auto;margin-top:1rem"%>
+      <%= link_to 'Drinking Game', drinks_path, :class=>"btn btn-outline-light btn-main btn-block", :style=>"margin:auto;margin-top:1rem"%>
     </div>
     <div class="col-sm-2 text-center shadow-text">
       <i style="font-size:5rem"class="fas fa-cogs"></i>
       <div style="font-size:2rem">Account Settings</div>
       <div style="font-size:1.25rem">View, update, and edit your account</div>
-      <%= link_to 'Account', edit_user_path(current_user.uuid), :class=>"btn btn-outline-light btn-main color", :style=>"margin:auto;margin-top:1rem"%>
+      <%= link_to 'Account', edit_user_path(current_user.uuid), :class=>"btn btn-outline-light btn-main btn-block", :style=>"margin:auto;margin-top:1rem"%>
     </div>
   </div>
 </div>
