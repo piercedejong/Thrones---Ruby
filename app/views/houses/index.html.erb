@@ -1,10 +1,10 @@
 <%= link_to 'Home', root_url, :class=>"topalignedleft btn btn-outline-light btn-back shadow-text" %>
 <pre class="title text-center shadow-text">House   Leaderboards</pre>
-<div class="container">
+<div class="container mb-5">
   <% House.all.each do |h| %>
-  <div class="row">
+  <div class="row bonus-card mb-2 mt-2">
     <div class="col-sm-10 mt-4 mb-4">
-      <div class="d-flex ">
+      <div class="d-flex">
         <div id="sigil" class="text-center"><%= image_tag h.image, class:"image-house" %></div>
         <div id="house-<%=h.hid%>" class="ml-4">
           <div class="d-flex">
@@ -17,7 +17,7 @@
           </div>
           <div id="members-<%h.hid%>">
             <% h.users.all.each do |u| %>
-            <li class="sub-title shadow-text"><%=u.username%></li>
+            <li class="h3 shadow-text"><%=u.username%></li>
             <% end%>
           </div>
         </div>
