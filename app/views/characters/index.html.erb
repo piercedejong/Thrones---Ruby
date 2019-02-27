@@ -59,9 +59,9 @@
             </div>
             <div class="col-sm-7 d-flex">
               <div class="progress character-name" style="font-size:1.5rem">
-                <div role="progressbar" class="progress-bar " style="display:inline-block;background-color:#52ad6a;width:<%=d.alive%>%"><div style="margin-top:0.75rem"><i class="fas fa-heart"></i><%= d.alive.to_s+"%" if d.alive >=10.00 %></div></div>
-                <div role="progressbar" class="progress-bar" style="display:inline-block;background-color:#ad5252;width:<%=d.dead%>%"><div style="margin-top:0.75rem"><i class="fas fa-skull-crossbones"></i><%= d.dead.to_s+"%" if d.dead >=10.00 %></div></div>
-                <div role="progressbar" class="progress-bar" style="display:inline-block;background-color:#5296ad;width:<%=d.wight%>%"><div style="margin-top:0.75rem"><i class="fas fa-skull"></i><%= d.wight.to_s+"%" if d.wight >=10.00 %></div></div>
+                <div role="progressbar" class="progress-bar " style="display:inline-block;background-color:#52ad6a;width:<%=d.alive%>%"><div style="margin-top:0.75rem"><i class="fas fa-heart"></i> <%= d.alive.to_s+"%" if d.alive >=10.00 %></div></div>
+                <div role="progressbar" class="progress-bar" style="display:inline-block;background-color:#ad5252;width:<%=d.dead%>%"><div style="margin-top:0.75rem"><i class="fas fa-skull-crossbones"></i> <%= d.dead.to_s+"%" if d.dead >=10.00 %></div></div>
+                <div role="progressbar" class="progress-bar" style="display:inline-block;background-color:#5296ad;width:<%=d.wight%>%"><div style="margin-top:0.75rem"><i class="fas fa-skull"></i> <%= d.wight.to_s+"%" if d.wight >=10.00 %></div></div>
               </div>
             </div>
             <div class="col-sm-1"></div>
