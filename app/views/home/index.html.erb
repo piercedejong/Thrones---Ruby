@@ -41,9 +41,12 @@
     </div>
   </div>
 <% if current_user %>
-  <div class="row">
+  <div class="row middle-bar align-items-center">
     <div class="col-sm-4">
-      <div class="sub-title text-center shadow-text">Current Leaders</div>
+      <div class="sub-title text-center shadow-text">Current Leader</div>
+      <h1 class="text-center shadow-text"><%=first_place.username%></h1>
+      <h3 class="text-center shadow-text"><%=first_place.points%> points</h3>
+      <!-- <div class="sub-title text-center shadow-text">Current Leaders</div>
       <div class="row align-items-center" style="">
         <div class="col-sm-4 text-center shadow-text">
           <h1>1st</h1>
@@ -64,24 +67,24 @@
           <h4><%=third_place.points%> points</h4>
           <%end%>
         </div>
-      </div>
+      </div> -->
     </div>
-    <div class="col-sm-4 text-center shadow-text">
+    <div class="col-sm-4 order-first order-sm-2 text-center">
       <div class="card prediction-card">
         <i style="font-size:5rem;" class="fab fa-wpforms"></i>
-        <div style="font-size:2rem">Predictions</div>
-        <div style="font-size:1.25em">Come make your predictions and answer the bonus questions</div>
-        <%= link_to 'Make Your Predictions', user_path(current_user.uuid), :class=>"btn btn-outline-warning btn-block btn-prediction", :style=>"margin:auto;margin-top:1rem"%>
+        <h2 class="shadow-text">Predictions</h2>
+        <h5 class="shadow-text">Come make your predictions and answer the bonus questions<h5>
+        <%= link_to 'Make Your Predictions', user_path(current_user.uuid), :class=>"btn btn-warning btn-block btn-prediction", :style=>"margin:auto;margin-top:1rem"%>
       </div>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-4 order-first order-sm-2">
       <div class="sub-title text-center shadow-text">House Questions</div>
       <h4 class="shadow-text text-center">Will be available on April 7th</h4>
     </div>
   </div>
-  <div class="row align-items-end">
+  <div class="row align-items-end bottom-bar">
     <div class="col-sm-2 text-center shadow-text">
-      <i style="font-size:5rem;backgorund-color:red" class="fas fa-gavel"></i>
+      <i style="font-size:5rem" class="fas fa-gavel"></i>
       <div style="font-size:2rem">Rules</div>
       <div style="font-size:1.25rem">Read the rules and FAQ</div>
       <div style="font-size:1.25rem;color:transparent;text-shadow:none">.</div>

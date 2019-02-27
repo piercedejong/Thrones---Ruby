@@ -17,6 +17,11 @@
   font-size: 1.5rem
 }
 
+.btn-prediction:hover{
+  background-color: white;
+  border-color:white
+}
+
 .btn-main:hover, .btn-house:hover,.btn-back:hover, .btn-log-out:hover, .btn-prediction:hover{
   text-shadow: none;
 }

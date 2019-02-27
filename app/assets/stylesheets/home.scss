@@ -177,11 +177,12 @@ padding-bottom: 2.5rem
   }
 }
 
-@media only screen and (max-width:1440px){
-  .position{
-    min-height: 20rem !important;
+@media only screen and (min-width:1550px){
+  .bottom-bar{
+    min-height: 30rem !important;
   }
-  .objects{
-    min-height: 10rem !important;
+
+  .middle-bar{
+    min-height: 30rem !important;
   }
 }
