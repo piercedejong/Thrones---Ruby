@@ -47,8 +47,11 @@
     <div class="col-sm-1">
     </div>
     <div class="col-sm-10 shadow-text">
-      <pre class="title sub-title text-center  shadow-text" style="margin:0px">Overall    Predictions</pre>
-      <div>
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-11"><pre class="title sub-title  shadow-text">All   Character   Predictions</pre></div>
+      </div>
+      <div id="stats">
         <% Death.order(alive: :desc).all.each do |d| %>
         <% if !d.eql? Death.last %>
           <div class="row content" style="margin-top:20px">
