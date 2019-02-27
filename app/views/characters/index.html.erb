@@ -1,9 +1,9 @@
 <% content_for :title, "Death Pool - Stats"%>
 <pre class="title text-center shadow-text " style="margin:0px">Character   Statistics</pre>
 <div class="container">
-  <div class="row content ">
+  <div class="row content bonus-card">
     <div class="col-sm-4">
-      <pre class="title sub-title text-center  shadow-text" style="margin:0px">Most Predicted as Alive</pre>
+      <div class="title sub-title text-center  shadow-text" style="margin:0px">Most Predicted to Live</div>
       <table class="table">
         <tbody class="unit-table">
           <% Death.order(alive: :desc).first(5).each do |d| %>
@@ -16,7 +16,7 @@
       </table>
     </div>
     <div class="col-sm-4">
-      <pre class="title sub-title text-center  shadow-text" style="margin:0px">Most Predicted as Dead</pre>
+      <div class="title sub-title text-center  shadow-text" style="margin:0px">Most Predicted to Die</div>
       <table class="table">
         <tbody class="unit-table">
           <% Death.order(dead: :desc).first(5).each do |d| %>
@@ -29,7 +29,7 @@
       </table>
     </div>
     <div class="col-sm-4">
-      <pre class="title sub-title text-center  shadow-text" style="margin:0px">Most predicted as Wight</pre>
+      <div class="title sub-title text-center  shadow-text" style="margin:0px">Most predicted to be a Wight</div>
       <table class="table">
         <tbody class="unit-table">
           <% Death.order(wight: :desc).first(5).each do |d| %>
