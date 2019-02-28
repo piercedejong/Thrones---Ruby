@@ -2,12 +2,12 @@
 <div class="container">
   <div class="row" style="margin-bottom:5rem">
     <div class="col-sm-1"></div>
-    <div class="col-sm-5 rule_container">
+    <div class="col-sm-5">
       <pre class="title text-center shadow-text">Rules</pre>
-      <div id="rules" class="">
+      <div id="rules" class="rule-card">
         <ul class="list-group list-group-flush">
           <% Rule.all.each do |r| %>
-            <li id="rule<%=r.rid%>"class="list-group-item rule"><strong><%=r.rid%>. <%=r.rule%></strong></li >
+            <p id="rule<%=r.rid%>"class="h4 shadow-text mt-3 mb-3"><strong><%=r.rid%>. <%=r.rule%></strong></p >
           <%end%>
         </ul>
       </div>
