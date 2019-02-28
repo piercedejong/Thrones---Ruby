@@ -109,7 +109,7 @@ class UsersController < ApplicationController
         a.update(text: "")
       end
     end
-    redirect_to account_path(@user.uuid), alert: 'Predictions Reset'
+    redirect_to edit_user_path(@user.uuid), alert: 'Predictions Reset'
   end
 
   def update_answers
@@ -134,19 +134,19 @@ class UsersController < ApplicationController
       if current_user and @user.eql?current_user
         if @user and @user.authenticate(house_update_params[:password])
           if house_update_params.eql?nil
-            format.html { redirect_to account_path(@user.uuid),alert: 'Error: You must select a house' }
+            format.html { redirect_to edit_user_path(@user.uuid),alert: 'Error: You must select a house' }
             format.json { render json: @user.errors, status: :unprocessable_entity }
           else
             @user.update_column(:house_id, house_update_params[:house_id])
-            format.html { redirect_to account_path(@user.uuid),alert: 'House Updated' }
+            format.html { redirect_to edit_user_path(@user.uuid),alert: 'House Updated' }
             format.json { render json: @user.errors, status: :unprocessable_entity }
           end
         else
-          format.html { redirect_to account_path(@user.uuid),alert: 'Error: Incorrect Password' }
+          format.html { redirect_to edit_user_path(@user.uuid),alert: 'Error: Incorrect Password' }
           format.json { render json: @user.errors, status: :unprocessable_entity }
         end
       else
-        format.html { redirect_to account_path(@user.uuid),alert: 'Error: You are not allowed to change soemone elses house' }
+        format.html { redirect_to edit_user_path(@user.uuid),alert: 'Error: You are not allowed to change soemone elses house' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -159,21 +159,21 @@ class UsersController < ApplicationController
         @user.password = password_update_params[:password_new]
         @user.password_confirmation = password_update_params[:password_confirmation]
         if @user.save
-          format.html { redirect_to account_path(@user.uuid), alert: 'Password Updated' }
+          format.html { redirect_to edit_user_path(@user.uuid), alert: 'Password Updated' }
         else
           if @user.password == nil
-            format.html { redirect_to account_path(@user.uuid) ,alert: 'Error: New Password can not be blank' }
+            format.html { redirect_to edit_user_path(@user.uuid) ,alert: 'Error: New Password can not be blank' }
             format.json { render json: @user.errors, status: :unprocessable_entity }
           elsif !@user.password.eql? @user.password_confirmation
-            format.html { redirect_to account_path(@user.uuid) ,alert: 'Error: Password Confirmation does not match New Password' }
+            format.html { redirect_to edit_user_path(@user.uuid) ,alert: 'Error: Password Confirmation does not match New Password' }
             format.json { render json: @user.errors, status: :unprocessable_entity }
           else
-            format.html { redirect_to account_path(@user.uuid) ,alert: 'Error: New Password is too short' }
+            format.html { redirect_to edit_user_path(@user.uuid) ,alert: 'Error: New Password is too short' }
             format.json { render json: @user.errors, status: :unprocessable_entity }
           end
         end
       else
-        format.html { redirect_to account_path(@user.uuid) ,alert: 'Error: Incorrect Current Password' }
+        format.html { redirect_to edit_user_path(@user.uuid) ,alert: 'Error: Incorrect Current Password' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -185,13 +185,13 @@ class UsersController < ApplicationController
       password = username_update_params[:password] and @user.eql? current_user
       if @user and @user.authenticate(password)
         if @user.update_column(:username, username_update_params[:username])
-          format.html { redirect_to account_path(@user.uuid), alert: 'Username Updated' }
+          format.html { redirect_to edit_user_path(@user.uuid), alert: 'Username Updated' }
         else
-          format.html { redirect_to account_path(@user.uuid), alert: 'Error: Username alreay taken or is not long enough' }
+          format.html { redirect_to edit_user_path(@user.uuid), alert: 'Error: Username alreay taken or is not long enough' }
           format.json { render json: @user.errors, status: :unprocessable_entity }
         end
       else
-        format.html { redirect_to account_path(@user.uuid),alert: 'Error: Incorrect Password'}
+        format.html { redirect_to edit_user_path(@user.uuid),alert: 'Error: Incorrect Password'}
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
