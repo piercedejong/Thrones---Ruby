@@ -1,41 +1,54 @@
 <% content_for :title, "Death Pool - Leaderboards"%>
-<div id="title" class="title text-center shadow-text ">Leaderboards</div>
-<div class="sub-title text-center shadow-text">Total Players: <%=User.count%></div>
-<table style="color:white;margin:0px;width:auto;margin-left:auto;margin-right:auto" class="table table-condensed ">
-  <thead>
-    <tr class="shadow-text table-top text-center">
-    <% if current_user.role.eql? "admin" %>
-      <th>Paid</th>
-    <%end%>
-      <th>User</th>
-      <th>Points</th>
-      <th>House</th>
-      <th>Prediction</th>
-    </tr>
-  </thead>
-  <tbody class="user-list">
-    <% @users.each do |user| %>
-      <tr class="table-row" style="font-size:2rem">
-      <% if current_user.role.eql? "admin" %>
-        <td class=""><a uid="<%=user.id%>"onclick="paid(this)" style="vertical-align:middle" class="text-center">
 
-          <%if user.paid%>
-            <span id="<%=user.id%>" class="glyphicon glyphicon-ok shadow-text"></span>
-          <%else%>
-            <span id="<%=user.id%>" class="glyphicon glyphicon-remove shadow-text"></span>
+<div class="container">
+  <div class="row">
+    <div id="title" class="title text-center shadow-text w-100 ">Leaderboards</div>
+  </div>
+  <div class="row">
+    <div class="sub-title text-center shadow-text w-100">Total Players: <%=User.count%></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <table style="width:auto;margin:auto" class="table table-condensed bonus-card">
+        <thead>
+          <tr class="user-table-top shadow-text table-top text-center">
+          <% if current_user.role.eql? "admin" %>
+            <th>Paid</th>
           <%end%>
-        </a></td>
-      <% end %>
-        <td class="shadow-text"style="vertical-align:middle"><%= user.username %></td>
-        <td class="shadow-text text-center"style="vertical-align:middle"><strong><%= user.points %></strong></td>
-        <td class="text-center"><%= image_tag user.house.image, class:"image-house-sm" %></td>
-        <td class="user-column"style="vertical-align:middle"><%= link_to 'View Entry', user_path(user.uuid), :class=>"btn btn-outline-light btn-main btn-block shadow-text"%></td>
-      <% if current_user.role.eql? "admin" %>
-        <td class="user-column"><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' },:class=>"btn btn-outline-light btn-character" %></td>
-      <%end%>
-        </tr>
-    <% end %>
-  </tbody>
-</table>
+            <th>User</th>
+            <th>Points</th>
+            <th>House</th>
+            <th>Prediction</th>
+          </tr>
+        </thead>
+        <tbody class="user-list">
+          <% @users.each do |user| %>
+            <tr class="table-row" style="font-size:2rem">
+            <% if current_user.role.eql? "admin" %>
+              <td class=""><a uid="<%=user.id%>"onclick="paid(this)" style="vertical-align:middle" class="text-center">
+
+                <%if user.paid%>
+                  <span id="<%=user.id%>" class="glyphicon glyphicon-ok shadow-text"></span>
+                <%else%>
+                  <span id="<%=user.id%>" class="glyphicon glyphicon-remove shadow-text"></span>
+                <%end%>
+              </a></td>
+            <% end %>
+              <td class="shadow-text"style="vertical-align:middle"><%= user.username %></td>
+              <td class="shadow-text text-center"style="vertical-align:middle"><strong><%= user.points %></strong></td>
+              <td class="text-center"><%= image_tag user.house.image, class:"image-house-sm" %></td>
+              <td class="user-column"style="vertical-align:middle"><%= link_to 'View Entry', user_path(user.uuid), :class=>"btn btn-dark btn-block shadow-text"%></td>
+            <% if current_user.role.eql? "admin" %>
+              <td class="user-column"><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' },:class=>"btn btn-outline-light btn-character" %></td>
+            <%end%>
+              </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</div>
 <br>
 <%= link_to 'Home', root_url, :class=>"topalignedleft btn btn-outline-light btn-back shadow-text" %>
