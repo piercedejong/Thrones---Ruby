@@ -15,10 +15,18 @@
             <pre id="words" class="pt-0 title words shadow-text"><%=h.words%>   </pre>
             <%= link_to 'House Predictions', house_path(h.name), :class=>"shadow-text btn btn-outline-light btn-house"%>
           </div>
-          <div id="members-<%h.hid%>">
-            <% h.users.all.each do |u| %>
-            <li class="h3 shadow-text"><%=u.username%></li>
-            <% end%>
+          <div id="members-<%=h.hid%>" class="shadow-text d-flex">
+            <% if h.users.count.eql? 0 %>
+              <pre class="h3">No Members :(</pre>
+            <% else %>
+              <pre class="h3">House Members:  </pre>
+              <% h.users.all.each do |u| %>
+                <pre class="h3"><strong><%=u.username%></strong></pre>
+                <% if !u.eql? h.users.last %>
+                  <pre class="h3">  |  </pre>
+                <% end %>
+              <% end%>
+            <% end %>
           </div>
         </div>
       </div>
