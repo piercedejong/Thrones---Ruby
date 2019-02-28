@@ -7,7 +7,7 @@
       <div id="rules" class="rule-card">
         <ul class="list-group list-group-flush">
           <% Rule.all.each do |r| %>
-            <p id="rule<%=r.rid%>"class="h4 shadow-text mt-3 mb-3"><strong><%=r.rid%>. <%=r.rule%></strong></p >
+            <p id="rule<%=r.rid%>"class="h4 shadow-text mt-3 mb-3"><%=r.rid%>. <%=r.rule%></p >
           <%end%>
         </ul>
       </div>
@@ -20,7 +20,7 @@
             <% Faq.all.each do |f| %>
             <div class="faq-container">
               <div class="faq-card-header" id="accordion-tab-1-heading-<%=f.fid%>">
-                <button class="btn btn-faq btn-link shadow-text" type="button" data-toggle="collapse" data-target="#accordion-tab-1-content-<%=f.fid%>" aria-expanded="false" aria-controls="accordion-tab-1-content-<%=f.fid%>"><%=f.fid%>. <strong><%=f.question%> </strong> <span><i class="fas fa-arrow-down"> </i></span></button>
+                <button class="btn btn-faq btn-link shadow-text" type="button" data-toggle="collapse" data-target="#accordion-tab-1-content-<%=f.fid%>" aria-expanded="false" aria-controls="accordion-tab-1-content-<%=f.fid%>"><%=f.fid%>. <%=f.question%> <span><i class="fas fa-arrow-down"> </i></span></button>
               </div>
               <div class="collapse" id="accordion-tab-1-content-<%=f.fid%>" aria-labelledby="accordion-tab-1-heading-<%=f.fid%>" data-parent="#accordion-tab-1">
                 <div class="card-body faq-card-body">
