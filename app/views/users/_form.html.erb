@@ -3,7 +3,7 @@
     <div id="error_explanation" class="">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being created:</h2>
       <% user.errors.full_messages.each do |message| %>
-        <pre class="h4">  <%= message %></pre>
+        <pre class="h4 shadow-text">  <%= message %></pre>
       <% end %>
     </div>
   <% end %>
