@@ -9,22 +9,22 @@
       </ul>
     </div>
   <% end %>
-  <form autocomplete="off">
+  <form>
     <div class="form-group">
       <div class="input-group">
         <div class="input-group-prepend"><span class="input-group-text"> <i class="fab fa-suse"></i> </span></div>
-         <%= form.text_field :test, value:nil, placeholder:"New Username (5-15 Characters)", autocomplete:"new-username", class:"form-control" %>
+         <%= form.text_field :username, value:nil, placeholder:"New Username (5-15 Characters)", autocomplete:"new-username", class:"form-control" %>
        </div> <!-- input-group.// -->
     </div> <!-- form-group// -->
     <div class="form-group">
       <div class="input-group">
         <div class="input-group-prepend"><span class="input-group-text"> <i class="fa fa-lock"></i> </span></div>
-         <%= form.password_field :test, value:nil, placeholder:"Current Password", autocomplete:"new-password", class:"form-control" %>
+         <%= form.password_field :password, value:nil, placeholder:"Current Password", autocomplete:"new-password", class:"form-control" %>
        </div> <!-- input-group.// -->
     </div> <!-- form-group// -->
     <div class="form-group">
-    <%= hidden_field_tag :uuid, value: @user.uuid  %>
-    <%= submit_tag "Update Username", :class=>"btn btn-outline-light btn-main shadow-text" %>
+    <%= form.hidden_field :uuid, value: @user.uuid  %>
+    <%= form.submit "Update Username", :class=>"btn btn-outline-light btn-main shadow-text" %>
     </div> <!-- form-group// -->
   </form>
 <% end %>
