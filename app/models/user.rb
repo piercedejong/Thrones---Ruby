@@ -4,9 +4,9 @@ class User < ApplicationRecord
   belongs_to :house
   has_many :characters
   has_many :answers
-  validates :email, presence: true, :uniqueness => { :case_sensitive => false }, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :email, :uniqueness => { :case_sensitive => false }, format: { with: URI::MailTo::EMAIL_REGEXP }, length: {maximum: 256}
   validates :username, :uniqueness => { :case_sensitive => false }, format: { without: /\s/ }, length: { in: 5..15}
-  validates :password, presence:true, length: { in: 6..20}
+  validates :password, length: { in: 6..20}
   validates :house_id, presence:true
   default_scope { order(created_at: :asc) }
 

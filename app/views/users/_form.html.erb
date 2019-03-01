@@ -2,11 +2,9 @@
   <% if user.errors.any? %>
     <div id="error_explanation" class="">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being created:</h2>
-      <ul >
       <% user.errors.full_messages.each do |message| %>
-        <li style="font-size:2rem"><%= message %></li>
+        <pre class="h4">  <%= message %></pre>
       <% end %>
-      </ul>
     </div>
   <% end %>
   <form>
@@ -15,7 +13,7 @@
     <div class="input-group-prepend">
         <span class="input-group-text"> <i class="fa fa-user"></i> </span>
      </div>
-     <%= form.text_field :email, placeholder:"Your Email", autocomplete:"new-password",class:"form-control" %>
+     <%= form.text_field :email, placeholder:"Your Email", autocomplete:"new-password",class:"form-control w-90" %>
   </div> <!-- input-group.// -->
   </div> <!-- form-group// -->
   <div class="form-group">
