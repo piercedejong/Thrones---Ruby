@@ -31,7 +31,7 @@
     <div class="input-group-prepend">
         <span class="input-group-text"> <i class="fas fa-flag"></i> </span>
      </div>
-     <%= select_tag "user[house_id]", content_tag(:option,'Select a House...',:value=>"")+options_for_select([["House Stark",1],["House Lannister",2],["House Targaryen",3],["House Baratheon",5],["House Martell",6],["House Tully",8],["House Tyrell",7],["House Greyjoy",9],["House Arryn",10],["Free Folk",4]]), style: 'width:91%' %>
+     <%= select_tag "user[house_id]", content_tag(:option,'Select a House...',:value=>"")+options_for_select([["House Stark",1],["House Lannister",2],["House Targaryen",3],["House Baratheon",5],["House Martell",6],["House Tully",8],["House Tyrell",7],["House Greyjoy",9],["House Arryn",10],["Free Folk",4]]), style: 'width:90%' %>
   </div> <!-- input-group.// -->
   </div> <!-- form-group// -->
   <div class="form-group">
@@ -51,7 +51,7 @@
   </div> <!-- input-group.// -->
   </div> <!-- form-group// -->
   <div class="form-group">
-  <%= form.submit "Create Player", :class=>"btn btn-block btn-primary" %>
+  <%= form.submit "Sign Up", :class=>"btn btn-block btn-primary" %>
   </div> <!-- form-group// -->
   </form>
 <% end %>
