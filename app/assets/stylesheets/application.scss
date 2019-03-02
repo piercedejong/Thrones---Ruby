@@ -197,3 +197,11 @@ body{
 .field_with_errors{
   width: 90%
 }
+
+.input-group-prepend{
+  flex: 0 0 auto;
+}
+
+.input-group-form{
+  flex: 1 0 auto;
+}
