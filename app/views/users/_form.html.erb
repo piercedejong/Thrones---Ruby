@@ -13,7 +13,7 @@
     <div class="input-group-prepend">
         <span class="input-group-text"> <i class="fa fa-user"></i> </span>
      </div>
-     <%= form.text_field :email, placeholder:"Your Email", autocomplete:"new-password",class:"form-control w-90" %>
+     <%= form.text_field :email, placeholder:"Your Email", autocomplete:"new-password",class:"form-control input-group-form" %>
   </div> <!-- input-group.// -->
   </div> <!-- form-group// -->
   <div class="form-group">
@@ -21,7 +21,7 @@
     <div class="input-group-prepend">
         <span class="input-group-text"> <i class="fab fa-suse"></i> </span>
      </div>
-     <%= form.text_field :username, placeholder:"Create Username (5-15 Characters)", autocomplete:"new-password", class:"form-control" %>
+     <%= form.text_field :username, placeholder:"Create Username (5-15 Characters)", autocomplete:"new-password", class:"form-control input-group-form" %>
   </div> <!-- input-group.// -->
   </div> <!-- form-group// -->
   <div class="form-group">
@@ -29,7 +29,7 @@
     <div class="input-group-prepend">
         <span class="input-group-text"> <i class="fas fa-flag"></i> </span>
      </div>
-     <%= select_tag "user[house_id]", content_tag(:option,'Select a House...',:value=>"")+options_for_select([["House Stark",1],["House Lannister",2],["House Targaryen",3],["House Baratheon",5],["House Martell",6],["House Tully",8],["House Tyrell",7],["House Greyjoy",9],["House Arryn",10],["Free Folk",4]]), style: 'width:90%' %>
+     <%= select_tag "user[house_id]", content_tag(:option,'Select a House...',:value=>"")+options_for_select([["House Stark",1],["House Lannister",2],["House Targaryen",3],["House Baratheon",5],["House Martell",6],["House Tully",8],["House Tyrell",7],["House Greyjoy",9],["House Arryn",10],["Free Folk",4]]), class:'input-group-form' %>
   </div> <!-- input-group.// -->
   </div> <!-- form-group// -->
   <div class="form-group">
@@ -37,7 +37,7 @@
     <div class="input-group-prepend">
         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
      </div>
-     <%= form.password_field :password, placeholder:"Create Password (6-20 Characters)", autocomplete:"new-password", class:"form-control" %>
+     <%= form.password_field :password, placeholder:"Create Password (6-20 Characters)", autocomplete:"new-password", class:"form-control input-group-form" %>
   </div> <!-- input-group.// -->
   </div> <!-- form-group// -->
   <div class="form-group">
@@ -45,7 +45,7 @@
     <div class="input-group-prepend">
         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
      </div>
-     <%= form.password_field :password, placeholder:"Confirm Password",  autocomplete:"new-password", class:"form-control"%>
+     <%= form.password_field :password, placeholder:"Confirm Password",  autocomplete:"new-password", class:"form-control input-group-form"%>
   </div> <!-- input-group.// -->
   </div> <!-- form-group// -->
   <div class="form-group">
