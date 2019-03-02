@@ -51,15 +51,11 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    @user = User.find(params[:id])
+    @user = User.find_by(uuid:params[:uuid])
     @user.characters.all.each do |x| x.destroy end
     @user.answers.all.each do |x| x.destroy end
     @user.destroy
-    if current_user
-      redirect_to users_path
-    else
-      redirect_to root_path
-    end
+    redirect_to users_path
   end
 
   def paid

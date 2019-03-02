@@ -34,4 +34,6 @@ Rails.application.routes.draw do
 
   get 'death', to: 'deaths#index', as: 'deaths'
   get 'death/status', to: 'deaths#status'
+
+  delete '/users/:uuid', to: 'users#destroy', as:'destroy_user'
 end
