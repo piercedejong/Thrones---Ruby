@@ -8,8 +8,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.uuid
       redirect_to root_url, notice: "Logged in!"
     else
-      flash.now[:alert] = "Email or password is invalid"
-      redirect_to root_url
+      redirect_to root_url, notice: "Error: Username or Password is invalid"
     end
   end
   def destroy

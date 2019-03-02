@@ -67,7 +67,7 @@
 .btn-faq {
     display: block;
     width: 100%;
-    color: #262626;
+    color: #f9f2de;
     text-align: left;
     white-space: normal;
     font-size: 1.5rem;
@@ -80,6 +80,7 @@
     &:active,
     &:hover:active {
         text-decoration: none;
+        color: #f9f2de;
     }
 }
 

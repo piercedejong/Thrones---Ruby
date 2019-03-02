@@ -2,34 +2,33 @@
 <div class="container">
   <div class="row" style="margin-bottom:5rem">
     <div class="col-sm-1"></div>
-    <div class="col-sm-5 rule_container">
+    <div class="col-sm-5 rule-container">
       <pre class="title text-center shadow-text">Rules</pre>
-      <div id="rules" class="">
+      <div id="rules" class="rule-card">
         <ul class="list-group list-group-flush">
           <% Rule.all.each do |r| %>
-            <li id="rule<%=r.rid%>"class="list-group-item rule"><strong><%=r.rid%>. <%=r.rule%></strong></li >
+            <p id="rule<%=r.rid%>"class="h4 shadow-text mt-3 mb-3"><%=r.rid%>. <%=r.rule%></p >
           <%end%>
         </ul>
       </div>
     </div>
     <div class="col-sm-5 faq_container">
       <pre class="title text-center shadow-text">FAQs</pre>
-      <div class="tab-content" id="faq-tab-content">
+      <div class="tab-content faq-card" id="faq-tab-content">
         <div class="tab-pane show active" id="tab1" role="tabpanel" aria-labelledby="tab1">
           <div class="accordion" id="accordion-tab-1">
             <% Faq.all.each do |f| %>
-            <div class="faq-border">
-              <div class="card faq-card">
-                <div class="card-header faq-card-header" id="accordion-tab-1-heading-<%=f.fid%>">
-                  <button class="btn btn-faq btn-link" type="button" data-toggle="collapse" data-target="#accordion-tab-1-content-<%=f.fid%>" aria-expanded="false" aria-controls="accordion-tab-1-content-<%=f.fid%>"><%=f.fid%>. <strong><%=f.question%> </strong> <span><i class="fas fa-arrow-down"> </i></span></button>
-                </div>
-                <div class="collapse" id="accordion-tab-1-content-<%=f.fid%>" aria-labelledby="accordion-tab-1-heading-<%=f.fid%>" data-parent="#accordion-tab-1">
-                  <div class="card-body faq-card-body">
-                    <p style="color:#262626"><%=f.answer%></p>
-                  </div>
+            <div class="faq-container">
+              <div class="faq-card-header" id="accordion-tab-1-heading-<%=f.fid%>">
+                <button class="btn btn-faq btn-link shadow-text" type="button" data-toggle="collapse" data-target="#accordion-tab-1-content-<%=f.fid%>" aria-expanded="false" aria-controls="accordion-tab-1-content-<%=f.fid%>"><%=f.fid%>. <%=f.question%> <span><i class="fas fa-arrow-down"> </i></span></button>
+              </div>
+              <div class="collapse" id="accordion-tab-1-content-<%=f.fid%>" aria-labelledby="accordion-tab-1-heading-<%=f.fid%>" data-parent="#accordion-tab-1">
+                <div class="card-body faq-card-body">
+                  <div class="faq-answer"><%=f.answer%></div>
                 </div>
               </div>
             </div>
+            <div class="faq-border"></div>
             <%end%>
             </div>
           </div>

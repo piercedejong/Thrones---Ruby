@@ -1,6 +1,10 @@
 <% content_for :title, "Death Pool"%>
 <% flash.each do |key, value| %>
-      <div class="alert alert-success text-center" role="alert"><%= value %></div>
+  <% if value.include? "Error" %>
+    <div class="alert alert-danger text-center" role="alert"><%= value %></div>
+  <% else %>
+    <div class="alert alert-success text-center" role="alert"><%= value %></div>
+  <%end%>
 <% end %>
 <pre class="title text-center shadow-text">Game   of   Thrones   Death   Pool</pre>
 <div class="container">
@@ -134,14 +138,14 @@
 </div>
 <% else %>
 <% content_for :title, " - Login"%>
-  <div class="position row align-items-center" style="">
+  <div class="position row" style="">
     <div class="col-sm-4">
     </div>
     <div class="col-sm-4">
-      <div class="card">
+      <div class="bonus-card">
       <article class="card-body">
-        <%= link_to 'Sign Up', signup_path, :id=>"sign-up", :class=>"btn btn-outline-dark top-aligned-left", :role=>"button" %>
-      	<h4 class="card-title text-center mb-4 mt-1" style="color:black;font-size:2rem">Login</h4>
+        <%= link_to 'Sign Up', signup_path, :id=>"sign-up", :class=>"btn btn-outline-light top-aligned-left", :role=>"button" %>
+      	<div class="card-title text-center mb-4 mt-1 h2">Login</div>
         <%= form_tag sessions_path do |form| %>
         	<form>
         	<div class="form-group">
@@ -149,7 +153,7 @@
         		<div class="input-group-prepend">
         		    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
         		 </div>
-             <%= text_field_tag :username, "", placeholder:"Email or Username", class:"form-control" %>
+             <%= text_field_tag :username, "", placeholder:"Username", class:"form-control" %>
         	</div> <!-- input-group.// -->
         	</div> <!-- form-group// -->
         	<div class="form-group">
