@@ -14,7 +14,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    if current_user and (current_user.uuid.eql?params[:id] or current_user.role.eql? "admin")
+    binding.pry
+    if current_user and (current_user.uuid.eql?params[:uuid] or current_user.role.eql? "admin")
       @user = User.find_by(uuid: params[:uuid])
     elsif (current_user)
       redirect_to users_path
