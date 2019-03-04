@@ -157,7 +157,7 @@ body{
   margin-right:0.1vw
  }
 
- .progress-bar {
+ .progress-bar{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -166,6 +166,19 @@ body{
     white-space: nowrap;
     background-color: #3490dc;
     transition: width .6s ease;
+    width:100%;
+}
+
+.progress-bar-alive{
+  background-color:#52ad6a
+}
+
+.progress-bar-dead{
+  background-color:#ad5252
+}
+
+.progress-bar-wight{
+  background-color:#5296ad
 }
 
 .progress {
@@ -176,6 +189,8 @@ body{
     font-size: .675rem;
     background-color: #e9ecef;
     border-radius:1rem;
+    border: solid 1px;
+    border-color: #262626
 }
 
 .fade_rule {

@@ -1,7 +1,7 @@
 <% content_for :title, "Death Pool - Stats"%>
 <pre class="title text-center shadow-text " style="margin:0px">Character   Statistics</pre>
 <div class="container">
-  <div class="row content bonus-card">
+  <div class="row content bonus-card mb-4">
     <div class="col-sm-4">
       <div class="title sub-title text-center  shadow-text" style="margin:0px">Most Predicted to Live</div>
       <table class="table">
@@ -43,14 +43,11 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row mt-4">
     <div class="col-sm-1">
     </div>
     <div class="col-sm-10 shadow-text">
-      <div class="row">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-11"><pre class="title sub-title  shadow-text">All   Character   Predictions</pre></div>
-      </div>
+      <pre class="title sub-title shadow-text text-center">All   Character   Predictions</pre>
       <div id="stats">
         <% Death.order(alive: :desc).all.each do |d| %>
         <% if !d.eql? Death.last %>
@@ -62,9 +59,9 @@
             </div>
             <div class="col-sm-7 d-flex">
               <div class="progress character-name" style="font-size:1.5rem">
-                <div role="progressbar" class="progress-bar " style="display:inline-block;background-color:#52ad6a;width:<%=d.alive%>%"><div style="margin-top:0.75rem"><i class="fas fa-heart"></i> <%= d.alive.to_s+"%" if d.alive >=10.00 %></div></div>
-                <div role="progressbar" class="progress-bar" style="display:inline-block;background-color:#ad5252;width:<%=d.dead%>%"><div style="margin-top:0.75rem"><i class="fas fa-skull-crossbones"></i> <%= d.dead.to_s+"%" if d.dead >=10.00 %></div></div>
-                <div role="progressbar" class="progress-bar" style="display:inline-block;background-color:#5296ad;width:<%=d.wight%>%"><div style="margin-top:0.75rem"><i class="fas fa-skull"></i> <%= d.wight.to_s+"%" if d.wight >=10.00 %></div></div>
+                <div role="progressbar" class="progress-bar-alive progress-bar" style="width:<%=d.alive%>%"><div><i class="fas fa-heart"></i> <%= d.alive.to_s+"%" if d.alive >=12.00 %> </div></div>
+                <div role="progressbar" class="progress-bar-dead progress-bar" style="width:<%=d.dead%>%"><div><i class="fas fa-skull-crossbones"></i> <%= d.dead.to_s+"%" if d.dead >=12.00 %> </div></div>
+                <div role="progressbar" class="progress-bar-wigth progress-bar" style="width:<%=d.wight%>%"><div><i class="fas fa-skull"></i> <%= d.wight.to_s+"%" if d.wight >=12.00 %> </div></div>
               </div>
             </div>
             <div class="col-sm-1"></div>
