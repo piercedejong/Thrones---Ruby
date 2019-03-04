@@ -30,15 +30,15 @@ function character_status(element){
        url: window.location.origin + '/user/character_status'
 	})
   .done(function(response) {
-    $("#alive-"+element.getAttribute("cid")).removeClass("btn-alive")
-    $("#dead-"+element.getAttribute("cid")).removeClass("btn-dead")
-    $("#wight-"+element.getAttribute("cid")).removeClass("btn-wight")
+    $("#alive-"+element.getAttribute("cid")).removeClass("alive")
+    $("#dead-"+element.getAttribute("cid")).removeClass("dead")
+    $("#wight-"+element.getAttribute("cid")).removeClass("wight")
     if (response["status"] == "alive"){
-      $("#alive-"+element.getAttribute("cid")).addClass("btn-alive")
+      $("#alive-"+element.getAttribute("cid")).addClass("alive")
     }else if ((response["status"] == "dead")){
-      $("#dead-"+element.getAttribute("cid")).addClass("btn-dead")
+      $("#dead-"+element.getAttribute("cid")).addClass("dead")
     }else{
-      $("#wight-"+element.getAttribute("cid")).addClass("btn-wight")
+      $("#wight-"+element.getAttribute("cid")).addClass("wight")
     }
   })
 }
