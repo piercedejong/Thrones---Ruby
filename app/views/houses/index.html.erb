@@ -12,12 +12,12 @@
             <div class="sub-title shadow-text"> - <%=h.points%> points</div>
           </div>
           <div class="d-flex">
-            <pre id="words" class="pt-0 title words shadow-text"><%=h.words%>    </pre>
+            <pre id="words" class="my-auto pt-0 title words shadow-text"><%=h.words%>    </pre>
             <% if current_user.role.eql?"admin"%>
               <%= link_to 'House Predictions', house_path(h.name), :class=>"shadow-text btn btn-outline-light btn-house"%>
             <% end %>
           </div>
-          <div id="members-<%=h.hid%>" class="shadow-text d-flex">
+          <div id="members-<%=h.hid%>" class="shadow-text row" style="flex-wrap: wrap;">
             <% if h.users.count.eql? 0 %>
               <pre class="h3">No Members :(</pre>
             <% else %>
