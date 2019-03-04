@@ -1,4 +1,42 @@
 <%= link_to 'Back', houses_path, :class=>"topalignedleft btn btn-outline-light btn-back shadow-text" %>
-<div class="title text-center shadow-text"><%=@house.name%></div>
-<pre id="words" class="title words text-center shadow-text"><%=@house.words%></pre>
-<div id="sigil" class="text-center"><%= image_tag @house.image, class:"image-house" %></div>
+<div class="container">
+  <div class="title text-center shadow-text"><%=@house.name%></div>
+  <pre id="words" class="title words text-center shadow-text"><%=@house.words%></pre>
+  <div id="sigil" class="text-center"><%= image_tag @house.image, class:"image-house" %></div>
+</div>
+
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <div class="progress character-name shadow-text">
+        <div role="progressbar" class="alive progress-bar"><div><i class="fas fa-heart"></i> Alive </div></div>
+        <div id="alive-characters">
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <div class="progress character-name shadow-text">
+        <div role="progressbar" class="dead progress-bar"><div><i class="fas fa-skull-crossbones"></i> Dead </div></div>
+        <div id="dead-characters">
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <div class="progress character-name shadow-text">
+        <div role="progressbar" class="wight progress-bar"><div><i class="fas fa-skull"></i> Wight </div></div>
+        <div id="wight-characters">
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+</div>

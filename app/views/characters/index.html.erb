@@ -59,9 +59,9 @@
             </div>
             <div class="col-sm-7 d-flex">
               <div class="progress character-name" style="font-size:1.5rem">
-                <div role="progressbar" class="progress-bar-alive progress-bar" style="width:<%=d.alive%>%"><div><i class="fas fa-heart"></i> <%= d.alive.to_s+"%" if d.alive >=12.00 %> </div></div>
-                <div role="progressbar" class="progress-bar-dead progress-bar" style="width:<%=d.dead%>%"><div><i class="fas fa-skull-crossbones"></i> <%= d.dead.to_s+"%" if d.dead >=12.00 %> </div></div>
-                <div role="progressbar" class="progress-bar-wigth progress-bar" style="width:<%=d.wight%>%"><div><i class="fas fa-skull"></i> <%= d.wight.to_s+"%" if d.wight >=12.00 %> </div></div>
+                <div role="progressbar" class="alive progress-bar" style="width:<%=d.alive%>%"><div><i class="fas fa-heart"></i> <%= d.alive.to_s+"%" if d.alive >=12.00 %> </div></div>
+                <div role="progressbar" class="dead progress-bar" style="width:<%=d.dead%>%"><div><i class="fas fa-skull-crossbones"></i> <%= d.dead.to_s+"%" if d.dead >=12.00 %> </div></div>
+                <div role="progressbar" class="wigth progress-bar" style="width:<%=d.wight%>%"><div><i class="fas fa-skull"></i> <%= d.wight.to_s+"%" if d.wight >=12.00 %> </div></div>
               </div>
             </div>
             <div class="col-sm-1"></div>
