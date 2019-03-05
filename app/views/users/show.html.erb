@@ -3,9 +3,11 @@
       <div class="alert alert-success text-center" role="alert"><%= value %></div>
 <% end %>
 <%= link_to 'Home', root_url, :class=>"topalignedleft btn btn-outline-light btn-back shadow-text" %>
-<div id="picks" class="container">
-  <div class="title user-title text-center shadow-text "><%=@user.username%></div>
-  <div id="table" class="row">
+
+<div id="picks" class="container mb-4">
+  <div class="title user-title text-center shadow-text"><%=@user.username%></div>
+  <% if current_user.eql? @user %>
+  <div class="row">
     <div class="col-sm-2"></div>
     <div class="col-sm-8">
       <div>
@@ -54,3 +56,76 @@
     </div>
   </div>
 </div>
+
+<% else %>
+  <div class="row mt-4 mb-4">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <div class="progress character-name shadow-text">
+        <div role="progressbar" class="alive progress-bar"><div><i class="fas fa-heart"></i> Alive </div></div>
+      </div>
+      <div id="no-prediction-characters" class="character-list d-flex">
+        <% @user.alive_characters.all.each do |c| %>
+          <div id="<%=c.name%>" class="character text-center">
+            <%= image_tag "characters/"+c.name+".jpg", class:"shadow-text image-character" %>
+            <div class="shadow-text text-center"><%=c.name%></div>
+          </div>
+        <%end%>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <div class="progress character-name shadow-text">
+        <div role="progressbar" class="dead progress-bar"><div><i class="fas fa-skull-crossbones"></i> Dead </div></div>
+      </div>
+      <div id="no-prediction-characters" class="character-list d-flex">
+        <% @user.dead_characters.all.each do |c| %>
+          <div id="<%=c.name%>" class="character text-center">
+            <%= image_tag "characters/"+c.name+".jpg", class:"shadow-text image-character" %>
+            <div class="shadow-text text-center"><%=c.name%></div>
+          </div>
+        <%end%>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <div class="progress character-name shadow-text">
+        <div role="progressbar" class="wight progress-bar"><div><i class="fas fa-skull"></i> Wight </div></div>
+      </div>
+      <div id="no-prediction-characters" class="character-list d-flex">
+        <% @user.wight_characters.all.each do |c| %>
+          <div id="<%=c.name%>" class="character text-center">
+            <%= image_tag "characters/"+c.name+".jpg", class:"shadow-text image-character" %>
+            <div class="shadow-text text-center"><%=c.name%></div>
+          </div>
+        <%end%>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <div class="progress character-name shadow-text">
+        <div role="progressbar" class="no-prediction progress-bar"><div><i class="fas fa-circle-notch"></i> No Prediction </div></div>
+      </div>
+      <div id="no-prediction-characters" class="character-list d-flex">
+        <% @user.no_status_characters.all.each do |c| %>
+          <div id="<%=c.name%>" class="character text-center">
+            <%= image_tag "characters/"+c.name+".jpg", class:"shadow-text image-character" %>
+            <div class="shadow-text text-center"><%=c.name%></div>
+          </div>
+        <%end%>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+</div>
+<%end%>

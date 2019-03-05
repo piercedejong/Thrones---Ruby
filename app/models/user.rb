@@ -23,4 +23,40 @@ class User < ApplicationRecord
     end
     return @points
   end
+
+  def alive_characters
+    c = self.characters.where(status: "alive")
+    if c.eql? nil
+      return []
+    else
+      return c
+    end
+  end
+
+  def dead_characters
+    c = self.characters.where(status: "dead")
+    if c.eql? nil
+      return []
+    else
+      return c
+    end
+  end
+
+  def wight_characters
+    c = self.characters.where(status: "wight")
+    if c.eql? nil
+      return []
+    else
+      return c
+    end
+  end
+
+  def no_status_characters
+    c = self.characters.where(status: "none")
+    if c.eql? nil
+      return []
+    else
+      return c
+    end
+  end
 end
