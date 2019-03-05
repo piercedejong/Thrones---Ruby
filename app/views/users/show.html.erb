@@ -58,7 +58,22 @@
 </div>
 
 <% else %>
-  <div class="row mt-4 mb-4">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <div class="bonus-card">
+        <div class="card-title sub-title text-center mb-0 mt-1 shadow-text">Bonus Questions</div>
+        <% Question.all.each do |q| %>
+          <div class="question-and-answer">
+            <div class="question"><%=q.qid%>. <%=q.text%></div>
+            <div class="answer" style="font-size:2rem"><%=@user.answers.find_by(rid: q.qid).text%></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+  <div class="row mt-4">
     <div class="col-sm-1"></div>
     <div class="col-sm-10">
       <div class="progress character-name shadow-text">
@@ -66,7 +81,7 @@
       </div>
       <div id="no-prediction-characters" class="character-list d-flex">
         <% @user.alive_characters.all.each do |c| %>
-          <div id="<%=c.name%>" class="character text-center">
+          <div id="<%=c.name%>" class="character character-name text-center">
             <%= image_tag "characters/"+c.name+".jpg", class:"shadow-text image-character" %>
             <div class="shadow-text text-center"><%=c.name%></div>
           </div>
@@ -83,7 +98,7 @@
       </div>
       <div id="no-prediction-characters" class="character-list d-flex">
         <% @user.dead_characters.all.each do |c| %>
-          <div id="<%=c.name%>" class="character text-center">
+          <div id="<%=c.name%>" class="character character-name text-center">
             <%= image_tag "characters/"+c.name+".jpg", class:"shadow-text image-character" %>
             <div class="shadow-text text-center"><%=c.name%></div>
           </div>
@@ -100,7 +115,7 @@
       </div>
       <div id="no-prediction-characters" class="character-list d-flex">
         <% @user.wight_characters.all.each do |c| %>
-          <div id="<%=c.name%>" class="character text-center">
+          <div id="<%=c.name%>" class="character character-name text-center">
             <%= image_tag "characters/"+c.name+".jpg", class:"shadow-text image-character" %>
             <div class="shadow-text text-center"><%=c.name%></div>
           </div>
@@ -118,7 +133,7 @@
       </div>
       <div id="no-prediction-characters" class="character-list d-flex">
         <% @user.no_status_characters.all.each do |c| %>
-          <div id="<%=c.name%>" class="character text-center">
+          <div id="<%=c.name%>" class="bonus-card character character-name text-center">
             <%= image_tag "characters/"+c.name+".jpg", class:"shadow-text image-character" %>
             <div class="shadow-text text-center"><%=c.name%></div>
           </div>
