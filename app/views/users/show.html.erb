@@ -79,9 +79,9 @@
       <div class="progress character-name shadow-text">
         <div role="progressbar" class="alive progress-bar"><div><i class="fas fa-heart"></i> Alive </div></div>
       </div>
-      <div id="no-prediction-characters" class="character-list d-flex">
+      <div id="alive-characters" class="character-list d-flex">
         <% @user.alive_characters.all.each do |c| %>
-          <div id="<%=c.name%>" class="character character-name text-center">
+          <div id="<%=c.name%>" class="bonus-card character character-name text-center">
             <%= image_tag "characters/"+c.name+".jpg", class:"shadow-text image-character" %>
             <div class="shadow-text text-center"><%=c.name%></div>
           </div>
@@ -96,9 +96,9 @@
       <div class="progress character-name shadow-text">
         <div role="progressbar" class="dead progress-bar"><div><i class="fas fa-skull-crossbones"></i> Dead </div></div>
       </div>
-      <div id="no-prediction-characters" class="character-list d-flex">
+      <div id="dead-characters" class="character-list d-flex">
         <% @user.dead_characters.all.each do |c| %>
-          <div id="<%=c.name%>" class="character character-name text-center">
+          <div id="<%=c.name%>" class="bonus-card character character-name text-center">
             <%= image_tag "characters/"+c.name+".jpg", class:"shadow-text image-character" %>
             <div class="shadow-text text-center"><%=c.name%></div>
           </div>
@@ -113,9 +113,9 @@
       <div class="progress character-name shadow-text">
         <div role="progressbar" class="wight progress-bar"><div><i class="fas fa-skull"></i> Wight </div></div>
       </div>
-      <div id="no-prediction-characters" class="character-list d-flex">
+      <div id="wight-characters" class="character-list d-flex">
         <% @user.wight_characters.all.each do |c| %>
-          <div id="<%=c.name%>" class="character character-name text-center">
+          <div id="<%=c.name%>" class="bonus-card character character-name text-center">
             <%= image_tag "characters/"+c.name+".jpg", class:"shadow-text image-character" %>
             <div class="shadow-text text-center"><%=c.name%></div>
           </div>
