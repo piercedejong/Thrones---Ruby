@@ -65,8 +65,8 @@
         <div class="card-title sub-title text-center mb-0 mt-1 shadow-text">Bonus Questions</div>
         <% Question.all.each do |q| %>
           <div class="question-and-answer">
-            <div class="question"><%=q.qid%>. <%=q.text%></div>
-            <div class="answer" style="font-size:2rem"><%=@user.answers.find_by(rid: q.qid).text%></div>
+            <div class="question shadow-text"><%=q.qid%>. <%=q.text%></div>
+            <div class="answer shadow-text" style="color:#f9f2de;font-size:2rem;margin-left:1rem"><%=@user.answers.find_by(rid: q.qid).text%></div>
           </div>
         <% end %>
       </div>
