@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
+gem 'bundler', '~>1.17.2'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -20,10 +21,10 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1', '>= 3.1.12'
 
 gem 'bootstrap', ">=4.1.2"
-gem 'jquery-rails'
+gem 'jquery-rails', '~>4.3.3'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -46,7 +47,7 @@ end
 
 group :development, :test do
   gem 'pry'
-  gem 'sqlite3', '~> 1.3.6'
+  gem 'sqlite3', '~> 1.3.13'
 end
 
 group :production do
