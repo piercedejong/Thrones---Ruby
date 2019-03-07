@@ -26,7 +26,7 @@ html {
   src: url('/assets/GameofThrones.ttf') format('truetype');
 }
 
-pre, div, table, body, .color{
+pre, div, table, body, .default-color{
   color: #f9f2de;
 }
 body{
@@ -196,22 +196,6 @@ body{
     border: solid 1px;
     border-color: #262626
 }
-
-.fade_rule {
-        height: 1px;
-        background-color: #E6E6E6;
-        width: 66.0em;
-        margin: 0 auto;
-        background-image: linear-gradient(left , white 2%, #E6E6E6 50%, white 98%);
-        background-image: -o-linear-gradient(left , white 2%, #E6E6E6 50%, white 98%);
-        background-image: -moz-linear-gradient(left , white 2%, #E6E6E6 50%, white 98%);
-        background-image: -webkit-linear-gradient(left , white 2%, #E6E6E6 50%, white 98%);
-        background-image: -ms-linear-gradient(left , white 2%, #E6E6E6 50%, white 98%);
-        background-image: -webkit-gradient( linear, left bottom, right bottom, color-stop(0.02, grey), color-stop(0.5, darkgray), color-stop(0.98, grey) );
-        margin-top:1.5rem;
-        margin-bottom: 1.5rem;
-}
-
 
 .field_with_errors{
   width: 90%

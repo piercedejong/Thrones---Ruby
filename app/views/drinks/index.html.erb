@@ -14,19 +14,19 @@
           <% Drink.all.each do |d| %>
             <% if d.id%2==0 %>
               <% if d.hardcore %>
-                <tr class="tablerow-hardcore" style="background-color:rgba(240,0,0,0.3)">
+                <tr class="tablerow-hardcore default-color" style="background-color:rgba(240,0,0,0.3)">
               <%else%>
                 <tr >
               <%end%>
-                <td class="drink-rule"><%if d.finish %>Finish your drink <%else%>Take a drink <%end%><%= d.rule %></td>
+                <td class="drink-rule default-color"><%if d.finish %>Finish your drink <%else%>Take a drink <%end%><%= d.rule %></td>
               </tr>
             <% else %>
               <% if d.hardcore %>
-                <tr class="tablerow-hardcore" style="background-color:rgba(240,0,0,0.3)">
+                <tr class="tablerow-hardcore default-color" style="background-color:rgba(240,0,0,0.3)">
               <%else%>
                 <tr >
               <%end%>
-                <td class="drink-rule"><%if d.finish %>Finish your drink <%else%>Take a drink <%end%><%= d.rule %></td>
+                <td class="drink-rule default-color"><%if d.finish %>Finish your drink <%else%>Take a drink <%end%><%= d.rule %></td>
                 </tr>
             <% end %>
           <%end%>
