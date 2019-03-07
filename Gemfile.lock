@@ -47,9 +47,10 @@ GEM
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
-    autoprefixer-rails (9.4.10)
+    autoprefixer-rails (9.4.10.1)
       execjs
     bcrypt (3.1.12)
+    bcrypt (3.1.12-x64-mingw32)
     bcrypt (3.1.12-x86-mingw32)
     bindex (0.5.0)
     bootsnap (1.4.1)
@@ -86,6 +87,7 @@ GEM
     erubi (1.8.0)
     execjs (2.7.0)
     ffi (1.10.0)
+    ffi (1.10.0-x64-mingw32)
     ffi (1.10.0-x86-mingw32)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -112,14 +114,18 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.11.3)
     msgpack (1.2.7)
+    msgpack (1.2.7-x64-mingw32)
     msgpack (1.2.7-x86-mingw32)
     multi_json (1.13.1)
     nio4r (2.3.1)
     nokogiri (1.10.1)
       mini_portile2 (~> 2.4.0)
+    nokogiri (1.10.1-x64-mingw32)
+      mini_portile2 (~> 2.4.0)
     nokogiri (1.10.1-x86-mingw32)
       mini_portile2 (~> 2.4.0)
     pg (1.1.4)
+    pg (1.1.4-x64-mingw32)
     pg (1.1.4-x86-mingw32)
     popper_js (1.14.5)
     pry (0.12.2)
@@ -196,6 +202,7 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.3.13)
+    sqlite3 (1.3.13-x64-mingw32)
     sqlite3 (1.3.13-x86-mingw32)
     thor (0.20.3)
     thread_safe (0.3.6)
@@ -222,12 +229,13 @@ GEM
 
 PLATFORMS
   ruby
+  x64-mingw32
   x86-mingw32
 
 DEPENDENCIES
   bcrypt (~> 3.1, >= 3.1.12)
   bootsnap (>= 1.1.0)
-  bootstrap (>= 4.1.2)
+  bootstrap (= 4.3.1)
   bundler (~> 1.17.2)
   byebug
   capybara (>= 2.15)
@@ -242,7 +250,7 @@ DEPENDENCIES
   rails_12factor
   sass-rails (~> 5.0)
   selenium-webdriver
-  sqlite3 (~> 1.3.13)
+  sqlite3
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)

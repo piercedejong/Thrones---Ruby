@@ -37,7 +37,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'bundler', '~>1.15.2'
+  gem 'bundler', '~>1.17.2'
 end
 
 group :development do
@@ -47,7 +47,7 @@ end
 
 group :development, :test do
   gem 'pry'
-  gem 'sqlite3', '~> 1.3.13'
+  gem 'sqlite3'
 end
 
 group :production do
