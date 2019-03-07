@@ -35,9 +35,9 @@
         </table> -->
         <% @user.characters.each do |c| %>
         <div class="bonus-card w-100 d-flex mt-2 mb-2 p-2">
-          <div class="character-image""><%= image_tag "characters/"+c.name+".jpg", :class=>"image-character" %></div>
-          <div class="character-name text-center character-name shadow-text my-auto mx-1" id="<%c.name%>"><%= c.name %></div>
-          <div class="character-buttons d-flex shadow-text">
+          <div class="p-character-image""><%= image_tag "characters/"+c.name+".jpg", :class=>"image-character" %></div>
+          <div class="p-character-name text-center character-name shadow-text my-auto mx-1" id="<%c.name%>"><%= c.name %></div>
+          <div class="p-character-buttons d-flex shadow-text">
             <button id="alive-<%=c.cid%>" character="<%=c.name%>" cid="<%=c.cid%>" status="alive" role="button" class="btn shadow-text btn-character my-auto ml-1 <%= 'alive' if c.status.eql?"alive" %>" onclick="character_status(this)">Alive</button>
             <button id="dead-<%=c.cid%>"  character="<%=c.name%>" cid="<%=c.cid%>" status="dead"  role="button" class="btn shadow-text btn-character my-auto ml-1 <%= 'dead' if c.status.eql?"dead" %>" onclick="character_status(this)">Dead</button>
             <% if !c.name.eql? "The Night King" and !c.name.eql? "Viserion"%>
