@@ -35,9 +35,9 @@
         </table> -->
         <% @user.characters.each do |c| %>
         <div class="bonus-card w-100 d-flex mt-2 mb-2 p-2">
-          <div style="width:8rem"><%= image_tag "characters/"+c.name+".jpg", :class=>"image-character" %></div>
-          <div style="width:25%" id="<%c.name%>"  class="text-center character-name shadow-text my-auto mx-1"><%= c.name %></div>
-          <div style="width:75%" class="d-flex shadow-text">
+          <div class="character-image""><%= image_tag "characters/"+c.name+".jpg", :class=>"image-character" %></div>
+          <div class="character-name text-center character-name shadow-text my-auto mx-1" id="<%c.name%>"><%= c.name %></div>
+          <div class="character-buttons d-flex shadow-text">
             <button id="alive-<%=c.cid%>" character="<%=c.name%>" cid="<%=c.cid%>" status="alive" role="button" class="btn shadow-text btn-character my-auto ml-1 <%= 'alive' if c.status.eql?"alive" %>" onclick="character_status(this)">Alive</button>
             <button id="dead-<%=c.cid%>"  character="<%=c.name%>" cid="<%=c.cid%>" status="dead"  role="button" class="btn shadow-text btn-character my-auto ml-1 <%= 'dead' if c.status.eql?"dead" %>" onclick="character_status(this)">Dead</button>
             <% if !c.name.eql? "The Night King" and !c.name.eql? "Viserion"%>
@@ -51,9 +51,9 @@
     <div class="col-sm-2"></div>
   </div>
   <div class='row mt-2' style="margin-bottom:6rem">
-    <div class="col-sm-4">
+    <div class="col-sm-3">
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-6">
       <div class="card bonus-card">
       <article class="card-body">
       	<div class="card-title sub-title text-center shadow-text">Bonus Questions</div>
@@ -61,7 +61,7 @@
       </article>
       </div> <!-- card.// -->
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-3">
     </div>
   </div>
 </div>
