@@ -11,7 +11,7 @@
     <div class="col-sm-2"></div>
     <div class="col-sm-8">
       <div>
-        <table class="table">
+        <table class="table default-color">
           <thead>
             <tr>
               <th colspan="2">Character</th>
@@ -73,6 +73,7 @@
     </div>
     <div class="col-sm-3"></div>
   </div>
+<% if !(@user.alive_characters == []) %>
   <div class="row mt-4">
     <div class="col-sm-1"></div>
     <div class="col-sm-10">
@@ -90,6 +91,8 @@
     </div>
     <div class="col-sm-1"></div>
   </div>
+<% end %>
+<% if !(@user.dead_characters == []) %>
   <div class="row mt-4">
     <div class="col-sm-1"></div>
     <div class="col-sm-10">
@@ -107,6 +110,8 @@
     </div>
     <div class="col-sm-1"></div>
   </div>
+<% end %>
+<% if !(@user.wight_characters == []) %>
   <div class="row mt-4">
     <div class="col-sm-1"></div>
     <div class="col-sm-10">
@@ -124,7 +129,8 @@
     </div>
     <div class="col-sm-1"></div>
   </div>
-
+<%end %>
+<% if !(@user.no_status_characters == []) %>
   <div class="row mt-4">
     <div class="col-sm-1"></div>
     <div class="col-sm-10">
@@ -142,5 +148,6 @@
     </div>
     <div class="col-sm-1"></div>
   </div>
+<% end %>
 </div>
 <%end%>
