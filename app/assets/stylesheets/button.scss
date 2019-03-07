@@ -39,7 +39,7 @@
 
 .btn-character{
   font-size: 1.5rem;
-  border-color: #262626;
+  border-color: #f9f2de;
   background-color: rgba(30,30,30,0.2);
   width: 100%;
   color:#f9f2de;
@@ -48,20 +48,6 @@
 .btn-character:hover{
   background-color: rgba(30,30,30,0.7);
   color:#f9f2de;
-}
-
-.btn-dead {
-  background-color:red;
-}
-.btn-alive{
-  background-color:#00ff00
-}
-.btn-just-dead{
-  color:white;
-}
-
-.btn-wight {
-  background-color:#0080ff
 }
 
 .btn-faq {

@@ -7,21 +7,16 @@
 <div id="picks" class="container mb-4">
   <div class="title user-title text-center shadow-text"><%=@user.username%></div>
   <% if current_user.eql? @user %>
+
   <div class="row">
     <div class="col-sm-2"></div>
     <div class="col-sm-8">
-      <div>
-        <table class="table default-color">
-          <thead>
-            <tr>
-              <th colspan="2">Character</th>
-              <th>Prediction</th>
-              <th></th>
-            </tr>
-          </thead>
+      <div class="card-title sub-title text-center mb-1 mt-1 shadow-text">Your Predictions</div>
+      <div id="predictions">
+        <!-- <table class="table default-color">
           <tbody>
             <% @user.characters.each do |c| %>
-            <tr>
+            <tr class="bonus-card mt-1 mb-1" style="border-top:none">
               <td style="width:10%"><%= image_tag "characters/"+c.name+".jpg", :class=>"image-character" %></td>
               <td id="<%c.name%>" style="width:30%"class="text-center character-name shadow-text"><%= c.name %></td>
               <td style="vertical-align:middle">
@@ -34,20 +29,34 @@
                   </div>
               </td>
             </tr>
+            <tr class="spacer" style="height:0.25rem;"></tr>
             <%end%>
           </tbody>
-        </table>
+        </table> -->
+        <% @user.characters.each do |c| %>
+        <div class="bonus-card w-100 d-flex mt-2 mb-2 p-2">
+          <div style="width:10%"><%= image_tag "characters/"+c.name+".jpg", :class=>"image-character" %></div>
+          <div id="<%c.name%>" style="width:30%" class="text-center character-name shadow-text my-auto"><%= c.name %></div>
+          <div style="width:60%" class="d-flex shadow-text">
+            <button id="alive-<%=c.cid%>" character="<%=c.name%>" cid="<%=c.cid%>" status="alive" role="button" class="btn shadow-text btn-character my-auto ml-1 <%= 'alive' if c.status.eql?"alive" %>" onclick="character_status(this)">Alive</button>
+            <button id="dead-<%=c.cid%>"  character="<%=c.name%>" cid="<%=c.cid%>" status="dead"  role="button" class="btn shadow-text btn-character my-auto ml-1 <%= 'dead' if c.status.eql?"dead" %>" onclick="character_status(this)">Dead</button>
+            <% if !c.name.eql? "The Night King" and !c.name.eql? "Viserion"%>
+            <button id="wight-<%=c.cid%>" character="<%=c.name%>" cid="<%=c.cid%>" status="wight" role="button" class="btn shadow-text btn-character my-auto ml-1 <%= 'wight' if c.status.eql?"wight" %>" onclick="character_status(this)">Wight</button>
+            <% end %>
+          </div>
+        </div>
+        <% end %>
       </div>
     </div>
     <div class="col-sm-2"></div>
   </div>
-  <div class='row' style="margin-bottom:6rem">
+  <div class='row mt-2' style="margin-bottom:6rem">
     <div class="col-sm-4">
     </div>
     <div class="col-sm-4">
       <div class="card bonus-card">
       <article class="card-body">
-      	<div class="card-title sub-title text-center mb-4 mt-1 shadow-text">Bonus Questions</div>
+      	<div class="card-title sub-title text-center shadow-text">Bonus Questions</div>
         <%= render 'formAnswer', user: @user %>
       </article>
       </div> <!-- card.// -->
