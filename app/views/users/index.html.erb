@@ -8,46 +8,32 @@
     <div class="sub-title text-center shadow-text w-100">Total Players: <%=User.count%></div>
   </div>
   <div class="row">
-    <div class="col-sm-2"></div>
-    <div class="col-sm-8">
-      <table style="width:auto;" class="table default-color mx-auto bonus-card">
-        <thead>
-          <tr class="user-table-top shadow-text table-top text-center">
-          <% if current_user.role.eql? "admin" %>
-            <th>Paid</th>
-          <%end%>
-            <th>User</th>
-            <th>Points</th>
-            <th>House</th>
-            <th>Prediction</th>
-          </tr>
-        </thead>
-        <tbody class="user-list">
-          <% @users.each do |user| %>
-            <tr class="table-row" style="font-size:2rem">
-            <% if current_user.role.eql? "admin" %>
-              <td class=""><a uid="<%=user.id%>"onclick="paid(this)" style="vertical-align:middle" class="text-center">
-
-                <%if user.paid%>
-                  <span id="<%=user.id%>" class="glyphicon glyphicon-ok shadow-text"></span>
-                <%else%>
-                  <span id="<%=user.id%>" class="glyphicon glyphicon-remove shadow-text"></span>
-                <%end%>
-              </a></td>
-            <% end %>
-              <td class="shadow-text"style="vertical-align:middle"><%= user.username %></td>
-              <td class="shadow-text text-center"style="vertical-align:middle"><strong><%= user.points %></strong></td>
-              <td class="text-center"><%= image_tag user.house.image, class:"image-house-sm" %></td>
-              <td class="user-column"style="vertical-align:middle"><%= link_to 'View Entry', user_path(user.uuid), :class=>"btn btn-dark btn-block shadow-text"%></td>
-            <% if current_user.role.eql? "admin" %>
-              <td class="user-column"><%= link_to 'Destroy', destroy_user_path(user.uuid), method: :delete, data: { confirm: 'Are you sure?' },:class=>"btn btn-outline-light btn-character" %></td>
-            <%end%>
-              </tr>
-          <% end %>
-        </tbody>
-      </table>
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <div class="users">
+        <div class="user-card d-flex w-auto">
+          <div class="shadow-text user-name my-auto"><strong>User</strong></div>
+          <div class="shadow-text user-points text-center my-auto"><strong>Points</strong></div>
+          <div class="shadow-text user-house text-center my-auto"><strong>House</strong></div>
+          <div class="shadow-text user-button text-center my-auto"><strong>Prediction</strong></div>
+        </div>
+        <% @users.each do |user| %>
+          <div class="user-card d-flex w-auto">
+            <div class="shadow-text user-name my-auto">
+              <% if current_user.role.eql?"admin" %>
+              <a uid="<%=user.id%>"onclick="paid(this)" style="vertical-align:middle" class="text-center">
+                <span id="<%=user.id%>" class="glyphicon <%= user.paid ? "glyphicon-ok": "glyphicon-remove"%> shadow-text"></span>
+              </a>
+              <% end %>
+              <%= user.username %></div>
+            <div class="shadow-text user-points text-center my-auto"><%= user.points %></div>
+            <div class="shadow-text user-house text-center mx-auto my-auto"><%= image_tag user.house.image, class:" my-auto image-house-sm" %></div>
+            <div class="shadow-text user-button my-auto"><%= link_to 'View Entry', user_path(user.uuid), :class=>"btn btn-dark btn-block shadow-text"%></div>
+          </div>
+        <% end %>
+      </div>
     </div>
-    <div class="col-sm-2"></div>
+    <div class="col-sm-3"></div>
   </div>
 </div>
 <br>

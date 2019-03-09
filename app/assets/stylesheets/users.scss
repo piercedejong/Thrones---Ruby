@@ -27,6 +27,32 @@
   border-radius: 1rem;
 }
 
+.user-card{
+  background-color:rgba(20,20,20,0.4);
+  border-radius: 1rem;
+  padding:1rem;
+  margin-top:0.5rem;
+  margin-bottom:0.5rem;
+  font-size: 2rem;
+}
+
+.user-name{
+  width: 40%
+}
+
+.user-points{
+  width: 35%
+}
+
+.user-house{
+  width:10rem;
+}
+
+.user-button{
+  width:35%
+}
+
+
 .question{
   font-size: 1.5rem;
   padding-top:0.5rem;
@@ -67,4 +93,10 @@
 
 .question-and-answer{
   margin-left: 0.5rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .user-card{
+    font-size: 1.25rem
+  }
 }
