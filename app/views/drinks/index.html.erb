@@ -1,37 +1,21 @@
 <% content_for :title, "Death Pool - Drinking Game"%>
 <div class="container">
   <div class="row">
-    <pre id="title" class="title text-center shadow-text w-100 ">Drinking    Game</pre>
+    <pre id="title" class="mx-4 title text-center shadow-text w-100 ">Drinking    Game</pre>
   </div>
   <div class="row">
   </div>
-  <div class="row">
+  <div class="row mb-4">
     <div class="col-sm-1"></div>
-    <div class="col-sm-10">
-      <div id="drink-table" class="bonus-card">
-      <table class="table table-condensed table-middle  shadow-text">
-        <tbody class="unit-table">
-          <% Drink.all.each do |d| %>
-            <% if d.id%2==0 %>
-              <% if d.hardcore %>
-                <tr class="tablerow-hardcore default-color" style="background-color:rgba(240,0,0,0.3)">
-              <%else%>
-                <tr >
-              <%end%>
-                <td class="drink-rule default-color"><%if d.finish %>Finish your drink <%else%>Take a drink <%end%><%= d.rule %></td>
-              </tr>
-            <% else %>
-              <% if d.hardcore %>
-                <tr class="tablerow-hardcore default-color" style="background-color:rgba(240,0,0,0.3)">
-              <%else%>
-                <tr >
-              <%end%>
-                <td class="drink-rule default-color"><%if d.finish %>Finish your drink <%else%>Take a drink <%end%><%= d.rule %></td>
-                </tr>
-            <% end %>
-          <%end%>
-        </tbody>
-      </table>
+    <div class="col-sm-10 mb-4">
+      <div id="drink-table" class="">
+      <% Drink.all.each do |d| %>
+        <% if d.hardcore %>
+          <div class="drink drink-hardcore shadow-text default-color"><%if d.finish %> Finish your drink <%else%> Take a drink <%end%><%= d.rule %></div>
+        <% else %>
+          <div class="drink drink-rule shadow-text default-color"><%if d.finish %> Finish your drink <%else%> Take a drink <%end%><%= d.rule %></div>
+        <%end%>
+      <% end %>
       </div>
     </div>
     <div class="col-sm-1"></div>

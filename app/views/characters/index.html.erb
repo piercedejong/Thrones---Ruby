@@ -52,7 +52,7 @@
         <% Death.order(alive: :desc).all.each do |d| %>
         <% if !d.eql? Death.last %>
           <div class="row content bonus-card mt-4 pt-2 pb-2" style="">
-            <div class="col-sm-3 d-flex">
+            <div class="col-sm-3 d-flex mb-2">
               <%= image_tag "characters/"+d.name+".jpg", :class=>"image-character-stats" %>
               <div class="character-name text-center" style="margin:auto" id="<%=d.name%>"> <%=d.name%></div>
             </div>
