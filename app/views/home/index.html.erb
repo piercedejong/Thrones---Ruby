@@ -86,27 +86,27 @@
       <h4 class="shadow-text text-center">Will be available on April 7th</h4>
     </div>
   </div>
-  <div class="row align-items-end bottom-bar">
-    <div class="col-sm-2 text-center shadow-text">
+  <div class="row align-items-end bottom-bar" style="margin-bottom:35px">
+    <div class="home-col col-sm-2 text-center shadow-text">
       <i style="font-size:5rem" class="fas fa-gavel"></i>
       <div style="font-size:2rem">Rules</div>
       <div style="font-size:1.25rem">Read the rules and FAQ</div>
       <div style="font-size:1.25rem;color:transparent;text-shadow:none">.</div>
       <%= link_to 'View the Rules', rules_path, :class=>"btn btn-outline-light btn-main btn-block", :style=>"margin:auto;margin-top:1rem"%>
     </div>
-    <div class="col-sm-2 text-center shadow-text">
+    <div class="home-col col-sm-2 text-center shadow-text">
       <i style="font-size:5rem;" class="far fa-chart-bar"></i>
       <div style="font-size:2rem">Statistics</div>
       <div style="font-size:1.25rem">The average prediction of each character</div>
       <%= link_to 'Statistics', characters_path, :class=>"btn btn-outline-light btn-main btn-block", :style=>"margin:auto;margin-top:1rem"%>
     </div>
-    <div class="col-sm-2 text-center shadow-text">
+    <div class="home-col col-sm-2 text-center shadow-text">
       <i style="font-size:5rem;" class="fas fa-home"></i>
       <div style="font-size:2rem">Houses</div>
       <div style="font-size:1.25em">See the house standings and house members</div>
       <%= link_to 'Houses', houses_path, :class=>"btn btn-outline-light btn-main btn-block", :style=>"margin:auto;margin-top:1rem"%>
     </div>
-    <div class="col-sm-2 text-center shadow-text">
+    <div class="home-col col-sm-2 text-center shadow-text">
       <i style="font-size:5rem"class="fas fa-poll"></i>
       <div style="font-size:2rem">Leaderboards</div>
       <div style="font-size:1.25rem">Check out everyones current poistion!</div>
@@ -114,13 +114,13 @@
       <%= link_to 'Leaderboards', users_path, :class=>"btn btn-outline-light btn-main btn-block", :style=>"margin:auto;margin-top:1rem"%>
       <!--<%= link_to 'Spoiler-Free Leaderboards', spoilerfree_path, :class=>"btn btn-outline-dark color", :style=>"margin:auto;margin-top:1rem"%> -->
     </div>
-    <div class="col-sm-2 text-center shadow-text">
+    <div class="home-col col-sm-2 text-center shadow-text">
       <i style="font-size:5rem"class="fas fa-wine-glass-alt"></i>
       <div style="font-size:2rem">Drinking Game</div>
       <div style="font-size:1.25rem">The rules for the Game of Thrones drinking game.</div>
       <%= link_to 'Drinking Game', drinks_path, :class=>"btn btn-outline-light btn-main btn-block", :style=>"margin:auto;margin-top:1rem"%>
     </div>
-    <div class="col-sm-2 text-center shadow-text">
+    <div class="home-col col-sm-2 text-center shadow-text">
       <i style="font-size:5rem"class="fas fa-cogs"></i>
       <div style="font-size:2rem">Account Settings</div>
       <div style="font-size:1.25rem">View, update, and edit your account</div>
@@ -131,11 +131,7 @@
 <% if !current_user.paid %>
   <div id="scum" class="text-center shadow-text">You have NOT paid your entry fee yet</div>
 <% end %>
-<div id="current-user" class=" bottomalignedright shadow-text ">
-  Welcome <%= current_user.username %>
-  <%= link_to 'Log Out', logout_path, :class=>"btn btn-log-out btn-outline-light" %>
-</div>
-</div>
+<pre id="current-user" class=" bottomalignedright shadow-text "> Welcome <%= current_user.username %>   <%= link_to 'Log Out', logout_path, :class=>"btn btn-log-out btn-outline-light" %></pre>
 <% else %>
 <% content_for :title, " - Login"%>
   <div class="position row" style="">
