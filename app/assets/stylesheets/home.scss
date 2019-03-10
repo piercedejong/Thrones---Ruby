@@ -122,6 +122,18 @@
   min-height:10rem
 }
 
+.bottom-bar-icon{
+  font-size: 5rem
+}
+
+.bottom-bar-name{
+  font-size: 2rem
+}
+
+.bottom-bar-info{
+  font-size: 1.25rem;
+}
+
 @media only screen and (max-width: 800px) {
   .character-name, .progress-bar-text{
     font-size: 1.5rem;
