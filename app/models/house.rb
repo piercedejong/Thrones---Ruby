@@ -1,6 +1,7 @@
 class House < ApplicationRecord
   before_create :create_uuid
   has_many :users
+  has_many :characters
 
 
 
@@ -21,6 +22,12 @@ class House < ApplicationRecord
     ]
     houses.each do |h|
       House.create(h)
+    end
+  end
+
+  def self.add_characters
+    House.all.each do |h|
+      Character.create_characters(h)
     end
   end
 
