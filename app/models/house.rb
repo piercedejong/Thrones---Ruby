@@ -3,7 +3,41 @@ class House < ApplicationRecord
   has_many :users
   has_many :characters
 
+  def alive_characters
+    c = self.characters.where(status: "alive")
+    if c.eql? nil
+      return []
+    else
+      return c
+    end
+  end
 
+  def dead_characters
+    c = self.characters.where(status: "dead")
+    if c.eql? nil
+      return []
+    else
+      return c
+    end
+  end
+
+  def wight_characters
+    c = self.characters.where(status: "wight")
+    if c.eql? nil
+      return []
+    else
+      return c
+    end
+  end
+
+  def no_status_characters
+    c = self.characters.where(status: "none")
+    if c.eql? nil
+      return []
+    else
+      return c
+    end
+  end
 
   protected
   def self.create_houses
