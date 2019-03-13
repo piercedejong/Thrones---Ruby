@@ -2,7 +2,7 @@
  <% flash.each do |key, value| %>
       <div class="alert alert-success text-center" role="alert"><%= value %></div>
 <% end %>
-<%= link_to 'Home', root_url, :class=>"topalignedleft btn btn-outline-light btn-back shadow-text" %>
+<%= link_to 'Home', root_url, class:"topalignedleft btn btn-outline-light btn-back shadow-text" %>
 
 <div id="picks" class="container mb-4">
   <div class="title user-title text-center shadow-text"><%=@user.username%></div>
@@ -17,7 +17,7 @@
           <tbody>
             <% @user.characters.each do |c| %>
             <tr class="bonus-card mt-1 mb-1" style="border-top:none">
-              <td style="width:10%"><%= image_tag "characters/"+c.name+".jpg", :class=>"image-character" %></td>
+              <td style="width:10%"><%= image_tag "characters/"+c.name+".jpg", class:"image-character" %></td>
               <td id="<%c.name%>" style="width:30%"class="text-center character-name shadow-text"><%= c.name %></td>
               <td style="vertical-align:middle">
                 <div class="d-flex shadow-text">
@@ -35,7 +35,7 @@
         </table> -->
         <% @user.characters.each do |c| %>
         <div class="bonus-card w-100 d-flex mt-2 mb-2 p-2">
-          <div class="p-character-image""><%= image_tag "characters/"+c.name+".jpg", :class=>"image-character" %></div>
+          <div class="p-character-image""><%= image_tag "characters/"+c.name+".jpg", class:"image-character" %></div>
           <div class="p-character-name text-center character-name shadow-text my-auto mx-1" id="<%c.name%>"><%= c.name %></div>
           <div class="p-character-buttons d-flex shadow-text">
             <button id="alive-<%=c.cid%>" character="<%=c.name%>" cid="<%=c.cid%>" status="alive" role="button" class="btn shadow-text btn-character my-auto ml-1 <%= 'alive' if c.status.eql?"alive" %>" onclick="character_status(this)">Alive</button>

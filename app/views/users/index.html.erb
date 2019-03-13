@@ -28,7 +28,7 @@
               <%= user.username %></div>
             <div class="shadow-text user-points text-center my-auto"><%= user.points %></div>
             <div class="shadow-text user-house text-center mx-auto my-auto"><%= image_tag user.house.image, class:" my-auto image-house-sm" %></div>
-            <div class="shadow-text user-button my-auto"><%= link_to 'View Entry', user_path(user.uuid), :class=>"btn btn-dark btn-block shadow-text"%></div>
+            <div class="shadow-text user-button my-auto"><%= link_to 'View Entry', user_path(user.uuid), class:"btn btn-dark btn-block shadow-text"%></div>
           </div>
         <% end %>
       </div>
@@ -37,4 +37,4 @@
   </div>
 </div>
 <br>
-<%= link_to 'Home', root_url, :class=>"topalignedleft btn btn-outline-light btn-back shadow-text" %>
+<%= link_to 'Home', root_url, class:"topalignedleft btn btn-outline-light btn-back shadow-text" %>

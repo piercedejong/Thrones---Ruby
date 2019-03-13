@@ -12,7 +12,7 @@
     <div class="col-sm-4">
       <div class="text-center sub-title shadow-text">Reset Predictions</div>
       <h4 class="shadow-text">This will reset all of your character predictions and any bonus questons you have answered</h4>
-      <%= link_to "Reset Predictions", reset_entry_path(@user.uuid), :class=>"btn btn-danger shadow-text", :data => {:confirm => 'Are you sure? There is no way to reverse this'} %>
+      <%= link_to "Reset Predictions", reset_entry_path(@user.uuid), class:"btn btn-danger shadow-text", :data => {:confirm => 'Are you sure? There is no way to reverse this'} %>
     </div>
     <div class="col-sm-4">
       <div id="username" class="text-center user shadow-text"><%=@user.username%></div>
@@ -47,7 +47,7 @@
   </div>
 </div>
 
-<%= link_to 'Home', root_url, :class=>"topalignedleft btn btn-outline-light btn-back shadow-text" %>
+<%= link_to 'Home', root_url, class:"topalignedleft btn btn-outline-light btn-back shadow-text" %>
 
 <script>
 $(document).ready(function () {

@@ -15,7 +15,7 @@
       <% else %>
         <tr class="tablerow2 shadow-text">
       <% end %>
-      <td><%= image_tag "characters/"+d.name+".jpg", :class=>"image-character" %></td>
+      <td><%= image_tag "characters/"+d.name+".jpg", class:"image-character" %></td>
       <td id="<%d.name%>" class="text-center character-name"><%= d.name %></td>
       <td class=" text-center align-middle">
         <% if d.status.eql? "alive" %>
@@ -32,4 +32,4 @@
 </table>
 </div>
 <br>
-<%= link_to 'Home', root_url, :class=>"topalignedleft btn btn-outline-light btn-back shadow-text" %>
+<%= link_to 'Home', root_url, class:"topalignedleft btn btn-outline-light btn-back shadow-text" %>

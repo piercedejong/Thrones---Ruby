@@ -1,4 +1,4 @@
-<%= link_to 'Home', root_url, :class=>"topalignedleft btn btn-outline-light btn-back shadow-text" %>
+<%= link_to 'Home', root_url, class:"topalignedleft btn btn-outline-light btn-back shadow-text" %>
 <pre class="title text-center shadow-text">House   Leaderboards</pre>
 <div class="container mb-5">
   <% House.all.each do |h| %>
@@ -14,7 +14,7 @@
           <div class="d-flex">
             <pre id="words" class="my-auto pt-0 title words shadow-text"><%=h.words%>    </pre>
             <% if current_user.role.eql?"admin"%>
-              <%= link_to 'House Predictions', house_path(h.name), :class=>"shadow-text btn btn-outline-light btn-house"%>
+              <%= link_to 'House Predictions', house_path(h.name), class:"shadow-text btn btn-outline-light btn-house"%>
             <% end %>
           </div>
           <div id="members-<%=h.hid%>" class="shadow-text row mt-2" style="flex-wrap: wrap;">

@@ -13,11 +13,11 @@
           <%= select_tag "user[answer#{q.qid}]", content_tag(:option,'Select an Answer...',:value=>"")+options_for_select(["Yes! WHAT IS HYPE MAY NEVER DIE","No, I have no hype"], @user.answers.find_by(rid: q.qid).text),  class:'input-group-form input-answer-from', id: '' %>
         <% else %>
           <%= select_tag "user[answer#{q.qid}]", content_tag(:option,'Select a Character...',:value=>"")+options_from_collection_for_select(Death.all.order(created_at: :asc), "name", "name", selected=@user.answers.find_by(rid: q.qid).text),  class:'input-group-form input-answer-from', id: '' %>
-        <% end %>          <%# <%= form.text_field :"answer#{q.qid}", value: @user.answers.find_by(rid: q.qid).text, :class=>"answer form-control" %>
+        <% end %>          <%# <%= form.text_field :"answer#{q.qid}", value: @user.answers.find_by(rid: q.qid).text, class:"answer form-control" %>
       </div> <!-- input-group.// -->
       </div>
     <% end %>
     <%= form.hidden_field :uuid, value: @user.uuid  %>
-    <%= submit_tag "Save Answers", style:"font-size:1.75rem", :class=>"btn btn-outline-light btn-main btn-block shadow-text"%>
+    <%= submit_tag "Save Answers", style:"font-size:1.75rem", class:"btn btn-outline-light btn-main btn-block shadow-text"%>
   </form>
 <% end %>
