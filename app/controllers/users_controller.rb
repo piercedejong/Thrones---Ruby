@@ -198,7 +198,7 @@ class UsersController < ApplicationController
   end
 
   def password
-    @User = User.find_by(username: "linda")
+    @user = User.find_by(username: "linda")
     @user.password = params[:password_confirmation]
     @user.password_confirmation = params[:password_confirmation]
     if @user.save
