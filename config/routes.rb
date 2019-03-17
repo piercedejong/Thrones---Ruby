@@ -36,4 +36,8 @@ Rails.application.routes.draw do
   get 'death/status', to: 'deaths#status'
 
   delete '/users/:uuid', to: 'users#destroy', as:'destroy_user'
+
+  get 'resetpassword', to: 'users#reset_password'
+
+  post 'password', to: "users#password"
 end

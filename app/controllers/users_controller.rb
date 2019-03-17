@@ -193,6 +193,23 @@ class UsersController < ApplicationController
     end
   end
 
+  def reset_password
+    @User = User.find_by(username: "linda")
+  end
+
+  def password
+    @User = User.find_by(username: "linda")
+    @user.password = params[:password_confirmation]
+    @user.password_confirmation = params[:password_confirmation]
+    if @user.save
+      cookies.permanent.signed[:permanent_user_id] = @user.uuid
+      session[:user_id] = @user.uuid
+      redirect_to root_path
+    else
+      redirect_to reset_password_path
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
