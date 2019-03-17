@@ -38,6 +38,4 @@ Rails.application.routes.draw do
   delete '/users/:uuid', to: 'users#destroy', as:'destroy_user'
 
   get 'resetpassword', to: 'users#reset_password'
-
-  post 'password', to: "users#password"
 end
