@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:password])
       cookies.permanent.signed[:permanent_user_id] = @user.uuid
       session[:user_id] = @user.uuid
-      UserMailer.welcome(@user).deliver_now
+      #UserMailer.welcome(@user).deliver_now
       redirect_to root_url, notice: "Logged in!"
     else
       redirect_to root_url, notice: "Error: Username or Password is invalid"
