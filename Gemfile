@@ -41,13 +41,15 @@ group :development, :test do
 end
 
 group :development do
-  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
+  gem 'dotenv-rails'
+  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
+  gem 'pry'
+  gem 'rspec-rails', '~> 3.5'
 end
 
 group :development, :test do
-  gem 'pry'
-  gem 'sqlite3'
+  gem 'sqlite3', "~> 1.3.6"
 end
 
 group :production do
