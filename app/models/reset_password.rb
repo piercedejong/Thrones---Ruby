@@ -1,2 +1,0 @@
-class ResetPassword < ApplicationRecord
-end

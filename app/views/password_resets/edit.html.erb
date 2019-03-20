@@ -1,0 +1,24 @@
+<% flash.each do |key, value| %>
+  <% if value.include? "Error" %>
+    <div class="alert alert-danger text-center" role="alert"><%= value %></div>
+  <% else %>
+    <div class="alert alert-success text-center" role="alert"><%= value %></div>
+  <%end%>
+<% end %>
+<div class="container">
+  <pre class="title text-center shadow-text">Game   of   Thrones   Death   Pool</pre>
+  <div class='row my-atuo' style="padding-top:15%">
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4">
+      <div class="bonus-card">
+      <article class="card-body">
+        <div class="card-title text-center mb-4 mt-1 h2">Reset Password</div>
+        <%= render 'formPassword', user: @user %>
+      </article>
+      </div> <!-- card.// -->
+    </div>
+    <div class="col-sm-4">
+    </div>
+  </div>
+</div>

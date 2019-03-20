@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'home#index'
   resources :answers
-  resources :reset_password
+  resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :sessions, only: [:new, :create, :destroy]
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
@@ -38,5 +38,4 @@ Rails.application.routes.draw do
 
   delete '/users/:uuid', to: 'users#destroy', as:'destroy_user'
 
-  post 'reset_password_confirmation', to: 'reset_password#confirmation'
 end

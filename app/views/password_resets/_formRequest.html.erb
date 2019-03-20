@@ -1,12 +1,4 @@
-<%= form_with(model: user, url:reset_password_confirmation_path, local: true) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation" class="">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being created:</h2>
-      <% user.errors.full_messages.each do |message| %>
-        <pre class="h4 shadow-text">  <%= message %></pre>
-      <% end %>
-    </div>
-  <% end %>
+<%= form_for(:password_reset, url: password_resets_path) do |form| %>
   <form>
   <div class="form-group">
   <div class="input-group">
