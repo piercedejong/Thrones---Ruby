@@ -1,0 +1,31 @@
+<%= form_with(model: user, url:reset_password_confirmation_path, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation" class="">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being created:</h2>
+      <% user.errors.full_messages.each do |message| %>
+        <pre class="h4 shadow-text">  <%= message %></pre>
+      <% end %>
+    </div>
+  <% end %>
+  <form>
+  <div class="form-group">
+  <div class="input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+     </div>
+     <%= form.text_field :email, placeholder:"Your Email", autocomplete:"new-password",class:"form-control input-group-form" %>
+  </div> <!-- input-group.// -->
+  </div> <!-- form-group// -->
+  <div class="form-group">
+  <div class="input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text"> <i class="fab fa-suse"></i> </span>
+     </div>
+     <%= form.text_field :username, placeholder:"Your Username", autocomplete:"new-password", class:"form-control input-group-form" %>
+  </div> <!-- input-group.// -->
+  </div> <!-- form-group// -->
+  <div class="form-group">
+  <%= form.submit "Reset Password", class:"btn btn-block btn-primary" %>
+  </div> <!-- form-group// -->
+  </form>
+<% end %>

@@ -1,0 +1,18 @@
+<div class="container">
+  <pre class="title text-center shadow-text">Game   of   Thrones   Death   Pool</pre>
+  <div class='row my-atuo' style="padding-top:15%">
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4">
+      <div class="bonus-card">
+      <article class="card-body">
+        <%= link_to 'Back', root_url, class:"btn btn-outline-light top-aligned-left", :role=>"button" %>
+        <div class="card-title text-center mb-4 mt-1 h2">Reset Password</div>
+        <%= render 'formRequest', user: @user %>
+      </article>
+      </div> <!-- card.// -->
+    </div>
+    <div class="col-sm-4">
+    </div>
+  </div>
+</div>
