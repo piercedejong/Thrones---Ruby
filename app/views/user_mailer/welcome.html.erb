@@ -4,13 +4,20 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Welcome to example.com, <%= @user.username %></h1>
+    <div style="font-size:1rem">Welcome, <%= @user.username %></div>
     <p>
-      You have successfully signed up to example.com,
+      You have successfully signed up to the Death Pool
     </p>
     <p>
-      To login to the site, just follow this link: <%= @url %>.
+      To login, just follow this <a href="<%= @url %>">link</a>.
     </p>
-    <p>Thanks for joining and have a great day!</p>
+
+    <p>
+      Please read the <a href="<%=@url%>rules">rules and faq</a>
+    </p>
+
+    <p>
+      Valar morghulis
+    </p>
   </body>
 </html>
