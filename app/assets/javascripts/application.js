@@ -80,22 +80,13 @@ function status(element){
 }
 
 var countDownDate = new Date("Apr 14, 2019 18:00:0").getTime();
-
-// Update the count down every 1 second
 setInterval(function() {
-
-  // Get todays date and time
   var now = new Date().getTime();
-
-  // Find the distance between now and the count down date
   var distance = countDownDate - now;
-
-  // Time calculations for days, hours, minutes and seconds
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
   if(days<10){
     days = "0" +days
   }
@@ -108,13 +99,10 @@ setInterval(function() {
   if(seconds<10){
     seconds = "0" +seconds
   }
-
   $("#day").text(days+" :");
   $("#hour").text(hours+" :");
   $("#minute").text(minutes+" :");
   $("#second").text(seconds);
-
-  // If the count down is over, write some text
   if (distance < 0) {
     clearInterval(x);
     document.getElementById("demo").innerHTML = "EXPIRED";
@@ -135,3 +123,7 @@ $(document).ready(function() {
     }
   });
 });
+
+function back_button_margin(){
+	$(".row-main").css("margin-top", -$(".row-back").height());
+}

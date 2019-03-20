@@ -139,9 +139,15 @@
   }
   .title{
     font-size: 2.5rem;
+    //margin-left: 0px !important;
+    //margin-right: 0px !important;
   }
   .house-title{
     font-size: 2rem
+  }
+
+  .house-points{
+    font-size: 1.5rem;
   }
   #current-user{
     font-size: 1.25rem

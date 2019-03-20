@@ -29,7 +29,7 @@ html {
 pre, div, table, body, .default-color{
   color: #f9f2de;
 }
-body, pre{
+body, pre, .house-points{
   font-family:"Georgia",'Nunito'
 }
 
@@ -40,9 +40,13 @@ body, pre{
   padding-top:1rem
 }
 
-.house-title{
+.house-title, .words{
   font-size: 3rem;
   font-family: 'Game of Thrones';
+}
+
+.house-points{
+  font-size: 2rem;
 }
 
 .user{

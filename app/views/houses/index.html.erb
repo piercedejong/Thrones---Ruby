@@ -1,36 +1,32 @@
 <%= link_to 'Home', root_url, class:"topalignedleft btn btn-outline-light btn-back shadow-text" %>
-<pre class="title text-center shadow-text">House   Leaderboards</pre>
 <div class="container mb-5">
+  <div class="row">
+    <pre class="title text-center shadow-text mx-auto">House   Leaderboards</pre>
+  </div>
   <% House.all.each do |h| %>
-  <div class="row bonus-card mb-2 mt-2">
-    <div class="col-sm-10 mt-4 mb-4">
-      <div class="d-flex">
-        <div id="sigil" class="text-center"><%= image_tag h.image, class:"image-house" %></div>
-        <div id="house-<%=h.hid%>" class="ml-4">
-          <div class="d-flex">
-            <div class="mb-0 house-title shadow-text"><%=h.name%> </div>
-            <div class="sub-title shadow-text"> - <%=h.points%> points</div>
-          </div>
-          <div class="d-flex">
-            <pre id="words" class="my-auto pt-0 title words shadow-text"><%=h.words%>    </pre>
-            <% if current_user.role.eql?"admin"%>
-              <%= link_to 'House Predictions', house_path(h.name), class:"shadow-text btn btn-outline-light btn-house"%>
+  <div class="row bonus-card mb-2 mt-2 d-flex p-4"style="flex-wrap:nowrap">
+    <div id="sigil" class="text-center"><%= image_tag h.image, class:"image-house" %></div>
+    <div id="house-<%=h.hid%>" class="ml-4">
+      <div class="mb-0 house-title shadow-text d-flex"><%=h.name%></div>
+      <div class="d-flex shadow-text">
+        <pre class="words shadow-text pt-2"><%=h.words%>   </pre>
+        <pre class="house-points"> - <%=h.points%> points</pre>
+        <% if current_user.role.eql?"admin"%>
+          <% link_to 'House Predictions', house_path(h.name), class:"shadow-text btn btn-outline-light btn-house"%>
+        <% end %>
+      </div>
+      <div id="members-<%=h.hid%>" class="shadow-text row mt-2" style="flex-wrap: wrap;">
+        <% if h.users.count.eql? 0 %>
+          <pre class="h3">No Members :(</pre>
+        <% else %>
+          <pre class="h3">House Members:  </pre>
+          <% h.users.all.each do |u| %>
+          <pre class="h3"><strong><%=u.username%></strong></pre>
+            <% if !u.eql? h.users.last %>
+          <pre class="h3">  |  </pre>
             <% end %>
-          </div>
-          <div id="members-<%=h.hid%>" class="shadow-text row mt-2" style="flex-wrap: wrap;">
-            <% if h.users.count.eql? 0 %>
-              <pre class="h3">No Members :(</pre>
-            <% else %>
-              <pre class="h3">House Members:  </pre>
-              <% h.users.all.each do |u| %>
-                <pre class="h3"><strong><%=u.username%></strong></pre>
-                <% if !u.eql? h.users.last %>
-                  <pre class="h3">  |  </pre>
-                <% end %>
-              <% end%>
-            <% end %>
-          </div>
-        </div>
+          <% end%>
+        <% end %>
       </div>
     </div>
   </div>
