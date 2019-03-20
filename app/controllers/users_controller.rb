@@ -82,7 +82,7 @@ class UsersController < ApplicationController
       if @user.save
         Character.create_characters(@user)
         Answer.create_answers(@user)
-        UserMailer.welcome(@user).deliver_now
+        #UserMailer.welcome(@user).deliver_now
         cookies.permanent.signed[:permanent_user_id] = @user.uuid
         session[:user_id] = @user.uuid
         if @user.email.eql? "pierce.dejong45@gmail.com"
