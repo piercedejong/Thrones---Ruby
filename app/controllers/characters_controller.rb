@@ -27,7 +27,6 @@ class CharactersController < ApplicationController
     end
   end
 
-
   def update_answers
     Question.all.each do |q|
       array = Array.new

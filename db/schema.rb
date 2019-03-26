@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_26_190555) do
+ActiveRecord::Schema.define(version: 2019_03_26_232738) do
 
   create_table "answers", force: :cascade do |t|
     t.string "text"
@@ -62,6 +62,24 @@ ActiveRecord::Schema.define(version: 2019_03_26_190555) do
     t.integer "fid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "house_answers", force: :cascade do |t|
+    t.string "text"
+    t.integer "aid"
+    t.boolean "correct"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "house_id"
+    t.integer "user_id"
+  end
+
+  create_table "house_questions", force: :cascade do |t|
+    t.string "text"
+    t.integer "qid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "house_id"
   end
 
   create_table "houses", force: :cascade do |t|
