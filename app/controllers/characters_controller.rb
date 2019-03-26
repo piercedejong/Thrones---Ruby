@@ -1,6 +1,12 @@
 class CharactersController < ApplicationController
 
   def index
+    update_stats
+    update_answers
+  end
+
+
+  def update_stats
     Death.all.each do |d|
       @alive = 0.0
       @dead = 0.0
@@ -18,6 +24,24 @@ class CharactersController < ApplicationController
       d.update(alive: (@alive*100/User.count).round(2))
       d.update(dead: (@dead*100/User.count).round(2))
       d.update(wight: (@wight*100/User.count).round(2))
+    end
+  end
+
+
+  def update_answers
+    Question.all.each do |q|
+      array = Array.new
+      User.all.each do |u|
+        a = u.answers.all.find_by(rid: q.qid).text
+        if !a.eql?""
+          array.push(a)
+        end
+      end
+      freq = array.inject(Hash.new(0)) { |h,v| h[v] += 1; h }
+      max = array.max_by { |v| freq[v] }
+      q.update(answer:max)
+      total = freq.first.second
+      total = total / (User.count+0.0)
     end
   end
 end

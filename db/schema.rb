@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_20_183607) do
+ActiveRecord::Schema.define(version: 2019_03_26_190555) do
 
   create_table "answers", force: :cascade do |t|
     t.string "text"
@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(version: 2019_03_20_183607) do
     t.integer "qid"
     t.integer "value"
     t.string "glyph"
+    t.string "answer"
   end
 
   create_table "rules", force: :cascade do |t|

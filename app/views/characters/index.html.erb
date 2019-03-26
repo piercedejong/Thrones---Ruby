@@ -43,6 +43,24 @@
     </div>
   </div>
 
+<% if current_user.role.eql? "admin" %>
+  <pre class="title sub-title shadow-text text-center mt-4 mx-auto">Top   Bonus   Question   Answers</pre>
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <div class="bonus-card">
+        <% Question.all.each do |q| %>
+          <div class="question-and-answer">
+            <div class="question shadow-text"><%=q.qid%>. <%=q.text%></div>
+            <div class="answer shadow-text character-name ml-4" style="color:#f9f2de;"><%=q.answer%></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+<%end%>
+
   <div class="row mt-4">
     <div class="col-sm-1">
     </div>
