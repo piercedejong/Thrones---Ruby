@@ -39,9 +39,11 @@ class CharactersController < ApplicationController
       end
       freq = array.inject(Hash.new(0)) { |h,v| h[v] += 1; h }
       max = array.max_by { |v| freq[v] }
-      q.update(answer:max)
       total = freq.first.second
-      total = total / (User.count+0.0)
+      total = (total / (User.count+0.0) * 100).round(2)
+      text = max+", "+total.to_s+"%"
+      q.update(answer:text)
+
     end
   end
 end
