@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_26_232738) do
+ActiveRecord::Schema.define(version: 2019_03_27_015621) do
 
   create_table "answers", force: :cascade do |t|
     t.string "text"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 2019_03_26_232738) do
     t.datetime "updated_at", null: false
     t.integer "house_id"
     t.integer "user_id"
+    t.integer "house_question_id"
   end
 
   create_table "house_questions", force: :cascade do |t|
