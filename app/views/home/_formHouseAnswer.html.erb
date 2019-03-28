@@ -1,13 +1,13 @@
 <%= form_for current_user, url: update_house_answers_path, method: :post  do |form| %>
   <form>
-    <% HouseQuestion.all.each do |q| %>
+    <% HouseQuestion.where(episode:current_episode).each do |q| %>
       <div class="form-group">
         <label class="shadow-text bottom-bar-info"><%=q.qid%>. <%=q.text%></label>
         <div class="input-group">
           <div class="input-group-prepend">
             <span class="input-group-text"> <i class=""></i></span>
           </div>
-          <%= select_tag "user[houseanswer#{q.qid}]", content_tag(:option,'Select an Answer...',value:"")+options_for_select(["Yes","No"], current_user.house_answers.find_by(aid: q.qid).text), class:'input-group-form input-answer-from', id: '' %>
+          <%= select_tag "user[houseanswer#{q.id}]", content_tag(:option,'Select an Answer...',value:"")+options_for_select(["Yes","No"], current_user.house_answers.find_by(aid: q.id).text), class:'input-group-form input-answer-from', id: '' %>
         </div> <!-- input-group.// -->
       </div>
     <% end %>

@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   helper_method :second_place
   helper_method :third_place
   helper_method :selected_answer
+  helper_method :current_episode
 
   def current_user
     return unless cookies.signed[:permanent_user_id] || session[:user_id]
@@ -16,6 +17,10 @@ class ApplicationController < ActionController::Base
     rescue Mongoid::Errors::DocumentNotFound
       nil
     end
+  end
+
+  def current_episode
+    @episode =  1
   end
 
   def first_place
