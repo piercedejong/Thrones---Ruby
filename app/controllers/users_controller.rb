@@ -126,6 +126,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def update_house_answers
+    @user = current_user
+    respond_to do |format|
+      @user.house_answers.all.each do |a|
+        a.update(text: house_answers_update_params["houseanswer#{a.aid}"])
+      end
+      format.html { redirect_to root_path,alert: 'Hosue Questions Saved' }
+      format.json { render json: @user.errors, status: :unprocessable_entity }
+    end
+  end
+
   def update_house
     @user = User.find_by(uuid:house_update_params[:uuid])
     respond_to do |format|
@@ -220,5 +231,9 @@ class UsersController < ApplicationController
 
     def house_update_params
       params.require(:user).permit(:uuid, :house_id,:password)
+    end
+
+    def house_answers_update_params
+      params.require(:user).permit(:houseanswer1, :houseanswer2, :houseanswer3)
     end
 end

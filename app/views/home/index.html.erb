@@ -60,10 +60,25 @@
       </div>
     </div>
     <div class="col-sm-4 order-first order-sm-2">
-      <div class="sub-title text-center shadow-text">House Questions</div>
+
+    <% if current_user.role.eql? "admin" %>
+      <div class="card bonus-card p-1">
+        <article class="card-body m-0 p-1">
+          <div class="card-title sub-title text-center shadow-text p-0 m-0">House Questions</div>
+          <div class="question text-center shadow-text m-0 p-0">Episode 1</div>
+          <%= render 'formHouseAnswer', user: @user %>
+        </article>
+      </div> <!-- card.// -->
+    <% else %>
+    <div class="sub-title text-center shadow-text">House Questions</div>
+
       <h4 class="shadow-text text-center">Available on April 7th</h4>
+    <% end %>
     </div>
   </div>
+  <% if !current_user.paid %>
+    <div id="scum" class="text-center shadow-text">You have NOT paid your entry fee yet. Read the FAQ</div>
+  <% end %>
   <div class="row align-items-end bottom-bar" style="margin-bottom:35px">
     <div class="home-col col-sm-2 text-center shadow-text">
       <i class=" bottom-bar-icon fas fa-gavel"></i>
@@ -103,9 +118,6 @@
       <%= link_to 'Account', edit_user_path(current_user.uuid), class:"btn btn-outline-light btn-main btn-block mx-auto mt-3"%>
     </div>
   </div>
-  <% if !current_user.paid %>
-    <div id="scum" class="text-center shadow-text">You have NOT paid your entry fee yet. Read the FAQ</div>
-  <% end %>
 </div>
 
 <pre id="current-user" class=" bottomalignedright shadow-text "> Welcome <%= current_user.username %>   <%= link_to 'Log Out', logout_path, class:"btn btn-log-out btn-outline-light" %></pre>
