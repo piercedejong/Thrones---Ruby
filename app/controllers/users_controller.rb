@@ -129,7 +129,6 @@ class UsersController < ApplicationController
   def update_house_answers
     @user = current_user
     respond_to do |format|
-      binding.pry
       @user.house_answers.where(episode: current_episode).each do |a|
         a.update(text: house_answers_update_params["houseanswer#{a.aid}"])
       end
