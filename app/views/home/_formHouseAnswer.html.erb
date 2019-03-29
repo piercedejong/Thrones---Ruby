@@ -1,7 +1,7 @@
 <%= form_for current_user, url: update_house_answers_path, method: :post  do |form| %>
   <form>
     <% HouseQuestion.where(episode:current_episode).each do |q| %>
-      <div class="form-group">
+      <div class="form-group p-0 mb-0">
         <label class="shadow-text bottom-bar-info"><%=q.qid%>. <%=q.text%></label>
         <div class="input-group">
           <div class="input-group-prepend">
@@ -11,6 +11,6 @@
         </div> <!-- input-group.// -->
       </div>
     <% end %>
-    <%= submit_tag "Save Answers", style:"font-size:1.75rem", class:"btn btn-outline-light btn-main btn-block shadow-text"%>
+    <%= submit_tag "Save Answers", class:"btn btn-outline-light btn-main btn-block shadow-text mt-2"%>
   </form>
 <% end %>
