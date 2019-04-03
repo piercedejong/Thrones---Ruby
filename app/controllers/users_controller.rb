@@ -194,7 +194,7 @@ class UsersController < ApplicationController
       password = username_update_params[:password] and @user.eql? current_user
       if username_update_params[:username] !~ /[^a-z0-9]/i
         if @user and @user.authenticate(password)
-          if username_update_params[:username].length >= 5 username_update_params[:username].length <= 20 and @user.update_column(:username, username_update_params[:username])
+          if username_update_params[:username].length >= 5 and username_update_params[:username].length <= 20 and @user.update_column(:username, username_update_params[:username])
             format.html { redirect_to edit_user_path(@user.uuid), alert: 'Username Updated' }
           else
             format.html { redirect_to edit_user_path(@user.uuid), alert: 'Error: Username alreay taken or is not long enough' }
