@@ -192,15 +192,20 @@ class UsersController < ApplicationController
     @user = User.find_by(uuid:username_update_params[:uuid])
     respond_to do |format|
       password = username_update_params[:password] and @user.eql? current_user
-      if @user and @user.authenticate(password)
-        if @user.update_column(:username, username_update_params[:username])
-          format.html { redirect_to edit_user_path(@user.uuid), alert: 'Username Updated' }
+      if username_update_params[:username] !~ /[^a-z0-9]/i
+        if @user and @user.authenticate(password)
+          if username_update_params[:username].length >= 5 username_update_params[:username].length <= 20 and @user.update_column(:username, username_update_params[:username])
+            format.html { redirect_to edit_user_path(@user.uuid), alert: 'Username Updated' }
+          else
+            format.html { redirect_to edit_user_path(@user.uuid), alert: 'Error: Username alreay taken or is not long enough' }
+            format.json { render json: @user.errors, status: :unprocessable_entity }
+          end
         else
-          format.html { redirect_to edit_user_path(@user.uuid), alert: 'Error: Username alreay taken or is not long enough' }
+          format.html { redirect_to edit_user_path(@user.uuid),alert: 'Error: Incorrect Password'}
           format.json { render json: @user.errors, status: :unprocessable_entity }
         end
       else
-        format.html { redirect_to edit_user_path(@user.uuid),alert: 'Error: Incorrect Password'}
+        format.html { redirect_to edit_user_path(@user.uuid),alert: 'Error: Username can only contain characters and numbers'}
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
