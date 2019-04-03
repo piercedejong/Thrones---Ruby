@@ -2,6 +2,7 @@ class House < ApplicationRecord
   before_create :create_uuid
   has_many :users
   has_many :characters
+  has_many :house_answers
 
   def alive_characters
     c = self.characters.where(status: "alive")

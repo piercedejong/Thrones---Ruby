@@ -6,6 +6,21 @@
 </div>
 
 <div class="container">
+  <div class="row mt-4 pb-4">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <div class="bonus-card">
+        <div class="card-title sub-title text-center mb-0 mt-1 shadow-text">Bonus Questions</div>
+        <% HouseQuestion.where("episode < ?", current_episode+1).each do |q| %>
+          <div class="question-and-answer">
+            <div class="question shadow-text"><%=q.qid%>. <%=q.text%></div>
+            <div class="answer shadow-text character-name ml-4" style="color:#f9f2de;"><%=@house.house_answers.find_by(aid: q.id).text%></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
   <% if !(@house.alive_characters == []) %>
     <div class="row mt-4">
       <div class="col-sm-1"></div>
@@ -64,7 +79,7 @@
     </div>
   <%end %>
   <% if !(@house.no_status_characters == []) %>
-    <div class="row mt-4">
+    <div class="row mt-4 pb-4">
       <div class="col-sm-1"></div>
       <div class="col-sm-10">
         <div class="progress w-100 progress-bar-text shadow-text">

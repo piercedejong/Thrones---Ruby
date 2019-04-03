@@ -12,7 +12,7 @@
         <pre class="words shadow-text pt-2"><%=h.words%>   </pre>
         <pre class="house-points"> - <%=h.points%> points</pre>
         <% if current_user.role.eql?"admin"%>
-          <% link_to 'House Predictions', house_path(h.name), class:"shadow-text btn btn-outline-light btn-house"%>
+          <%= link_to 'House Predictions', house_path(h.name), class:"shadow-text btn btn-outline-light btn-house"%>
         <% end %>
       </div>
       <div id="members-<%=h.hid%>" class="shadow-text row mt-2" style="flex-wrap: wrap;">

@@ -129,7 +129,7 @@ class UsersController < ApplicationController
   def update_house_answers
     @user = current_user
     respond_to do |format|
-      @user.house_answers.all.each do |a|
+      @user.house_answers.where(episode: current_episode).each do |a|
         a.update(text: house_answers_update_params["houseanswer#{a.aid}"])
       end
       format.html { redirect_to root_path,alert: 'Hosue Questions Saved' }
@@ -234,6 +234,6 @@ class UsersController < ApplicationController
     end
 
     def house_answers_update_params
-      params.require(:user).permit(:houseanswer1, :houseanswer2, :houseanswer3)
+      params.require(:user).permit(:houseanswer1, :houseanswer2, :houseanswer3, :houseanswer4, :houseanswer5, :houseanswer6, :houseanswer7, :houseanswer8, :houseanswer9, :houseanswer10, :houseanswer11, :houseanswer12, :houseanswer13, :houseanswer14, :houseanswer15, :houseanswer16, :houseanswer17, :houseanswer18)
     end
 end

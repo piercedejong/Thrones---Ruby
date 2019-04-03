@@ -62,9 +62,9 @@
     <div class="col-sm-4 order-first order-sm-2">
 
     <% if current_user.role.eql? "admin" %>
-      <div class="card bonus-card p-1">
-        <article class="card-body m-0 p-1">
-          <div class="card-title sub-title text-center shadow-text p-0 m-0">House Questions</div>
+      <div class="card prediction-card pt-0 pb-4">
+        <article class="card-body m-0 p-0">
+          <div class="card-title bottom-bar-name text-center shadow-text p-0 m-0">House Questions</div>
           <div class="question text-center shadow-text m-0 p-0">Episode 1</div>
           <%= render 'formHouseAnswer', user: @user %>
         </article>
@@ -153,7 +153,7 @@
             <%= submit_tag 'Login', class:"btn btn-primary btn-block" %>
         	</div> <!-- form-group// -->
           <div class="form-group shaow-text">
-            <%link_to "Forgot Password?", new_password_reset_path, class:"shadow-text"%>
+            <%=link_to "Forgot Password?", new_password_reset_path, class:"shadow-text"%>
           </div>
         	</form>
         <% end %>
