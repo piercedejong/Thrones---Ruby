@@ -11,19 +11,23 @@ class CharactersController < ApplicationController
       @alive = 0.0
       @dead = 0.0
       @wight = 0.0
+      @count = 0.0
       characters = Character.where({name: d.name, house_id:nil})
       characters.all.each do |c|
-        if c.status.eql?"alive" or c.status.eql?"none"
+        if c.status.eql?"alive"
           @alive +=1
+          @count +=1
         elsif c.status.eql?"dead"
-          @dead+=1
-        else
+          @dead +=1
+          @count +=1
+        elsif c.status.eql?"wight"
           @wight +=1
+          @count +=1
         end
       end
-      d.update(alive: (@alive*100/User.count).round(2))
-      d.update(dead: (@dead*100/User.count).round(2))
-      d.update(wight: (@wight*100/User.count).round(2))
+      d.update(alive: (@alive*100/@count).round(2))
+      d.update(dead: (@dead*100/@count).round(2))
+      d.update(wight: (@wight*100/@count).round(2))
     end
   end
 
