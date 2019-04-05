@@ -120,7 +120,7 @@
   </div>
 </div>
 
-<pre id="current-user" class=" bottomalignedright shadow-text "> Welcome <%= current_user.username %>   <%= link_to 'Log Out', logout_path, class:"btn btn-log-out btn-outline-light" %></pre>
+<pre id="current-user" class=" bottomalignedright shadow-text bottom-bar-info"> Welcome <%= current_user.username %>   <%= link_to 'Log Out', logout_path, class:"btn btn-log-out btn-outline-light" %></pre>
 <% else %>
 <% content_for :title, " - Login"%>
   <div class="position row">
