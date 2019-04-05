@@ -29,6 +29,10 @@ class CharactersController < ApplicationController
       d.update(dead: (@dead*100/@count).round(2))
       d.update(wight: (@wight*100/@count).round(2))
     end
+
+    Death.last.update(alive: 0)
+    Death.last.update(dead:0)
+    Death.last.update(wight: 0)
   end
 
   def update_answers
