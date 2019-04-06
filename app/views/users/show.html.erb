@@ -7,32 +7,11 @@
 <div id="picks" class="container mb-4">
   <div class="title user-title text-center shadow-text"><%=@user.username%></div>
   <% if current_user.eql? @user %>
-
   <div class="row">
     <div class="col-sm-2"></div>
     <div class="col-sm-8">
       <div class="card-title sub-title text-center mb-1 mt-1 shadow-text">Your Predictions</div>
       <div id="predictions">
-        <!-- <table class="table default-color">
-          <tbody>
-            <% @user.characters.each do |c| %>
-            <tr class="bonus-card mt-1 mb-1" style="border-top:none">
-              <td style="width:10%"><%= image_tag "characters/"+c.name+".jpg", class:"image-character" %></td>
-              <td id="<%c.name%>" style="width:30%"class="text-center character-name shadow-text"><%= c.name %></td>
-              <td style="vertical-align:middle">
-                <div class="d-flex shadow-text">
-                  <button id="alive-<%=c.cid%>" character="<%=c.name%>" cid="<%=c.cid%>" status="alive" role="button" class="btn shadow-text btn-character <%= 'alive' if c.status.eql?"alive" %>" onclick="character_status(this)">Alive</button>
-                  <button id="dead-<%=c.cid%>"  character="<%=c.name%>" cid="<%=c.cid%>" status="dead"  role="button" class="btn shadow-text btn-character <%= 'dead' if c.status.eql?"dead" %>" onclick="character_status(this)">Dead</button>
-                <% if !c.name.eql? "The Night King" and !c.name.eql? "Viserion"%>
-                  <button id="wight-<%=c.cid%>" character="<%=c.name%>" cid="<%=c.cid%>" status="wight" role="button" class="btn shadow-text btn-character <%= 'wight' if c.status.eql?"wight" %>" onclick="character_status(this)">Wight</button>
-                <%end%>
-                  </div>
-              </td>
-            </tr>
-            <tr class="spacer" style="height:0.25rem;"></tr>
-            <%end%>
-          </tbody>
-        </table> -->
         <% @user.characters.each do |c| %>
         <div class="bonus-card w-100 d-flex mt-2 mb-2 p-2">
           <div class="p-character-image""><%= image_tag "characters/"+c.name+".jpg", class:"image-character" %></div>
