@@ -18,7 +18,7 @@ class DeathsController < ApplicationController
       elsif c.status.eql? @status and @status.eql? "wight"
         c.update(points: 2)
       elsif c.status.eql? "wight"
-        c.update(points: -1)
+        c.update(points: 0)
       elsif @status.eql? "none"
         c.update(points: 0)
       else
