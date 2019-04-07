@@ -10,10 +10,10 @@
     <div id="house-<%=h.hid%>" class="ml-4">
       <div class="mb-0 house-title shadow-text d-flex"><%=h.name%></div>
       <div class="d-flex shadow-text">
-        <pre class="words shadow-text pt-2"><%=h.words%>   </pre>
-        <pre class="house-points"> - <%=h.points%> points</pre>
+        <pre class="words shadow-text pt-2 my-auto"><%=h.words%> </pre>
+        <pre class="house-points my-auto"> - <%=h.points%> points</pre>
         <% if current_user.role.eql?"admin"%>
-          <%= link_to 'House Predictions', house_path(h.name), class:"shadow-text btn btn-outline-light btn-house"%>
+          <%= link_to 'House Predictions', house_path(h.name), class:"shadow-text btn btn-outline-light btn-house my-auto ml-2"%>
         <% end %>
       </div>
       <div id="members-<%=h.hid%>" class="shadow-text row mt-2" style="flex-wrap: wrap;">
