@@ -5,6 +5,9 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     if(current_user)
+      User.all.each do |x|
+        x.update_points
+      end
       @users = User.all
     else
       redirect_to root_path

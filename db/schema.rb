@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_28_222920) do
+ActiveRecord::Schema.define(version: 2019_04_07_092859) do
 
   create_table "answers", force: :cascade do |t|
     t.string "text"
@@ -126,6 +126,7 @@ ActiveRecord::Schema.define(version: 2019_03_28_222920) do
     t.integer "house_id"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
+    t.integer "points", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

@@ -34,12 +34,12 @@ class User < ApplicationRecord
     reset_sent_at < 2.hours.ago
   end
 
-  def points
+  def update_points
     @points = 0
     self.characters.all.each do |c|
       @points = @points + c.points
     end
-    return @points
+    self.update_column(:points, @points)
   end
 
   def alive_characters
