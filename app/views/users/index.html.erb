@@ -17,7 +17,7 @@
           <div class="shadow-text user-house text-center my-auto"><strong>House</strong></div>
           <div class="shadow-text user-button text-center my-auto"><strong>Prediction</strong></div>
         </div>
-        <% @users.unscoped.order(points: :desc).each do |user| %>
+        <% @users.unscoped.order(points: :desc, created_at: :asc).each do |user| %>
           <div class="user-card d-flex w-auto">
             <div class="shadow-text user-name my-auto">
               <% if current_user.role.eql?"admin" %>
