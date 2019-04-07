@@ -6,7 +6,7 @@
       <div class="title sub-title text-center  shadow-text" style="margin:0px">Most Predicted to Live</div>
       <table class="table">
         <tbody class="unit-table">
-          <% Death.order(alive: :desc).first(5).each do |d| %>
+          <% Death.unscoped.order(alive: :desc).first(5).each do |d| %>
             <tr class="tablerow1 shadow-text">
               <td><%= image_tag "characters/"+d.name+".jpg", class:"image-character" %></td>
               <td class="align-middle stat default-color"><%=d.alive%>% of people think <%=d.name%> will live</td>
@@ -19,7 +19,7 @@
       <div class="title sub-title text-center shadow-text" style="margin:0px">Most Predicted to Die</div>
       <table class="table">
         <tbody class="unit-table">
-          <% Death.order(dead: :desc).first(5).each do |d| %>
+          <% Death.unscoped.order(dead: :desc).first(5).each do |d| %>
             <tr class="tablerow1 shadow-text">
               <td><%= image_tag "characters/"+d.name+".jpg", class:"image-character" %></td>
               <td class="align-middle default-color stat"><%=d.dead%>% of people think <%=d.name%> will die</td>
@@ -32,7 +32,7 @@
       <div class="title sub-title text-center shadow-text" style="margin:0px">Most predicted to be a Wight</div>
       <table class="table">
         <tbody class="unit-table">
-          <% Death.order(wight: :desc).first(5).each do |d| %>
+          <% Death.unscoped.order(wight: :desc).first(5).each do |d| %>
             <tr class="tablerow1 shadow-text">
               <td><%= image_tag "characters/"+d.name+".jpg", class:"image-character" %></td>
               <td class="align-middle default-color stat"><%=d.wight%>% of people think <%=d.name%> will become a wight</td>
@@ -67,7 +67,7 @@
     <div class="col-sm-10 shadow-text">
       <pre class="title sub-title shadow-text text-center mt-4">All   Character   Predictions</pre>
       <div id="stats">
-        <% Death.order(alive: :desc, dead: :desc, wight: :desc).all.each do |d| %>
+        <% Death.unscoped.order(alive: :desc, dead: :desc, wight: :desc).all.each do |d| %>
         <% if !d.eql? Death.last %>
           <div class="row content bonus-card mt-4 pt-2 pb-2" style="">
             <div class="col-sm-3 d-flex mb-2">
