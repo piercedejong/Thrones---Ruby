@@ -60,21 +60,28 @@ function paid(element){
   })
 }
 
-function status(element){
+function death_status(element){
   $.ajax({
        method: "GET",
        data:{
-       	did: element.getAttribute("id")
+       	did: element.getAttribute("did"),
+        status: element.getAttribute("status")
        },
        url: window.location.origin + '/death/status'
 	})
   .done(function(response) {
-    if(response["status"]=="alive"){
-      $("#"+element.getAttribute("id")).removeClass("btn-walker").addClass("btn-alive").text("Alive")
-    }else if(response["status"]=="dead"){
-      $("#"+element.getAttribute("id")).removeClass("btn-alive").addClass("btn-dead").text("Dead")
+    $("#alive-"+element.getAttribute("did")).removeClass("alive")
+    $("#dead-"+element.getAttribute("did")).removeClass("dead")
+    $("#wight-"+element.getAttribute("did")).removeClass("wight")
+    $("#none-"+element.getAttribute("did")).removeClass("none")
+    if (response["status"] == "alive"){
+      $("#alive-"+element.getAttribute("did")).addClass("alive")
+    }else if ((response["status"] == "dead")){
+      $("#dead-"+element.getAttribute("did")).addClass("dead")
+    }else if ((response["status"] == "none")){
+      $("#none-"+element.getAttribute("did")).addClass("none")
     }else{
-      $("#"+element.getAttribute("id")).removeClass("btn-dead").addClass("btn-walker").text("Wight")
+      $("#wight-"+element.getAttribute("did")).addClass("wight")
     }
   })
 }

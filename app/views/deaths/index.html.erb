@@ -1,35 +1,42 @@
 <% content_for :title, "Death Pool - Deaths"%>
-<pre class="text-center title shadow-text ">Character   Status</pre>
-<div id="status-table row">
-<table class="table table-condensed table-middle ">
-  <thead>
-    <tr class="shadow-text table-top">
-      <th class="text-center" colspan="2">Character</th>
-      <th class="text-center">Status</th>
-    </tr>
-  </thead>
-  <tbody class="unit-table">
-    <% Death.all.each do |d| %>
-      <% if d.id%2 ==  0 %>
-        <tr class="tablerow1 shadow-text">
-      <% else %>
-        <tr class="tablerow2 shadow-text">
-      <% end %>
-      <td><%= image_tag "characters/"+d.name+".jpg", class:"image-character" %></td>
-      <td id="<%d.name%>" class="text-center character-name"><%= d.name %></td>
-      <td class=" text-center align-middle">
-        <% if d.status.eql? "alive" %>
-          <button id="<%=d.did%>" class="btn btn-character btn-alive nowrap" onclick="status(this)">Alive</button>
-        <% elsif d.status.eql? "dead" %>
-          <button id="<%=d.did%>" class="btn btn-character btn-dead nowrap" onclick="status(this)">Dead</button>
-        <% else %>
-          <button id="<%=d.did%>" class="btn btn-character btn-walker nowrap" onclick="status(this)">Wight</button>
-        <%end%>
-      </td>
-      </tr>
-    <%end%>
-  </tbody>
-</table>
+<pre class="text-center title shadow-text ">Death   Status</pre>
+<div id="picks" class="container mb-4">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <div id="predictions">
+        <% Death.all.each do |c| %>
+        <% if !c.eql? Death.last %>
+        <div class="bonus-card w-100 d-flex mt-2 mb-2 p-2">
+          <div class="p-character-image""><%= image_tag "characters/"+c.name+".jpg", class:"image-character" %></div>
+          <div class="p-character-name text-center character-name shadow-text my-auto mx-1" id="<%c.name%>"><%= c.name %></div>
+          <div class="p-character-buttons d-flex shadow-text">
+            <button id="none-<%=c.did%>" character="<%=c.name%>" did="<%=c.did%>" status="none" role="button" class="btn shadow-text btn-character my-auto ml-1 <%= 'none' if c.status.eql?"none" %>" onclick="death_status(this)">None</button>
+            <button id="alive-<%=c.did%>" character="<%=c.name%>" did="<%=c.did%>" status="alive" role="button" class="btn shadow-text btn-character my-auto ml-1 <%= 'alive' if c.status.eql?"alive" %>" onclick="death_status(this)">Alive</button>
+            <button id="dead-<%=c.did%>"  character="<%=c.name%>" did="<%=c.did%>" status="dead"  role="button" class="btn shadow-text btn-character my-auto ml-1 <%= 'dead' if c.status.eql?"dead" %>" onclick="death_status(this)">Dead</button>
+            <% if !c.name.eql? "The Night King" and !c.name.eql? "Viserion"%>
+            <button id="wight-<%=c.did%>" character="<%=c.name%>" did="<%=c.did%>" status="wight" role="button" class="btn shadow-text btn-character my-auto ml-1 <%= 'wight' if c.status.eql?"wight" %>" onclick="death_status(this)">Wight</button>
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+  <div class='row mt-2' style="margin-bottom:6rem">
+    <div class="col-sm-3">
+    </div>
+    <div class="col-sm-6">
+      <div class="card bonus-card">
+      <article class="card-body">
+      	<div class="card-title sub-title text-center shadow-text">Bonus Questions</div>
+      </article>
+      </div> <!-- card.// -->
+    </div>
+    <div class="col-sm-3">
+    </div>
+  </div>
 </div>
-<br>
 <%= link_to 'Home', root_url, class:"topalignedleft btn btn-outline-light btn-back shadow-text" %>
