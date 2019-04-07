@@ -1,6 +1,6 @@
 class HouseQuestion < ApplicationRecord
   has_many :house_answers
-
+  default_scope { order(created_at: :asc) }
 
   protected
   def self.create_questions
