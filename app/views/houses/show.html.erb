@@ -10,8 +10,9 @@
   <div class="row mt-4 pb-4">
     <div class="col-sm-3"></div>
     <div class="col-sm-6">
-      <div class="bonus-card">
-        <div class="card-title sub-title text-center mb-0 mt-1 shadow-text">Bonus Questions</div>
+      <div class="bonus-card p-3">
+        <div class="card-title sub-title text-center mb-0 mt-1 shadow-text">House Weekly Questions</div>
+        <div class="card-title h2 text-center mb-0 mt-1 shadow-text">Episode 1</div>
         <% HouseQuestion.where("episode < ?", current_episode+1).each do |q| %>
           <div class="question-and-answer">
             <div class="question shadow-text"><%=q.qid%>. <%=q.text%></div>

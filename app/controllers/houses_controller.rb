@@ -24,16 +24,27 @@ class HousesController < ApplicationController
           none+=1
         end
       end
+      yes = (yes*100/@house.users.count).round(2)
+      no = (no*100/@house.users.count).round(2)
+      none = (none*100/@house.users.count).round(2)
       if yes>=no and yes >= none
-        x = "Yes | "+(yes*100/@house.users.count).round(2).to_s+"% of house vote"
-        a.update(text:x)
+        x = "House Answer: YES ||| "
+        if none > 0
+          x += yes.to_s+"% voted yes, " +no.to_s+"% voted no and " +none.to_s+"% have not voted yet"
+        else
+          x += yes.to_s+"% voted yes and " +no.to_s+"% voted no"
+        end
       elsif no>= none
-        x = "No | "+(no*100/@house.users.count).round(2).to_s+"% of house vote"
-        a.update(text: x)
+        x = "House Answer: NO ||| "
+        if none > 0
+          x += yes.to_s+"% voted yes, " +no.to_s+"% voted no and " +none.to_s+"% have not voted yet"
+        else
+          x += yes.to_s+"% voted yes and " +no.to_s+"% voted no"
+        end
       else
-        x = "A majority, "+(none*100/@house.users.count).round(2).to_s+"%, of house has not voted"
-        a.update(text: x)
+        x = "A majority, "+none.to_s+"%, of house has not voted yet"
       end
+        a.update(text: x)
     end
   end
 
