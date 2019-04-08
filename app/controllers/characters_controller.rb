@@ -44,13 +44,25 @@ class CharactersController < ApplicationController
           array.push(a)
         end
       end
+      text = ""
       freq = array.inject(Hash.new(0)) { |h,v| h[v] += 1; h }
-      max = array.max_by { |v| freq[v] }
-      total = freq.first.second
-      total = (total / (User.count+0.0) * 100).round(2)
-      text = max+", "+total.to_s+"%"
-      q.update(answer:text)
 
+      # Get top top rated answer
+      first = freq.first
+      total = (first.second / (User.count+0.0) * 100).round(2)
+      text +=first.first+", "+total.to_s+"%"
+
+      # Check if there is a scond answer and add it
+      if freq.length>1
+        total = (freq.values[1] / (User.count+0.0) * 100).round(2)
+        text +=" ||| "+freq.keys[1]+", "+total.to_s+"%"
+      end
+
+      if freq.length>2
+        total = (freq.values[2] / (User.count+0.0) * 100).round(2)
+        text +=" ||| "+freq.keys[2]+", "+total.to_s+"%"
+      end
+      q.update(answer:text)
     end
   end
 end
