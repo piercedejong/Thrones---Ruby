@@ -67,6 +67,7 @@
           <div class="card-title bottom-bar-name text-center shadow-text p-0 m-0">House Questions</div>
           <div class="question text-center shadow-text m-0 p-0">Episode 1</div>
           <%= render 'formHouseAnswer', user: @user %>
+          <%= link_to 'View Your House\'s Answers', house_path(current_user.house.name), class:"shadow-text btn btn-outline-info btn-block mx-auto mt-2"%>
         </article>
       </div> <!-- card.// -->
     <% else %>

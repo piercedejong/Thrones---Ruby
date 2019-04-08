@@ -7,6 +7,7 @@
 </div>
 
 <div class="container">
+  <% if current_user.house.eql? @house or current_user.role.eql?"admin"%>
   <div class="row mt-4 pb-4">
     <div class="col-sm-3"></div>
     <div class="col-sm-6">
@@ -23,6 +24,7 @@
     </div>
     <div class="col-sm-3"></div>
   </div>
+  <% end %>
   <% if !(@house.alive_characters == []) %>
     <div class="row mt-4">
       <div class="col-sm-1"></div>
