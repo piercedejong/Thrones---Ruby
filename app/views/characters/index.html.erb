@@ -43,7 +43,7 @@
     </div>
   </div>
 
-<% if current_user.role.eql? "admin" %>
+<% if current_user.role.eql? "admin" or current_user.role.eql? "moderator" %>
   <pre class="title sub-title shadow-text text-center mt-4 mx-auto">Top   Bonus   Question   Answers</pre>
   <div class="row">
     <div class="col-sm-3"></div>
