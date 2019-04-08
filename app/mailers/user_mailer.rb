@@ -11,6 +11,12 @@ class UserMailer < ApplicationMailer
     @user = user
     @url = edit_password_reset_url(@user.reset_token, email: @user.email)
     mail(to: @user.email, subject:"Password Reset | GoT Death Pool")
+  end
 
+  def update
+    User.all.each do |u|
+      @user = User.first
+      mail(to: @user.email, subject:"1 Week | GoT Death Pool")
+    end
   end
 end
