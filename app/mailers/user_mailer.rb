@@ -13,10 +13,8 @@ class UserMailer < ApplicationMailer
     mail(to: @user.email, subject:"Password Reset | GoT Death Pool")
   end
 
-  def update
-    User.all.each do |u|
-      @user = User.first
+  def update(user)
+      @user = user
       mail(to: @user.email, subject:"1 Week | GoT Death Pool")
     end
-  end
 end
