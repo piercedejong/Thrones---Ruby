@@ -15,6 +15,6 @@ class UserMailer < ApplicationMailer
 
   def update(user)
       @user = user
-      mail(to: @user.email, subject:"1 Week To Go | GoT Death Pool")
+      mail(to: @user.email, subject:"5 Days To Go | GoT Death Pool")
     end
 end
