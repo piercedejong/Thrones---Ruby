@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   helper_method :third_place
   helper_method :selected_answer
   helper_method :current_episode
+  helper_method :video
 
   def current_user
     return unless cookies.signed[:permanent_user_id] || session[:user_id]
@@ -21,6 +22,19 @@ class ApplicationController < ActionController::Base
 
   def current_episode
     @episode =  1
+  end
+
+  def video
+    videos = [
+      "https://www.youtube.com/embed/rlR4PJn8b8I",
+      "https://www.youtube.com/embed/wA38GCX4Tb0",
+      "https://www.youtube.com/embed/NspqGM0DbbQ",
+      "https://www.youtube.com/embed/vwmAWOE5F9o",
+      "https://www.youtube.com/embed/p2E30wWcBjY",
+      "https://www.youtube.com/embed/kuLUyJdRvSU",
+    ]
+    x = rand(0..5)
+    return videos[x]
   end
 
   def first_place

@@ -50,9 +50,10 @@
 <% if current_user %>
   <div class="row middle-bar align-items-center">
     <div class="col-sm-4">
-      <div class="sub-title text-center shadow-text">Current Leader</div>
+      <!-- <div class="sub-title text-center shadow-text">Current Leader</div>
       <div class="text-center shadow-text h1"><%=first_place.username%></div>
-      <div class="text-center shadow-text h3"><%=first_place.points%> points</div>
+      <div class="text-center shadow-text h3"><%=first_place.points%> points</div> -->
+      <iframe id="player" style="width:100%;"src="<%= video %>" frameborder="0" allow="accelerometer;encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div class="col-sm-4 order-first order-sm-2 text-center">
       <div class="card prediction-card">
@@ -180,5 +181,8 @@ $(document).ready(function () {
    $("#house").css("color","#262626").removeClass("shadow-text")
    $("#words").css("color","#262626").removeClass("shadow-text")
  }
+});
+$(document).ready(video_resize());
+$(window).resize(function () {video_resize();
 });
 </script>

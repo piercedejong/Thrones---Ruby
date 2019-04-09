@@ -134,3 +134,9 @@ $(document).ready(function() {
 function back_button_margin(){
 	$(".row-main").css("margin-top", -$(".row-back").height());
 }
+
+function video_resize(){
+  width = $("#player").width();
+  height = 1080/1920 * width
+  $("#player").height(height);
+}
