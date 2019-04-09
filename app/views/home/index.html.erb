@@ -6,6 +6,9 @@
     <div class="alert alert-success text-center" role="alert"><%= value %></div>
   <%end%>
 <% end %>
+<% if current_user %>
+<div id="current-user" class="shadow-text bottom-bar-info"> Welcome <%= current_user.username %>   <%= link_to 'Log Out', logout_path, class:"btn btn-log-out btn-outline-light" %></div>
+<% end %>
 <pre class="title text-center shadow-text">Game   of   Thrones   Death   Pool</pre>
 <div class="container">
   <div class="row m-auto">
@@ -80,7 +83,7 @@
   <% if !current_user.paid %>
     <div id="scum" class="text-center shadow-text">You have NOT paid your entry fee yet. Read the FAQ</div>
   <% end %>
-  <div class="row align-items-end bottom-bar" style="margin-bottom:35px">
+  <div class="row align-items-end bottom-bar">
     <div class="home-col col-sm-2 text-center shadow-text">
       <i class=" bottom-bar-icon fas fa-gavel"></i>
       <div class="bottom-bar-name">Rules</div>
@@ -120,8 +123,6 @@
     </div>
   </div>
 </div>
-
-<pre id="current-user" class=" bottomalignedright shadow-text bottom-bar-info"> Welcome <%= current_user.username %>   <%= link_to 'Log Out', logout_path, class:"btn btn-log-out btn-outline-light" %></pre>
 <% else %>
 <% content_for :title, " - Login"%>
   <div class="position row">
