@@ -12,7 +12,7 @@
       <div class="d-flex shadow-text">
         <pre class="words shadow-text pt-2 my-auto"><%=h.words%> </pre>
         <pre class="house-points my-auto"> - <%=h.points%> points</pre>
-        <% if current_user.role.eql?"admin"%>
+        <% if current_user.role.eql?"admin" or current_user.house.eql? h%>
           <%= link_to 'House Predictions', house_path(h.name), class:"shadow-text btn btn-outline-light btn-house my-auto ml-2"%>
         <% end %>
       </div>
