@@ -30,19 +30,19 @@ class HousesController < ApplicationController
       if yes>=no and yes >= none
         x = "House Answer: YES ||| "
         if none > 0
-          x += yes.to_s+"% voted yes, " +no.to_s+"% voted no and " +none.to_s+"% have not voted yet"
+          x += yes.to_s+"% voted yes, " +no.to_s+"% voted no, and " +none.to_s+"% have not voted yet"
         else
           x += yes.to_s+"% voted yes and " +no.to_s+"% voted no"
         end
       elsif no>= none
         x = "House Answer: NO ||| "
         if none > 0
-          x += yes.to_s+"% voted yes, " +no.to_s+"% voted no and " +none.to_s+"% have not voted yet"
+          x += yes.to_s+"% voted yes, " +no.to_s+"% voted no, and " +none.to_s+"% have not voted yet"
         else
           x += yes.to_s+"% voted yes and " +no.to_s+"% voted no"
         end
       else
-        x = "A majority, "+none.to_s+"%, of house has not voted yet"
+        x = "A majority, "+none.to_s+"%, of the house has not voted yet"
       end
         a.update(text: x)
     end
