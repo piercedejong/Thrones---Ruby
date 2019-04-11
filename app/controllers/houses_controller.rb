@@ -27,7 +27,9 @@ class HousesController < ApplicationController
       yes = (yes*100/@house.users.count).round(2)
       no = (no*100/@house.users.count).round(2)
       none = (none*100/@house.users.count).round(2)
-      if yes>=no
+      if no==0 and yes == 0
+        x = "House Answer: No one in this house has voted yet"
+      elsif yes>=no
         x = "House Answer: YES ||| "
         if none > 0
           x += yes.to_s+"% voted yes, " +no.to_s+"% voted no, and " +none.to_s+"% have not voted yet"
