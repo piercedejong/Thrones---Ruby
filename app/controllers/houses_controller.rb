@@ -42,6 +42,7 @@ class HousesController < ApplicationController
           x += yes.to_s+"% voted yes and " +no.to_s+"% voted no"
         end
       end
+      a.update(text: x)
     end
   end
 
