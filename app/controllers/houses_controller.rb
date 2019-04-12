@@ -76,7 +76,7 @@ class HousesController < ApplicationController
           characters.delete(r)
         end
       end
-      if c.name.eql? "The Night King"
+      if c.name.eql? "Rhaegal"
         puts("Alive: "+alive.to_s)
         puts("Dead: "+dead.to_s)
         puts("Wight: "+wight.to_s)
