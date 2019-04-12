@@ -70,10 +70,8 @@
       </div>
       <div id="alive-characters" class="character-list d-flex">
         <% @user.alive_characters.all.each do |c| %>
-          <div id="<%=c.name%>" class="bonus-card character character-name text-center">
-            <%= image_tag "characters/"+c.name+".jpg", class:"shadow-text image-character" %>
-            <div class="shadow-text text-center"><%=c.name%></div>
-          </div>
+          <% @c = c %>
+          <%= render 'formCharacter', character: @c %>
         <%end%>
       </div>
     </div>
@@ -89,10 +87,8 @@
       </div>
       <div id="dead-characters" class="character-list d-flex">
         <% @user.dead_characters.all.each do |c| %>
-          <div id="<%=c.name%>" class="bonus-card character character-name text-center">
-            <%= image_tag "characters/"+c.name+".jpg", class:"shadow-text image-character" %>
-            <div class="shadow-text text-center"><%=c.name%></div>
-          </div>
+          <% @c = c %>
+          <%= render 'formCharacter', character: @c %>
         <%end%>
       </div>
     </div>
@@ -108,10 +104,8 @@
       </div>
       <div id="wight-characters" class="character-list d-flex">
         <% @user.wight_characters.all.each do |c| %>
-          <div id="<%=c.name%>" class="bonus-card character character-name text-center">
-            <%= image_tag "characters/"+c.name+".jpg", class:"shadow-text image-character" %>
-            <div class="shadow-text text-center"><%=c.name%></div>
-          </div>
+          <% @c = c %>
+          <%= render 'formCharacter', character: @c %>
         <%end%>
       </div>
     </div>
@@ -127,10 +121,8 @@
       </div>
       <div id="no-prediction-characters" class="character-list d-flex">
         <% @user.no_status_characters.all.each do |c| %>
-          <div id="<%=c.name%>" class="bonus-card character character-name text-center">
-            <%= image_tag "characters/"+c.name+".jpg", class:"shadow-text image-character" %>
-            <div class="shadow-text text-center"><%=c.name%></div>
-          </div>
+          <% @c = c %>
+          <%= render 'formCharacter', character: @c %>
         <%end%>
       </div>
     </div>
