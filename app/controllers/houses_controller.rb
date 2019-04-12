@@ -24,9 +24,11 @@ class HousesController < ApplicationController
           none+=1
         end
       end
-      yes = (yes*100/@house.users.count).round(2)
-      no = (no*100/@house.users.count).round(2)
-      none = (none*100/@house.users.count).round(2)
+      if @house.users.count > 0
+        yes = (yes*100/@house.users.count).round(2)
+        no = (no*100/@house.users.count).round(2)
+        none = (none*100/@house.users.count).round(2)
+      end
       if no==0 and yes == 0
         x = "House Answer: No one in this house has voted yet"
       elsif yes>=no
@@ -74,15 +76,22 @@ class HousesController < ApplicationController
           characters.delete(r)
         end
       end
-      if alive >= dead and alive >= wight and alive >= none and alive > 0
-        c.update_column(:status,"alive")
-      elsif dead >= wight and dead >= none and dead > 0
-        c.update_column(:status,"dead")
-      elsif wight >= none and wight > 0
+      if wight > dead and wight > alive
         c.update_column(:status,"wight")
+      elsif dead > alive
+        c.update_column(:status,"dead")
       else
-        c.update_column(:status,"none")
+        c.update_column(:status,"alive")
       end
+      # if alive >= dead and alive >= wight and alive >= none
+      #   c.update_column(:status,"alive")
+      # elsif dead >= wight and dead >= none and dead > 0
+      #   c.update_column(:status,"dead")
+      # elsif wight >= none and wight > 0
+      #   c.update_column(:status,"wight")
+      # else
+      #   c.update_column(:status,"none")
+      # end
     end
 
   end
