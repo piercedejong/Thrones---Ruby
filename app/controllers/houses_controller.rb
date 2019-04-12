@@ -63,7 +63,7 @@ class HousesController < ApplicationController
       wight = 0
       none = 0
       characters.each do |r|
-        if(r.name.eql? c.name)
+        if(r.cid.eql? c.cid)
           if r.status.eql? "alive"
             alive+=1
           elsif r.status.eql? "dead"
@@ -76,7 +76,7 @@ class HousesController < ApplicationController
           characters.delete(r)
         end
       end
-      if c.name.eql? "Rhaegal"
+      if c.name.eql? "Rhaegal" or c.name.eql? "The Night King"
         puts("Alive: "+alive.to_s)
         puts("Dead: "+dead.to_s)
         puts("Wight: "+wight.to_s)
