@@ -31,7 +31,7 @@ Rule.create(
       {rid: 3,rule: "Correctly answer Bonus Questions for more points. (The answer no one does NOT have a double meaning. It cannot both mean Arya and literally no one at the same time.)"},
       {rid: 4,rule: "Points for dead and wight characters will be awarded as the season goes on. Alive characters will only be counted after the end of the season. Bonus Points will be awarded as they get answered."},
       {rid: 5,rule: "The Pool Entry Fee is $10 CAD / $7.50 USD. 50% to the winner, 20% to 2nd place, 5% to 3rd place."},
-      {rid: 6,rule: "Each player is a member of a House. Each House has the opportunity to win 20% of the total pot split between all members equally. House points are awarded by communalitve character predictions and House questions asked before each episode."},
+      {rid: 6,rule: "Each player is a member of a House. Each House has the opportunity to win 20% of the total pot split between all members equally. House points are awarded by cumulative character predictions and House questions asked before each episode."},
     ]
 )
 
