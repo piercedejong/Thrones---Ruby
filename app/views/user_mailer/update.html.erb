@@ -4,33 +4,44 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <div style="font-size:1rem">Hello, <%= @user.username %></div>
+    <div style="font-size:1rem">Hello <%= @user.username %>,</div>
     <p>
       Thank you for signing up for the Game of Thrones Death Pool!
     </p>
     <p>
-      There is less than 1 week until the season premiere. The entry time will close 1 hour before the premiere (8:00 pm EDT / 6:00 pm MDT). After this time, you will NOT be able to make/update your predictions or bonus question responses.
+      There is just over left 24 hours until the season premiere. Your predictions, bonus question answers, and house question answers will lock one hour before the premier starts. (8:00 pm EDT / 6:00 pm MDT) At this time the website will go down for a few minutes to lock all of the response. Once it goes live again, you will be able to view everyyones predictions through the leaderboards. Double check all of your predicitons and answers between now and then.
     </p>
     <p>
-      The last day to change your house allegiance is this Wednesday, April 10th. This is also the same day that the weekly house episode questions will be open for Episode 1. Each week, every house will be given 3 questions to answer about the upcoming episode; correctly answering these questions will award your house with points. Your answers will be locked at the same time as your predictions.
+      Please read the Rules and FAQ page before the prediction deadline, the page will tell you exactly how the points will be tallied throughout the season.
     </p>
     <p>
-      There is still space for people to sign up and join the pool. Feel free to invite your friends and family to join. The last day to sign up is Saturday, April 13th.
+      Due to some requests, I have pushed the sign-up deadline to 2 hours before the premier. (7:00 pm EDT / 5:00 pm MDT) There is still room for people to sign up and join the pool. Feel free to invite your friends and family.
     </p>
     <p>
       <br/>
       <% if @user.paid %>
       Thank you for already paying your entrance fee!
       <% else %>
-      You have not yet paid your entrance fee. Please pay by the time the predictions close or your account will be deleted.
+      You have NOT yet paid your entrance fee. Please pay by the time the predictions close tomorrow.
       <br/>
-          If you live in Canada, you can either e-transfer $10 CAD to pierce.dejong45@gmail.com or pay in cash.
+          If you live in Canada, you can either e-transfer $10 CAD to pierce.dejong45@gmail.com or pay in cash. Please include your username in the e-transfer.
       <br/>
-          If you live in the US, you can venmo $7.50 USD to Pierce-deJong.
+          If you live in the US, you can venmo $7.50 USD to Pierce-deJong. Please include your username in the venmo.
+      <br/>
+      <br/>
+          ** If you can NOT pay by deadline, please reply to this email so that we can figure something out.  **
+      <br/>
+      <br/>
+          ** If you have not paid or replied to this email by the due date your account will be removed when the predictions are locked. **
       <% end %>
     </p>
 
     <p>
+      <br/>
+      Thank you,
+      <br/>
+      Pierce
+      <br/>
       <br/>
       Night Gathers, and now my watch begins.
     </p>
