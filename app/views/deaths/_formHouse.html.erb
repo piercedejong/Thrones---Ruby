@@ -1,0 +1,16 @@
+<%= form_for :anything, url: update_house_question_answers_path, method: :post  do |form| %>
+  <form>
+    <% HouseQuestion.where(episode: current_episode).each do |q| %>
+      <div class="form-group">
+        <label class="shadow-text question"><%=q.qid%>. <%=q.text%></label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"> <i class=""></i></span>
+        </div>
+          <%= select_tag "answer[a#{q.qid}]", content_tag(:option,'Select an Answer...',:value=>"")+options_for_select(["Yes","No"], q.answer), class:'input-group-form input-answer-from', id: '' %>
+      </div> <!-- input-group.// -->
+      </div>
+    <% end %>
+    <%= submit_tag "Update Answers", style:"font-size:1.75rem", class:"btn btn-outline-light btn-main btn-block shadow-text"%>
+  </form>
+<% end %>

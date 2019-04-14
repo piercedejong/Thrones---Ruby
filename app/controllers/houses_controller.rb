@@ -35,7 +35,7 @@ class HousesController < ApplicationController
         a.update_column(:answer, "none")
       elsif yes>=no
         x = "House Answer: YES ||| "
-        a.update_column(:answer, "yes")
+        a.update_column(:answer, "Yes")
         if none > 0
           x += yes.to_s+"% voted yes, " +no.to_s+"% voted no, and " +none.to_s+"% have not voted yet"
         else
@@ -43,7 +43,7 @@ class HousesController < ApplicationController
         end
       else
         x = "House Answer: NO ||| "
-        a.update_column(:answer, "no")
+        a.update_column(:answer, "No")
         if none > 0
           x += yes.to_s+"% voted yes, " +no.to_s+"% voted no, and " +none.to_s+"% have not voted yet"
         else

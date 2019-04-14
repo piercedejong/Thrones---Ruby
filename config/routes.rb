@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   post '/update_house_answers', to: 'users#update_house_answers'
 
   post '/update_question_answers', to: 'deaths#update_answers'
+  post '/update_house_question_answers', to: 'deaths#update_house_answers'
 
   post '/leaderboards', to: 'users#create'
 

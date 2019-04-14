@@ -85,10 +85,28 @@ class DeathsController < ApplicationController
     redirect_to deaths_path
   end
 
+  def update_house_answers
+    HouseQuestion.where(episode: current_episode).each do |q|
+      q.update_column(:answer, answer_params["a#{q.id}"])
+      HouseAnswer.where(aid: q.id).each do |a|
+        if a.answer.eql? q.answer
+          a.update_column(:correct, true)
+        else
+          a.update_column(:correct, false)
+        end
+      end
+    end
+    redirect_to deaths_path
+  end
+
 
   private
   def answer_params
     params.require(:answer).permit(:a1, :a2, :a3, :a4, :a5, :a6)
+  end
+
+  def house_answer_params
+    params.require(:answer)
   end
 
 end

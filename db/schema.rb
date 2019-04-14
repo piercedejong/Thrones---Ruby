@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_14_063520) do
+ActiveRecord::Schema.define(version: 2019_04_14_065743) do
 
   create_table "answers", force: :cascade do |t|
     t.string "text"
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 2019_04_14_063520) do
     t.integer "house_id"
     t.integer "episode"
     t.integer "value", default: 0
+    t.string "answer", default: ""
   end
 
   create_table "houses", force: :cascade do |t|
