@@ -10,6 +10,7 @@ class User < ApplicationRecord
   validates :username, :uniqueness => { :case_sensitive => false }, format:{ with: /\A[a-zA-Z0-9]+\z/i, message: "can only contain letters and numbers." }, length: { in: 5..20, message: "must be between 5 and 20 characters long"}
   validates :password, length: { in: 6..20}
   validates :house_id, presence:true
+  before_save :downcase_fields
   default_scope { order(created_at: :asc) }
 
   def create_uuid
@@ -100,6 +101,10 @@ class User < ApplicationRecord
     else
       return c
     end
+  end
+
+  def downcase_fields
+    self.email.downcase!
   end
 
   def User.new_token
