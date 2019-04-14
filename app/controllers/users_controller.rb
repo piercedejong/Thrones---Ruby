@@ -87,6 +87,8 @@ class UsersController < ApplicationController
         Character.create_characters(@user)
         Answer.create_answers(@user)
         HouseAnswer.create_answers(@user)
+        @user.answers.all.each do |a| a.update_column(:correct, nil) end
+        @user.house_answers.all.each do |a| a.update_column(:correct, nil) end
         #UserMailer.welcome(@user).deliver_now
         cookies.permanent.signed[:permanent_user_id] = @user.uuid
         session[:user_id] = @user.uuid
