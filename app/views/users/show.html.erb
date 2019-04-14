@@ -6,6 +6,7 @@
 
 <div id="picks" class="container mb-4">
   <div class="title user-title text-center shadow-text"><%=@user.username%></div>
+  <div class="sub-title user-title text-center shadow-text">Points: <%=@user.points%></div>
   <% if current_user.eql? @user %>
   <div class="row">
     <div class="col-sm-2"></div>
