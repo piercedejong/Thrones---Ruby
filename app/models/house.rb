@@ -40,6 +40,25 @@ class House < ApplicationRecord
     end
   end
 
+  def get_answer_points
+    @points = 0
+    self.house_answers.all.each do |a|
+      if a.correct.eql? true
+        question = HouseQuestion.find_by(id: a.aid)
+        @points= @points + question.value
+      end
+    end
+    return @points
+  end
+
+  def get_character_points
+    @points = 0
+    self.characters.all.each do |c|
+      @points = @points + c.points
+    end
+    return @points
+  end
+
   protected
   def self.create_houses
     House.all.each do |h| h.destroy end

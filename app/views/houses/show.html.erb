@@ -2,6 +2,7 @@
 <%= link_to 'Back', houses_path, class:"topalignedleft btn btn-outline-light btn-back shadow-text" %>
 <div class="container">
   <div class="title text-center shadow-text"><%=@house.name%></div>
+  <div class="sub-title user-title text-center shadow-text mb-3">Total Points: <%=@house.points%></div>
   <pre id="words" class="title words text-center shadow-text"><%=@house.words%></pre>
   <div id="sigil" class="text-center"><%= image_tag @house.image, class:"image-house" %></div>
 </div>
@@ -13,11 +14,21 @@
     <div class="col-sm-6">
       <div class="bonus-card p-3">
         <div class="card-title sub-title text-center mb-0 mt-1 shadow-text">House Weekly Questions</div>
-        <div class="card-title h2 text-center mb-0 mt-1 shadow-text">Episode 1</div>
+        <div class="card-title h2 text-center mb-4 mt-1 shadow-text">Points: <%=@house.get_answer_points%></div>
+        <div class="card-title h2 text-center mb-0 mt-2 shadow-text">Episode 1</div>
         <% HouseQuestion.where("episode < ?", current_episode+1).each do |q| %>
           <div class="question-and-answer">
             <div class="question shadow-text"><%=q.qid%>. <%=q.text%></div>
-            <div class="answer shadow-text character-name ml-4" style="color:#f9f2de;"><%=@house.house_answers.find_by(aid: q.id).text%></div>
+            <div class="answer shadow-text character-name ml-4" style="color:#f9f2de;">
+              <% @answer = @house.house_answers.find_by(aid: q.id)%>
+              <% if @answer.correct.eql? true %>
+                <i class="fas fa-check-circle" style="color:#52ad6a"></i>
+              <% elsif @answer.correct .eql? false%>
+                <i class="fas fa-times-circle"style="color:#ad5252"></i>
+              <%else %>
+                <i class="fas fa-clock"></i>
+              <% end %>
+              <%=@answer.text%></div>
           </div>
         <% end %>
       </div>
@@ -25,6 +36,12 @@
     <div class="col-sm-3"></div>
   </div>
   <% end %>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card-title sub-title text-center mb-0 mt-1 shadow-text">House Character Predictions</div>
+      <div class="card-title h2 text-center mb-2 mt-1 shadow-text">Points: <%=@house.get_character_points%></div>
+    </div>
+  </div>
   <% if !(@house.alive_characters == []) %>
     <div class="row mt-4">
       <div class="col-sm-1"></div>
@@ -34,10 +51,8 @@
         </div>
         <div id="alive-characters" class="character-list d-flex">
           <% @house.alive_characters.all.each do |c| %>
-            <div id="<%=c.name%>" class="bonus-card character character-name text-center">
-              <%= image_tag "characters/"+c.name+".jpg", class:"shadow-text image-character" %>
-              <div class="shadow-text text-center"><%=c.name%></div>
-            </div>
+            <% @c = c %>
+            <%= render 'formCharacter', character: @c %>
           <%end%>
         </div>
       </div>
@@ -53,10 +68,8 @@
         </div>
         <div id="dead-characters" class="character-list d-flex">
           <% @house.dead_characters.all.each do |c| %>
-            <div id="<%=c.name%>" class="bonus-card character character-name text-center">
-              <%= image_tag "characters/"+c.name+".jpg", class:"shadow-text image-character" %>
-              <div class="shadow-text text-center"><%=c.name%></div>
-            </div>
+            <% @c = c %>
+            <%= render 'formCharacter', character: @c %>
           <%end%>
         </div>
       </div>
@@ -72,10 +85,8 @@
         </div>
         <div id="wight-characters" class="character-list d-flex">
           <% @house.wight_characters.all.each do |c| %>
-            <div id="<%=c.name%>" class="bonus-card character character-name text-center">
-              <%= image_tag "characters/"+c.name+".jpg", class:"shadow-text image-character" %>
-              <div class="shadow-text text-center"><%=c.name%></div>
-            </div>
+            <% @c = c %>
+            <%= render 'formCharacter', character: @c %>
           <%end%>
         </div>
       </div>
@@ -91,10 +102,8 @@
         </div>
         <div id="no-prediction-characters" class="character-list d-flex">
           <% @house.no_status_characters.all.each do |c| %>
-            <div id="<%=c.name%>" class="bonus-card character character-name text-center">
-              <%= image_tag "characters/"+c.name+".jpg", class:"shadow-text image-character" %>
-              <div class="shadow-text text-center"><%=c.name%></div>
-            </div>
+            <% @c = c %>
+            <%= render 'formCharacter', character: @c %>
           <%end%>
         </div>
       </div>

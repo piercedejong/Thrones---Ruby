@@ -1,0 +1,14 @@
+<% @d = Death.find_by(did: @c.cid) %>
+<% if @d.status.eql? "alive" %>
+<div id="<%=@c.name%>" class="bonus-card character character-name text-center" style="background-color:rgba(82, 173, 106, 0.6)" >
+<% elsif @d.status.eql? "dead" %>
+<div id="<%=@c.name%>" class="bonus-card character character-name text-center" style="background-color:rgba(173, 82, 82, 0.6)" >
+<% elsif @d.status.eql? "wight" %>
+<div id="<%=@c.name%>" class="bonus-card character character-name text-center" style="background-color:rgba(82, 150, 173, 0.6)" >
+<% else %>
+<div id="<%=@c.name%>" class="bonus-card character character-name text-center">
+<% end %>
+  <%= image_tag "characters/"+@c.name+".jpg", class:"shadow-text image-character" %>
+  <div class="shadow-text text-center"><%=@c.name%></div>
+  <div class="shadow-text text-center"><%=@c.points%></div>
+</div>
