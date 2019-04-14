@@ -71,4 +71,24 @@ class DeathsController < ApplicationController
     # end
   end
 
+  def update_answers
+    Question.all.each do |q|
+      q.update_column(:answer, answer_params["a#{q.qid}"])
+      Answer.where(rid: q.qid).each do |a|
+        if a.text.eql? q.answer
+          a.update_column(:correct, true)
+        else
+          a.update_column(:correct, false)
+        end
+      end
+    end
+    redirect_to deaths_path
+  end
+
+
+  private
+  def answer_params
+    params.require(:answer).permit(:a1, :a2, :a3, :a4, :a5, :a6)
+  end
+
 end

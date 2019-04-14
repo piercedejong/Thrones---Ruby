@@ -1,0 +1,22 @@
+<%= form_for :anything, url: update_question_answers_path, method: :post  do |form| %>
+  <form>
+    <% Question.all.each do |q| %>
+      <div class="form-group">
+        <label class="shadow-text question"><%=q.qid%>. <%=q.text%></label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"> <i class="<%=q.glyph%>"></i></span>
+        </div>
+        <% if q.qid == 1 %>
+          <%= select_tag "answer[a#{q.qid}]", content_tag(:option,'Select an Answer...',:value=>"")+options_for_select(["Yes","No"], q.answer), class:'input-group-form input-answer-from', id: '' %>
+        <% elsif q.qid ==2 %>
+          <%= select_tag "answer[a#{q.qid}]", content_tag(:option,'Select an Answer...',:value=>"")+options_for_select(["Yes! WHAT IS HYPE MAY NEVER DIE","No, I have no hype"], q.answer),  class:'input-group-form input-answer-from', id: '' %>
+        <% else %>
+          <%= select_tag "answer[a#{q.qid}]", content_tag(:option,'Select a Character...',:value=>"")+options_from_collection_for_select(Death.all.order(created_at: :asc), "name", "name", selected=q.answer),  class:'input-group-form input-answer-from', id: '' %>
+        <% end %>
+      </div> <!-- input-group.// -->
+      </div>
+    <% end %>
+    <%= submit_tag "Update Answers", style:"font-size:1.75rem", class:"btn btn-outline-light btn-main btn-block shadow-text"%>
+  </form>
+<% end %>
