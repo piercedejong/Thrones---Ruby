@@ -6,7 +6,7 @@
 
 <div id="picks" class="container mb-4">
   <div class="title user-title text-center shadow-text"><%=@user.username%></div>
-  <div class="sub-title user-title text-center shadow-text">Points: <%=@user.points%></div>
+  <div class="sub-title user-title text-center shadow-text">Total Points: <%=@user.points%></div>
   <% if current_user.eql? @user %>
   <div class="row">
     <div class="col-sm-2"></div>
@@ -52,10 +52,21 @@
     <div class="col-sm-6">
       <div class="bonus-card">
         <div class="card-title sub-title text-center mb-0 mt-1 shadow-text">Bonus Questions</div>
+        <div class="card-title question text-center mb-0 mt-1 shadow-text">Points: <%=@user.get_bonus_points%></div>
         <% Question.all.each do |q| %>
           <div class="question-and-answer">
             <div class="question shadow-text"><%=q.qid%>. <%=q.text%></div>
-            <div class="answer shadow-text character-name ml-4" style="color:#f9f2de;"><%=@user.answers.find_by(rid: q.qid).text%></div>
+            <% @answer = @user.answers.find_by(rid: q.qid) %>
+            <div class="answer shadow-text character-name ml-4" style="color:#f9f2de;">
+            <% if @answer.correct.eql? true %>
+              <i class="fas fa-check-circle" style="color:#52ad6a"></i>
+            <% elsif @answer.correct .eql? false%>
+              <i class="fas fa-times-circle"style="color:#ad5252"></i>
+            <%else %>
+              <i class="fas fa-clock"></i>
+            <% end %>
+              <%=@answer.text%>
+            </div>
           </div>
         <% end %>
       </div>

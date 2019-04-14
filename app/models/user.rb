@@ -39,9 +39,25 @@ class User < ApplicationRecord
     self.characters.all.each do |c|
       @points = @points + c.points
     end
+    self.answers.all.each do |a|
+      if a.correct.eql? true
+        question = Question.find_by(qid: a.rid)
+        @points= @points + question.value
+      end
+    end
     self.update_column(:points, @points)
   end
 
+  def get_bonus_points
+    @points = 0
+    self.answers.all.each do |a|
+      if a.correct.eql? true
+        question = Question.find_by(qid: a.rid)
+        @points= @points + question.value
+      end
+    end
+    return @points
+  end
   def alive_characters
     c = self.characters.where(status: "alive")
     if c.eql? nil
