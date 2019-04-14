@@ -4,8 +4,9 @@ class HousesController < ApplicationController
 
   def show
     @house = House.find_by(name: params[:name])
-    update_characters(@house)
     update_house_answers(@house)
+    @house.update_characters
+    @house.update_points
   end
 
   def update_house_answers(house)
@@ -31,8 +32,10 @@ class HousesController < ApplicationController
       end
       if no==0 and yes == 0
         x = "House Answer: No one in this house has voted yet"
+        a.update_column(:answer, "none")
       elsif yes>=no
         x = "House Answer: YES ||| "
+        a.update_column(:answer, "yes")
         if none > 0
           x += yes.to_s+"% voted yes, " +no.to_s+"% voted no, and " +none.to_s+"% have not voted yet"
         else
@@ -40,6 +43,7 @@ class HousesController < ApplicationController
         end
       else
         x = "House Answer: NO ||| "
+        a.update_column(:answer, "no")
         if none > 0
           x += yes.to_s+"% voted yes, " +no.to_s+"% voted no, and " +none.to_s+"% have not voted yet"
         else
@@ -48,57 +52,5 @@ class HousesController < ApplicationController
       end
       a.update(text: x)
     end
-  end
-
-
-  def update_characters(house)
-    @house = house
-    characters = []
-    @house.users.all.each do |u|
-      characters+= u.characters
-    end
-    @house.characters.all.each do |c|
-      alive = 0
-      dead = 0
-      wight = 0
-      none = 0
-      characters.each do |r|
-        if(r.cid.eql? c.cid)
-          if r.status.eql? "alive"
-            alive+=1
-          elsif r.status.eql? "dead"
-            dead+=1
-          elsif r.status.eql? "wight"
-            wight+=1
-          else
-            none+=1
-          end
-          characters.delete(r)
-        end
-      end
-      if c.name.eql? "Rhaegal" or c.name.eql? "The Night King"
-        puts("Alive: "+alive.to_s)
-        puts("Dead: "+dead.to_s)
-        puts("Wight: "+wight.to_s)
-        puts("None: "+none.to_s)
-      end
-      if wight > dead and wight > alive
-        c.update_column(:status,"wight")
-      elsif dead > alive
-        c.update_column(:status,"dead")
-      else
-        c.update_column(:status,"alive")
-      end
-      # if alive >= dead and alive >= wight and alive >= none
-      #   c.update_column(:status,"alive")
-      # elsif dead >= wight and dead >= none and dead > 0
-      #   c.update_column(:status,"dead")
-      # elsif wight >= none and wight > 0
-      #   c.update_column(:status,"wight")
-      # else
-      #   c.update_column(:status,"none")
-      # end
-    end
-
   end
 end
