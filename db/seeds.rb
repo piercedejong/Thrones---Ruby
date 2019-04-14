@@ -27,7 +27,7 @@ Question.create(
 Rule.create(
     [
       {rid: 1,rule: "Predict whether each character (41 total) will be dead or alive at the END of season 8. ONE point for each correct answer."},
-      {rid: 2,rule: "If you think the character will die, you can predict if they become a wight or not. If ou predict they will become a wight and they do become a wight, you gain ONE extra point on top of the point aleady gained for predicting their death. If you predict the charater will only die and they become a wight, you still get ONE point for correctly predicting their death."},
+      {rid: 2,rule: "If you think the character will die, you can predict if they become a wight or not. If you predict they will become a wight and they do become a wight, you gain ONE extra point on top of the point aleady gained for predicting their death. If you predict they will become a wight and they do not you lose ONE point. If you predict the charater will only die and they become a wight, you still get ONE point for correctly predicting their death."},
       {rid: 3,rule: "Correctly answer Bonus Questions for more points. (The answer no one does NOT have a double meaning. It cannot both mean Arya and literally no one at the same time.)"},
       {rid: 4,rule: "Points for dead and wight characters will be awarded as the season goes on. Alive characters will only be counted after the end of the season. Bonus Points will be awarded as they get answered."},
       {rid: 5,rule: "The Pool Entry Fee is $10 CAD / $7.50 USD. 50% to the winner, 20% to 2nd place, 10% to 3rd place."},
