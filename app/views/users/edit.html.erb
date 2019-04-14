@@ -10,9 +10,9 @@
   <div class="text-center title shadow-text">Account Settings</div>
   <div class="row text-center" style="margin-top:6rem">
     <div class="col-sm-4">
-      <div class="text-center sub-title shadow-text">Reset Predictions</div>
+      <!-- <div class="text-center sub-title shadow-text">Reset Predictions</div>
       <h4 class="shadow-text">This will reset all of your character predictions and any bonus questons you have answered</h4>
-      <%= link_to "Reset Predictions", reset_entry_path(@user.uuid), class:"btn btn-danger shadow-text", :data => {:confirm => 'Are you sure? There is no way to reverse this'} %>
+      <% link_to "Reset Predictions", reset_entry_path(@user.uuid), class:"btn btn-danger shadow-text", :data => {:confirm => 'Are you sure? There is no way to reverse this'} %> -->
     </div>
     <div class="col-sm-4">
       <div id="username" class="text-center user shadow-text"><%=@user.username%></div>
@@ -26,17 +26,16 @@
 
   <div class="row" style="margin-top:8rem">
     <div class="col-sm-4">
-      <div class="text-center sub-title shadow-text">Update Username</div>
-      <%= render 'formUsername', user: @user %>
+      <!-- <div class="text-center sub-title shadow-text">Update Username</div>
+      <% render 'formUsername', user: @user %> -->
     </div>
     <div class="col-sm-4">
       <div class="text-center sub-title shadow-text">Update Password</div>
       <%= render 'formPassword', user: @user %>
     </div>
     <div class="col-sm-4">
-
-      <div class="text-center sub-title shadow-text">Update House</div>
-      <%= render 'formHouse', user: @user %>
+      <!-- <div class="text-center sub-title shadow-text">Update House</div>
+      <% render 'formHouse', user: @user %> -->
     </div>
   </div>
   <div class="row text-center" style="margin-top:6rem">

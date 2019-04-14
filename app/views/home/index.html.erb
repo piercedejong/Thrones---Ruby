@@ -59,8 +59,8 @@
       <div class="card prediction-card">
         <i class="bottom-bar-icon fab fa-wpforms"></i>
         <div class="bottom-bar-name shadow-text">Predictions</div>
-        <div class="bottom-bar-info shadow-text">Make your predictions for the FINAL season of Game of Throns. Guess who is ging to live, die, or become a wight and answer the bonus questions</div>
-        <%= link_to 'Make Your Predictions', user_path(current_user.uuid), class:"btn btn-warning btn-block btn-prediction mx-auto"%>
+        <!-- <div class="bottom-bar-info shadow-text">Make your predictions for the FINAL season of Game of Throns. Guess who is ging to live, die, or become a wight and answer the bonus questions</div> -->
+        <%= link_to 'View Your Predictions', user_path(current_user.uuid), class:"btn btn-warning btn-block btn-prediction mx-auto"%>
         <%= link_to 'View Your House\'s Predictions', house_path(current_user.house.name), class:"shadow-text btn btn-info btn-block mx-auto mt-2"%>
       </div>
     </div>
@@ -69,7 +69,8 @@
         <article class="card-body m-0 p-0">
           <div class="card-title bottom-bar-name text-center shadow-text p-0 m-0">Weekly House Questions</div>
           <div class="question text-center shadow-text m-0 p-0">Episode 1</div>
-          <%= render 'formHouseAnswer', user: @user %>
+          <div class="question text-center shadow-text m-0 p-0">Answers have been locked</div>
+          <% render 'formHouseAnswer', user: @user %>
         </article>
       </div> <!-- card.// -->
     </div>
