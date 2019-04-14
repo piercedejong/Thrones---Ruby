@@ -58,6 +58,14 @@ class User < ApplicationRecord
     end
     return @points
   end
+
+  def get_character_points
+    @points = 0
+    self.characters.all.each do |c|
+      @points = @points + c.points
+    end
+    return @points
+  end
   def alive_characters
     c = self.characters.where(status: "alive")
     if c.eql? nil
