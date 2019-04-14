@@ -107,6 +107,11 @@ class User < ApplicationRecord
     self.email.downcase!
   end
 
+  def downcase_everyone
+    email = self.email
+    self.update_column(:email, email.downcase!)
+  end
+
   def User.new_token
     SecureRandom.urlsafe_base64
   end
