@@ -4,7 +4,7 @@
   <div class="row">
     <pre class="title text-center shadow-text mx-auto">House   Leaderboards</pre>
   </div>
-  <% House.all.each do |h| %>
+  <% House.unscoped.order(points: :desc, created_at: :asc).each do |h| %>
   <div class="row bonus-card mb-2 mt-2 d-flex p-4"style="flex-wrap:nowrap">
     <div id="sigil" class="text-center"><%= image_tag h.image, class:"image-house" %></div>
     <div id="house-<%=h.hid%>" class="ml-4">
