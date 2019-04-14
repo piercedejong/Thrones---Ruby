@@ -37,7 +37,7 @@ Rule.create(
 
 Faq.create(
   [
-    {fid:1, question:"When is the payment due?", answer:"Payement is due by 12:00pm MT / 1:00pm CT on April 14th. If you have not paid by then, your predictions will be deleted."},
+    {fid:1, question:"When is the payment due?", answer:"Payement is due at the same time your predictions are locked (6:00pm MDT / 8:00pm EDT). If you have not paid by then, your predictions will be deleted."},
     {fid:2, question:"How do I make the payment?", answer:"Payment can be made in person with cash, e-transfer to pierce.dejong45@gmail.com, or venmo Pierce-deJong. Please add the email and username you used to the e-transfer/venmo."},
     {fid:3, question:"How long do I have to make my predictions?", answer:"You have until 1 hour before season 8 premieres, 6:00pm MDT / 8:00pm EDT, April 14th. (The countdown on the main page)"},
     {fid:4, question:"Can I change my predictions?", answer:"Yes, you can. You have until the countdown hits zero to change your predictions and bonus questions."},
