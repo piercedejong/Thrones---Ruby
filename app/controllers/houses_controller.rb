@@ -1,12 +1,20 @@
 class HousesController < ApplicationController
   def index
+    if current_user
+    else
+      redirect_to root_path
+    end
   end
 
   def show
-    @house = House.find_by(name: params[:name])
-    update_house_answers(@house)
-    @house.update_characters
-    @house.update_points
+    if current_user
+      @house = House.find_by(name: params[:name])
+      update_house_answers(@house)
+      @house.update_characters
+      @house.update_points
+    else
+      redirect_to root_path
+    end
   end
 
   def update_house_answers(house)
