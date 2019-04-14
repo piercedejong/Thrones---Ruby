@@ -1,8 +1,12 @@
 class CharactersController < ApplicationController
 
   def index
-    update_stats
-    update_answers
+    if current_user
+      update_stats
+      update_answers
+    else
+      redirect_to root_path
+    end
   end
 
 
