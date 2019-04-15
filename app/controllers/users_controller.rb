@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    if current_user and (current_user.uuid.eql?params[:uuid] or current_user.role.eql? "admin" or current_user.role.eql? "moderator")
+    if current_user
       @user = User.find_by(uuid: params[:uuid])
       @user.update_points
     elsif (current_user)
