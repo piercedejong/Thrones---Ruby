@@ -19,16 +19,23 @@
         <% HouseQuestion.where("episode < ?", current_episode+1).each do |q| %>
           <div class="question-and-answer">
             <div class="question shadow-text"><%=q.qid%>. <%=q.text%></div>
-            <div class="answer shadow-text character-name ml-4" style="color:#f9f2de;">
+            <div class="answer shadow-text character-name ml-4 d-flex" style="color:#f9f2de;">
               <% @answer = @house.house_answers.find_by(aid: q.id)%>
-              <% if @answer.correct.eql? true %>
-                <i class="fas fa-check-circle" style="color:#52ad6a"></i>
-              <% elsif @answer.correct .eql? false%>
-                <i class="fas fa-times-circle"style="color:#ad5252"></i>
-              <%else %>
-                <i class="fas fa-clock"></i>
-              <% end %>
-              <%=@answer.text%></div>
+              <div class="d-flex">
+                <% if @answer.correct.eql? true %>
+                  <i class="fas fa-check-circle mr-1 my-auto" style="color:#52ad6a"></i>
+                <% elsif @answer.correct .eql? false%>
+                  <i class="fas fa-times-circle mr-1 my-auto"style="color:#ad5252"></i>
+                <%else %>
+                  <i class="fas fa-clock mr-1 my-auto"></i>
+                <% end %>
+                <%=@answer.answer%>
+              </div>
+              <div class="answer shadow-text character-name ml-4 mb-2" style="color:#f9f2de;font-weight:normal">
+                <%=@answer.text%>
+              </div>
+            </div>
+
           </div>
         <% end %>
       </div>
