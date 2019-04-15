@@ -42,7 +42,7 @@ class CharactersController < ApplicationController
   def update_answers
     Question.all.each do |q|
       array = Array.new
-      User.all.each do |u|
+      User.where(paid:true).each do |u|
         a = u.answers.all.find_by(rid: q.qid).text
         if !a.eql?""
           array.push(a)
@@ -52,17 +52,17 @@ class CharactersController < ApplicationController
       freq = array.inject(Hash.new(0)) { |h,v| h[v] += 1; h }
       list = freq.sort_by{|answer,count| -count}
 
-      total = (list[0][1]/ (User.count+0.0) * 100).round(2)
+      total = (list[0][1]/ (User.where(paid:true).count+0.0) * 100).round(2)
       text +=list[0][0]+", "+total.to_s+"%"
 
       # Check if there is a scond answer and add it
       if list.length>1
-        total = (list[1][1] / (User.count+0.0) * 100).round(2)
+        total = (list[1][1] / (User.where(paid:true).count+0.0) * 100).round(2)
         text +=" ||| "+list[1][0]+", "+total.to_s+"%"
       end
 
       if list.length>2
-        total = (list[2][1] / (User.count+0.0) * 100).round(2)
+        total = (list[2][1] / (User.where(paid:true).count+0.0) * 100).round(2)
         text +=" ||| "+list[2][0]+", "+total.to_s+"%"
       end
       q.update(answer:text)
