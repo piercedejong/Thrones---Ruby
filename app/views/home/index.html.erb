@@ -13,6 +13,9 @@
 <div class="container">
   <div class="row m-auto">
     <div class="col-sm-4 align-items-center justify-content-center">
+      <div class="sub-title text-center shadow-text">Current Leader</div>
+      <div class="text-center shadow-text h1"><%=first_place.username%></div>
+      <div class="text-center shadow-text h3"><%=first_place.points%> points</div>
       <!-- <div class="text-center">
         <div class="time-info text-center">Predictions can be made until <strong>ONE</strong> hour before season 8 starts</div>
         <div>
@@ -51,8 +54,8 @@
   <div class="row middle-bar align-items-center">
     <div class="col-sm-4">
       <!-- <div class="sub-title text-center shadow-text">Current Leader</div>
-      <div class="text-center shadow-text h1"><%=first_place.username%></div>
-      <div class="text-center shadow-text h3"><%=first_place.points%> points</div> -->
+      <div class="text-center shadow-text h1"><%=first_place.username%></div> -->
+      <div class="text-center shadow-text h3">Epsiode 2 Preview</div>
       <iframe id="player" style="width:100%;"src="<%= video %>" frameborder="0" allow="accelerometer;encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div class="col-sm-4 order-first order-sm-2 text-center">
@@ -68,8 +71,8 @@
       <div class="card prediction-card pt-0 pb-4">
         <article class="card-body m-0 p-0">
           <div class="card-title bottom-bar-name text-center shadow-text p-0 m-0">Weekly House Questions</div>
-          <div class="question text-center shadow-text m-0 p-0">Episode 1</div>
-          <div class="question text-center shadow-text m-0 p-0">Answers have been locked</div>
+          <div class="question text-center shadow-text m-0 p-0">Episode 2</div>
+          <div class="question text-center shadow-text m-0 p-0">Questions will be available on Wednesday, April 17th</div>
           <% render 'formHouseAnswer', user: @user %>
         </article>
       </div> <!-- card.// -->

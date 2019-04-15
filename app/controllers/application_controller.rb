@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
       "https://www.youtube.com/embed/kuLUyJdRvSU",
     ]
     x = rand(0..5)
-    return videos[x]
+    return "https://www.youtube.com/embed/R6YCfVe4eR0"
   end
 
   def first_place
