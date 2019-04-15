@@ -73,7 +73,7 @@ class DeathsController < ApplicationController
 
   def update_answers
     Question.all.each do |q|
-      q.update_column(:answer, answer_params["a#{q.qid}"])=
+      q.update_column(:answer, answer_params["a#{q.qid}"])
       Answer.where(rid: q.qid).each do |a|
         if a.text.eql? q.answer and !q.answer.eql?""
           a.update_column(:correct, true)
