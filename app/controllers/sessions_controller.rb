@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   end
   def create
     @user = User.find_by_username(params[:username].downcase) || User.find_by_email(params[:username].downcase)
-    if @user && @user.authenticate(params[:password])
+    if @user && @user.authenticate(params[:password]) && @user.paid
       cookies.permanent.signed[:permanent_user_id] = @user.uuid
       session[:user_id] = @user.uuid
       redirect_to root_url, notice: "Logged in!"
