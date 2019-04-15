@@ -73,10 +73,12 @@ class DeathsController < ApplicationController
 
   def update_answers
     Question.all.each do |q|
-      q.update_column(:answer, answer_params["a#{q.qid}"])
+      q.update_column(:answer, answer_params["a#{q.qid}"])=
       Answer.where(rid: q.qid).each do |a|
-        if a.text.eql? q.answer
+        if a.text.eql? q.answer and !q.answer.eql?""
           a.update_column(:correct, true)
+        elsif q.answer.eql?""
+          a.update_column(:correct, nil)
         else
           a.update_column(:correct, false)
         end
@@ -89,8 +91,10 @@ class DeathsController < ApplicationController
     HouseQuestion.where(episode: current_episode).each do |q|
       q.update_column(:answer, answer_params["a#{q.id}"])
       HouseAnswer.where(aid: q.id).each do |a|
-        if a.answer.eql? q.answer
+        if a.answer.eql? q.answer and !q.answer.eql?""
           a.update_column(:correct, true)
+        elsif q.answer.eql?""
+          a.update_column(:correct, nil)
         else
           a.update_column(:correct, false)
         end
