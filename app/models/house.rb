@@ -47,7 +47,7 @@ class House < ApplicationRecord
 
   def update_characters
     characters = []
-    self.users.all.each do |u|
+    self.users.where(paid:true).each do |u|
       characters+= u.characters
     end
     self.characters.all.each do |c|
@@ -84,7 +84,7 @@ class House < ApplicationRecord
       end
     end
   end
-  
+
   def no_status_characters
     c = self.characters.where(status: "none")
     if c.eql? nil

@@ -5,7 +5,7 @@
     <div id="title" class="title text-center shadow-text w-100 ">Leaderboards</div>
   </div>
   <div class="row">
-    <div class="sub-title text-center shadow-text w-100">Total Players: <%=User.count%></div>
+    <div class="sub-title text-center shadow-text w-100">Total Players: <%=User.where(paid:true).count%></div>
   </div>
   <div class="row">
     <div class="col-sm-2"></div>
@@ -17,7 +17,7 @@
           <div class="shadow-text user-house text-center my-auto"><strong>House</strong></div>
           <div class="shadow-text user-button text-center my-auto"><strong>Prediction</strong></div>
         </div>
-        <% @users.unscoped.order(points: :desc, created_at: :asc).each do |user| %>
+        <% @users.order(points: :desc, created_at: :asc).each do |user| %>
           <div class="user-card d-flex w-auto">
             <div class="shadow-text user-name my-auto">
               <% if current_user.role.eql?"admin" %>

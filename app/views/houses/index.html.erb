@@ -17,11 +17,11 @@
         <% end %>
       </div>
       <div id="members-<%=h.hid%>" class="shadow-text row mt-2" style="flex-wrap: wrap;">
-        <% if h.users.count.eql? 0 %>
+        <% if h.users.where(paid:true).count.eql? 0 %>
           <pre class="h3">No Members :(</pre>
         <% else %>
           <pre class="h3">House Members:  </pre>
-          <% h.users.all.each do |u| %>
+          <% h.users.where(paid:true).each do |u| %>
           <pre class="h3"><strong><%=u.username%></strong></pre>
             <% if !u.eql? h.users.last %>
           <pre class="h3">  |  </pre>

@@ -11,7 +11,6 @@ class User < ApplicationRecord
   validates :password, length: { in: 6..20}
   validates :house_id, presence:true
   before_save :downcase_fields
-  default_scope { order(created_at: :asc) }
 
   def create_uuid
     begin

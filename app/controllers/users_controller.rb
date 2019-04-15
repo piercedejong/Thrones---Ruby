@@ -8,7 +8,7 @@ class UsersController < ApplicationController
       User.all.each do |x|
         x.update_points
       end
-      @users = User.all
+      @users = User.where(paid:true)
     else
       redirect_to root_path
     end

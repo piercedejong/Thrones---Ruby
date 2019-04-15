@@ -23,7 +23,7 @@ class HousesController < ApplicationController
       yes = 0
       no = 0
       none = 0
-      @house.users.each do |u|
+      @house.users.where(paid:true).each do |u|
         text = u.house_answers.find_by(aid: a.aid).text
         if text.eql? "Yes"
           yes+=1
@@ -34,9 +34,9 @@ class HousesController < ApplicationController
         end
       end
       if @house.users.count > 0
-        yes = (yes*100/@house.users.count).round(2)
-        no = (no*100/@house.users.count).round(2)
-        none = (none*100/@house.users.count).round(2)
+        yes = (yes*100/@house.users.where(paid:true).count).round(2)
+        no = (no*100/@house.users.where(paid:true).count).round(2)
+        none = (none*100/@house.users.where(paid:true).count).round(2)
       end
       if no==0 and yes == 0
         x = "House Answer: No one in this house has voted yet"
