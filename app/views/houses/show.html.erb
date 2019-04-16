@@ -13,9 +13,38 @@
     <div class="col-sm-3"></div>
     <div class="col-sm-6">
       <div class="bonus-card p-3">
-        <div class="card-title sub-title text-center mb-0 mt-1 shadow-text">House Weekly Questions</div>
+        <div class="card-title sub-title text-center mb-0 mt-1 shadow-text">Weekly House Questions</div>
         <div class="card-title h2 text-center mb-4 mt-1 shadow-text">Points: <%=@house.get_answer_points%></div>
-        <div class="card-title h2 text-center mb-0 mt-2 shadow-text">Episode 1</div>
+        <% if current_user.house.eql? @house or current_user.role.eql? "admin" %>
+          <div class="card-title h2 text-center mb-0 mt-2 shadow-text">Current Episode</div>
+          <div class="question shadow-text text-center">Episode <%=current_episode%></div>
+          <div class="mb-4">
+            <% HouseQuestion.where(episode: current_episode).each do |q| %>
+              <div class="question-and-answer mb">
+                <div class="question shadow-text"><%=q.qid%>. <%=q.text%></div>
+                <div class="answer shadow-text character-name ml-4 d-flex" style="color:#f9f2de;">
+                  <% @answer = @house.house_answers.find_by(aid: q.id)%>
+                  <div>
+                  <% if @answer.correct.eql? true %>
+                    <i class="fas fa-check-circle mr-1 my-auto" style="color:#52ad6a"></i>
+                  <% elsif @answer.correct .eql? false%>
+                    <i class="fas fa-times-circle mr-1 my-auto"style="color:#ad5252"></i>
+                  <%else %>
+                    <i class="fas fa-clock mr-1 my-auto"></i>
+                  <% end %>
+                  </div>
+                  <div>
+                    <%=@answer.answer%>
+                  </div>
+                  <div class="ml-4" style="font-weight:normal">
+                    <%=@answer.text%>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+        <div class="card-title h2 text-center mb-0 mt-4 shadow-text">Previous Episodes</div>
         <% HouseQuestion.where("episode < ?", current_episode).each do |q| %>
           <div class="question-and-answer">
             <div class="question shadow-text"><%=q.qid%>. <%=q.text%></div>
@@ -37,7 +66,6 @@
                 <%=@answer.text%>
               </div>
             </div>
-
           </div>
         <% end %>
       </div>

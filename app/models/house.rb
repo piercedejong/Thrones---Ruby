@@ -106,7 +106,7 @@ class House < ApplicationRecord
         none = (none*100/self.users.where(paid:true).count).round(2)
       end
       if no==0 and yes == 0
-        x = "House Answer: No one in this house has voted yet"
+        x = "No one in this house has voted yet"
         a.update_column(:answer, "none")
       elsif yes>=no
         x = " "
