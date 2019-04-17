@@ -20,25 +20,21 @@
           <div class="question shadow-text text-center">Episode <%=current_episode%></div>
           <div class="mb-4">
             <% HouseQuestion.where(episode: current_episode).each do |q| %>
-              <div class="question-and-answer mb">
+              <div class="question-and-answer mb-2">
                 <div class="question shadow-text"><%=q.qid%>. <%=q.text%></div>
                 <div class="answer shadow-text character-name ml-4 d-flex" style="color:#f9f2de;">
                   <% @answer = @house.house_answers.find_by(aid: q.id)%>
                   <div>
-                  <% if @answer.correct.eql? true %>
-                    <i class="fas fa-check-circle mr-1 my-auto" style="color:#52ad6a"></i>
-                  <% elsif @answer.correct .eql? false%>
-                    <i class="fas fa-times-circle mr-1 my-auto"style="color:#ad5252"></i>
-                  <%else %>
-                    <i class="fas fa-clock mr-1 my-auto"></i>
-                  <% end %>
+                    <% if @answer.correct.eql? true %>
+                      <i class="fas fa-check-circle mr-1 my-auto" style="color:#52ad6a"></i>
+                    <% elsif @answer.correct .eql? false%>
+                      <i class="fas fa-times-circle mr-1 my-auto"style="color:#ad5252"></i>
+                    <%else %>
+                      <i class="fas fa-clock mr-1 my-auto"></i>
+                    <% end %>
                   </div>
-                  <div>
-                    <%=@answer.answer%>
-                  </div>
-                  <div class="ml-4" style="font-weight:normal">
-                    <%=@answer.text%>
-                  </div>
+                  <div class="ml-2"> <%=@answer.answer%></div>
+                  <div class="ml-4" style="font-weight:normal"><%=@answer.text%></div>
                 </div>
               </div>
             <% end %>
@@ -46,7 +42,7 @@
         <% end %>
         <div class="card-title h2 text-center mb-0 mt-4 shadow-text">Previous Episodes</div>
         <% HouseQuestion.where("episode < ?", current_episode).each do |q| %>
-          <div class="question-and-answer">
+          <div class="question-and-answer mb-2">
             <div class="question shadow-text"><%=q.qid%>. <%=q.text%></div>
             <div class="answer shadow-text character-name ml-4 d-flex" style="color:#f9f2de;">
               <% @answer = @house.house_answers.find_by(aid: q.id)%>
@@ -59,11 +55,11 @@
                 <i class="fas fa-clock mr-1 my-auto"></i>
               <% end %>
               </div>
-              <div>
+              <div class="ml-2">
                 <%=@answer.answer%>
-              </div>
+              </div >
               <div class="ml-4" style="font-weight:normal">
-                <%=@answer.text%>
+                <%@answer.text%>
               </div>
             </div>
           </div>
