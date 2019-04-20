@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def new
   end
   def create
-    @user = User.find_by(username:params[:username].downcase)
+    @user = User.find_by(username:params[:username].downcase) || User.find_by(username:params[:username])
     puts @user
     puts params[:username]
     if @user.eql? nil
