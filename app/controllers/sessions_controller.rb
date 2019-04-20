@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def new
   end
   def create
-    @user = User.where("lower(username) = ?", params[:username].downcase).first
+    @user = User.where("lower(username) = ?", params[:username].downcase).first || User.where("lower(email) = ?", params[:username].downcase).first
     if @user and @user.authenticate(params[:password])
       cookies.permanent.signed[:permanent_user_id] = @user.uuid
       session[:user_id] = @user.uuid
