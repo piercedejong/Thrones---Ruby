@@ -2,8 +2,18 @@ class SessionsController < ApplicationController
   def new
   end
   def create
-    @user = User.find_by(username:params[:username].downcase) || User.find_by(email:params[:username].downcase)
+    @user = User.find_by(username:params[:username].downcase)
+    puts @user
+    puts params[:username]
+    if @user.eql? nil
+      puts "EMAIL WAS USED"
+      @user =  User.find_by(email:params[:username].downcase)
+    end
+    puts @user
     if @user and @user.authenticate(params[:password])
+      puts "Test123"
+      puts @user.username
+      puts params[:username]
       cookies.permanent.signed[:permanent_user_id] = @user.uuid
       session[:user_id] = @user.uuid
       redirect_to root_url, notice: "Logged in!"
