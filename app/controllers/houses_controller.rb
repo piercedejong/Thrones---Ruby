@@ -3,7 +3,6 @@ class HousesController < ApplicationController
     if current_user
       House.all.each do |x|
         x.update_points
-        x.update_house_answers(current_episode)
       end
     else
       redirect_to root_path
