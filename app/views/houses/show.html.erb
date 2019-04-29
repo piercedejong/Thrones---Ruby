@@ -42,7 +42,7 @@
         <div class="card-title h2 text-center mb-0 mt-4 shadow-text">Previous Episodes</div>
         <% HouseQuestion.where("episode < ?", current_episode).each do |q| %>
           <div class="question-and-answer mb-2">
-            <div class="question shadow-text"><%=q.qid%>. <%=q.text%></div>
+            <div class="question shadow-text"><%=q.id%>. <%=q.text%></div>
             <div class="answer shadow-text character-name ml-4 d-flex" style="color:#f9f2de;">
               <% @answer = @house.house_answers.find_by(aid: q.id)%>
               <div>
