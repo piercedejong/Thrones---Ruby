@@ -11,25 +11,41 @@ class DeathsController < ApplicationController
     @character.update(status: params["status"])
     @status = @character.status
     Character.where(cid: @character.did).each do |c|
-      if c.status.eql? @status
-        if @status.eql? "alive"
+      case c.stauts
+      when "alive"
+        case @status
+        when "alive"
           c.update(points: 1)
-        elsif @status.eql? "dead"
-          c.update(points: 1)
-        elsif @status.eql? "wight"
-          c.update(points: 2)
-        else
+        when "dead"
+          c.update(points: 0)
+        when "wight"
+          c.update(points: 0)
+        when "none"
           c.update(points: 0)
         end
-      elsif c.status.eql? "dead" and @status.eql? "wight"
-        c.update(points: 1)
-      elsif c.status.eql? "wight" and @status.eql? "dead"
-        c.update(points: 0)
-      elsif c.status.eql? "wight" and @status.eql? "alive"
-        c.update(points: -1)
-      elsif @status.eql? "none"
-        c.update(points: 0)
-      else
+      when "dead"
+        case @status
+        when "alive"
+          c.update(points: 0)
+        when "dead"
+          c.update(points: 1)
+        when "wight"
+          c.update(points: 1)
+        when "none"
+          c.update(points: 0)
+        end
+      when "wight"
+        case @status
+        when "alive"
+          c.update(points: -1)
+        when "dead"
+          c.update(points: 0)
+        when "wight"
+          c.update(points: 2)
+        when "none"
+          c.update(points: 0)
+        end
+      when "none"
         c.update(points: 0)
       end
     end
