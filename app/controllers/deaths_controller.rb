@@ -108,13 +108,14 @@ class DeathsController < ApplicationController
   end
 
   def update_house_answers
+    answers = HouseAnswer.where(episode:current_episode).where(user_id:nil)
     HouseQuestion.where(episode: current_episode).each do |q|
       q.update_column(:answer, answer_params["a#{q.id}"])
-      HouseAnswer.where(aid: q.id).each do |a|
-        if a.answer.eql? q.answer and !a.answer.eql?""
-          a.update_column(:correct, true)
-        elsif q.answer.eql?""
+      answers.where(aid: q.id).each do |a|
+        if q.answer.eql?""
           a.update_column(:correct, nil)
+        elsif a.answer.eql? q.answer
+          a.update_column(:correct, true)
         else
           a.update_column(:correct, false)
         end
@@ -126,7 +127,7 @@ class DeathsController < ApplicationController
 
   private
   def answer_params
-    params.require(:answer).permit(:a1, :a2, :a3, :a4, :a5, :a6)
+    params.require(:answer).permit(:a1, :a2, :a3, :a4, :a5, :a6,:a7,:a8,:a9,:a10,:a11,:a12,:a13,:a14,:q15,:a16,:a17,:a18)
   end
 
   def house_answer_params

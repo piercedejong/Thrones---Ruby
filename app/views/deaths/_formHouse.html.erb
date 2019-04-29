@@ -7,7 +7,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text"> <i class=""></i></span>
         </div>
-          <%= select_tag "answer[a#{q.qid}]", content_tag(:option,'Select an Answer...',:value=>"")+options_for_select(["Yes","No"], q.answer), class:'input-group-form input-answer-from', id: '' %>
+          <%= select_tag "answer[a#{q.id}]", content_tag(:option,'Select an Answer...',:value=>"")+options_for_select(["Yes","No"], q.answer), class:'input-group-form input-answer-from', id: '' %>
       </div> <!-- input-group.// -->
       </div>
     <% end %>
