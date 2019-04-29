@@ -111,7 +111,7 @@ class DeathsController < ApplicationController
     HouseQuestion.where(episode: current_episode).each do |q|
       q.update_column(:answer, answer_params["a#{q.id}"])
       HouseAnswer.where(aid: q.id).each do |a|
-        if a.answer.eql? q.answer and !q.answer.eql?""
+        if a.answer.eql? q.answer and !a.answer.eql?""
           a.update_column(:correct, true)
         elsif q.answer.eql?""
           a.update_column(:correct, nil)
