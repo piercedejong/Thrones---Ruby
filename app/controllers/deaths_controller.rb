@@ -11,7 +11,7 @@ class DeathsController < ApplicationController
     @character.update(status: params["status"])
     @status = @character.status
     Character.where(cid: @character.did).each do |c|
-      case c.stauts
+      case c.status
       when "alive"
         case @status
         when "alive"
