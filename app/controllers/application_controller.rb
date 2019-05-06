@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_episode
-    @episode =  4
+    @episode =  5
   end
 
   def video
@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
       "https://www.youtube.com/embed/kuLUyJdRvSU",
     ]
     x = rand(0..5)
-    return "https://www.youtube.com/embed/ksTqLXLUvQ4"
+    return "https://www.youtube.com/embed/F1fqet9V49"
   end
 
   def first_place

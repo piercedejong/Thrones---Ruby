@@ -14,7 +14,7 @@
       <div class="bonus-card p-3">
         <div class="card-title sub-title text-center mb-0 mt-1 shadow-text">Weekly House Questions</div>
         <div class="card-title h2 text-center mb-4 mt-1 shadow-text">Points: <%=@house.get_answer_points%></div>
-        <% if true and current_user.house.eql? @house or current_user.role.eql? "admin" %>
+        <% if false and current_user.house.eql? @house or current_user.role.eql? "admin" %>
           <div class="card-title h2 text-center mb-0 mt-2 shadow-text">Current Episode</div>
           <div class="question shadow-text text-center">Episode <%=current_episode%></div>
           <div class="mb-4">
