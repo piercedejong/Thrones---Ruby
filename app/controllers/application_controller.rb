@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_episode
-    @episode =  5
+    @episode =  6
   end
 
   def video
