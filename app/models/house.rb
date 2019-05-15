@@ -101,9 +101,9 @@ class House < ApplicationRecord
         end
       end
       if self.users.where(paid:true).count > 0
-        yes = (yes*100/self.users.where(paid:true).count).round(2)
-        no = (no*100/self.users.where(paid:true).count).round(2)
-        none = (none*100/self.users.where(paid:true).count).round(2)
+        yes = (yes*100/self.users.where(paid:true).count).round
+        no = (no*100/self.users.where(paid:true).count).round
+        none = (none*100/self.users.where(paid:true).count).round
       end
       if no==0 and yes == 0
         x = "No one in this house has voted yet"
