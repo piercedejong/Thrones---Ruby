@@ -14,7 +14,7 @@
       <div class="bonus-card p-3">
         <div class="card-title sub-title text-center mb-0 mt-1 shadow-text">Weekly House Questions</div>
         <div class="card-title h2 text-center mb-4 mt-1 shadow-text">Points: <%=@house.get_answer_points%></div>
-        <% if false and current_user.house.eql? @house or current_user.role.eql? "admin" %>
+        <% if false or current_user.house.eql? @house and current_user.role.eql? "admin" %>
           <div class="card-title h2 text-center mb-0 mt-2 shadow-text">Current Episode</div>
           <div class="question shadow-text text-center">Episode <%=current_episode%></div>
           <div class="mb-4">
@@ -40,7 +40,7 @@
           </div>
         <% end %>
         <div class="card-title h2 text-center mb-0 mt-4 shadow-text">Previous Episodes</div>
-        <% HouseQuestion.where("episode < ?", current_episode).each do |q| %>
+        <% HouseQuestion.where("episode < ?", 7).each do |q| %>
           <div class="question-and-answer mb-2">
             <div class="question shadow-text"><%=q.id%>. <%=q.text%></div>
             <div class="answer shadow-text character-name ml-4 d-flex" style="color:#f9f2de;">

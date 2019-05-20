@@ -74,10 +74,10 @@
           <div class="card-title bottom-bar-name text-center shadow-text p-0 m-0">Weekly House Questions</div>
           <div class="question text-center shadow-text m-0 p-0">Episode <%=current_episode%></div>
           <% if false or current_user.role.eql? "admin" %>
-            <%= render 'formHouseAnswer', user: @user %>
+            <% render 'formHouseAnswer', user: @user %>
           <% else %>
             <!-- <div class="question text-center shadow-text m-0 p-0">Questions will be available on Wednesday, May 15th</div> -->
-            <div class="question text-center shadow-text m-0 p-0">ALL FINAL ANSWERS WILL BE UPDATED 1-2 HOURS AFTER THE FINALE ENDS</div>
+            <!-- <div class="question text-center shadow-text m-0 p-0">ALL FINAL ANSWERS WILL BE UPDATED 1-2 HOURS AFTER THE FINALE ENDS</div> -->
           <% end %>
         </article>
       </div> <!-- card.// -->
