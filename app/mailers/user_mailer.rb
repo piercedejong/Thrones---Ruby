@@ -15,6 +15,6 @@ class UserMailer < ApplicationMailer
 
   def update(user)
       @user = user
-      mail(to: @user.email, subject:"Entrance Fee Due| GoT Death Pool", 'Importance' => 'high','X-Priority' => '1')
+      mail(to: @user.email, subject:"*Spoilers* Iron Throne Question| GoT Death Pool", 'Importance' => 'high','X-Priority' => '1')
     end
 end
