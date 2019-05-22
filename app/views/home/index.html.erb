@@ -13,9 +13,9 @@
 <div class="container">
   <div class="row m-auto">
     <div class="col-sm-4 align-items-center justify-content-center">
-      <div class="text-center shadow-text h2">Current Leader</div>
-      <div class="text-center shadow-text h1"><strong><%=first_place.username%></strong></div>
-      <div class="text-center shadow-text h3 mb-4"><%=first_place.points%> points</div>
+      <div class="text-center shadow-text h2">Winners</div>
+      <div class="text-center shadow-text h1"><strong>BobbyB</strong> and <strong>roblong</strong></div>
+      <div class="text-center shadow-text h3 mb-4"><strong>Free Folk</strong></div>
       <div class="text-center shadow-text h3 mt-4">Total Pot: $910 CAD / $683 USD</div>
       <!-- <div class="text-center">
         <div class="time-info text-center">Predictions can be made until <strong>ONE</strong> hour before season 8 starts</div>
@@ -71,8 +71,9 @@
     <div class="col-sm-4 order-first order-sm-2">
       <div class="card prediction-card pt-0 pb-4">
         <article class="card-body m-0 p-0">
-          <div class="card-title bottom-bar-name text-center shadow-text p-0 m-0">Weekly House Questions</div>
-          <div class="question text-center shadow-text m-0 p-0">Episode <%=current_episode%></div>
+          <div class="card-title bottom-bar-name text-center shadow-text p-0 m-0">All ppints have been finalized</div>
+          <!-- <div class="card-title bottom-bar-name text-center shadow-text p-0 m-0">Weekly House Questions</div> -->
+          <!-- <div class="question text-center shadow-text m-0 p-0">Episode <%=current_episode%></div> -->
           <% if false or current_user.role.eql? "admin" %>
             <% render 'formHouseAnswer', user: @user %>
           <% else %>
